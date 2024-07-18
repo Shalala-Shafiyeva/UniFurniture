@@ -1,0 +1,1048 @@
+.aboutContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutContainer .hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: calc(100vh - 96px);
+    margin-top: 96px;
+    padding: 22px 7%;
+}
+
+.aboutContainer .phoneHero{
+    display: none;
+}
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+}
+
+.aboutContainer .hero .item1 {
+    width: 12px;
+    height: 12px;
+    bottom: 8%;
+    left: 10%;
+}
+
+.aboutContainer .hero .item2 {
+    width: 34px;
+    height: 34px;
+    bottom: 5%;
+    left: 23%;
+}
+
+.aboutContainer .hero .darkGreen {
+    background-color: #189877;
+}
+
+.aboutContainer .hero .green {
+    background-color: #00D0D0;
+}
+
+.aboutContainer .hero .cover {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+}
+
+.aboutContainer .hero .desc {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.aboutContainer .hero .desc h2 {
+    color: #24252E;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 65px;
+}
+
+.aboutContainer .hero .desc h2>span {
+    color: #FF914D;
+}
+
+.aboutContainer .hero p {
+    color: #3C3D45;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 32px;
+}
+
+.aboutContainer .getStart {
+    display: flex;
+    padding: 30px 89px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #00A991;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-top: 43px;
+    width: max-content;
+    transition: 0.3s all ease-in-out;
+}
+
+.aboutContainer .getStart:hover {
+    background-color: #028571;
+}
+
+.aboutContainer .hero .img {
+    width: 39%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutContainer .hero .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aboutContainer .paralax {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../public/images/aboutparalax.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 10%;
+}
+
+.aboutContainer .paralax .cover {
+    width: 56%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.aboutContainer .paralax h3 {
+    color: #FFF;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 55.5px;
+}
+
+.aboutContainer .paralax p {
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.aboutContainer .banking {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 7%;
+    position: relative;
+}
+
+.aboutContainer .banking .imgs {
+    width: 45%;
+    height: 500px;
+}
+
+.aboutContainer .banking img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aboutContainer .banking .desc {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutContainer .banking h3 {
+    color: #24252E;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 55.5px;
+}
+
+.aboutContainer .banking h3 span {
+    color: #FF9C5F;
+}
+
+.aboutContainer .banking p {
+    color: #3C3D45;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 32px;
+    margin-bottom: 37px;
+}
+
+.darkOrange {
+    background-color: #F36A00;
+}
+
+.item3 {
+    width: 29px;
+    height: 29px;
+    top: 8%;
+    left: 16%;
+}
+
+.item4 {
+    width: 12px;
+    height: 12px;
+    background-color: #00D0D0;
+    top: 0;
+    right: 35%;
+}
+
+.item5 {
+    width: 8px;
+    height: 8px;
+    background-color: #32A7E2;
+    bottom: 5%;
+    left: 21%;
+}
+
+.item6 {
+    width: 8px;
+    height: 8px;
+    background-color: #00D0D0;
+    bottom: 0;
+    left: 37%;
+}
+
+.item7 {
+    width: 20px;
+    height: 20px;
+    background-color: #FFBF47;
+    bottom: 4%;
+    right: 30%;
+}
+
+.item8 {
+    width: 19px;
+    height: 19px;
+    background-color: #189877;
+    bottom: 2%;
+    right: 22%;
+}
+
+.item9 {
+    width: 8px;
+    height: 8px;
+    background-color: #FFBF47;
+    bottom: 14%;
+    right: 10%;
+}
+
+.team {
+    width: 100%;
+    padding: 12% 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.team h3 {
+    color: #24252E;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 55.5px;
+    width: 47%;
+    padding: 10px;
+}
+
+.team h3 span {
+    color: #FF914D;
+}
+
+.team .memberCards {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 23%);
+    gap: 36px;
+}
+
+.team .memberCards .card {
+    width: 100%;
+    height: 370px;
+    border-radius: 10px;
+    background: #99DDD3;
+    position: relative;
+    overflow: hidden;
+}
+
+.team .memberCards .card .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+.team .memberCards .card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.team .memberCards .card img:hover {
+    transition: 0.3s all ease-in-out;
+    position: relative;
+    transform: scale(1.1);
+}
+
+.team .memberCards .desc {
+    width: 76%;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #F3F3F3;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: 0.3s all ease-in-out;
+}
+
+.team .memberCards .desc:hover {
+    background: #f3f3f3b3;
+}
+
+.team .memberCards .desc span:first-of-type {
+    color: #0B0D17;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.team .memberCards .desc span:last-of-type {
+    color: #0B0D17;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.aboutContainer .getStart {
+    margin-top: 0;
+}
+
+.aboutContainer .paralax2 {
+    width: 100%;
+    height: max-content;
+    background-image: url('../../../public/images/team/impact.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    margin-bottom: 50px;
+}
+
+.paralax2::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../../../public/images/team/shape.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -10;
+}
+
+.aboutContainer .paralax2 .cover {
+    width: 62%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.aboutContainer .paralax2 .cover>span {
+    color: #FFF;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 55.5px;
+    padding: 10px;
+}
+
+.aboutContainer .paralax2 .nums {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aboutContainer .paralax2 .nums>div {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.aboutContainer .paralax2 .box {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.aboutContainer .paralax2 .box2 {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.aboutContainer .paralax2 .nums>div div:not(.box) {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutContainer .paralax2 .nums>div span {
+    padding: 10px;
+}
+
+.aboutContainer .paralax2 .nums>div>div span:first-of-type {
+    color: #FFF;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 65.222px;
+}
+
+.aboutContainer .paralax2 .nums>div>div span:last-of-type {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.weDo {
+    width: 100%;
+    padding: 50px 6%;
+    background: #E5F6F4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.weDo h4 {
+    width: 55%;
+    color: #24252E;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.weDo h4 span {
+    color: #FF914D;
+}
+
+.weDo .doCards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.weDo .card {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    transition: .3s all ease-in-out;
+}
+
+.weDo .card:hover {
+    transform: scale(1.05);
+}
+
+.weDo .card .img {
+    width: 152px;
+    height: 152px;
+    padding: 10px;
+}
+
+.weDo .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.weDo .card .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.weDo .content .title {
+    color: #24252E;
+    text-align: center;
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 50px;
+    height: 60px;
+    text-transform: capitalize;
+}
+
+.weDo .content p {
+    color: #3C3D45;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 28px;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.createAccount {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 96px);
+    padding: 17% 6%;
+    position: relative;
+}
+
+.createAccount .vector {
+    position: absolute;
+    background-image: url('../../../public/images/weDo/Vector.png');
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-position: center top 55%;
+    background-repeat: no-repeat;
+    background-size: 100% 200px;
+}
+
+.aboutContainer>.createAccount>.cover {
+    width: 100%;
+    border-radius: 10px;
+    background: #00A991;
+    padding: 5% 17%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+}
+
+.createAccount>.cover h4 {
+    color: #FFF;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 55.5px;
+    width: 100%;
+}
+
+.createAccount .cover a {
+    display: flex;
+    padding: 30px 89px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #FFF;
+    color: #24252E;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    transition: .3s all ease-in-out;
+}
+
+.createAccount .cover a:hover {
+    background: #ffffffd4;
+}
+
+.createAccount .item10 {
+    width: 29px;
+    height: 29px;
+    background-color: #F36A00;
+    top: 3%;
+    left: 10%;
+}
+
+.createAccount .item11 {
+    width: 8px;
+    height: 8px;
+    background-color: #32A7E2;
+    bottom: 6%;
+    left: 13%;
+}
+
+.createAccount .item12 {
+    width: 20px;
+    height: 20px;
+    background-color: #FFBF47;
+    bottom: 4%;
+    right: 40%;
+}
+
+.createAccount .item13 {
+    width: 19px;
+    height: 19px;
+    background-color: #189877;
+    bottom: 3%;
+    right: 35%;
+}
+
+.createAccount .item14 {
+    width: 8px;
+    height: 9px;
+    background-color: #FFBF47;
+    bottom: 10%;
+    right: 10%;
+}
+
+
+@media (max-width:1024px) {
+    .aboutContainer .hero {
+        height: calc(70vh - 68px);
+        margin-top: 68px;
+    }
+
+    .aboutContainer .hero .desc {
+        gap: 9px;
+    }
+
+    .aboutContainer .hero .desc h2 {
+        font-size: 42px;
+        line-height: 55.5px;
+    }
+
+    .aboutContainer .hero p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .aboutContainer .getStart {
+        padding: 21px 63px;
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .aboutContainer .hero .img {
+        width: 40%;
+    }
+
+    .aboutContainer .paralax {
+        height: 320px;
+    }
+
+    .aboutContainer .paralax h3 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .aboutContainer .paralax p {
+        font-size: 16px;
+    }
+
+    .aboutContainer .banking {
+        height: 55vh;
+    }
+
+    .aboutContainer .banking .imgs {
+        height: 350px;
+    }
+
+    .aboutContainer .banking h3 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .aboutContainer .banking p {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .team h3 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .team .memberCards .card {
+        height: 270px;
+    }
+
+    .team .memberCards .desc {
+        padding: 6px;
+    }
+
+    .team .memberCards .desc span:first-of-type {
+        font-size: 11px;
+        line-height: 18px
+    }
+
+    .team .memberCards .desc span:last-of-type {
+        font-size: 8px;
+        line-height: 14px;
+    }
+
+    .aboutContainer .paralax2 {
+        padding: 60px 0;
+    }
+
+    .aboutContainer .paralax2 .cover>span {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .aboutContainer .paralax2 .nums>div span {
+        padding: 0;
+    }
+
+    .aboutContainer .paralax2 .nums>div>div span:first-of-type {
+        font-size: 42px;
+        line-height: normal;
+    }
+
+    .aboutContainer .paralax2 .nums>div>div span:last-of-type {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .weDo h4 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .weDo .card {
+        width: 28%;
+        padding: 22px 18px;
+    }
+
+    .weDo .card .img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .weDo .card .content {
+        margin-top: 9px;
+    }
+
+    .weDo .content .title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: normal;
+        height: 48px;
+    }
+
+    .weDo .content p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .createAccount {
+        padding: 100px 6%;
+        height: calc(70vh - 96px);
+    }
+
+    .aboutContainer>.createAccount>.cover {
+        gap: 60px;
+    }
+
+    .createAccount>.cover h4 {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 38px;
+    }
+
+    .createAccount .cover a {
+        padding: 20px 60px;
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .aboutContainer .hero {
+        display: none;
+    }
+
+    .aboutContainer .phoneHero {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        margin-top: 68px;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 6%;
+        background-image: url('../../../public/images/aboutheropng.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .aboutContainer .phoneHero .cover {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .aboutContainer .phoneHero .title {
+        color: #FFF;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .aboutContainer .phoneHero .title>span {
+        color: #FF914D;
+    }
+
+    .aboutContainer .paralax {
+        padding: 10% 6%;
+        height: max-content;
+        margin: 50px 0;
+    }
+
+    .aboutContainer .phoneHero .cover p {
+        color: #E5E5E5;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+    }
+
+    .aboutContainer .paralax .cover {
+        width: 100%;
+        gap: 16px;
+    }
+
+    .aboutContainer .paralax h3 {
+        font-size: 20px;
+        line-height: 32px;
+        width: 80%;
+    }
+
+    .aboutContainer .paralax p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .aboutContainer .banking {
+        height: max-content;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .aboutContainer .banking .imgs {
+        width: 100%;
+        height: 380px;
+    }
+
+    .aboutContainer .banking .desc {
+        width: 100%;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .aboutContainer .banking h3 {
+        font-size: 20px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .aboutContainer .banking p {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .team {
+        gap: 35px;
+    }
+
+    .team h3 {
+        width: 90%;
+        padding: 7px;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .team .memberCards {
+        gap: 19px;
+        display: flex;
+        flex-wrap: wrap !important;
+        justify-content: center;
+    }
+
+    .team .memberCards .card {
+        width: 47% !important;
+        height: 209px;
+    }
+
+    .team .memberCards .desc {
+        pad: 4px;
+    }
+
+    .team .memberCards .desc span:first-of-type {
+        font-size: 8px;
+        line-height: 14px;
+    }
+
+    .team .memberCards .desc span:last-of-type {
+        font-size: 6px;
+        line-height: 10px;
+    }
+
+    .aboutContainer .paralax2 .cover {
+        width: 100%;
+        padding: 0 7%;
+    }
+
+    .aboutContainer .paralax2 .cover>span {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .aboutContainer .paralax2 .nums>div>div span:first-of-type {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .aboutContainer .paralax2 .nums>div>div span:last-of-type {
+        font-size: 10px;
+        line-height: 22px;
+    }
+
+    .weDo {
+        gap: 30px;
+        padding: 40px 6%;
+    }
+
+    .weDo h4 {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .weDo .doCards {
+        gap: 15px;
+    }
+
+    .weDo .card {
+        width: 47%;
+    }
+
+    .weDo .card .img {
+        width: 76px;
+        height: 76px;
+    }
+
+    .weDo .content .title {
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 16px;
+        height: 30px;
+    }
+
+    .weDo .content p {
+        font-size: 9px;
+        font-weight: 300;
+        line-height: 14px;
+    }
+
+    .createAccount {
+        height: 178px;
+        padding: 0;
+        margin: 50px 0;
+    }
+
+    .aboutContainer>.createAccount>.cover {
+        height: 100%;
+        border-radius: 0;
+        padding: 25px 43px;
+        gap: 30px;
+    }
+
+    .createAccount>.cover h4 {
+        font-size: 15px;
+        line-height: normal;
+    }
+
+    .createAccount .cover a {
+        padding: 10px 30px;
+        font-size: 7px;
+        line-height: 12px;
+    }
+}
+
+@media (max-width:380px){
+    .team .memberCards .card{
+        width: 100% !important;
+    }
+    .weDo .card{
+        width:  100% !important;
+    }
+
+    .weDo .card:hover{
+        transform: scale(1);
+    }
+}

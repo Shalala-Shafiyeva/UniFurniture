@@ -1,0 +1,625 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.container {
+    width: 100%;
+    /* height: 100vh; */
+}
+
+/* DESKTOP AND TABLET MODE */
+.desktopTabletModes {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 60px;
+    padding: 40px 0;
+}
+
+.desktopTabletModes .leftBg {
+    width: 43%;
+    height: 100%;
+    background: #E5F6F4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+}
+
+.desktopTabletModes .rightBg {
+    width: 57%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -5;
+}
+
+.desktopTabletModes .circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.desktopTabletModes .lightorange {
+    width: 32px;
+    height: 32px;
+    background: #FFB282;
+    top: 14%;
+    left: 12%;
+}
+
+.desktopTabletModes .orange {
+    width: 22px;
+    height: 22px;
+    background: #FF914D;
+    right: 28%;
+    bottom: 15%;
+}
+
+.desktopTabletModes .lightgreen {
+    width: 10px;
+    height: 10px;
+    background: #37CE1E;
+    left: 19%;
+    bottom: 17%;
+}
+
+.desktopTabletModes .greenCircle {
+    width: 14px;
+    height: 14px;
+    background: #00A991;
+    bottom: 45%;
+    left: 6%;
+}
+
+.desktopTabletModes .darkgreenCircle {
+    width: 21px;
+    height: 21px;
+    background: #00A991;
+    right: 18%;
+    bottom: 13%;
+}
+
+.desktopTabletModes .darkgreenCircle2 {
+    width: 14px;
+    height: 14px;
+    background-color: #00A991;
+    top: 7%;
+    right: 30%;
+}
+
+.desktopTabletModes .img {
+    width: 32%;
+    height: 44%;
+    padding: 51px 46px;
+}
+
+.desktopTabletModes .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.desktopTabletModes .loginPage {
+    width: 30%;
+    display: inline-flex;
+    /* height: 77%; */
+    padding: 34px 49px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    border-radius: 20px;
+    border: 1px solid #B3E5DE;
+    background: #FFF;
+}
+
+.desktopTabletModes h3 {
+    color: #0B0D17;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34px;
+}
+
+.desktopTabletModes .greenTxt {
+    color: #00A991;
+}
+
+.desktopTabletModes .desktopTabletModes .greenTxt {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+.desktopTabletModes .loginPage>span {
+    color: #0B0D17;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.desktopTabletModes .loginPage>span .greenTxt {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.desktopTabletModes form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+}
+
+.desktopTabletModes .inp {
+    width: 100%;
+    position: relative;
+}
+
+.desktopTabletModes input {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgba(11, 13, 23, 0.1);
+    color: #0B0D17;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 16px 24px;
+    outline: none;
+}
+
+.desktopTabletModes input#password {
+    padding: 16px 101px 16px 24px;
+}
+
+.desktopTabletModes label {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    transform: translate(0, -50%);
+    color: rgba(11, 13, 23, 0.4);
+    font-size: 12px;
+    line-height: 16px;
+    padding: 0 8px;
+    background: #FFF;
+}
+
+.desktopTabletModes #forgetPass {
+    color: #85868B;
+    font: 400 10px "Prompt";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.desktopTabletModes .icons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.desktopTabletModes .item {
+    border-radius: 15px 15px 0px 0px;
+    width: 52px;
+    height: 3px;
+}
+
+.desktopTabletModes .orange {
+    background: #FF914D;
+}
+
+.desktopTabletModes .green {
+    background: #80D4C8;
+}
+
+.desktopTabletModes .darkgreen {
+    background: #4B9F47;
+}
+
+
+.desktopTabletModes .lightgrey {
+    background: rgba(11, 13, 23, 0.1);
+}
+
+.desktopTabletModes .privacy {
+    width: 100%;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+input[type='checkbox'] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #00A991;
+    border-radius: 4px;
+    padding: 0 0 !important;
+    cursor: pointer;
+}
+
+input[type='checkbox']:checked {
+    background: #00A991;
+    /* background-image: url("/images/Mark.png"); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.desktopTabletModes .privacy span {
+    width: 92%;
+    color: #24252E;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+}
+
+.desktopTabletModes .btnSignIn {
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 16px;
+    background: #00A991;
+    color: #FFF;
+    text-align: center;
+    font-weight: 700;
+    line-height: 24px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s all ease-in-out;
+}
+
+.desktopTabletModes .btnSignIn:hover {
+    background-color: #018975;
+}
+
+.desktopTabletModes .continueWith {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+}
+
+.desktopTabletModes .continueWith>span {
+    color: #0B0D17;
+    text-align: center;
+    font-family: "Prompt";
+    font-size: 12px;
+    line-height: 20px;
+    opacity: 0.5;
+}
+
+.desktopTabletModes .btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    justify-content: center;
+}
+
+.desktopTabletModes .btns a {
+    width: 100%;
+    height: 48px;
+    padding: 8px;
+    border-radius: 16px;
+    background: rgba(128, 212, 200, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0B0D17;
+    font-weight: 700;
+    line-height: 24px;
+    gap: 12px;
+}
+
+.desktopTabletModes .btn a img {
+    width: 16px;
+    height: 16px;
+}
+
+.desktopTabletModes .btn a span {
+    color: #0B0D17;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+
+
+
+/* MOBILE MODE */
+.mobileMode {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mobileMode .top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 28px 25px;
+}
+
+.mobileMode .top>a {
+    display: flex;
+    padding: 8px 9px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 12px;
+    left: 25px;
+    border-radius: 50%;
+    border: 1px solid #E9E9EA;
+}
+
+
+.mobileMode .top>a>img {
+    width: 25px;
+    height: 25px;
+}
+
+.mobileMode .top>span {
+    color: #1F272D;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mobileMode .formPart {
+    width: 100%;
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobileMode .formPart h4 {
+    color: #1F272D;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.mobileMode .formPart>span {
+    color: #1F272D;
+    font-size: 16px;
+    margin: 18px 0 16px;
+    text-align: left;
+    width: 100%;
+}
+
+.mobileMode .formPart form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobileMode .inpMobile {
+    width: 100%;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 1000px;
+    border: 1px solid #CACCCE;
+}
+
+.mobileMode .inpMobile img {
+    width: 24px;
+    height: 24px;
+}
+
+.mobileMode .inpMobile input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.mobileMode .inpMobile input::placeholder {
+    color: #CACCCE;
+}
+
+.mobileMode .formPart button {
+    width: 100%;
+    height: 56px;
+    border-radius: 1000px;
+    background: #22BB9B;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+
+.mobileMode .formPart button:hover {
+    background: #0f9b7d;
+}
+
+.mobileMode .bottom {
+    width: 100%;
+    padding: 0 25px 78px 25px;
+}
+
+.mobileMode .bottom .continueWith {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.mobileMode .bottom .continueWith>span {
+    color: #0B0D17;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    opacity: 0.4;
+}
+
+.mobileMode .bottom .btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 38px;
+}
+
+.mobileMode .bottom .btns a {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    border-radius: 13px;
+    background: rgba(128, 212, 200, 0.1);
+    color: #0B0D17;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 19px;
+    padding: 15px 0;
+}
+
+.mobileMode .haveAccount {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobileMode .haveAccount span {
+    color: #1F272D;
+    text-align: center;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.mobileMode .haveAccount .greenTxt {
+    color: #22BB9B;
+    font-weight: 500;
+}
+
+
+@media (max-width:1024px) {
+    .desktopTabletModes {
+        gap: 42px;
+    }
+
+    .desktopTabletModes .loginPage {
+        gap: 15px;
+        padding: 24px 34px;
+    }
+
+    .desktopTabletModes h3,
+    .desktopTabletModes h3 .greenTxt {
+        font-size: 17px;
+        line-height: 24px;
+    }
+
+    .desktopTabletModes .loginPage>span,
+    .desktopTabletModes .loginPage>span .greenTxt {
+        font-size: 10px;
+    }
+
+    .desktopTabletModes form {
+        gap: 15px;
+    }
+
+    .desktopTabletModes input {
+        padding: 10px 17px;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 17px;
+    }
+
+    .desktopTabletModes input#password {
+        padding: 11px 75px 11px 17px;
+    }
+
+    .desktopTabletModes label {
+        font-size: 9px;
+        line-height: 11px;
+    }
+
+    .desktopTabletModes #forgetPass {
+        font-size: 7px;
+    }
+
+    .desktopTabletModes .icons {
+        gap: 3px;
+    }
+
+    .desktopTabletModes .item {
+        width: 25px;
+    }
+
+    .desktopTabletModes .privacy {
+        gap: 9px;
+    }
+
+    .desktopTabletModes .privacy span {
+        font-size: 10px;
+        line-height: 17px;
+    }
+
+    .desktopTabletModes .btnSignIn {
+        padding: 11px 0;
+        font-size: 10px;
+        line-height: 17px;
+    }
+
+    .desktopTabletModes .continueWith {
+        gap: 16px;
+    }
+
+    .desktopTabletModes .continueWith span {
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .desktopTabletModes .btns {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .desktopTabletModes .btns a {
+        width: 44%;
+        height: 34px;
+        gap: 10px;
+        font-size: 10px;
+        line-height: 17px;
+    }
+
+    .desktopTabletModes .btns a img {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width:576px) {
+    .desktopTabletModes {
+        display: none;
+    }
+
+    .mobileMode {
+        display: flex;
+    }
+}

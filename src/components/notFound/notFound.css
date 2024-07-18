@@ -1,0 +1,133 @@
+.notFoundContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.notFound {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0;
+    margin-top: 96px;
+}
+
+.notFound .img {
+    width: 40%;
+    height: 37%;
+    margin-bottom: 20px;
+}
+
+.notFound .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.notFound h4 {
+    padding: 10px;
+    color: #24252E;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 65px;
+}
+
+.notFound>span {
+    width: 52%;
+    color: #3C3D45;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 32px;
+}
+
+.notFound a {
+    width: max-content;
+    display: flex;
+    padding: 30px 72px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: #00A991;
+    margin-top: 24px;
+}
+
+.notFound a span {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.notFound a img {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
+@media (max-width:1024px) {
+    .notFound {
+        width: 100%;
+        margin-top: 68px;
+        padding:10px 16px 32px !important ;
+    }
+
+    .notFound .img{
+        width: 100%;padding: 0 49px;
+    }
+
+    .notFound h3 {
+        font-size: 42px;
+        line-height: 55.5px;
+    }
+
+    .notFound>span {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .notFound a {
+        padding: 24px 48px;
+    }
+
+    .notFound a >span{
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width:576px) {
+    .notFound {
+        width: 100%;
+        padding: 0 16px 32px !important;
+    }
+
+    .notFound .img {
+        width: 100% !important;
+        padding: 49px;
+        margin-bottom: 6px;
+    }
+
+    .notFound h4 {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .notFound>span {
+        width: 100%;
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .notFound a{
+        display: none;
+    }
+
+}
