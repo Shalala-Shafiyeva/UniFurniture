@@ -35,8 +35,8 @@ function NextGenBanking() {
           </div>
           <div className="right">
             <div className="btns">
-              <Link to="/register">Create Account</Link>
-              <Link to="/login">Sign In</Link>
+              <Link className="createAccountBtn" to="/register">Create Account</Link>
+              <Link className="loginBtn" to="/login">Sign In</Link>
             </div>
             <div className="app">
               <div className="title">Mobile and desktop app</div>
