@@ -20,6 +20,10 @@
     border-radius: 0 0 25px 25px;
 }
 
+.coverOut{
+    display: none;
+}
+
 .homeHero .ellipse {
     position: absolute;
     bottom: 0;
@@ -97,6 +101,7 @@
 
 .nextBanking>.container {
     width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     height: max-content;
@@ -123,10 +128,18 @@
     line-height: 55.5px;
 }
 
-.nextBanking .smallGrey {
+.homeContainer .nextBanking .middleTxt{
+    order: 1;
+}
+
+.homeContainer .smallGrey {
     color: #6D6E74;
     font-size: 20px;
     line-height: 32px;
+}
+
+.homeContainer .nextBanking .smallGrey{
+    order: 2;
 }
 
 .nextBanking .imgDiagram {
@@ -134,6 +147,7 @@
     height: 312px;
     margin-top: 35px;
     position: relative;
+    order: 3;
 }
 
 .nextBanking .imgDiagram span {
@@ -144,11 +158,17 @@
 }
 
 .nextBanking .imgDiagram img,
-.nextBanking .imgCripto img,
-.nextBanking .imgSupport img {
+.nextBanking .imgCripto img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.nextBanking .imgSupport img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
 }
 
 .nextBanking .imgCripto,
@@ -157,6 +177,14 @@
     height: 300px;
     margin-top: 29px;
     position: relative;
+}
+
+.nextBanking .imgCripto{
+    order: 4;
+}
+
+.nextBanking .imgSupport{
+    order: 5;
 }
 
 .nextBanking .imgCripto span {
@@ -192,10 +220,6 @@
     bottom: 20px;
     right: 20px;
     z-index: 2;
-}
-
-.nextBanking .imgSupport img {
-    border-radius: 14px;
 }
 
 .nextBanking .imgSupport::after {
@@ -246,6 +270,7 @@
 .homeContainer .loginBtn {
     border-radius: 10px;
     background: #00A991;
+    border: 3px solid #00A991;
     color: #FFF;
 }
 
@@ -283,6 +308,7 @@
     flex-direction: column;
     gap: 40px;
     align-items: center;
+    height: max-content;
 }
 
 .choose .title {
@@ -509,6 +535,12 @@
     transform: translate(-50%, -50%);
 }
 
+.containerManage .card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .containerManage .card .content {
     width: 79%;
     display: flex;
@@ -552,6 +584,7 @@
     background-position: right center;
     background-repeat: no-repeat;
     background-size: contain;
+    z-index: -10;
 }
 
 .homeContainer .startWithUni::before {
@@ -565,6 +598,7 @@
     background-position: right center;
     background-repeat: no-repeat;
     background-size: contain;
+    z-index: -10;
 }
 
 
@@ -588,6 +622,7 @@
     background-position: right center;
     background-repeat: no-repeat;
     background-size: contain;
+    z-index: -10;
 }
 
 .homeContainer .startWithUni .containerStart::after {
@@ -601,6 +636,7 @@
     background-position: right center;
     background-repeat: no-repeat;
     background-size: contain;
+    z-index: -10;
 }
 
 .startWithUni .containerStart .head {
@@ -670,6 +706,7 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 80%);
+    z-index: -10;
 }
 
 .startWithUni .contentUni .box:nth-of-type(even):not(:last-of-type):after {
@@ -684,6 +721,7 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 80%);
+    z-index: -10;
 }
 
 .startWithUni .contentUni .box>div {
@@ -1000,9 +1038,10 @@
 }
 
 .questionAccourdion .accordionItem.active {
-    border-radius: 10px;
-    border: 1px solid #9D9EA2;
-    background: #FFF;
+    border-radius: 7px;
+    border: 1px solid #CCEEE9;
+    background:  #F2FBF9;
+    box-shadow: 0px 4px 23px -4px rgba(0, 0, 0, 0.14);
 }
 
 .questionAccourdion .accordionItem.active img {
@@ -1073,7 +1112,7 @@
     gap: 20px;
 }
 
-.homeContainer .articles .head .txt {
+.homeContainer .articles .head .txt p {
     color: #6D6E74;
     font-size: 20px;
     font-weight: 400;
@@ -1099,7 +1138,7 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 26px;
-    padding: 20px;
+    padding: 14px;
 }
 
 .homeContainer .articleItems {
@@ -1115,6 +1154,8 @@
     width: 30%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
@@ -1150,8 +1191,9 @@
     gap: 13px;
     align-items: center;
     transition: .3s all ease-in-out;
+    text-transform: uppercase;
 }
 
-.homeContainer .articleItem .context a:hover{
+.homeContainer .articleItem .context a:hover {
     color: #00A991;
 }

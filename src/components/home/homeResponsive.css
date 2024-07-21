@@ -1,0 +1,936 @@
+@media (max-width:1024px) {
+    .homeHero {
+        height: calc(100vh - 68px);
+        margin-top: 66px;
+    }
+
+    .homeHero .ellipse {
+        width: 147px;
+        height: 106px;
+    }
+
+    .homeHero .cover {
+        width: 65%;
+        gap: 9px;
+    }
+
+    .homeHero .cover h3 {
+        font-size: 42px;
+        line-height: 55.5px;
+    }
+
+    .homeHero .cover p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .homeHero .cover a {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 12px 63px;
+    }
+
+    .nextBanking {
+        margin: 100px 0;
+    }
+
+    .nextBanking .cover .diagram {
+        gap: 15px;
+    }
+
+    .homeContainer .middleTxt {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .homeContainer .smallGrey {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .nextBanking .imgDiagram {
+        height: 220px;
+        margin-top: 20px;
+    }
+
+    .nextBanking .imgCripto,
+    .nextBanking .imgSupport {
+        height: 215px;
+        margin-top: 20px;
+    }
+
+    .nextBanking .imgCripto span {
+        font-size: 20px;
+    }
+
+    .nextBanking .imgSupport span:first-of-type {
+        font-size: 20px;
+    }
+
+    .nextBanking .imgSupport span:last-of-type {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .nextBanking .btns a,
+    .startWithUni .btns a {
+        font-size: 11px;
+        line-height: 18px;
+        padding: 14px 20px;
+    }
+
+    .nextBanking .app {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 27px;
+    }
+
+    .choose {
+        margin: 40px;
+    }
+
+    .choose>.container {
+        gap: 28px;
+    }
+
+    .choose .title {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .homeContainer .choose .imgPoster {
+        height: 446px;
+    }
+
+    .homeContainer .imgPoster .content {
+        gap: 12px;
+    }
+
+    .homeContainer .imgPoster span:first-of-type {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .homeContainer .imgPoster span:nth-of-type(2) {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px
+    }
+
+    .homeContainer .getStart {
+        font-size: 12px;
+        line-height: 20px;
+        padding: 14px 44px;
+    }
+
+    .homeContainer .impact .rating .top>div,
+    .homeContainer .impact .rating .bottom>div {
+        padding: 7px;
+    }
+
+    .homeContainer .impact .rating .top>div span:first-of-type,
+    .homeContainer .impact .rating .bottom>div span:first-of-type {
+        font-size: 42px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .homeContainer .impact .rating .top>div span:nth-of-type(2),
+    .homeContainer .impact .rating .bottom>div span:nth-of-type(2) {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .homeContainer .manageFinannce {
+        margin: 65px 0;
+    }
+
+    .manageFinannce .containerManage {
+        gap: 40px;
+    }
+
+    .containerManage .head {
+        gap: 20px;
+    }
+
+    .containerManage .head h3 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .containerManage .head span {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .containerManage .cards {
+        gap: 80px;
+    }
+
+    .containerManage .card .img {
+        padding: 10px;
+    }
+
+    .containerManage .card .img {
+        width: 130px;
+    }
+
+    .containerManage .card .content .name {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .containerManage .card .content .role {
+        font-size: 10px;
+        line-height: normal;
+    }
+
+    .containerManage .card .content .desc {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .homeContainer .startWithUni .containerStart {
+        gap: 30px;
+    }
+
+    .startWithUni .head .left {
+        gap: 15px;
+    }
+
+    .startWithUni .head .left h3 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .startWithUni .head .left p {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .startWithUni .head .btns {
+        gap: 17px;
+    }
+
+    .startWithUni .containerStart>.contentUni {
+        gap: 60px;
+    }
+
+    .startWithUni .contentUni .box>div {
+        height: 270px;
+    }
+
+    .startWithUni .contentUni .box .desc {
+        gap: 10px;
+    }
+
+    .startWithUni .contentUni .box span {
+        font-size: 28px;
+    }
+
+    .startWithUni .contentUni .box p {
+        font-size: 14px;
+        line-height: normal;
+    }
+
+    .createAccount .containerAcc {
+        padding: 45px 80px;
+    }
+
+    .createAccount .cover {
+        gap: 65px;
+    }
+
+    .createAccount .cover h4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .createAccount .cover a {
+        padding: 20px 64px;
+        font-size: 14px;
+        line-height: 23px;
+    }
+
+    .slider .cover {
+        padding: 60px;
+    }
+
+    .slider .cover .content .title {
+        font-size: 32px;
+        line-height: normal;
+        margin-bottom: 15px;
+    }
+
+    .slider .cover .content p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .slider .cover .content .name {
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .slider .cover .content .role {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .slider .swiper-button-prev,
+    .slider .swiper-button-next {
+
+        width: 28px;
+        height: 28px;
+    }
+
+    .slider .swiper-pagination-bullet {
+        width: 11px;
+        height: 11px;
+    }
+
+    .slider .swiper-pagination-bullet-active {
+        width: 22px;
+        height: 11px;
+    }
+
+    .questionAccourdion .filterBtns {
+        margin-top: 20px;
+    }
+
+    .questionAccourdion .filterBtns .btn span,
+    .questionAccourdion .filterBtns .btn {
+        font-size: 20px;
+    }
+
+    .questionAccourdion .cover>p {
+        font-size: 16px;
+        line-height: normal;
+        margin-top: 20px;
+    }
+
+    .questionAccourdion .cover .accordion {
+        margin-top: 20px;
+    }
+
+    .questionAccourdion .accordionItem {
+        gap: 6px;
+        padding: 20px 17px;
+    }
+
+    .questionAccourdion .accordionItem img {
+        width: 23px;
+        height: 23px;
+        top: 20px;
+        right: 17px;
+    }
+
+    .questionAccourdion .accordionItem span {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .questionAccourdion .accordionItem p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .homeContainer .articles .containerArticle {
+        gap: 25px;
+    }
+
+    .homeContainer .articles .head .txt {
+        gap: 15px;
+    }
+
+    .homeContainer .articles .head .txt p {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .homeContainer .articles .btns {
+        gap: 10px;
+    }
+
+    .homeContainer .articles .btns a:first-of-type {
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .homeContainer .articleItems {
+        gap: 30px;
+    }
+
+
+    .homeContainer .articleItem {
+        gap: 7px;
+    }
+
+    .homeContainer .articleItem .context {
+        gap: 10px;
+    }
+
+    .homeContainer .articleItem .context .title {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .homeContainer .articleItem .context a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:576px) {
+    .homeHero {
+        height: 280px;
+    }
+
+    .homeHero .ellipse {
+        width: 61px;
+        height: 59px;
+    }
+
+    .homeHero .cover {
+        display: none;
+    }
+
+    .coverOut {
+        width: 90%;
+        margin: 0 auto;
+        margin: 40px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .coverOut h3 {
+        color: #24252E;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .coverOut p {
+        color: #6D6E74;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .coverOut a {
+        display: flex;
+        width: 212px;
+        height: 48px;
+        padding: 12px 63px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 7px;
+        background: #00A991;
+        color: #FFF;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        margin-top: 20px;
+    }
+
+
+    .nextBanking {
+        margin: 30px 0;
+    }
+
+    .nextBanking .cover {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nextBanking .cover .diagram {
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .homeContainer .middleTxt {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 32px;
+    }
+
+    .homeContainer .nextBanking .middleTxt {
+        order: 2;
+    }
+
+    .homeContainer .smallGrey {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+        margin-top: 12px;
+    }
+
+    .homeContainer .nextBanking .smallGrey {
+        order: 1;
+    }
+
+    .homeContainer .nextBanking .imgDiagram {
+        height: 165px;
+        margin-top: 0;
+        order: 5;
+    }
+
+    .nextBanking .imgDiagram span {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 16px;
+    }
+
+    .nextBanking .imgCripto,
+    .nextBanking .imgSupport {
+        height: 165px;
+        margin-top: 0;
+    }
+
+    .nextBanking .imgCripto span {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+    .homeContainer .nextBanking .imgCripto {
+        order: 4;
+    }
+
+    .homeContainer .nextBanking .imgSupport {
+        order: 3;
+    }
+
+    .nextBanking .imgSupport span:first-of-type {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .nextBanking .imgSupport span:last-of-type {
+        font-size: 7px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .nextBanking .right {
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 20px;
+        gap: 30px;
+    }
+
+    .nextBanking .btns a,
+    .startWithUni .btns a {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 18px;
+        padding: 14px 44px;
+    }
+
+    .nextBanking .app .title {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 27px;
+        margin-bottom: 10px;
+    }
+
+    .nextBanking .imgPhone {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .nextBanking .imgPhone img {
+        object-fit: contain;
+    }
+
+    .homeContainer .choose {
+        margin: 30px 0;
+    }
+
+    .choose>.container {
+        gap: 10px;
+    }
+
+    .choose .title {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .homeContainer .choose .imgPoster {
+        height: 260px;
+        background-size: cover;
+        padding: 20px;
+    }
+
+    .homeContainer .imgPoster .content {
+        gap: 5;
+    }
+
+    .homeContainer .imgPoster span:first-of-type {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .homeContainer .imgPoster span:nth-of-type(2) {
+        font-size: 5px;
+        font-weight: 400;
+        line-height: 8px;
+    }
+
+    .homeContainer .impact {
+        padding: 10px 25px;
+
+    }
+
+    .homeContainer .impact .head {
+        gap: 20px;
+    }
+
+    .homeContainer .impact .head .left {
+        gap: 8px;
+    }
+
+    .homeContainer .getStart {
+        font-size: 5px;
+        font-weight: 500;
+        line-height: 8px;
+        padding: 6ppx 18px;
+    }
+
+    .homeContainer .impact .rating .top>div,
+    .homeContainer .impact .rating .bottom>div {
+        padding: 3px;
+    }
+
+    .homeContainer .impact .rating .top>div span:first-of-type,
+    .homeContainer .impact .rating .bottom>div span:first-of-type {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .homeContainer .impact .rating .top>div span:nth-of-type(2),
+    .homeContainer .impact .rating .bottom>div span:nth-of-type(2) {
+        font-size: 10px;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .manageFinannce .containerManage {
+        gap: 30px;
+    }
+
+    .containerManage .head {
+        width: 100%;
+        gap: 17px;
+    }
+
+    .containerManage .head h3 {
+        width: 80%;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .containerManage .head span {
+        width: 100%;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+    }
+
+    .containerManage .cards {
+        gap: 20px;
+    }
+
+    .containerManage .card {
+        width: 80%;
+    }
+
+    .containerManage .card .img {
+        padding: 5px;
+    }
+
+    .containerManage .card .content .name {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .containerManage .card .content .role {
+        font-size: 9px;
+        line-height: normal;
+    }
+
+    .containerManage .card .content .desc {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 20px;
+    }
+
+    .startWithUni .containerStart .head {
+        flex-direction: column;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    .startWithUni .head>div {
+        width: 100%;
+    }
+
+    .startWithUni .head .left {
+        gap: 12px;
+    }
+
+    .startWithUni .head .left h3 {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .startWithUni .head .left p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+    }
+
+    .startWithUni .head .btns {
+        justify-content: center;
+        gap: 17px;
+    }
+
+    .startWithUni .containerStart>.contentUni {
+        gap: 50px;
+    }
+
+    .startWithUni .contentUni .box {
+        gap: 30px;
+    }
+
+    .startWithUni .contentUni .box:nth-of-type(odd) {
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+    }
+
+    .startWithUni .contentUni .box:nth-of-type(even) {
+        flex-direction: column-reverse;
+    }
+
+    .startWithUni .contentUni .box:nth-of-type(odd):after,
+    .startWithUni .contentUni .box:nth-of-type(even):not(:last-of-type):after {
+        display: none;
+    }
+
+    .startWithUni .contentUni .box>.img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .startWithUni .contentUni .box>.desc {
+        width: 100%;
+        height: max-content;
+        gap: 10px;
+    }
+
+    .startWithUni .contentUni .box span {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .startWithUni .contentUni .box p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .createAccount .containerAcc {
+        padding: 25px 43px;
+    }
+
+    .createAccount .cover {
+        gap: 37px;
+    }
+
+    .createAccount .cover h4 {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .createAccount .cover a {
+        padding: 10px 30px;
+        font-size: 7px;
+        line-height: 12px;
+    }
+
+    .slider .cover {
+        padding: 50px;
+    }
+
+
+    .slider .cover .content .title {
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    .slider .cover .content p {
+        font-size: 7px;
+        line-height: normal;
+    }
+
+    .slider .cover .content .name {
+        font-size: 5px;
+        line-height: 9px;
+    }
+
+    .slider .cover .content .role {
+        font-size: 5px;
+        line-height: 8px;
+    }
+
+    .slider .swiper-button-prev,
+    .slider .swiper-button-next {
+        width: 11px;
+        height: 11px;
+        padding: 2px;
+    }
+
+    .slider .swiper-button-prev::after,
+    .slider .swiper-button-next::after {
+        background-size: 5px 5px;
+    }
+
+    .slider .swiper-pagination-bullet {
+        height: 4px;
+        width: 4px;
+    }
+
+    .slider .swiper-pagination-bullet-active {
+        height: 4px;
+        width: 8px;
+    }
+
+    .homeContainer .questionAccourdion {
+        margin: 60px 0;
+    }
+
+    .questionAccourdion .filterBtns {
+        margin-top: 18px;
+    }
+
+    .questionAccourdion .filterBtns .btn span,
+    .questionAccourdion .filterBtns .btn p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .questionAccourdion .filterBtns .btn.active span.line {
+        height: 2px;
+    }
+
+    .questionAccourdion .cover>p {
+        margin-top: 13px;
+        width: 90%;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .questionAccourdion .cover .accordion {
+        margin-top: 20px;
+    }
+
+    .questionAccourdion .accordionItem {
+        padding: 10px;
+    }
+
+    .questionAccourdion .accordionItem img {
+        top: 10px;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .questionAccourdion .accordionItem span {
+        font-size: 10px;
+        line-height: normal;
+    }
+
+    .questionAccourdion .accordionItem p {
+        font-size: 10px;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .homeContainer .articles {
+        margin: 0;
+    }
+
+    .homeContainer .articles .containerArticle .head {
+        flex-direction: column;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    .homeContainer .articles .head .txt {
+        width: 100%;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .homeContainer .articles .head .txt p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .homeContainer .articles .btns {
+        width: 100%;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .homeContainer .articles .btns a:first-of-type {
+        padding: 7px;
+        font-size: 5px;
+        line-height: 18px;
+    }
+
+    .homeContainer .articleItems {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .homeContainer .articleItem {
+        width: 80%;
+        gap: 7px;
+    }
+
+    .homeContainer .articleItem .context {
+        gap: 15px;
+    }
+
+    .homeContainer .articleItem .context .title {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .homeContainer .articleItem .context a {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
