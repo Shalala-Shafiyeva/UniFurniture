@@ -1,0 +1,313 @@
+@media (max-width:1024px) {
+    .shoppingHero {
+        height: calc(100vh - 250px);
+        margin-top: 75px;
+    }
+
+    .shoppingHero .container {
+        gap: 20px;
+    }
+
+    .shoppingHero .container>img {
+        height: 70%;
+    }
+
+    .shoppingHero .container .cover {
+        padding: 20px;
+        gap: 9px;
+    }
+
+    .shoppingHero .container .cover h2 {
+        font-size: 42px;
+        line-height: 55.5px;
+    }
+
+    .shoppingHero .container .cover p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .shoppingHero .container .inp {
+        padding: 5px;
+        gap: 10px;
+    }
+
+    .shoppingHero .container .inp input {
+        padding: 20px;
+    }
+
+    .shoppingHero .container .inp input,
+    .shoppingHero .container .inp input::placeholder {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .shoppingHero .container .inp button {
+        padding: 19px 30px;
+    }
+
+    .shoppingHero .container .inp button>img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .furnitures {
+        margin: 40px 0;
+    }
+
+    .furnitures .container {
+        gap: 35px;
+    }
+
+    .furnitures .title {
+        font-size: 29px;
+        line-height: normal;
+    }
+
+    .furnitures .container .head a {
+        font-size: 11.352px;
+        line-height: normal;
+    }
+
+    .furnitures .container .head a img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .furnitures .filterBtns {
+        gap: 15px;
+    }
+
+    .furnitures .filterBtns button {
+        padding: 8px 20px;
+        gap: 10px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .furnitures .filterBtns button img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .furnitures .products {
+        gap: 30px;
+    }
+
+    .furnitures .products .productCard {
+        height: 350px;
+    }
+
+    .furnitures .products .productCard .head {
+        padding: 13px;
+    }
+
+    .furnitures .products .productCard .head .img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .furnitures .products .productCard .head .price {
+        font-size: 8px;
+        line-height: 14px;
+    }
+
+    .furnitures .products .productCard .productContext {
+        padding: 13px;
+    }
+
+    .furnitures .products .productCard .productContext .productName {
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    .furnitures .products .productCard .productContext .productDesc {
+        font-size: 8px;
+        line-height: 14px;
+    }
+
+    .furnitures .products .productCard .productImg {
+        height: 130px;
+    }
+
+    .furnitures .products .productCard .btn {
+        padding: 13px;
+    }
+
+    .furnitures .products .productCard .addCart {
+        padding: 7px 15px;
+        font-size: 12px;
+        line-height: 19px;
+    }
+
+    .furnitures .pagination .nextBtn,
+    .furnitures .pagination .prevBtn,
+    .furnitures .pagination .pages>button {
+        padding: 12px;
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .serviceCommit {
+        margin: 50px 0;
+    }
+
+    .serviceCommit .container {
+        height: max-content;
+    }
+
+    .serviceCommit .txt h2 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .serviceCommit .txt p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .serviceCommit .txt a {
+        padding: 20px 55px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .serviceCommit .img {
+        height: 390px;
+    }
+
+    .shopSlider {
+        margin: 75px 0;
+    }
+
+    .shopSlider .swiper {
+        gap: 40px;
+    }
+
+    .shopSlider .swiper .cover {
+        height: 300px;
+        padding: 30px;
+    }
+
+    .shopSlider .swiper .content .title {
+        font-size: 15px;
+        line-height: normal;
+    }
+
+    .shopSlider .swiper .content h3 {
+        font-size: 27px;
+        line-height: normal;
+    }
+
+    .shopSlider .swiper .content p {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .shopSlider .swiper .content a {
+        padding: 6px 10px;
+        font-size: 13px;
+        gap: 5px;
+    }
+
+    .shopSlider .swiper .content a img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .gallary {
+        height: 47vh;
+    }
+
+    .gallary .container .head {
+        gap: 8px;
+    }
+
+    .gallary .container .head h3 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .gallary .container .head p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .gallary .img {
+        height: 140px;
+    }
+
+    .peopleSlider {
+        margin: 40px 0;
+    }
+
+    .peopleSlider .container {
+        gap: 12px;
+    }
+
+    .peopleSlider .container h2 {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .peopleSlider .container>p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .peopleSlider .container .swiper {
+        padding: 30px;
+    }
+
+    .peopleSlider .swiper .swiperSlide {
+        padding: 22px 35px;
+    }
+
+    .peopleSlider .swiperSlide .img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .peopleSlider .swiperSlide .name {
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 9px;
+    }
+
+    .peopleSlider .swiperSlide .role {
+        margin-top: 3px;
+        font-size: 10px;
+    }
+
+    .peopleSlider .swiperSlide>p {
+        font-size: 10px;
+        margin-top: 7px;
+    }
+
+    .peopleSlider .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+    }
+
+    .peopleSlider .swiper-pagination-bullet-active {
+        width: 20px;
+        height: 11px;
+    }
+
+    .startShopping .cover {
+        gap: 65px;
+        padding: 40px 80px;
+    }
+
+    .startShopping h2 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .startShopping a {
+        padding: 20px 60px;
+        font-size: 14px;
+        line-height: 23px;
+    }
+}

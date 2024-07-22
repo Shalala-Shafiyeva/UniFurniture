@@ -81,7 +81,6 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
     }
   ],
-
   "founders": [
     {
       "id": 1,
@@ -246,20 +245,510 @@
   ],
   "homeArticles": [
     {
+      "id": 1,
+      "img": "/images/home/articlle1.png",
+      "title": "We are the next banking experience"
+    },
+    {
+      "id": 2,
+      "img": "/images/home/article2.png",
+      "title": "We are the next banking experience"
+    },
+    {
+      "id": 3,
+      "img": "/images/home/article3.png",
+      "title": "We are the next banking experience"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "img": "/images/shop/chair1.png",
+      "name": "Armchair and pillow",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": 49.0
+    },
+    {
+      "id": 2,
+      "img": "/images/shop/chair2.png",
+      "name": " Sophisticated Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": 42.0
+    },
+    {
+      "id": 3,
+      "img": "/images/shop/chair3.png",
+      "name": " Futura Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": 45.0
+    },
+    {
+      "id": 4,
+      "img": "/images/shop/chair4.png",
+      "name": " Slylish Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": 60.0
+    },
+    {
+      "id": 5,
+      "img": "/images/shop/chair5.png",
+      "name": " Sophisticated Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": 55.0
+    },
+    {
+      "id": 6,
+      "img": "/images/shop/chair6.png",
+      "name": " Sophisticated Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": 42.0
+    },
+    {
+      "id": 7,
+      "img": "/images/shop/chair7.png",
+      "name": " Sophisticated Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": 47.0
+    },
+    {
+      "id": 8,
+      "img": "/images/shop/chair8.png",
+      "name": " Sophisticated Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": 42.0
+    },
+    {
+      "id": 9,
+      "img": "/images/shop/chair9.png",
+      "name": " Sophisticated Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": 42.0
+    },
+    {
+      "id": 10,
+      "img": "/images/shop/wardrobe1.jpg",
+      "name": " Wardrobe1",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 11,
+      "img": "/images/shop/wardrobe2.jpg",
+      "name": "Wardrobe",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 12,
+      "img": "/images/shop/wardrobe3.jpg",
+      "name": "Wardrobe",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 13,
+      "img": "/images/shop/wardrobe4.jpg",
+      "name": "Wardrobe",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 14,
+      "img": "/images/shop/wardrobe5.jpg",
+      "name": " Sophisticated Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 15,
+      "img": "/images/shop/wardrobe6.jpg",
+      "name": "Wardrobe",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 16,
+      "img": "/images/shop/wardrobe7.jpg",
+      "name": "Wardrobe",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 17,
+      "img": "/images/shop/wardrobe8.jpg",
+      "name": " Sophisticated Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 18,
+      "img": "/images/shop/wardrobe9.jpg",
+      "name": "Wardrobe",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 19,
+      "img": "/images/shop/wardrobe10.jpg",
+      "name": "Wardrobe",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "wardrobe",
+      "price": 42.0
+    },
+    {
+      "id": 20,
+      "img": "/images/shop/office1.png",
+      "name": "Office",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "office",
+      "price": 42.0
+    },
+    {
+      "id": 21,
+      "img": "/images/shop/office2.png",
+      "name": "Office",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "office",
+      "price": 42.0
+    },
+    {
+      "id": 22,
+      "img": "/images/shop/office3.png",
+      "name": "Office",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "office",
+      "price": 42.0
+    },
+    {
+      "id": 23,
+      "img": "/images/shop/office4.png",
+      "name": "Office",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "office",
+      "price": 42.0
+    },
+    {
+      "id": 24,
+      "img": "/images/shop/office5.png",
+      "name": "Office",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "office",
+      "price": 42.0
+    },
+    {
+      "id": 25,
+      "img": "/images/shop/office6.png",
+      "name": "Office",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "office",
+      "price": 42.0
+    },
+    {
+      "id": 26,
+      "img": "/images/shop/office7.png",
+      "name": "Office",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "office",
+      "price": 42.0
+    },
+    {
+      "id": 27,
+      "img": "/images/shop/sofa1.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 28,
+      "img": "/images/shop/sofa2.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 29,
+      "img": "/images/shop/sofa3.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 30,
+      "img": "/images/shop/sofa4.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 31,
+      "img": "/images/shop/sofa5.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 32,
+      "img": "/images/shop/sofa6.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 33,
+      "img": "/images/shop/sofa7.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 34,
+      "img": "/images/shop/sofa8.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 35,
+      "img": "/images/shop/sofa9.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 36,
+      "img": "/images/shop/sofa10.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 37,
+      "img": "/images/shop/sofa11.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 38,
+      "img": "/images/shop/sofa12.png",
+      "name": "Sofa",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "sofa",
+      "price": 42.0
+    },
+    {
+      "id": 39,
+      "img": "/images/shop/table1.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 40,
+      "img": "/images/shop/table2.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 41,
+      "img": "/images/shop/table3.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 42,
+      "img": "/images/shop/table4.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 43,
+      "img": "/images/shop/table5.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 44,
+      "img": "/images/shop/table6.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 45,
+      "img": "/images/shop/table7.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 46,
+      "img": "/images/shop/table8.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 47,
+      "img": "/images/shop/table9.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 48,
+      "img": "/images/shop/table10.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 49,
+      "img": "/images/shop/table11.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    },
+    {
+      "id": 50,
+      "img": "/images/shop/table12.png",
+      "name": "Table",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "table",
+      "price": 42.0
+    }
+  ],
+  "shopSlider": [
+    {
+      "id": 1,
+      "img": "/public/images/shop/slider1.png",
+      "title": "Special Winter Offer",
+      "percent": 40,
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu."
+    },
+    {
+      "id": 2,
+      "img": "/public/images/shop/slider2.png",
+      "title": "Special Festival Offer",
+      "percent": 20,
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu."
+    },
+    {
+      "id": 3,
+      "img": "/public/images/shop/slider1.png",
+      "title": "Special Spring Offer",
+      "percent": 60,
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu."
+    },
+    {
+      "id": 4,
+      "img": "/public/images/shop/slider2.png",
+      "title": "Special Festival Offer",
+      "percent": 5,
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu."
+    }
+  ],
+  "gallary": [
+    {
       "id":1,
-      "img":"/images/home/articlle1.png",
-      "title":"We are the next banking experience"
+      "img":"images/shop/gallary1.png"
     },
     {
       "id":2,
-      "img":"/images/home/article2.png",
-      "title":"We are the next banking experience"
+      "img":"images/shop/gallary2.png"
     },
     {
       "id":3,
-      "img":"/images/home/article3.png",
-      "title":"We are the next banking experience"
+      "img":"images/shop/gallary3.png"
+    },
+    {
+      "id":4,
+      "img":"images/shop/gallary4.png"
+    },
+    {
+      "id":5,
+      "img":"images/shop/gallary5.png"
     }
-
-  ]
+  ],
+"peopleSlider":[
+  {
+    "id":1,
+    "name":"Robin Doe",
+    "role":"Founder of Alpha",
+    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+    "img":"/images/shop/avatar1.png"
+  },
+  {
+    "id":2,
+    "name":"Sabo Masties",
+    "role":"Founder of Rubik",
+    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+    "img":"/images/shop/avatar2.png"
+  },
+  {
+    "id":3,
+    "name":"John Rowan",
+    "role":"Founder of tabar",
+    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+    "img":"/images/shop/avatar3.png"
+  },
+  {
+    "id":4,
+    "name":"June Doe",
+    "role":"Founder of Camo",
+    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+    "img":"/images/shop/avatar2.png"
+  },
+  {
+    "id":5,
+    "name":"Maria Samolya",
+    "role":"Founder of Omega",
+    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+    "img":"/images/shop/avatar3.png"
+  }
+]
 }
