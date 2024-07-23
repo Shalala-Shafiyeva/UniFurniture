@@ -1,8 +1,13 @@
-import React from "react";
-import './header.css';
+import React, { useState } from "react";
+import "./header.css";
 import { Link, NavLink } from "react-router-dom";
 
 function Header() {
+  const [openMenu, setOpenMenu] = useState(false);
+  const handleOpenMenu=()=>{
+    setOpenMenu(!openMenu);
+    console.log(openMenu)
+  }
   return (
     <header>
       <div className="logo">
@@ -33,12 +38,31 @@ function Header() {
           Sign Up
         </Link>
       </div>
-      <div className="menuBar">
+      <div className="menuBar" onClick={handleOpenMenu}>
         <img src="/images/menu.png" alt="Menu" />
       </div>
       <NavLink id="mobileLogin" to="/login">
         Login
       </NavLink>
+      <div className={`navBar ${openMenu ? "open" : ""}`}>
+        <div className="closeBtn">
+          <span onClick={()=>setOpenMenu(false)}>x</span>
+        </div>
+        <ul>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/shop">Shop</NavLink>
+          </li>
+          <li>
+            <NavLink to="/pricing">Pricing</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { filterProducts } from "../../slices/productsSlices";
+import { filterProducts, singleProduct } from "../../slices/productsSlices";
 import { useDispatch, useSelector } from "react-redux";
 import data from "../../data.json";
 
 function Furnitures() {
+  //single page/productDetails
+  const dispatchProduct = useDispatch();
+  ////////
   const dispatch = useDispatch();
   const filteredProducts = useSelector(
     (state) => state.products.filteredProducts
@@ -13,38 +16,23 @@ function Furnitures() {
   //pagination
   const [currentProducts, setCurrentProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  // const [filterBtnClicked, setFilterBtnClicked] = useState(false);
   const [totalPages, setTotalPages] = useState(0);
   const productsPerPage = 3;
   useEffect(() => {
     const lastPostIndex = currentPage * productsPerPage;
     const firstPostIndex = lastPostIndex - productsPerPage;
     let products = [];
-    products = data.products.slice(firstPostIndex, lastPostIndex);
-    setTotalPages(Math.ceil(data.products.length / productsPerPage));
-    setCurrentProducts(products);
-  }, []);
 
-  console.log(totalPages);
-  console.log(currentProducts);
-
-  const showProducts = () => {
-    const lastPostIndex = currentPage * productsPerPage;
-    const firstPostIndex = lastPostIndex - productsPerPage;
-    let products = [];
-    // if (filterBtnClicked) {
+    if (filteredProducts.length) {
       products = filteredProducts.slice(firstPostIndex, lastPostIndex);
       setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
-  //  } 
-    //else {
-    //   products = data.products.slice(firstPostIndex, lastPostIndex);
-    //   setTotalPages(Math.ceil(data.products.length / productsPerPage));
-    // }
+    } else {
+      products = data.products.slice(firstPostIndex, lastPostIndex);
+      setTotalPages(Math.ceil(data.products.length / productsPerPage));
+    }
+
     setCurrentProducts(products);
-    // console.log(filterBtnClicked);
-    console.log("1st index", firstPostIndex);
-    console.log("2nd index", lastPostIndex);
-  };
+  }, [currentPage, filteredProducts]);
 
   const paginate = () => {
     let pages = [];
@@ -58,7 +46,6 @@ function Furnitures() {
           className={`${currentPage === i ? "active" : ""}`}
           onClick={() => {
             setCurrentPage(i);
-            showProducts();
           }}
         >
           {i}
@@ -105,12 +92,14 @@ function Furnitures() {
     });
     if (el.target.dataset && el.target.dataset.id == "button") {
       el.target.classList.add("active");
+      //showProducts();
     } else {
       el.target.parentElement.classList.add("active");
     }
   };
   const activeBtnForChild = (el) => {
     el.target.parentElement.classList.add("active");
+    //showProducts();
   };
 
   return (
@@ -134,6 +123,7 @@ function Furnitures() {
                 onClick={(e) => {
                   dispatch(filterProducts(btn.name.toLowerCase()));
                   activeBtn(e);
+                  setCurrentPage(1);
                 }}
               >
                 <img
@@ -149,7 +139,12 @@ function Furnitures() {
         <div className="products">
           {currentProducts.map((product) => {
             return (
-              <div className="productCard" key={product.id}>
+              <Link
+                to={`/product/${product.type}/${product.id}`}
+                className="productCard"
+                key={product.id}
+                onClick={() => dispatchProduct(singleProduct(product.id))}
+              >
                 <div className="productContext">
                   <div className="head">
                     <div className="favorite">
@@ -166,7 +161,7 @@ function Furnitures() {
                 <div className="btn">
                   <button className="addCart">Add to cart</button>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

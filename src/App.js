@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Shopping from "./pages/Shopping";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About/>}/>
+        <Route path="/product/:type/:id" element={<ProductDetails/>}/>
         <Route path="*" element={<NotFound/>} />
       </Routes>
       {/* <Header/>
