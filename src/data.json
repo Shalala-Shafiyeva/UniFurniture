@@ -311,8 +311,7 @@
         "Warranty Length: 1 Year",
         "Features: Product Warranty",
         "Features: Product Warranty"
-      ],
-      "price": "49.00"
+      ]
     },
     {
       "id": 2,
@@ -705,6 +704,87 @@
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
       "price": 42.0
+    }
+    ,
+    {
+      "id": 51,
+      "img": "/images/shop/chair10.png",
+      "name": "Aqua Globes Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": "30.00",
+      "priceBefore":"25.00",
+      "reviews":"(8 reviews)"
+    },
+    {
+      "id": 52,
+      "img": "/images/shop/chair11.png",
+      "name": "Aqua Globes Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": "30.00",
+      "priceBefore":"25.00",
+      "reviews":"(8 reviews)"
+    },
+    {
+      "id": 53,
+      "img": "/images/shop/chair12.png",
+      "name": "Aqua Globes Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": "30.00",
+      "priceBefore":"25.00",
+      "reviews":"(8 reviews)"
+    },
+    {
+      "id": 54,
+      "img": "/images/shop/chair13.png",
+      "name": "Aqua Globes Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": "30.00",
+      "priceBefore":"25.00",
+      "reviews":"(8 reviews)"
+    },
+    {
+      "id": 55,
+      "img": "/images/shop/chair14.png",
+      "name": "Aqua Globes Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": "30.00",
+      "priceBefore":"25.00",
+      "reviews":"(8 reviews)"
+    },
+    {
+      "id": 56,
+      "img": "/images/shop/chair15.png",
+      "name": "Aqua Globes Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": "30.00",
+      "priceBefore":"25.00",
+      "reviews":"(8 reviews)"
+    },
+    {
+      "id": 57,
+      "img": "/images/shop/chair16.png",
+      "name": "Aqua Globes Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": "30.00",
+      "priceBefore":"25.00",
+      "reviews":"(8 reviews)"
+    },
+    {
+      "id": 58,
+      "img": "/images/shop/chair17.png",
+      "name": "Aqua Globes Chair",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "type": "chair",
+      "price": "30.00",
+      "priceBefore":"25.00",
+      "reviews":"(8 reviews)"
     }
   ],
   "shopSlider": [

@@ -92,14 +92,12 @@ function Furnitures() {
     });
     if (el.target.dataset && el.target.dataset.id == "button") {
       el.target.classList.add("active");
-      //showProducts();
     } else {
       el.target.parentElement.classList.add("active");
     }
   };
   const activeBtnForChild = (el) => {
     el.target.parentElement.classList.add("active");
-    //showProducts();
   };
 
   return (

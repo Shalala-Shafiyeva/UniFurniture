@@ -1,0 +1,254 @@
+@media (max-width:1024px) {
+    .mainDetails {
+        margin-top: 80px;
+    }
+
+    .mainDetails .container {
+        gap: 16px;
+    }
+
+    .mainDetails .linksCover>a {
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .mainDetails .linksCover>a img,
+    .mainDetails .links img,
+    .mainDetails .wrapper .imgDetails .nextBtn img,
+    .mainDetails .descDetails .addToCart img,
+    .overview .container .txt .characteristics li .img,
+    .overview .bottomSection .questions .messegeBtn img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .mainDetails .links a {
+        font-size: 11px;
+    }
+
+    .mainDetails .wrapper {
+        gap: 35px;
+    }
+
+    .mainDetails .wrapper .imgDetails .nextBtn {
+        width: 40px;
+        height: 40px;
+        padding: 7px;
+    }
+
+    .mainDetails .wrapper .imgDetails .imgs {
+        gap: 17px;
+    }
+
+    .mainDetails .wrapper .mainImg {
+        height: 370px;
+    }
+
+    .mainDetails .wrapper .smallImgs {
+        gap: 5px;
+    }
+
+    .mainDetails .wrapper .smallImgs .img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .mainDetails .descDetails,
+    .overview .container .txt .characteristics ul,
+    .overview .container .txt .characteristics li,
+    .overview .container .video>div:first-of-type {
+        gap: 10px;
+    }
+
+    .mainDetails .descDetails .fullTitle,
+    .overview .container .txt h3,
+    .overview .container .video>div>span {
+        font-size: 22px;
+    }
+
+    .mainDetails .descDetails .rating,
+    .similarProducts .product .review {
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .mainDetails .descDetails .price,
+    .similarProducts .container .head {
+        font-size: 22px;
+        line-height: 35px;
+    }
+
+    .mainDetails .descDetails .desc {
+        font-size: 11px;
+        margin-top: 13px;
+    }
+
+    .mainDetails .descDetails .chooseColor {
+        margin-top: 7px;
+    }
+
+    .mainDetails .descDetails .chooseColor .currentColor,
+    .mainDetails .descDetails .chooseColor .canChoose {
+        gap: 5px;
+    }
+
+    .mainDetails .descDetails .currentColor .img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .mainDetails .descDetails .currentColor span,
+    .mainDetails .descDetails .colors .img span {
+        font-size: 8px;
+        line-height: 14px;
+    }
+
+    .mainDetails .descDetails .canChoose>span,
+    .mainDetails .descDetails .quantity>span,
+    .mainDetails .descDetails .selectQty>span,
+    .mainDetails .descDetails .addToCart,
+    .mainDetails .descDetails .garranty {
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .mainDetails .descDetails .canChoose .colors {
+        gap: 24px;
+    }
+
+    .mainDetails .descDetails .colors .img {
+        gap: 3px;
+    }
+
+    .mainDetails .descDetails .colors .img img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .mainDetails .descDetails .qtyAndAddToCart {
+        gap: 20px;
+    }
+
+    .mainDetails .descDetails .quantity,
+    .similarProducts .container {
+        gap: 15px;
+    }
+
+    .mainDetails .descDetails .selectQty>span {
+        width: 21px;
+        height: 24px;
+
+    }
+
+    .mainDetails .descDetails .addToCart {
+        padding: 10px 20px;
+        gap: 12px;
+    }
+
+    .overview,
+    .similarProducts {
+        margin-top: 50px;
+    }
+
+    .overview .container {
+        padding: 40px 0 13px;
+        gap: 40px;
+    }
+
+    .overview .container .topSection .txt {
+        gap: 20px;
+    }
+
+    .overview .container .txt .desc span,
+    .overview .bottomSection .orderBtn,
+    .overview .bottomSection .questions .left span:first-of-type,
+    .similarProducts .pagination .pages>button {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .overview .container .txt .desc p,
+    .overview .container .txt .characteristics li span,
+    .overview .bottomSection .questions .left span:last-of-type {
+        font-size: 11px;
+    }
+
+    .overview .container .video .cover {
+        height: 350px;
+    }
+
+    .overview .container .video .cover .play {
+        width: 60px;
+        height: 60px;
+    }
+
+    .overview .bottomSection .orderBtn {
+        padding: 20px 60px;
+    }
+
+    .overview .bottomSection .questions .left {
+        gap: 8px;
+    }
+
+    .overview .bottomSection .questions .messegeBtn {
+        padding: 10px 15px;
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .similarProducts .container .product {
+        height: 250px;
+    }
+
+    .similarProducts .product .img {
+        height: 75%;
+    }
+
+    .similarProducts .product .img img {
+        object-fit: contain;
+    }
+
+    .similarProducts .product .review {
+        margin-top: 15px;
+    }
+
+    .similarProducts .product .title {
+        font-size: 12px;
+    }
+
+    .similarProducts .product .prices {
+        font-size: 9px;
+        line-height: 15px;
+    }
+
+    .similarProducts .pagination {
+        margin-top: 30px;
+    }
+
+    .similarProducts .pagination .nextBtn,
+    .similarProducts .pagination .prevBtn {
+        padding: 11px;
+    }
+
+    .similarProducts .pagination .nextBtn img,
+    .similarProducts .pagination .prevBtn img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .similarProducts .pagination .pages>button {
+        padding: 11px;
+    }
+
+    .similarProducts .pagination .pages button.active{
+        padding: 11px 20px;
+    }
+
+    .similarProducts .noSimilar{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:576px){
+    
+}

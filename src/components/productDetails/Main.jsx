@@ -73,7 +73,7 @@ function Main() {
               </div>
               <div className="descDetails">
                 <span className="fullTitle">{product.fullTitle}</span>
-                <div className="raiting">34 Reviews</div>
+                <div className="rating">34 Reviews</div>
                 <span className="price">${product.price}</span>
                 <p className="desc">{product.description}</p>
                 <div className="chooseColor">

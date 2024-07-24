@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import ReactPlayer from "react-player";
 import { singleProduct } from "../../slices/productsSlices";
 import data from "../../data.json";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 function ProductOverview() {
@@ -10,6 +11,13 @@ function ProductOverview() {
   let product = useSelector((state) => state.products.singleProduct);
   product = product.filter((prod) => prod.id == id);
   product = product[0];
+
+  const [hidden, setHidden] = useState(false);
+  const [play, setPlay] = useState(false);
+  const hiddenElements = () => {
+    setHidden(true);
+    setPlay(true);
+  };
   return (
     <section className="overview">
       <div className="container">
@@ -44,12 +52,48 @@ function ProductOverview() {
                 alt="Share"
               />
             </div>
-            <video width="320" height="240" controls  src='/images/productDetails/product1/videoproduct1.mp4'/>
+            <div className="cover">
+              <ReactPlayer
+                controls={true}
+                url="/images/productDetails/product1/videoproduct1.mp4"
+                playing={play}
+                width={"100%"}
+                height={"100%"}
+              />
+              {/* <video
+                width="320"
+                height="240"
+                controls
+                src="/images/productDetails/product1/videoproduct1.mp4"
+              /> */}
+              <img
+                onClick={() => hiddenElements()}
+                className={`play ${hidden ? "hidden" : ""}`}
+                src="/images/play.png"
+                alt="Play video"
+              />
+              <img
+                className={`overlay ${hidden ? "hidden" : ""}`}
+                src="/images/productDetails/product1/mainImg.png"
+                alt=""
+              />
+            </div>
           </div>
         </div>
         <div className="bottomSection">
-          <div className="btn"></div>
-          <div className="questions"></div>
+          <Link className="orderBtn" to="#">
+            Order Now
+          </Link>
+          <div className="questions">
+            <div className="left">
+              <span>Have a question?</span>
+              <span>We're here to help</span>
+            </div>
+            <Link className="messegeBtn" to="mailto:unifurniture@gmail.com">
+              <span>Messege us</span>
+              <img src="/images/messenge.png" alt="Messege us" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
