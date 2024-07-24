@@ -5,9 +5,11 @@
 
 .mainDetails .container {
     width: 90%;
+    height: max-content;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 24px;
 }
 
 .mainDetails .linksCover {
@@ -27,8 +29,429 @@
     gap: 5px;
 }
 
-.mainDetails .linksCover>a img{
+.mainDetails .linksCover>a img {
     transform: rotate(180deg);
     width: 20px;
     height: 20px;
+}
+
+.mainDetails .links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mainDetails .links a {
+    color: #6D6E74;
+    font-size: 16px;
+    font-weight: 400;
+    transition: .3s all ease-in-out;
+}
+
+.mainDetails .links a:hover {
+    color: #24252E;
+}
+
+.mainDetails .links a.active {
+    font-weight: 500;
+    color: #24252E;
+}
+
+.mainDetails .links a.active::first-letter {
+    text-transform: uppercase;
+}
+
+.mainDetails .links span {
+    display: flex;
+    align-items: center;
+}
+
+.mainDetails .links img {
+    width: 20px;
+    height: 20px;
+    transform: rotate(180deg);
+}
+
+.mainDetails .wrapper {
+    width: 100%;
+    display: flex;
+    gap: 46px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.mainDetails .wrapper .imgDetails {
+    width: 40%;
+    position: relative;
+}
+
+.mainDetails .wrapper .imgDetails .nextBtn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 56px;
+    height: 56px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainDetails .wrapper .imgDetails .nextBtn img {
+    width: 20px;
+    height: 20px;
+}
+
+.mainDetails .wrapper .imgDetails .imgs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.mainDetails .wrapper .mainImg {
+    width: 100%;
+    height: 480px;
+}
+
+.mainDetails .wrapper .mainImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mainDetails .wrapper .smallImgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.mainDetails .wrapper .smallImgs .img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    border: 2px solid #6d6e7423;
+}
+
+.mainDetails .wrapper .smallImgs .img.active {
+    border: 2px solid #00A991;
+}
+
+.mainDetails .wrapper .smallImgs .img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.mainDetails .descDetails {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+}
+
+.mainDetails .descDetails .fullTitle {
+    color: #00A991;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.mainDetails .descDetails .rating {
+    color: rgba(24, 27, 49, 0.50);
+    text-align: right;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.mainDetails .descDetails .price {
+    color: #24252E;
+    text-align: left;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 50px;
+}
+
+.mainDetails .descDetails .desc {
+    margin-top: 20px;
+    color: #3C3D45;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.mainDetails .descDetails .chooseColor {
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+.mainDetails .descDetails .chooseColor .currentColor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.mainDetails .descDetails .currentColor .img {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    border: 2px solid #00A991;
+}
+
+.mainDetails .descDetails .currentColor .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.mainDetails .descDetails .currentColor span {
+    color: #24252E;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.mainDetails .descDetails .chooseColor .canChoose {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mainDetails .descDetails .canChoose>span {
+    color: #24252E;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+.mainDetails .descDetails .canChoose .colors {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.mainDetails .descDetails .colors .img {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.mainDetails .descDetails .colors .img img {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #6d6e746e;
+    border-radius: 5px;
+}
+
+.mainDetails .descDetails .colors .img span {
+    color: #24252E;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.mainDetails .descDetails .qtyAndAddToCart {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.mainDetails .descDetails .quantity {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mainDetails .descDetails .quantity>span {
+    color: #24252E;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+.mainDetails .descDetails .selectQty {
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    border: 1px solid #6D6E74;
+    background: #FFF;
+}
+
+.mainDetails .descDetails .selectQty>span {
+    width: 30px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s all ease-in-out;
+}
+
+.mainDetails .descDetails .selectQty>span:hover:not(:nth-of-type(2)) {
+    background-color: #6d6e742a;
+    cursor: pointer;
+}
+
+.mainDetails .descDetails .addToCart {
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 19px;
+    border-radius: 6px;
+    background: #00A991;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.mainDetails .descDetails .addToCart img {
+    width: 20px;
+    height: 20px;
+}
+
+.mainDetails .descDetails .garranty {
+    text-align: end;
+    color: #3C3D45;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    margin-top: 40px;
+}
+
+.mainDetails .outOfStock {
+    color: red;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 600;
+    text-align: end;
+}
+
+.overview {
+    margin-top: 70px;
+    width: 100%;
+}
+
+.overview .container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0 20px;
+    border-top: 1px solid #9d9ea26b;
+    border-bottom: 1px solid #9d9ea26b;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.overview .container .topSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.overview .container .topSection .txt {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.overview .container .txt h3,
+.overview .container .video>div>span {
+    color: #3C3D45;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.overview .container .txt .desc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.overview .container .txt .desc span {
+    color: #3C3D45;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.overview .container .txt .desc p {
+    color: #6D6E74;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.overview .container .txt .characteristics {
+    width: 100%;
+}
+
+.overview .container .txt .characteristics ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.overview .container .txt .characteristics li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.overview .container .txt .characteristics li .img {
+    width: 24px;
+    height: 24px;
+}
+
+.overview .container .txt .characteristics li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overview .container .txt .characteristics li span {
+    color: #3C3D45;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.overview .container .video{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.overview .container .video video{
+    width: 100%;
+    height: 450px;
+}
+
+.overview .container .video>div:first-of-type {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }

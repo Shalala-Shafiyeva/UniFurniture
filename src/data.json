@@ -267,7 +267,52 @@
       "name": "Armchair and pillow",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": 49.0
+      "fullTitle": "Axton 86cm Wide Tufted Armchair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Wild Watermelon",
+          "imgs": [
+            "/images/productDetails/product1/mainImg.png",
+            "/images/productDetails/product1/smallimg2.png",
+            "/images/productDetails/product1/smallimg3.png"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Ash Grey",
+          "imgs": [
+            "/images/productDetails/product1/smallimg11.png",
+            "/images/productDetails/product1/smallimg11.png",
+            "/images/productDetails/product1/smallimg11.png",
+            "/images/productDetails/product1/smallimg11.png"
+          ]
+        },
+        {
+          "id": 3,
+          "colorName": "Glade Green",
+          "imgs": [
+            "/images/productDetails/product1/smallimg22.png",
+            "/images/productDetails/product1/smallimg22.png",
+            "/images/productDetails/product1/smallimg22.png",
+            "/images/productDetails/product1/smallimg22.png"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 10,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ],
+      "price": "49.00"
     },
     {
       "id": 2,
@@ -694,61 +739,61 @@
   ],
   "gallary": [
     {
-      "id":1,
-      "img":"images/shop/gallary1.png"
+      "id": 1,
+      "img": "images/shop/gallary1.png"
     },
     {
-      "id":2,
-      "img":"images/shop/gallary2.png"
+      "id": 2,
+      "img": "images/shop/gallary2.png"
     },
     {
-      "id":3,
-      "img":"images/shop/gallary3.png"
+      "id": 3,
+      "img": "images/shop/gallary3.png"
     },
     {
-      "id":4,
-      "img":"images/shop/gallary4.png"
+      "id": 4,
+      "img": "images/shop/gallary4.png"
     },
     {
-      "id":5,
-      "img":"images/shop/gallary5.png"
+      "id": 5,
+      "img": "images/shop/gallary5.png"
     }
   ],
-"peopleSlider":[
-  {
-    "id":1,
-    "name":"Robin Doe",
-    "role":"Founder of Alpha",
-    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
-    "img":"/images/shop/avatar1.png"
-  },
-  {
-    "id":2,
-    "name":"Sabo Masties",
-    "role":"Founder of Rubik",
-    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
-    "img":"/images/shop/avatar2.png"
-  },
-  {
-    "id":3,
-    "name":"John Rowan",
-    "role":"Founder of tabar",
-    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
-    "img":"/images/shop/avatar3.png"
-  },
-  {
-    "id":4,
-    "name":"June Doe",
-    "role":"Founder of Camo",
-    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
-    "img":"/images/shop/avatar2.png"
-  },
-  {
-    "id":5,
-    "name":"Maria Samolya",
-    "role":"Founder of Omega",
-    "text":"Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
-    "img":"/images/shop/avatar3.png"
-  }
-]
+  "peopleSlider": [
+    {
+      "id": 1,
+      "name": "Robin Doe",
+      "role": "Founder of Alpha",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "img": "/images/shop/avatar1.png"
+    },
+    {
+      "id": 2,
+      "name": "Sabo Masties",
+      "role": "Founder of Rubik",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "img": "/images/shop/avatar2.png"
+    },
+    {
+      "id": 3,
+      "name": "John Rowan",
+      "role": "Founder of tabar",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "img": "/images/shop/avatar3.png"
+    },
+    {
+      "id": 4,
+      "name": "June Doe",
+      "role": "Founder of Camo",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "img": "/images/shop/avatar2.png"
+    },
+    {
+      "id": 5,
+      "name": "Maria Samolya",
+      "role": "Founder of Omega",
+      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "img": "/images/shop/avatar3.png"
+    }
+  ]
 }
