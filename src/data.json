@@ -271,7 +271,7 @@
       "colorImgs": [
         {
           "id": 1,
-          "colorName": "Wild Watermelon",
+          "colorName": "White",
           "imgs": [
             "/images/productDetails/product1/mainImg.png",
             "/images/productDetails/product1/smallimg2.png",
@@ -280,9 +280,8 @@
         },
         {
           "id": 2,
-          "colorName": "Ash Grey",
+          "colorName": "Grey",
           "imgs": [
-            "/images/productDetails/product1/smallimg11.png",
             "/images/productDetails/product1/smallimg11.png",
             "/images/productDetails/product1/smallimg11.png",
             "/images/productDetails/product1/smallimg11.png"
@@ -290,9 +289,8 @@
         },
         {
           "id": 3,
-          "colorName": "Glade Green",
+          "colorName": "Green",
           "imgs": [
-            "/images/productDetails/product1/smallimg22.png",
             "/images/productDetails/product1/smallimg22.png",
             "/images/productDetails/product1/smallimg22.png",
             "/images/productDetails/product1/smallimg22.png"
@@ -311,7 +309,9 @@
         "Warranty Length: 1 Year",
         "Features: Product Warranty",
         "Features: Product Warranty"
-      ]
+      ],
+      "price": "30.00",
+      "priceBefore": "20.00"
     },
     {
       "id": 2,
@@ -319,63 +319,366 @@
       "name": " Sophisticated Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": 42.0
+      "price": "103.00",
+      "priceBefore": "80.00",
+      "fullTitle": "Axton 86cm Wide Sophisticated Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/chair2.png",
+            "/images/shop/chair2-4.jpeg",
+            "/images/shop/chair2-5.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/chair2-2.jpg",
+            "/images/shop/chair2-8.jpeg",
+            "/images/shop/chair2-9.jpeg"
+          ]
+        },
+        {
+          "id": 3,
+          "colorName": "Blue",
+          "imgs": [
+            "/images/shop/chair2-3.jpg",
+            "/images/shop/chair2-6.jpeg",
+            "/images/shop/chair2-7.jpeg"
+          ]
+        }
+      ],
+      "garranty": 2,
+      "stock": 0,
+      "hasStock": false,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 3,
       "img": "/images/shop/chair3.png",
-      "name": " Futura Chair",
+      "name": "Futura Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": 45.0
+      "price": "66.00",
+      "priceBefore": "90.00",
+      "fullTitle": "Axton 86cm Wide Futura Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/chair3-4.jpeg",
+            "/images/shop/chair3-5.jpeg",
+            "/images/shop/chair3-6.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Orange",
+          "imgs": [
+            "/images/shop/chair3.png",
+            "/images/shop/chair3-2.jpeg",
+            "/images/shop/chair3-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 4,
       "img": "/images/shop/chair4.png",
-      "name": " Slylish Chair",
+      "name": "Slylish Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": 60.0
+      "price": "70.00",
+      "priceBefore": "92.99",
+      "fullTitle": "Axton 86cm Wide Slylish Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/chair4.png",
+            "/images/shop/chair4-2.jpeg",
+            "/images/shop/chair4-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 7,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 5,
       "img": "/images/shop/chair5.png",
-      "name": " Sophisticated Chair",
+      "name": "Sophisticated Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": 55.0
+      "price": "45.90",
+      "priceBefore": "50.99",
+      "fullTitle": "Axton 86cm Wide Sophisticated Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/chair5.png",
+            "/images/shop/chair5-2.jpeg",
+            "/images/shop/chair5-5.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Blue",
+          "imgs": [
+            "/images/shop/chair5-3.jpeg",
+            "/images/shop/chair5-4.jpeg",
+            "/images/shop/chair5-6.jpeg"
+          ]
+        },
+        {
+          "id": 3,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/chair5-7.jpeg",
+            "/images/shop/chair5-8.jpeg",
+            "/images/shop/chair5-9.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 2,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 6,
       "img": "/images/shop/chair6.png",
-      "name": " Sophisticated Chair",
+      "name": "Armchair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": 42.0
+      "price": "20.90",
+      "priceBefore": "10.99",
+      "fullTitle": "Axton 86cm Wide Armchair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/chair6.png",
+            "/images/shop/chair6-2.jpeg",
+            "/images/shop/chair6-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "White",
+          "imgs": ["/images/shop/chair6-4.jpeg", "/images/shop/chair6-5.jpeg"]
+        }
+      ],
+      "garranty": 2,
+      "stock": 3,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 7,
       "img": "/images/shop/chair7.png",
-      "name": " Sophisticated Chair",
+      "name": "Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": 47.0
+      "price": "21.00",
+      "priceBefore": "15.99",
+      "fullTitle": "Axton 86cm Wide Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/chair7.png",
+            "/images/shop/chair7-2.jpeg",
+            "/images/shop/chair7-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Green",
+          "imgs": ["/images/shop/chair7-4.jpeg", "/images/shop/chair7-8.jpeg"]
+        },
+        {
+          "id": 3,
+          "colorName": "Grey",
+          "imgs": ["/images/shop/chair7-5.jpeg", "/images/shop/chair7-6.jpeg"]
+        }
+      ],
+      "garranty": 1,
+      "stock": 0,
+      "hasStock": false,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 8,
       "img": "/images/shop/chair8.png",
-      "name": " Sophisticated Chair",
+      "name": "Sophisticated Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": 42.0
+      "price": "30.10",
+      "priceBefore": "29.99",
+      "fullTitle": "Axton 86cm Wide Sophisticated Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/chair8.png",
+            "/images/shop/chair8-2.jpeg",
+            "/images/shop/chair8-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/chair8-4.jpeg", 
+          "/images/shop/chair8-5.jpeg"
+        ]
+        },
+        {
+          "id": 3,
+          "colorName": "Red",
+          "imgs": [
+            "/images/shop/chair8-6.jpeg",
+           "/images/shop/chair8-7.jpeg",
+           "/images/shop/chair8-8.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 12,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 9,
       "img": "/images/shop/chair9.png",
-      "name": " Sophisticated Chair",
+      "name": "Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": 42.0
+      "price": "33.00",
+      "priceBefore": "29.99",
+      "fullTitle": "Axton 86cm Wide Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/chair9.png",
+            "/images/shop/chair9-2.jpeg",
+            "/images/shop/chair9-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/chair9-4.jpeg", 
+          "/images/shop/chair9-5.jpeg",
+          "/images/shop/chair9-6.jpeg"
+        ]
+        },
+        {
+          "id": 3,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/chair9-7.jpeg",
+           "/images/shop/chair9-8.jpeg",
+           "/images/shop/chair9-9.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 10,
@@ -383,7 +686,33 @@
       "name": " Wardrobe1",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "150.99",
+      "priceBefore": "145.99",
+      "fullTitle": "NW Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Green",
+          "imgs": [
+            "/images/shop/wardrobe1.jpg",
+            "/images/shop/wardrobe1-2.jpeg",
+            "/images/shop/wardrobe1-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 1,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 11,
@@ -391,7 +720,33 @@
       "name": "Wardrobe",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "150.99",
+      "priceBefore": "145.99",
+      "fullTitle": "NW Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/wardrobe2.jpg",
+            "/images/shop/wardrobe2-2.jpeg",
+            "/images/shop/wardrobe2-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 3,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 12,
@@ -399,7 +754,33 @@
       "name": "Wardrobe",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "159.89",
+      "priceBefore": "131.99",
+      "fullTitle": "NW Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/wardrobe3.jpg",
+            "/images/shop/wardrobe3.-2.jpeg",
+            "/images/shop/wardrobe3-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 0,
+      "hasStock": false,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 13,
@@ -407,7 +788,33 @@
       "name": "Wardrobe",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "100.99",
+      "priceBefore": "121.99",
+      "fullTitle": "NW Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Green",
+          "imgs": [
+            "/images/shop/wardrobe4.jpg",
+            "/images/shop/wardrobe4-2.jpeg",
+            "/images/shop/wardrobe4-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 10,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 14,
@@ -415,7 +822,33 @@
       "name": " Sophisticated Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "101.99",
+      "priceBefore": "122.99",
+      "fullTitle": "NW Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/wardrobe5.jpg",
+            "/images/shop/wardrobe5-2.jpeg",
+            "/images/shop/wardrobe5-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 15,
@@ -423,7 +856,32 @@
       "name": "Wardrobe",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "99.99",
+      "priceBefore": "118.90",
+      "fullTitle": "NW Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/wardrobe6.jpg",
+            "/images/shop/wardrobe6-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 2,
+      "stock": 0,
+      "hasStock": false,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 16,
@@ -431,7 +889,33 @@
       "name": "Wardrobe",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "18.99",
+      "priceBefore": "85.99",
+      "fullTitle": "VSH Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/wardrobe7.jpg",
+            "/images/shop/wardrobe7-2.jpeg",
+            "/images/shop/wardrobe7-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 7,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 17,
@@ -439,7 +923,33 @@
       "name": " Sophisticated Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "299.99",
+      "priceBefore": "105.99",
+      "fullTitle": "VSH Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/wardrobe8.jpg",
+            "/images/shop/wardrobe8-2.jpeg",
+            "/images/shop/wardrobe8-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 7,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 18,
@@ -447,7 +957,33 @@
       "name": "Wardrobe",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "250.99",
+      "priceBefore": "329.99",
+      "fullTitle": "SH Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/wardrobe9.jpg",
+            "/images/shop/wardrobe9-2.jpeg",
+            "/images/shop/wardrobe9-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 6,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 19,
@@ -455,7 +991,33 @@
       "name": "Wardrobe",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "wardrobe",
-      "price": 42.0
+      "price": "89.89",
+      "priceBefore": "109.79",
+      "fullTitle": "NW Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Orange",
+          "imgs": [
+            "/images/shop/wardrobe10.jpg",
+            "/images/shop/wardrobe10-2.jpeg",
+            "/images/shop/wardrobe10-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 10,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 20,
@@ -463,7 +1025,32 @@
       "name": "Office",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "office",
-      "price": 42.0
+      "price": "59.99",
+      "priceBefore": "66.99",
+      "fullTitle": "NW Office",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/office1.png",
+            "/images/shop/office1-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock":5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 21,
@@ -471,7 +1058,40 @@
       "name": "Office",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "office",
-      "price": 42.0
+      "price": "100.99",
+      "priceBefore": "121.99",
+      "fullTitle": "NW Office",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/office2.png",
+            "/images/shop/office2-2.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/office2-3.jpeg",
+            "/images/shop/office2-4.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 4,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 22,
@@ -479,7 +1099,41 @@
       "name": "Office",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "office",
-      "price": 42.0
+      "price": "77.00",
+      "priceBefore": "81.59",
+      "fullTitle": "SHs Office",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/office3.png",
+            "/images/shop/office3-2.jpeg",
+            "/images/shop/office3-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/office3-4.jpeg",
+            "/images/shop/office3-5.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 4,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 23,
@@ -487,7 +1141,32 @@
       "name": "Office",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "office",
-      "price": 42.0
+      "price": "39.50",
+      "priceBefore": "56.69",
+      "fullTitle": "SHs Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/office4.png",
+            "/images/shop/office4-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 3,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 24,
@@ -495,7 +1174,33 @@
       "name": "Office",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "office",
-      "price": 42.0
+      "price": "45.00",
+      "priceBefore": "80.00",
+      "fullTitle": "Ssha Office",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/office5.png",
+            "/images/shop/office5-2.jpeg",
+            "/images/shop/office5-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 2,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 25,
@@ -503,7 +1208,33 @@
       "name": "Office",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "office",
-      "price": 42.0
+      "price": "67.00",
+      "priceBefore": "77.59",
+      "fullTitle": "NW office",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/office6.png",
+            "/images/shop/office6-2.jpeg",
+            "/images/shop/office6-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 1,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 26,
@@ -511,7 +1242,32 @@
       "name": "Office",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "office",
-      "price": 42.0
+      "price": "77.00",
+      "priceBefore": "81.59",
+      "fullTitle": "SHs Wardrobe",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/office7.png",
+            "/images/shop/office7-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 0,
+      "hasStock": false,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 27,
@@ -519,7 +1275,47 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "102.30",
+      "priceBefore": "140.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Orange",
+          "imgs": [
+            "/images/shop/sofa1.png",
+            "/images/shop/sofa1-2.jpeg",
+            "/images/shop/sofa1-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/sofa1-4.jpeg"
+          ]
+        },
+        {
+          "id": 3,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/sofa1-5.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 28,
@@ -527,7 +1323,41 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "99.00",
+      "priceBefore": "130.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/sofa2.png",
+            "/images/shop/sofa2-2.jpeg",
+            "/images/shop/sofa2-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/sofa2-4.jpeg",
+            "/images/shop/sofa2-5.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 4,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 29,
@@ -535,7 +1365,40 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "102.30",
+      "priceBefore": "140.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/sofa3.png",
+            "/images/shop/sofa3-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/sofa3-2.jpeg",
+            "/images/shop/sofa3-4.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 3,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 30,
@@ -543,7 +1406,34 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "230.00",
+      "priceBefore": "520.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/sofa4.png",
+            "/images/shop/sofa4-2.jpeg",
+            "/images/shop/sofa4-3.jpeg",
+            "/images/shop/sofa4-4.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 2,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 31,
@@ -551,7 +1441,40 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "100.00",
+      "priceBefore": "220.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/sofa6.png",
+            "/images/shop/sofa6-2.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Green",
+          "imgs": [
+            "/images/shop/sofa6-3.jpeg",
+            "/images/shop/sofa6-4.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 0,
+      "hasStock": false,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 32,
@@ -559,7 +1482,57 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "144.00",
+      "priceBefore": "190.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/sofa5.png",
+            "/images/shop/sofa5-2.jpeg",
+            "/images/shop/sofa5-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/sofa5-4.jpeg",
+            "/images/shop/sofa5-7.jpeg"
+          ]
+        },
+        {
+          "id": 3,
+          "colorName": "Blue",
+          "imgs": [
+            "/images/shop/sofa5-5.jpeg",
+            "/images/shop/sofa5-6.jpeg"
+          ]
+        },
+        {
+          "id": 4,
+          "colorName": "Orange",
+          "imgs": [
+            "/images/shop/sofa5-8.jpeg",
+            "/images/shop/sofa5-9.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 8,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 33,
@@ -567,7 +1540,40 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "100.00",
+      "priceBefore": "130.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/sofa7.png",
+            "/images/shop/sofa7-2.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/sofa7-3.jpeg",
+            "/images/shop/sofa7-4.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 7,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 34,
@@ -575,7 +1581,32 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "109.00",
+      "priceBefore": "115.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/sofa8.png",
+            "/images/shop/sofa8-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 6,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 35,
@@ -583,7 +1614,41 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "55.00",
+      "priceBefore": "90.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Red",
+          "imgs": [
+            "/images/shop/sofa9.png",
+            "/images/shop/sofa9-2.jpeg",
+            "/images/shop/sofa903.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Green",
+          "imgs": [
+            "/images/shop/sofa9-4.jpeg",
+            "/images/shop/sofa9-5.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 36,
@@ -591,7 +1656,32 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "59.00",
+      "priceBefore": "89.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/sofa10.png",
+            "/images/shop/sofa10-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 4,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 37,
@@ -599,7 +1689,39 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "167.00",
+      "priceBefore": "235.90",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Green",
+          "imgs": [
+            "/images/shop/sofa12.png",
+            "/images/shop/sofa12-2.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Red",
+          "imgs": [
+            "/images/shop/sofa12-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 3,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 38,
@@ -607,7 +1729,57 @@
       "name": "Sofa",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "sofa",
-      "price": 42.0
+      "price": "144.00",
+      "priceBefore": "190.00",
+      "fullTitle": "S_Sofa",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/sofa5.png",
+            "/images/shop/sofa5-2.jpeg",
+            "/images/shop/sofa5-3.jpeg"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/sofa5-4.jpeg",
+            "/images/shop/sofa5-7.jpeg"
+          ]
+        },
+        {
+          "id": 3,
+          "colorName": "Blue",
+          "imgs": [
+            "/images/shop/sofa5-5.jpeg",
+            "/images/shop/sofa5-6.jpeg"
+          ]
+        },
+        {
+          "id": 4,
+          "colorName": "Orange",
+          "imgs": [
+            "/images/shop/sofa5-8.jpeg",
+            "/images/shop/sofa5-9.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 8,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 39,
@@ -615,7 +1787,32 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "20.00",
+      "priceBefore": "70.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/table1.png",
+            "/images/shop/table1-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 40,
@@ -623,7 +1820,32 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "25.00",
+      "priceBefore": "45.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/table2.png",
+            "/images/shop/table2-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 4,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 41,
@@ -631,7 +1853,32 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "40.00",
+      "priceBefore": "88.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/table3.png",
+            "/images/shop/table3-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 3,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 42,
@@ -639,7 +1886,33 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "20.00",
+      "priceBefore": "70.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/table4.png",
+            "/images/shop/table4-2.jpeg",
+            "/images/shop/table4-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 2,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 43,
@@ -647,7 +1920,32 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "52.00",
+      "priceBefore": "73.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/table5.png",
+            "/images/shop/table5-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 1,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 44,
@@ -655,7 +1953,32 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "89.00",
+      "priceBefore": "140.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/table6.png",
+            "/images/shop/table6-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 0,
+      "hasStock": false,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 45,
@@ -663,7 +1986,32 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "20.00",
+      "priceBefore": "70.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/table7.png",
+            "/images/shop/table7-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 10,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 46,
@@ -671,7 +2019,32 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "15.00",
+      "priceBefore": "40.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/table8.png",
+            "/images/shop/table8-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 47,
@@ -679,7 +2052,32 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "21.00",
+      "priceBefore": "30.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/table9.png",
+            "/images/shop/table9-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 1,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 48,
@@ -687,7 +2085,33 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "12.00",
+      "priceBefore": "29.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Brown",
+          "imgs": [
+            "/images/shop/table10.png",
+            "/images/shop/table10-2.jpeg",
+            "/images/shop/table10-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 3,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 49,
@@ -695,7 +2119,32 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
+      "price": "14.00",
+      "priceBefore": "34.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/table11.png",
+            "/images/shop/table11-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 50,
@@ -703,9 +2152,33 @@
       "name": "Table",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "table",
-      "price": 42.0
-    }
-    ,
+      "price": "20.00",
+      "priceBefore": "32.00",
+      "fullTitle": "Tt Table",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/table12.png",
+            "/images/shop/table12-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 2,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
+    },
     {
       "id": 51,
       "img": "/images/shop/chair10.png",
@@ -713,8 +2186,45 @@
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
       "price": "30.00",
-      "priceBefore":"25.00",
-      "reviews":"(8 reviews)"
+      "priceBefore": "25.00",
+      "reviews": "(8 reviews)",
+      "fullTitle": "Aqua Globes Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Blue",
+          "imgs": [
+            "/images/shop/chair10.png"
+          ]
+        },
+        {
+          "id": 2,
+          "colorName": "Orange",
+          "imgs": [
+            "/images/shop/chair10-2.jpeg"
+          ]
+        },
+        {
+          "id": 3,
+          "colorName": "Red",
+          "imgs": [
+            "/images/shop/chair10-3.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 15,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 52,
@@ -722,9 +2232,33 @@
       "name": "Aqua Globes Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": "30.00",
-      "priceBefore":"25.00",
-      "reviews":"(8 reviews)"
+      "price": "31.00",
+      "priceBefore": "24.00",
+      "reviews": "(8 reviews)",
+      "fullTitle": "Aqua Globes Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/chair11.png",
+            "/images/shop/chair11-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 10,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 53,
@@ -733,8 +2267,32 @@
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
       "price": "30.00",
-      "priceBefore":"25.00",
-      "reviews":"(8 reviews)"
+      "priceBefore": "25.00",
+      "reviews": "(8 reviews)",
+      "fullTitle": "Aqua Globes Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/chair12.png",
+            "/images/shop/chair12-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 5,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 54,
@@ -742,9 +2300,33 @@
       "name": "Aqua Globes Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": "30.00",
-      "priceBefore":"25.00",
-      "reviews":"(8 reviews)"
+      "price": "40.00",
+      "priceBefore": "37.00",
+      "reviews": "(8 reviews)",
+      "fullTitle": "Aqua Globes Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "White",
+          "imgs": [
+            "/images/shop/chair13.png",
+            "/images/shop/chair13-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 0,
+      "hasStock": false,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 55,
@@ -752,9 +2334,33 @@
       "name": "Aqua Globes Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": "30.00",
-      "priceBefore":"25.00",
-      "reviews":"(8 reviews)"
+      "price": "19.00",
+      "priceBefore": "25.00",
+      "reviews": "(8 reviews)",
+      "fullTitle": "Aqua Globes Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/chair14.png",
+            "/images/shop/chair14-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 2,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 56,
@@ -763,8 +2369,32 @@
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
       "price": "30.00",
-      "priceBefore":"25.00",
-      "reviews":"(8 reviews)"
+      "priceBefore": "25.00",
+      "reviews": "(8 reviews)",
+      "fullTitle": "Aqua Globes Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Black",
+          "imgs": [
+            "/images/shop/chair15.png",
+            "/images/shop/chair15-2.jpeg"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 4,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 57,
@@ -772,9 +2402,33 @@
       "name": "Aqua Globes Chair",
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
-      "price": "30.00",
-      "priceBefore":"25.00",
-      "reviews":"(8 reviews)"
+      "price": "33.00",
+      "priceBefore": "77.00",
+      "reviews": "(8 reviews)",
+      "fullTitle": "Aqua Globes Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Grey",
+          "imgs": [
+            "/images/shop/chair17-2.jpeg",
+            "/images/shop/chair17.png"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 7,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     },
     {
       "id": 58,
@@ -783,8 +2437,31 @@
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "type": "chair",
       "price": "30.00",
-      "priceBefore":"25.00",
-      "reviews":"(8 reviews)"
+      "priceBefore": "25.00",
+      "reviews": "(8 reviews)",
+      "fullTitle": "Aqua Globes Chair",
+      "colorImgs": [
+        {
+          "id": 1,
+          "colorName": "Blue",
+          "imgs": [
+            "/images/shop/chair10.png"
+          ]
+        }
+      ],
+      "garranty": 1,
+      "stock": 20,
+      "hasStock": true,
+      "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
+      "charasteristics": [
+        "Seat Depth: Standard (21'-28')",
+        "Warranty Length: 1 Year",
+        "Seat Depth: Standard (21'-28')",
+        "Seat Height (Inches): 43",
+        "Warranty Length: 1 Year",
+        "Features: Product Warranty",
+        "Features: Product Warranty"
+      ]
     }
   ],
   "shopSlider": [

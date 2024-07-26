@@ -12,6 +12,14 @@
     gap: 24px;
 }
 
+.mainDetails .desktopMode{
+    width: 100%;
+}
+
+.mainDetails .mobileMode{
+    display: none;
+}
+
 .mainDetails .linksCover {
     display: flex;
     width: 100%;
@@ -73,7 +81,7 @@
     transform: rotate(180deg);
 }
 
-.mainDetails .wrapper {
+.mainDetails .desktopMode .wrapper {
     width: 100%;
     display: flex;
     gap: 46px;
@@ -81,12 +89,12 @@
     align-items: flex-start;
 }
 
-.mainDetails .wrapper .imgDetails {
+.mainDetails .desktopMode .wrapper .imgDetails {
     width: 40%;
     position: relative;
 }
 
-.mainDetails .wrapper .imgDetails .nextBtn {
+.mainDetails .desktopMode .wrapper .imgDetails .nextBtn {
     position: absolute;
     top: 50%;
     right: 0;
@@ -101,12 +109,12 @@
     align-items: center;
 }
 
-.mainDetails .wrapper .imgDetails .nextBtn img {
+.mainDetails .desktopMode .wrapper .imgDetails .nextBtn img {
     width: 20px;
     height: 20px;
 }
 
-.mainDetails .wrapper .imgDetails .imgs {
+.mainDetails .desktopMode .wrapper .imgDetails .imgs {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -115,43 +123,45 @@
     gap: 24px;
 }
 
-.mainDetails .wrapper .mainImg {
+.mainDetails .desktopMode .wrapper .mainImg {
     width: 100%;
     height: 480px;
 }
 
-.mainDetails .wrapper .mainImg img {
+.mainDetails .desktopMode .wrapper .mainImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.mainDetails .wrapper .smallImgs {
+.mainDetails .desktopMode .wrapper .smallImgs {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
 }
 
-.mainDetails .wrapper .smallImgs .img {
+.mainDetails .desktopMode .wrapper .smallImgs >.img {
     width: 80px;
     height: 80px;
     border-radius: 5px;
     border: 2px solid #6d6e7423;
+    cursor: pointer;
 }
 
-.mainDetails .wrapper .smallImgs .img.active {
+.mainDetails .desktopMode .wrapper .smallImgs> .img.active,
+.mainDetails .mobileMode .canChoose .img.active {
     border: 2px solid #00A991;
 }
 
-.mainDetails .wrapper .smallImgs .img img {
+.mainDetails .desktopMode .wrapper .smallImgs >.img img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
     object-fit: cover;
 }
 
-.mainDetails .descDetails {
+.mainDetails .desktopMode .descDetails {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -159,20 +169,20 @@
     gap: 14px;
 }
 
-.mainDetails .descDetails .fullTitle {
+.mainDetails .desktopMode .descDetails .fullTitle {
     color: #00A991;
     font-size: 32px;
     font-weight: 600;
 }
 
-.mainDetails .descDetails .rating {
+.mainDetails .desktopMode .descDetails .rating {
     color: rgba(24, 27, 49, 0.50);
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
 }
 
-.mainDetails .descDetails .price {
+.mainDetails .desktopMode .descDetails .price {
     color: #24252E;
     text-align: left;
     font-size: 32px;
@@ -180,101 +190,102 @@
     line-height: 50px;
 }
 
-.mainDetails .descDetails .desc {
+.mainDetails .desktopMode .descDetails .desc {
     margin-top: 20px;
     color: #3C3D45;
     font-size: 16px;
     font-weight: 400;
 }
 
-.mainDetails .descDetails .chooseColor {
+.mainDetails .desktopMode .descDetails .chooseColor {
     margin-top: 10px;
     display: flex;
     gap: 30px;
 }
 
-.mainDetails .descDetails .chooseColor .currentColor {
+.mainDetails .desktopMode .descDetails .chooseColor .currentColor {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
 }
 
-.mainDetails .descDetails .currentColor .img {
+.mainDetails .desktopMode .descDetails .currentColor .img {
     width: 120px;
     height: 120px;
     border-radius: 5px;
     border: 2px solid #00A991;
 }
 
-.mainDetails .descDetails .currentColor .img img {
+.mainDetails .desktopMode .descDetails .currentColor .img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.mainDetails .descDetails .currentColor span {
+.mainDetails .desktopMode .descDetails .currentColor span {
     color: #24252E;
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
 }
 
-.mainDetails .descDetails .chooseColor .canChoose {
+.mainDetails .desktopMode .descDetails .chooseColor .canChoose {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.mainDetails .descDetails .canChoose>span {
+.mainDetails .desktopMode .descDetails .canChoose>span {
     color: #24252E;
     font-size: 16px;
     font-weight: 500;
     line-height: 26px;
 }
 
-.mainDetails .descDetails .canChoose .colors {
+.mainDetails .desktopMode .descDetails .canChoose .colors {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.mainDetails .descDetails .colors .img {
+.mainDetails .desktopMode .descDetails .colors .img {
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 }
 
-.mainDetails .descDetails .colors .img img {
+.mainDetails .desktopMode .descDetails .colors .img img {
     width: 120px;
     height: 120px;
     border: 2px solid #6d6e746e;
     border-radius: 5px;
 }
 
-.mainDetails .descDetails .colors .img span {
+.mainDetails .desktopMode .descDetails .colors .img span {
     color: #24252E;
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
 }
 
-.mainDetails .descDetails .qtyAndAddToCart {
+.mainDetails .desktopMode .descDetails .qtyAndAddToCart {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.mainDetails .descDetails .quantity {
+.mainDetails .desktopMode .descDetails .quantity {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.mainDetails .descDetails .quantity>span {
+.mainDetails .desktopMode .descDetails .quantity>span {
     color: #24252E;
     font-size: 16px;
     font-weight: 500;
@@ -282,7 +293,7 @@
     text-transform: uppercase;
 }
 
-.mainDetails .descDetails .selectQty {
+.mainDetails .desktopMode .descDetails .selectQty {
     display: flex;
     align-items: center;
     border-radius: 2px;
@@ -290,7 +301,7 @@
     background: #FFF;
 }
 
-.mainDetails .descDetails .selectQty>span {
+.mainDetails .desktopMode .descDetails .selectQty>span {
     width: 30px;
     height: 34px;
     display: flex;
@@ -302,12 +313,12 @@
     line-height: 26px;
 }
 
-.mainDetails .descDetails .selectQty>span:hover:not(:nth-of-type(2)) {
+.mainDetails .desktopMode .descDetails .selectQty>span:hover:not(:nth-of-type(2)) {
     background-color: #6d6e742a;
     cursor: pointer;
 }
 
-.mainDetails .descDetails .addToCart {
+.mainDetails .desktopMode .descDetails .addToCart {
     padding: 15px 30px;
     display: flex;
     align-items: center;
@@ -324,12 +335,12 @@
     cursor: pointer;
 }
 
-.mainDetails .descDetails .addToCart img {
+.mainDetails .desktopMode .descDetails .addToCart img {
     width: 20px;
     height: 20px;
 }
 
-.mainDetails .descDetails .garranty {
+.mainDetails .desktopMode .descDetails .garranty {
     text-align: end;
     color: #3C3D45;
     font-size: 16px;
@@ -338,12 +349,236 @@
     margin-top: 40px;
 }
 
-.mainDetails .outOfStock {
+.mainDetails .desktopMode .outOfStock, {
     color: red;
     font-size: 20px;
     line-height: 22px;
     font-weight: 600;
     text-align: end;
+}
+
+.mobileMode .outOfStock{
+    color: red;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.mainDetails .mobileMode .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+}
+
+.mainDetails .mobileMode .imgDetails {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mainDetails .mobileMode .chooseColor {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.mainDetails .mobileMode .canChoose {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.mainDetails .mobileMode .canChoose .img {
+    width: 100%;
+    height: 110px;
+    border-radius: 2px;
+    border: 1px solid #E7E7E8;
+    background: #FFF;
+}
+
+.mainDetails .mobileMode .canChoose .img img {
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.mainDetails .mobileMode .canChoose .colorName {
+    color: #24252E;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.mainDetails .mobileMode .mainImg {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mainDetails .mobileMode .mainImg .bigImg {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+.mainDetails .mobileMode .mainImg .chosedColor {
+    color: #24252E;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.mainDetails .mobileMode .mainImg .bigImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.mainDetails .mobileMode .mainImg .smallImgs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.mainDetails .mobileMode .mainImg .smallImgs .img {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #E7E7E8;
+    border-radius: 2px;
+}
+
+.mainDetails .mobileMode .mainImg .smallImgs .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mainDetails .mobileMode .descDetails {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.mainDetails .mobileMode .fullTitle {
+    color: #00A991;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.mainDetails .mobileMode .rating {
+    color: rgba(24, 27, 49, 0.50);
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-top: 15px;
+}
+
+.mainDetails .mobileMode .price {
+    color: #24252E;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 35px;
+    margin-top: 10px;
+}
+
+.mainDetails .mobileMode .garranty {
+    color: #3C3D45;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.mainDetails .mobileMode .desc {
+    color: #3C3D45;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 9px;
+}
+
+.mainDetails .mobileMode .qtyAndAddToCart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.mainDetails .mobileMode .qtyAndAddToCart .quantity {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.mainDetails .mobileMode .qtyAndAddToCart .quantity span {
+    color: #24252E;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+.mainDetails .mobileMode .qtyAndAddToCart .selectQty {
+    border-radius: 2px;
+    border: 1px solid #6D6E74;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+}
+
+.mainDetails .mobileMode .qtyAndAddToCart .selectQty>span {
+    width: 12px;
+    height: 12px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.mainDetails .mobileMode .addToCart {
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #00A991;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 18px;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+}
+
+.mainDetails .mobileMode .addToCart img{
+    width: 15px;
+    height: 15px;
 }
 
 .overview {
@@ -413,6 +648,7 @@
 .overview .container .txt .characteristics ul {
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 16px;
 }
@@ -427,6 +663,9 @@
 .overview .container .txt .characteristics li .img {
     width: 24px;
     height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .overview .container .txt .characteristics li img {

@@ -240,15 +240,192 @@
         padding: 11px;
     }
 
-    .similarProducts .pagination .pages button.active{
+    .similarProducts .pagination .pages button.active {
         padding: 11px 20px;
     }
 
-    .similarProducts .noSimilar{
+    .similarProducts .noSimilar {
         font-size: 16px;
     }
 }
 
-@media (max-width:576px){
+@media (max-width:576px) {
+
+    .mainDetails .linksCover{
+        gap: 0px;
+    }
     
+.mainDetails .linksCover>a {
+    font-size: 11px;
+}
+
+.mainDetails .linksCover>a img{
+    width: 10px;
+    height: 10px;
+}
+
+    .mainDetails .desktopMode {
+        display: none;
+    }
+
+    .mainDetails {
+        margin-top: 10px;
+    }
+
+    .mainDetails .mobileMode {
+        display: flex;
+        width: 100%;
+        height: max-content;
+    }
+
+    .overview {
+        margin-top: 35px;
+    }
+
+    .overview .container {
+        padding: 0px;
+        border: none;
+        gap: 20px;
+    }
+
+    .overview .container .topSection {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .overview .container .topSection .txt {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .overview .container .txt h3,
+    .overview .container .video>div>span {
+        font-size: 20px;
+    }
+
+    .overview .container .txt .desc,
+    .overview .container .txt .characteristics ul,
+    .overview .container .txt .characteristics li {
+        gap: 10px;
+    }
+
+    .overview .container .txt .desc span,
+    .overview .bottomSection .orderBtn,
+    .overview .bottomSection .questions .left span:first-of-type {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .overview .container .txt .desc p,
+    .overview .container .txt .characteristics li span,
+    .overview .bottomSection .questions .left span:last-of-type {
+        font-size: 11px;
+    }
+
+    .overview .container .video {
+        width: 100%;
+    }
+
+    .overview .container .video .cover {
+        height: 370px;
+    }
+
+    .overview .container .video .cover .play {
+        width: 40px;
+        height: 40px;
+    }
+
+    .overview .container .video>div:first-of-type {
+        gap: 10px;
+    }
+
+    .overview .container .video>div:first-of-type img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .overview .bottomSection .orderBtn {
+        padding: 20px 55px;
+    }
+
+    .overview .bottomSection .questions .left {
+        width: 50%;
+        gap: 8px;
+    }
+
+    .overview .bottomSection .questions .messegeBtn {
+        padding: 10px 18px;
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .overview .bottomSection .questions .messegeBtn img {
+        width: 12px;
+        height: 12px;
+    }
+
+    .similarProducts {
+        margin: 35px 0;
+    }
+
+    .similarProducts .container {
+        gap: 15px;
+    }
+
+    .similarProducts .container .head {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .similarProducts .container .products {
+        gap: 20px 0px;
+        justify-content: center;
+    }
+
+    .similarProducts .container .product {
+        width: 49%;
+        height: max-content;
+    }
+
+    .similarProducts .product .img {
+        height: 180px;
+    }
+
+    .similarProducts .product .review {
+        gap: 10px;
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .similarProducts .product .title {
+        font-size: 12px;
+    }
+
+    .similarProducts .product .prices {
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .similarProducts .pagination {
+        margin-top: 30px;
+    }
+
+    .similarProducts .pagination .nextBtn,
+    .similarProducts .pagination .prevBtn {
+        padding: 5px;
+    }
+
+    .similarProducts .pagination .pages {
+        gap: 0px;
+    }
+
+    .similarProducts .pagination .pages>button {
+        padding: 8px;
+        font-size: 10px;
+        line-height: 17px;
+    }
+
+    .similarProducts .pagination .pages button.active{
+        padding: 6px 13px;
+    }
 }

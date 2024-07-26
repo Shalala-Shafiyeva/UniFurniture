@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { filterProducts, singleProduct } from "../../slices/productsSlices";
+import { filterProducts, singledProduct } from "../../slices/productsSlices";
 import { useDispatch, useSelector } from "react-redux";
 import data from "../../data.json";
 
@@ -17,7 +17,7 @@ function Furnitures() {
   const [currentProducts, setCurrentProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const productsPerPage = 3;
+  const productsPerPage = 9;
   useEffect(() => {
     const lastPostIndex = currentPage * productsPerPage;
     const firstPostIndex = lastPostIndex - productsPerPage;
@@ -53,6 +53,18 @@ function Furnitures() {
       );
     }
     return pages;
+  };
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   //filter btns
@@ -107,7 +119,7 @@ function Furnitures() {
           <h2 className="title">
             Latest <span>Furnitures</span>
           </h2>
-          <Link to="/moreFurnitures">
+          <Link to="/shop/moreFurnitures">
             <span>More Furnitures</span>
             <img src="/images/shop/arrowleft.png" alt="Arrow More" />
           </Link>
@@ -141,7 +153,7 @@ function Furnitures() {
                 to={`/product/${product.type}/${product.id}`}
                 className="productCard"
                 key={product.id}
-                onClick={() => dispatchProduct(singleProduct(product.id))}
+                onClick={() => dispatchProduct(singledProduct(product.id))}
               >
                 <div className="productContext">
                   <div className="head">
@@ -164,13 +176,13 @@ function Furnitures() {
           })}
         </div>
         <div className="pagination">
-          {/* <div className="prevBtn">
+          <div className="prevBtn" onClick={prevPage}>
             <img src="/images/shop/prev.png" alt="Previous page" />
-          </div> */}
+          </div>
           <div className="pages">{paginate()}</div>
-          {/* <div className="nextBtn">
+          <div className="nextBtn" onClick={nextPage}>
             <img src="/images/shop/next.png" alt="Next page" />
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
