@@ -33,7 +33,6 @@ function Furnitures() {
 
     setCurrentProducts(products);
   }, [currentPage, filteredProducts]);
-
   const paginate = () => {
     let pages = [];
     const firstPage = currentPage - 4 < 1 ? 1 : currentPage - 4;

@@ -6,6 +6,7 @@ import data from "../../data.json";
 function SimilarProducts() {
   const { id } = useParams();
   const singleProduct = data.products.filter((product) => product.id == id);
+
   const similarProducts = data.products.filter(
     (prod) =>
       prod.type == singleProduct[0].type && prod.id != singleProduct[0].id
@@ -57,13 +58,13 @@ function SimilarProducts() {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
-  }
+  };
 
   const prevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-  }
+  };
 
   return (
     <section className="similarProducts">

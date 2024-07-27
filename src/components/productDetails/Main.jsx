@@ -56,6 +56,7 @@ function Main() {
     setColorIndex(index);
   };
 
+
   return (
     <section className="mainDetails">
       <div className="container">
