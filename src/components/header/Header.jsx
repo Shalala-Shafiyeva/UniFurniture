@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import "./header.css";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Cart from "../cart/Cart";
 
 function Header() {
+  const { cart } = useSelector((state) => state.cart);
   const [openMenu, setOpenMenu] = useState(false);
+  const [openBasket, setOpenBasket] = useState(false);
   const handleOpenMenu = () => {
     setOpenMenu(!openMenu);
-    console.log(openMenu);
   };
+
+  const handleOpenBasket = () => {
+    if (openMenu) {
+      setOpenMenu(false);
+    }
+    setOpenBasket(true);
+  };
+  console.log(openBasket)
   return (
     <header>
       <div className="logo">
@@ -45,8 +56,16 @@ function Header() {
         <NavLink id="mobileLogin" to="/login">
           Login
         </NavLink>
-        <div className="basket">
+        <div
+          className="basket"
+          onClick={() => {
+            if (!openBasket) {
+              handleOpenBasket();
+            }
+          }}
+        >
           <img src="/images/basketicon.png" alt="Basket" />
+          <span>{cart.length}</span>
         </div>
       </div>
       <div className={`navBar ${openMenu ? "open" : ""}`}>
@@ -68,6 +87,7 @@ function Header() {
           </li>
         </ul>
       </div>
+      {openBasket ? <Cart /> : null}
     </header>
   );
 }

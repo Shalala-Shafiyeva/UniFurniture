@@ -1,0 +1,159 @@
+.cart {
+    position: fixed;
+    top: 96px;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: calc(100vh - 96px);
+    background-color: #00000041;
+}
+
+.cart .modal {
+    width: 45%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart .head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.cart .head .closeBtn {
+    padding: 6px 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 700;
+    border: 1px solid #9f9c9c;
+}
+
+.cart .head .closeBtn .active {
+    background-color: red;
+    color: #fff;
+}
+
+.cart .head span {
+    font-weight: 700;
+}
+
+.cart .head span:first-of-type {
+    font-size: 18px;
+}
+
+.cart .head span:last-of-type {
+    font-size: 13px;
+}
+
+.cart .orderProducts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.cart .orderProducts .product {
+    width: 95%;
+    margin: 0 auto;
+    border-bottom: 1px solid #9f9c9c;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+.cart .orderProducts .product .productDesc {
+    display: flex;
+    gap: 10px;
+}
+
+.cart .product .img {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d7d5d5;
+}
+
+.cart .product .img img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.cart .product .removeBtn img {
+    width: 15px;
+    height: 15px;
+}
+
+.cart .product .txt {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px !important;
+}
+
+.cart .product .title,
+.cart .product .price,
+.cart .product .qty,
+.cart .product .color {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cart .totalCount {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart .totalCount span:first-of-type {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.cart .totalCount span:last-of-type {
+    color: #00A991;
+    font-weight: 500;
+}
+
+.cart .btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart .orderBtn {
+    padding: 10px 25px;
+    border-radius: 10px;
+    background: #00A991;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.emptyCart {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: red;
+}
+
+.closeCart {
+    right: -100%;
+    transition: 0.3s all ease-in-out;
+}

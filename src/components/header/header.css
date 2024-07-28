@@ -84,11 +84,29 @@ header #register {
     display: flex;
     align-items: center;
     gap: 30px;
+    position: relative;
 }
 
 .btns .basket{
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.btns .basket span{
+    position: absolute;
+    top: -100%;
+    right: -50%;
+    width: 18px;
+    height: 18px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #00A991;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
 }
 
 .btns img{
