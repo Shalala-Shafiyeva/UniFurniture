@@ -75,7 +75,7 @@ function Main() {
               <img src="/images/chevron-left.png" alt="Icon" />
             </span>
             <Link to="#" className="active">
-              {product[0].type}
+              {product.map(prod=>prod.type)}
             </Link>
           </div>
         </div>

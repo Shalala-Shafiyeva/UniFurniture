@@ -8,6 +8,7 @@ export const productsSlice = createSlice({
     filteredProducts:
       JSON.parse(sessionStorage.getItem("filteredData")) || data.products,
     singleProduct: data.products,
+    error: false,
   },
   reducers: {
     filterProducts(state, action) {
@@ -34,14 +35,19 @@ export const productsSlice = createSlice({
     },
     filterByColor(state, action) {
       try {
-        const filteredByColor = data.products.filter((product) =>
-          product.colorImgs.some((colorImg) => colorImg.colorName === action.payload)
+        const filteredByColor = state.filteredProducts.filter((product) =>
+          product.colorImgs.some(
+            (colorImg) => colorImg.colorName === action.payload
+          )
         );
+        state.error = false;
         state.filteredProducts = filteredByColor;
         if (filteredByColor.length) {
-          const saveState = JSON.stringify(filteredByColor);
-          sessionStorage.setItem("filteredData", saveState);
+          state.error = false;
+          // const saveState = JSON.stringify(filteredByColor);
+          // sessionStorage.setItem("filteredData", saveState);
         } else {
+          state.error = true;
           state.filteredProducts = [];
         }
       } catch (error) {
@@ -53,11 +59,16 @@ export const productsSlice = createSlice({
         const filteredByHighPrice = state.filteredProducts
           .slice(0)
           .sort((a, b) => b.price - a.price);
-        state.filteredProducts = filteredByHighPrice;
         if (filteredByHighPrice.length) {
-          const saveState = JSON.stringify(filteredByHighPrice);
-          sessionStorage.setItem("filteredData", saveState);
+          const noError = false;
+          state.error = noError;
+          if (!noError) {
+            state.filteredProducts = filteredByHighPrice;
+            // const saveState = JSON.stringify(filteredByHighPrice);
+            // sessionStorage.setItem("filteredData", saveState);
+          }
         } else {
+          state.error = true;
           state.filteredProducts = [];
         }
       } catch (error) {
@@ -69,11 +80,16 @@ export const productsSlice = createSlice({
         const filteredByLowPrice = state.filteredProducts
           .slice(0)
           .sort((a, b) => a.price - b.price);
-        state.filteredProducts = filteredByLowPrice;
         if (filteredByLowPrice.length) {
-          const saveState = JSON.stringify(filteredByLowPrice);
-          sessionStorage.setItem("filteredData", saveState);
+          const noError = false;
+          state.error = noError;
+          if (!noError) {
+            state.filteredProducts = filteredByLowPrice;
+            // const saveState = JSON.stringify(filteredByLowPrice);
+            // sessionStorage.setItem("filteredData", saveState);
+          }
         } else {
+          state.error = true;
           state.filteredProducts = [];
         }
       } catch (error) {
@@ -87,9 +103,11 @@ export const productsSlice = createSlice({
           .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
         state.filteredProducts = filteredByDate;
         if (filteredByDate.length) {
-          const saveState = JSON.stringify(filteredByDate);
-          sessionStorage.setItem("filteredData", saveState);
+          state.error = false;
+          // const saveState = JSON.stringify(filteredByDate);
+          // sessionStorage.setItem("filteredData", saveState);
         } else {
+          state.error = true;
           state.filteredProducts = [];
         }
       } catch (error) {
@@ -98,14 +116,16 @@ export const productsSlice = createSlice({
     },
     filterByCategory(state, action) {
       try {
-        const filteredByCategoty = data.products.filter(
+        const filteredByCategoty = state.filteredProducts.filter(
           (product) => product.category == action.payload
         );
         state.filteredProducts = filteredByCategoty;
-        if (filteredByCategoty) {
-          const saveState = JSON.stringify(filteredByCategoty);
-          sessionStorage.setItem("filteredData", saveState);
+        if (filteredByCategoty.length) {
+          state.error = false;
+          // const saveState = JSON.stringify(filteredByCategoty);
+          // sessionStorage.setItem("filteredData", saveState);
         } else {
+          state.error = true;
           state.filteredProducts = [];
         }
       } catch (error) {
@@ -114,14 +134,16 @@ export const productsSlice = createSlice({
     },
     filterByStock(state, action) {
       try {
-        const filteredByStock = data.products.filter(
+        const filteredByStock = state.filteredProducts.filter(
           (product) => product.hasStock == action.payload
         );
         state.filteredProducts = filteredByStock;
-        if (filteredByStock) {
-          const saveState = JSON.stringify(filteredByStock);
-          sessionStorage.setItem("filteredData", saveState);
+        if (filteredByStock.length) {
+          state.error = false;
+          // const saveState = JSON.stringify(filteredByStock);
+          // sessionStorage.setItem("filteredData", saveState);
         } else {
+          state.error = true;
           state.filteredProducts = [];
         }
       } catch (error) {
@@ -130,14 +152,16 @@ export const productsSlice = createSlice({
     },
     filterBySale(state, action) {
       try {
-        const filteredBySale = data.products.filter(
+        const filteredBySale = state.filteredProducts.filter(
           (product) => product.onSale == action.payload
         );
         state.filteredProducts = filteredBySale;
-        if (filteredBySale) {
-          const saveState = JSON.stringify(filteredBySale);
-          sessionStorage.setItem("filteredData", saveState);
+        if (filteredBySale.length) {
+          state.error = false;
+          // const saveState = JSON.stringify(filteredBySale);
+          // sessionStorage.setItem("filteredData", saveState);
         } else {
+          state.error = true;
           state.filteredProducts = [];
         }
       } catch (error) {

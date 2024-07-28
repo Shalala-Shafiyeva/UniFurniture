@@ -1,0 +1,326 @@
+@media (max-width:1024px) {
+    .headFilters {
+        margin-top: 75px;
+    }
+
+    .headFilters .cover .backBtn,
+    .filteredProducts .details .rating span,
+    .filteredProducts .price,
+    .filteredProducts .shipping {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .headFilters .cover .backBtn img,
+    .headFilters .backLinks img,
+    .filters .filter .inps .inp input,
+    .filteredProducts .details .rating .stars img,
+    .filteredProducts .pagination .nextBtn img,
+    .filteredProducts .pagination .prevBtn img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .headFilters .backLinks a:not(:last-of-type),
+    .headFilters .sort>span,
+    .filters .filter label,
+    .filters .filter:nth-of-type(2) .inps span {
+        font-size: 12px;
+    }
+
+    .headFilters .backLinks a:last-of-type,
+    .delivery .boxs .box .desc span {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .headFilters .sortBtns button {
+        padding: 9px 17px;
+        font-size: 12px;
+        border-radius: 7px;
+    }
+
+    .sections .container,
+    .filters .container {
+        gap: 30px;
+    }
+
+    .filters .filter {
+        gap: 17px;
+    }
+
+    .filters .filter h4,
+    .filteredProducts .details .title {
+        font-size: 14px;
+    }
+
+    .filters .filter .inps,
+    .filters .filter:not(:nth-of-type(2)) .inps .inp,
+    .filters .filter:nth-of-type(2) .inps .inp>div,
+    .filteredProducts .details .rating {
+        gap: 12px;
+    }
+
+    .filteredProducts .container {
+        gap: 40px;
+    }
+
+    .filteredProducts .products {
+        gap: 28px 20px;
+    }
+
+    .filteredProducts a,
+    .delivery .boxs {
+        gap: 15px;
+    }
+
+    .filteredProducts a .img {
+        height: 230px;
+    }
+
+    .filteredProducts a .details {
+        gap: 3px;
+    }
+
+    .filteredProducts a .trend,
+    .filteredProducts a .sale {
+        padding: 3px 9px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .filteredProducts .details .rating {
+        flex-wrap: wrap;
+    }
+
+    .filteredProducts .pagination .nextBtn,
+    .filteredProducts .pagination .prevBtn {
+        padding: 12px;
+    }
+
+    .filteredProducts .pagination .pages>button {
+        font-size: 15px;
+        line-height: 25px;
+        padding: 7px 17px;
+    }
+
+    .filteredProducts .pagination .pages button.active {
+        padding: 7px 17px;
+    }
+
+    .delivery {
+        margin: 80px 0 50px;
+    }
+
+    .delivery .boxs .box .img {
+        width: max-content;
+        height: max-content;
+        padding: 10px;
+    }
+
+    .delivery .boxs .box .img img {
+        width: 29px;
+        height: 29px;
+    }
+
+    .delivery .boxs .box .desc p {
+        font-size: 8px;
+        line-height: 13px
+    }
+}
+
+@media (max-width:576px) {
+
+    .headFilters {
+        height: max-content;
+        margin-top: 0px;
+    }
+
+    .headFilters .cover .backBtn {
+        justify-content: flex-start;
+        width: max-content;
+    }
+
+    .headFilters .backLinks {
+        width: max-content;
+        justify-content: flex-end;
+    }
+
+    .headFilters .backLinks a:not(:last-of-type),
+    .headFilters .sort>span,
+    .headFilters .backLinks a:last-of-type {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .headFilters .backLinks img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .headFilters .sort {
+        width: 100%;
+        margin-top: 20px;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .headFilters .sortBtns {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    .headFilters .sortBtns button {
+        padding: 9px 20px;
+        border-radius: 6px;
+        font-size: 10px;
+    }
+
+    .sections .container {
+        flex-direction: column;
+    }
+
+    .filters {
+        width: 100%;
+    }
+
+    .filters .container,
+    .filters .filter .inps {
+        gap: 15px;
+    }
+
+    .filters .filter {
+        gap: 9px;
+    }
+
+    .filters .filter h4 {
+        font-size: 13px;
+    }
+
+    .filters .filter label,
+    .filters .filter:nth-of-type(2) .inps span,
+    .filteredProducts .details .title {
+        font-size: 12px;
+    }
+
+    .filters .filter:not(:nth-of-type(2)) .inps .inp,
+    .filters .filter:nth-of-type(2) .inps .inp>div {
+        gap: 8px;
+    }
+
+    .filters .filter:not(:nth-of-type(2)) .inps .inp input,
+    .filters .filter:nth-of-type(2) .inps .inp>div input {
+        width: 14px;
+        height: 14px;
+    }
+
+    .filters .filter:nth-of-type(2) .inps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .filters .filter:nth-of-type(2) .inps .inp {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .filters .filter:nth-of-type(3) .inps {
+        flex-direction: row;
+    }
+
+    .filteredProducts .container {
+        gap: 25px;
+    }
+
+    .filteredProducts .products {
+        gap: 20px 15px;
+    }
+
+    .filteredProducts .product {
+        width: calc(50% - 15px);
+    }
+
+    .filters .filter .inps {
+        gap: 13px;
+    }
+
+    .filteredProducts a .img {
+        height: 210px;
+    }
+
+    .filteredProducts a .img img {
+        width: 70%;
+        height: 70%;
+    }
+
+    .filteredProducts a .details {
+        padding: 0 6px 6px 6px;
+    }
+
+    .filteredProducts a .trend,
+    .filteredProducts a .sale {
+        padding: 3px 6px;
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .filteredProducts .details .rating span,
+    .filteredProducts .price,
+    .filteredProducts .shipping {
+        font-size: 9px;
+        line-height: 15px;
+    }
+
+    .filteredProducts .pagination .nextBtn,
+    .filteredProducts .pagination .prevBtn {
+        padding: 7px;
+    }
+
+    .filteredProducts .pagination .pages>button {
+        font-size: 13px;
+        line-height: 21px;
+        padding: 5px 7px;
+    }
+
+    .filteredProducts .pagination .pages button.active {
+        padding: 5px 13px;
+    }
+
+    .delivery .boxs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .delivery .boxs .box {
+        width: 100%;
+    }
+
+    .delivery .boxs .box .img {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+    }
+
+    .delivery .boxs .box .desc span {
+        font-size: 12px;
+        line-height: 19px;
+    }
+
+    .delivery .boxs .box .desc p {
+        font-size: 8px;
+        line-height: 13px;
+    }
+}
+
+@media (max-width:345px) {
+    .filters .filter:nth-of-type(2) .inps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filteredProducts .product{
+        width: 100%;
+    }
+}

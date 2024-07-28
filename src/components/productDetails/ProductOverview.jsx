@@ -9,6 +9,7 @@ function ProductOverview() {
   const dispatch = useDispatch();
   const { id } = useParams();
   let product = useSelector((state) => state.products.singleProduct);
+  console.log(product);
   product = product.filter((prod) => prod.id == id);
   product = product[0];
 
@@ -18,6 +19,7 @@ function ProductOverview() {
     setHidden(true);
     setPlay(true);
   };
+
   return (
     <section className="overview">
       <div className="container">

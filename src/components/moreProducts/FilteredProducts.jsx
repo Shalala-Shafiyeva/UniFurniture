@@ -8,6 +8,7 @@ function FilteredProducts() {
   const filteredProducts = useSelector(
     (state) => state.products.filteredProducts
   );
+  const error = useSelector((state) => state.products.error);
 
   //pagination
   const [currentProducts, setCurrentProducts] = useState([]);
@@ -62,55 +63,61 @@ function FilteredProducts() {
       setCurrentPage(currentPage - 1);
     }
   };
-
+  console.log(currentProducts);
   return (
     <section className="filteredProducts">
       <div className="container">
-        <div className="products">
-          {currentProducts.map((product) => (
-            <Link
-              className="product"
-              to={`/product/${product.type}/${product.id}`}
-              key={product.id}
-            >
-              <div className="img">
-                <img src={product.img} alt={product.title} />
-              </div>
-              <div className="details">
-                {product.trending && <div className="trend">Trending</div>}
-                {product.onSale && product.discount && (
-                  <div className="sale">-{product.discount}%</div>
-                )}
-                <div className="rating">
-                  <div className="stars">
-                    <img src="/images/star.png" alt="star" />
-                    <img src="/images/star.png" alt="star" />
-                    <img src="/images/star.png" alt="star" />
-                    <img src="/images/star.png" alt="star" />
-                    <img src="/images/emptystar.png" alt="star" />
+        {error ? (
+          <div className="error">Sorry we don't have this product</div>
+        ) : (
+          <>
+            <div className="products">
+              {currentProducts.map((product) => (
+                <Link
+                  className="product"
+                  to={`/product/${product.type}/${product.id}`}
+                  key={product.id}
+                >
+                  <div className="img">
+                    <img src={product.img} alt={product.title} />
                   </div>
-                  <span>({product.reviews} reviews)</span>
-                </div>
-                <div className="title">{product.name}</div>
-                <div className="price">
-                  ${product.priceBefore}-${product.price}
-                </div>
-                <div className="shipping">
-                  ${product.shipping} days shipping
-                </div>
+                  <div className="details">
+                    {product.trending && <div className="trend">Trending</div>}
+                    {product.onSale && product.discount && (
+                      <div className="sale">-{product.discount}%</div>
+                    )}
+                    <div className="rating">
+                      <div className="stars">
+                        <img src="/images/star.png" alt="star" />
+                        <img src="/images/star.png" alt="star" />
+                        <img src="/images/star.png" alt="star" />
+                        <img src="/images/star.png" alt="star" />
+                        <img src="/images/emptystar.png" alt="star" />
+                      </div>
+                      <span>({product.reviews} reviews)</span>
+                    </div>
+                    <div className="title">{product.name}</div>
+                    <div className="price">
+                      ${product.priceBefore}-${product.price}
+                    </div>
+                    <div className="shipping">
+                      ${product.shipping} days shipping
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="pagination">
+              <div className="prevBtn" onClick={prevPage}>
+                <img src="/images/shop/prev.png" alt="Previous page" />
               </div>
-            </Link>
-          ))}
-        </div>
-        <div className="pagination">
-          <div className="prevBtn" onClick={prevPage}>
-            <img src="/images/shop/prev.png" alt="Previous page" />
-          </div>
-          <div className="pages">{paginate()}</div>
-          <div className="nextBtn" onClick={nextPage}>
-            <img src="/images/shop/next.png" alt="Next page" />
-          </div>
-        </div>
+              <div className="pages">{paginate()}</div>
+              <div className="nextBtn" onClick={nextPage}>
+                <img src="/images/shop/next.png" alt="Next page" />
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
