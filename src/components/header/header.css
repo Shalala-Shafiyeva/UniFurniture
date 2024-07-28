@@ -80,6 +80,22 @@ header #register {
     display: none;
 }
 
+.btns{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.btns .basket{
+    display: flex;
+    align-items: center;
+}
+
+.btns img{
+    width: 20px;
+    height: 20px;
+}
+
 @media (max-width:1024px) {
     header {
         height: 68px;
@@ -135,6 +151,18 @@ header #register {
         display: flex;
     }
 
+    .btns{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    .btns .basket img{
+        width: 15px;
+        height: 15px;
+    }
+
     .navBar {
         display: flex;
         position: absolute;
@@ -163,15 +191,15 @@ header #register {
     }
 
     .navBar .closeBtn span {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         padding: 10px;
         border-radius: 50%;
         background-color: rgb(233, 16, 16);
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 600;
         color: #fff;
     }
@@ -189,7 +217,7 @@ header #register {
 
     .navBar li a{
         color: #6D6E74;
-        font-size: 18px;
+        font-size: 12px;
         font-weight: 500;
     }
 

@@ -9,10 +9,10 @@ function ProductOverview() {
   const dispatch = useDispatch();
   const { id } = useParams();
   let product = useSelector((state) => state.products.singleProduct);
-  console.log(product);
-  product = product.filter((prod) => prod.id == id);
+  // console.log(product);
+  // product = product.filter((prod) => prod.id == id);
   product = product[0];
-
+  //console.log(product)
   const [hidden, setHidden] = useState(false);
   const [play, setPlay] = useState(false);
   const hiddenElements = () => {

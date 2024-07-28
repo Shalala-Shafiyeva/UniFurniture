@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { filterProducts, singledProduct } from "../../slices/productsSlices";
 import { useDispatch, useSelector } from "react-redux";
 import data from "../../data.json";
+import { addToCart } from "../../slices/cartSlice";
 
 function Furnitures() {
   //single page/productDetails
@@ -12,7 +13,13 @@ function Furnitures() {
   const filteredProducts = useSelector(
     (state) => state.products.filteredProducts
   );
-
+  const cart = useSelector((state) => state.cart.cart);
+  const handleColorAndImg = (product) => {
+    let productColor = product.colorImgs[0].colorName;
+    let productImg = product.colorImgs[0].imgs[0];
+    return [productColor, productImg];
+  };
+  console.log(cart);
   //pagination
   const [currentProducts, setCurrentProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -152,7 +159,11 @@ function Furnitures() {
                 to={`/product/${product.type}/${product.id}`}
                 className="productCard"
                 key={product.id}
-                onClick={() => dispatchProduct(singledProduct(product.id))}
+                onClick={() =>
+                  dispatchProduct(
+                    singledProduct({ id: product.id, type: product.type })
+                  )
+                }
               >
                 <div className="productContext">
                   <div className="head">
@@ -168,7 +179,24 @@ function Furnitures() {
                   <img src={product.img} alt={product.type} />
                 </div>
                 <div className="btn">
-                  <button className="addCart">Add to cart</button>
+                  <button
+                    className="addCart"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      dispatch(
+                        addToCart({
+                          id: product.id,
+                          fullTitle: product.fullTitle,
+                          color: handleColorAndImg(product)[0],
+                          img: handleColorAndImg(product)[1],
+                          price: Math.round(Number(product.price)),
+                          amount: 1,
+                        })
+                      );
+                    }}
+                  >
+                    Add to cart
+                  </button>
                 </div>
               </Link>
             );

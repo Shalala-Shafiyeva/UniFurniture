@@ -4,10 +4,10 @@ import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
-  const handleOpenMenu=()=>{
+  const handleOpenMenu = () => {
     setOpenMenu(!openMenu);
-    console.log(openMenu)
-  }
+    console.log(openMenu);
+  };
   return (
     <header>
       <div className="logo">
@@ -30,23 +30,28 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <div className="registerBtns">
-        <Link id="login" to="/login">
+      <div className="btns">
+        <div className="registerBtns">
+          <Link id="login" to="/login">
+            Login
+          </Link>
+          <Link id="register" to="/register">
+            Sign Up
+          </Link>
+        </div>
+        <div className="menuBar" onClick={handleOpenMenu}>
+          <img src="/images/menu.png" alt="Menu" />
+        </div>
+        <NavLink id="mobileLogin" to="/login">
           Login
-        </Link>
-        <Link id="register" to="/register">
-          Sign Up
-        </Link>
+        </NavLink>
+        <div className="basket">
+          <img src="/images/basketicon.png" alt="Basket" />
+        </div>
       </div>
-      <div className="menuBar" onClick={handleOpenMenu}>
-        <img src="/images/menu.png" alt="Menu" />
-      </div>
-      <NavLink id="mobileLogin" to="/login">
-        Login
-      </NavLink>
       <div className={`navBar ${openMenu ? "open" : ""}`}>
         <div className="closeBtn">
-          <span onClick={()=>setOpenMenu(false)}>x</span>
+          <span onClick={() => setOpenMenu(false)}>x</span>
         </div>
         <ul>
           <li>

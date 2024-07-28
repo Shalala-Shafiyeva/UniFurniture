@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import data from "../../data.json";
 
 function SimilarProducts() {
-  const { id } = useParams();
-  const singleProduct = data.products.filter((product) => product.id == id);
+  const { type, id } = useParams();
+  const singleProduct = data.products.filter((product) => product.id == id && product.type == type);
 
   const similarProducts = data.products.filter(
     (prod) =>

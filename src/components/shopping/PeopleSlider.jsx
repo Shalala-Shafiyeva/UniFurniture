@@ -24,8 +24,8 @@ function PeopleSlider() {
             prevEl: ".swiper-button-prev",
           }}
           pagination={{ clickable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
+          onSwiper={console.log(null)}
+          onSlideChange={console.log(null)}
           loop={true}
         >
           {data.peopleSlider.map((slide) => (

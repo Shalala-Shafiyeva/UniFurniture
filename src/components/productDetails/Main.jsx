@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { singledProduct } from "../../slices/productsSlices";
+import { addToCart } from "../../slices/cartSlice";
 import { Link, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import data from "../../data.json";
 
 function Main() {
   let product = useSelector((state) => state.products.singleProduct);
+  let cart = useSelector((state) => state.cart.cart);
+  console.log(cart);
+  let dispatch = useDispatch();
   const { type, id } = useParams();
-
-  product=product.filter(prod=>prod.id==id && prod.type==type);
+  //product=product.filter(prod=>prod.id==id && prod.type==type);
   const [quantity, setQuantity] = useState(1);
   const [colorIndex, setColorIndex] = useState(0);
   const [img, setImg] = useState(product[0]?.colorImgs[colorIndex]?.imgs[0]);
@@ -31,7 +34,7 @@ function Main() {
     const smallImgs = [...e.currentTarget.parentElement.children];
     smallImgs.map((child) => {
       //child.classList.remove("active");
-      child.style.border="2px solid #6d6e7423"
+      child.style.border = "2px solid #6d6e7423";
     });
     product
       .filter((prod) => prod.id == id)
@@ -42,7 +45,7 @@ function Main() {
             src = "/" + src.slice(3).join("/");
             if (img == src) {
               //e.currentTarget.classList.add("active");
-              e.currentTarget.style.border="2px solid #00A991";
+              e.currentTarget.style.border = "2px solid #00A991";
             }
             setImg(e.target.src);
           } catch (err) {
@@ -55,7 +58,6 @@ function Main() {
   const handleColorChange = (index) => {
     setColorIndex(index);
   };
-
 
   return (
     <section className="mainDetails">
@@ -75,7 +77,7 @@ function Main() {
               <img src="/images/chevron-left.png" alt="Icon" />
             </span>
             <Link to="#" className="active">
-              {product.map(prod=>prod.type)}
+              {product.map((prod) => prod.type)}
             </Link>
           </div>
         </div>
@@ -163,7 +165,21 @@ function Main() {
                         />
                       </button>
                     ) : (
-                      <button className="addToCart">
+                      <button
+                        onClick={() =>
+                          dispatch(
+                            addToCart({
+                              id: product.id,
+                              fullTitle: product.fullTitle,
+                              color: product.colorImgs[colorIndex].colorName,
+                              img: product.colorImgs[colorIndex].imgs[0],
+                              price: Math.round(Number(product.price)),
+                              amount: quantity,
+                            })
+                          )
+                        }
+                        className="addToCart"
+                      >
                         <span>ADD TO CART</span>
                         <img
                           src="/images/productDetails/product1/cartbtnicon.png"
@@ -191,10 +207,12 @@ function Main() {
               <div className="wrapper" key={product.id}>
                 <div className="imgDetails">
                   <div className="chooseColor">
-                    {product.colorImgs.map((color,index) => (
+                    {product.colorImgs.map((color, index) => (
                       <div className="canChoose" key={color.id}>
                         <div
-                          className={`img ${colorIndex==index ? "active" : ""}`}
+                          className={`img ${
+                            colorIndex == index ? "active" : ""
+                          }`}
                           onClick={() => handleColorChange(index)}
                         >
                           <img src={color.imgs[colorIndex]} alt="Product" />
@@ -209,25 +227,20 @@ function Main() {
                         Select Upholstery:{" "}
                         {product.colorImgs[colorIndex].colorName}
                       </div>
-                      <img
-                        src={img}
-                        alt="Product image"
-                      />
+                      <img src={img} alt="Product image" />
                     </div>
                     <div className="smallImgs">
-                      {
-                        product.colorImgs[colorIndex].imgs.map((img) => (
-                          <div
-                            className="img"
-                            key={img.id}
-                            onClick={(e) => {
-                              handleSmallImg(e);
-                            }}
-                          >
-                            <img src={img} alt="Product image" />
-                          </div>
-                        ))
-                      }
+                      {product.colorImgs[colorIndex].imgs.map((img) => (
+                        <div
+                          className="img"
+                          key={img.id}
+                          onClick={(e) => {
+                            handleSmallImg(e);
+                          }}
+                        >
+                          <img src={img} alt="Product image" />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -240,7 +253,9 @@ function Main() {
                   ) : null}
                   <span className="rating">(8 reviews)</span>
                   <span className="price">${product.price}</span>
-                  <span className="garranty">Warranty Length {product.garranty} Year</span>
+                  <span className="garranty">
+                    Warranty Length {product.garranty} Year
+                  </span>
                   <p className="desc">{product.description}</p>
                   <div className="qtyAndAddToCart">
                     <div className="quantity">

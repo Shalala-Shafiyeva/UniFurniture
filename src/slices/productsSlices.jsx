@@ -24,9 +24,10 @@ export const productsSlice = createSlice({
       }
     },
     singledProduct(state, action) {
+      const {id, type}=action.payload
       try {
         const oneProduct = data.products.filter(
-          (product) => product.id == action.payload
+          (product) => product.id == id && product.type == type
         );
         state.singleProduct = oneProduct;
       } catch (error) {
