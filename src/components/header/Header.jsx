@@ -16,9 +16,8 @@ function Header() {
     if (openMenu) {
       setOpenMenu(false);
     }
-    setOpenBasket(true);
+    setOpenBasket(!openBasket);
   };
-  console.log(openBasket)
   return (
     <header>
       <div className="logo">
@@ -56,14 +55,7 @@ function Header() {
         <NavLink id="mobileLogin" to="/login">
           Login
         </NavLink>
-        <div
-          className="basket"
-          onClick={() => {
-            if (!openBasket) {
-              handleOpenBasket();
-            }
-          }}
-        >
+        <div className="basket" onClick={() => handleOpenBasket()}>
           <img src="/images/basketicon.png" alt="Basket" />
           <span>{cart.length}</span>
         </div>
@@ -87,7 +79,7 @@ function Header() {
           </li>
         </ul>
       </div>
-      {openBasket ? <Cart /> : null}
+      {openBasket ? <Cart openBasket={openBasket} setOpenBasket={setOpenBasket}/> : null}
     </header>
   );
 }

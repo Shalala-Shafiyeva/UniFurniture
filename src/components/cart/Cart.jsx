@@ -1,20 +1,24 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import "../cart/cart.css";
+import "../cart/cartResponsice.css";
+import { increaseAmount,decreaseAmount, removeFromCart } from "../../slices/cartSlice";
 
-function Cart() {
-  const cart = useSelector((state) => state.cart.cart);
-  const [closeCart, setCloseCart] = useState(false);
+function Cart({ openBasket, setOpenBasket }) {
+  let cart = useSelector((state) => state.cart.cart);
+  const handleCloseCart = () => {
+    setOpenBasket(false);
+  };
 
-const handleCloseCart = () => {
-  setCloseCart(true);
-};
+  const dispatch = useDispatch();
   return (
-    <section className={`cart ${closeCart?"closeCart":""}`}>
+    <section className={`cart ${!openBasket ? "closeCart" : ""}`}>
       <div className="modal">
         <div className="head">
-          <div onClick={handleCloseCart} className="closeBtn">x</div>
+          <div onClick={handleCloseCart} className="closeBtn">
+            x
+          </div>
           <span>Shopping Cart</span>
           <span>{cart.length}</span>
         </div>
@@ -28,12 +32,49 @@ const handleCloseCart = () => {
                   </div>
                   <div className="txt">
                     <span className="title">{product.fullTitle}</span>
-                    <span className="price">${product.totalPrice}</span>
-                    <span className="qty">{product.amount}</span>
+                    <span className="price">${product.price}</span>
+                    <div className="qty">
+                      <button
+                       onClick={() =>
+                        dispatch(
+                          decreaseAmount({
+                            id:product.id,
+                            type:product.type,
+                            price:product.price
+                          })
+                        )
+                      }
+                        className="decrease"
+                      >
+                        -
+                      </button>
+                      <span>{product.amount}</span>
+                      <button
+                        onClick={() =>
+                          dispatch(
+                            increaseAmount({
+                              id:product.id,
+                              type:product.type,
+                              price:product.price
+                            })
+                          )
+                        }
+                        className="increase"
+                      >
+                        +
+                      </button>
+                    </div>
                     <span className="color">{product.color}</span>
                   </div>
                 </div>
-                <div className="removeBtn">
+                <div
+                  className="removeBtn"
+                  onClick={() =>
+                    dispatch(
+                      removeFromCart({ id: product.id, type: product.type })
+                    )
+                  }
+                >
                   <img src="/images/trash.svg" alt="Trash" />
                 </div>
               </div>

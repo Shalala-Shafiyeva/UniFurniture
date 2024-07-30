@@ -33,6 +33,7 @@
     font-size: 17px;
     font-weight: 700;
     border: 1px solid #9f9c9c;
+    cursor: pointer;
 }
 
 .cart .head .closeBtn .active {
@@ -89,6 +90,10 @@
     object-fit: contain;
 }
 
+.cart .product .removeBtn{
+    cursor: pointer;
+}
+
 .cart .product .removeBtn img {
     width: 15px;
     height: 15px;
@@ -107,6 +112,32 @@
 .cart .product .color {
     font-size: 16px;
     font-weight: 500;
+}
+
+.cart .product .qty{
+    display: flex;
+    width: max-content;
+    height: max-content !important;
+    align-items: center;
+    border: 1px solid #9f9c9c;
+    padding: 0;
+}
+
+.cart .product .qty button{
+    padding: 0px 8px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+
+.cart .product .qty button:hover{
+    background-color: #9f9c9c;
+}
+
+.cart .product .qty span{
+    padding: 0 8px;
 }
 
 .cart .totalCount {

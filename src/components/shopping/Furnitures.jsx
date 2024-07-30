@@ -19,7 +19,6 @@ function Furnitures() {
     let productImg = product.colorImgs[0].imgs[0];
     return [productColor, productImg];
   };
-  console.log(cart);
   //pagination
   const [currentProducts, setCurrentProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -117,7 +116,7 @@ function Furnitures() {
   const activeBtnForChild = (el) => {
     el.target.parentElement.classList.add("active");
   };
-
+  console.log(cart);
   return (
     <section className="furnitures">
       <div className="container">

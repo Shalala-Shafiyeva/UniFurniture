@@ -109,6 +109,10 @@ header #register {
     font-size: 11px;
 }
 
+.btns .basket img{
+    cursor: pointer;
+}
+
 .btns img{
     width: 20px;
     height: 20px;

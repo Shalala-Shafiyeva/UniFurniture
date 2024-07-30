@@ -147,7 +147,7 @@ function Main() {
                     <div className="quantity">
                       <span>QTY</span>
                       <div className="selectQty">
-                        <span className="minus" onClick={decreaseQty}>
+                        <span className="minus"  onClick={decreaseQty}>
                           -
                         </span>
                         <span className="qty">{quantity}</span>
