@@ -6,9 +6,6 @@ import data from "../../data.json";
 import { addToCart } from "../../slices/cartSlice";
 
 function Furnitures() {
-  //single page/productDetails
-  const dispatchProduct = useDispatch();
-  ////////
   const dispatch = useDispatch();
   const filteredProducts = useSelector(
     (state) => state.products.filteredProducts
@@ -159,7 +156,7 @@ function Furnitures() {
                 className="productCard"
                 key={product.id}
                 onClick={() =>
-                  dispatchProduct(
+                  dispatch(
                     singledProduct({ id: product.id, type: product.type })
                   )
                 }
@@ -178,24 +175,32 @@ function Furnitures() {
                   <img src={product.img} alt={product.type} />
                 </div>
                 <div className="btn">
-                  <button
-                    className="addCart"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      dispatch(
-                        addToCart({
-                          id: product.id,
-                          fullTitle: product.fullTitle,
-                          color: handleColorAndImg(product)[0],
-                          img: handleColorAndImg(product)[1],
-                          price: Math.round(Number(product.price)),
-                          amount: 1,
-                        })
-                      );
-                    }}
-                  >
-                    Add to cart
-                  </button>
+                  {!product.hasStock ? (
+                    <button disabled="disabled" className="addCart">
+                      Add to cart
+                    </button>
+                  ) : (
+                    <button
+                      className="addCart"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        dispatch(
+                          addToCart({
+                            id: product.id,
+                            fullTitle: product.fullTitle,
+                            color: handleColorAndImg(product)[0],
+                            img: handleColorAndImg(product)[1],
+                            price: Math.round(Number(product.price)),
+                            amount: 1,
+                            stock: product.stock,
+                            hasStock:product.hasStock
+                          })
+                        );
+                      }}
+                    >
+                      Add to cart
+                    </button>
+                  )}
                 </div>
               </Link>
             );

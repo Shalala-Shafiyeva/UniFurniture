@@ -12,10 +12,6 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const productId = action.payload;
-      const productStock = data.products.filter(
-        (product) =>
-          product.id === productId.id && product.type === productId.type
-      ).stock;
       try {
         const exist = state.cart.find(
           (product) =>
@@ -23,24 +19,23 @@ export const cartSlice = createSlice({
         );
         if (exist) {
           exist.amount += productId.amount;
-          exist.totalPrice = productId.price * productId.amount;
+          exist.totalPrice = exist.price * exist.amount;
           exist.stock -= productId.amount;
-          state.totalAmount++;
-          state.totalPrice += productId.totalPrice;
         } else {
           state.cart.push({
             id: productId.id,
             price: productId.price,
             img: productId.img,
             color: productId.color,
-            amount: 1,
-            totalPrice: productId.price,
+            amount: productId.amount,
+            totalPrice: productId.price * productId.amount,
             fullTitle: productId.fullTitle,
-            stock: productStock,
+            stock: productId.stock-1,
+            hasStock: productId.hasStock,
           });
         }
-        state.totalAmount++;
-        state.totalPrice += productId.price;
+        state.totalAmount += productId.amount;
+        state.totalPrice += productId.price * productId.amount;
         const saveState = JSON.stringify(state.cart);
         sessionStorage.setItem("cartData", saveState);
       } catch (error) {
@@ -65,8 +60,11 @@ export const cartSlice = createSlice({
           product.id === productId.id && product.type === productId.type
       );
       if (exist) {
-        exist.amount ++;
-        exist.totalPrice += productId.price;
+        if (exist.amount < productId.stock) {
+          exist.amount++;
+          exist.stock--;
+          exist.totalPrice += productId.price;
+        }
       }
       state.totalAmount++;
       state.totalPrice += productId.price;
@@ -81,8 +79,11 @@ export const cartSlice = createSlice({
           product.id === productId.id && product.type === productId.type
       );
       if (exist) {
-        exist.amount --;
-        exist.totalPrice -= productId.price;
+        if (exist.amount > 1) {
+          exist.amount--;
+          exist.stock++;
+          exist.totalPrice -= productId.price;
+        }
       }
       state.totalAmount--;
       state.totalPrice -= productId.price;

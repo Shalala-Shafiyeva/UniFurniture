@@ -40,7 +40,8 @@ function Cart({ openBasket, setOpenBasket }) {
                           decreaseAmount({
                             id:product.id,
                             type:product.type,
-                            price:product.price
+                            price:product.price,
+                            stock:product.stock
                           })
                         )
                       }
@@ -55,7 +56,8 @@ function Cart({ openBasket, setOpenBasket }) {
                             increaseAmount({
                               id:product.id,
                               type:product.type,
-                              price:product.price
+                              price:product.price,
+                              stock:product.stock
                             })
                           )
                         }

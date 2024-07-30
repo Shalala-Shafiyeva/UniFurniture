@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { singledProduct } from "../../slices/productsSlices";
 import { addToCart } from "../../slices/cartSlice";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,6 +6,7 @@ import data from "../../data.json";
 
 function Main() {
   let product = useSelector((state) => state.products.singleProduct);
+
   let cart = useSelector((state) => state.cart.cart);
   console.log(cart);
   let dispatch = useDispatch();
@@ -19,14 +19,25 @@ function Main() {
     setImg(product[0].colorImgs[colorIndex].imgs[0]);
   }, [colorIndex]);
 
+  const cartProduct = cart.filter((prod) => prod.id == id);
   const increaseQty = () => {
-    if (quantity < product[0].stock) {
-      setQuantity((prev) => prev + 1);
+    if (cartProduct) {
+      console.log(cartProduct);
+      if (quantity < cartProduct.stock) {
+        setQuantity((prev) => prev + 1);
+        cartProduct.stock -= 1;
+        if (cartProduct.stock == 0) {
+          cartProduct.hasStock = false;
+        }
+      }
     }
   };
   const decreaseQty = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
+    if (cartProduct) {
+      if (quantity > 1) {
+        setQuantity((prev) => prev - 1);
+        cartProduct.stock += 1;
+      }
     }
   };
 
@@ -147,7 +158,7 @@ function Main() {
                     <div className="quantity">
                       <span>QTY</span>
                       <div className="selectQty">
-                        <span className="minus"  onClick={decreaseQty}>
+                        <span className="minus" onClick={decreaseQty}>
                           -
                         </span>
                         <span className="qty">{quantity}</span>
@@ -156,7 +167,7 @@ function Main() {
                         </span>
                       </div>
                     </div>
-                    {!product.hasStock ? (
+                    {!product.hasStock || cartProduct.stock == 0 ? (
                       <button disabled="disabled" className="addToCart">
                         <span>ADD TO CART</span>
                         <img
@@ -175,6 +186,7 @@ function Main() {
                               img: product.colorImgs[colorIndex].imgs[0],
                               price: Math.round(Number(product.price)),
                               amount: quantity,
+                              stock: product.hasStock,
                             })
                           )
                         }
@@ -191,7 +203,7 @@ function Main() {
                   <span className="garranty">
                     Warranty Length {product.garranty} Year
                   </span>
-                  {!product.hasStock ? (
+                  {!product.hasStock || cartProduct.hasStock == false ? (
                     <p className="outOfStock">
                       Sorry, but this product is out of stock
                     </p>
