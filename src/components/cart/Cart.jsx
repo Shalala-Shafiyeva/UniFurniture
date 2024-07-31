@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import "../cart/cart.css";
 import "../cart/cartResponsice.css";
+import { Link } from "react-router-dom";
 import { increaseAmount,decreaseAmount, removeFromCart } from "../../slices/cartSlice";
 
 function Cart({ openBasket, setOpenBasket }) {
@@ -90,7 +91,7 @@ function Cart({ openBasket, setOpenBasket }) {
           <span>${cart.reduce((acc, item) => acc + item.totalPrice, 0)}</span>
         </div>
         <div className="btn">
-          <button className="orderBtn">Make Order</button>
+          <Link to="/cart/deliveryaddress"><button className="orderBtn">Make Order</button></Link>
         </div>
       </div>
     </section>

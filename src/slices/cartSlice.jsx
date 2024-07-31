@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import data from "../data.json";
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -29,8 +28,9 @@ export const cartSlice = createSlice({
             color: productId.color,
             amount: productId.amount,
             totalPrice: productId.price * productId.amount,
+            discount: productId.discount,
             fullTitle: productId.fullTitle,
-            stock: productId.stock-1,
+            stock: productId.stock - 1,
             hasStock: productId.hasStock,
           });
         }
@@ -48,7 +48,7 @@ export const cartSlice = createSlice({
         (product) =>
           !(product.id === productId.id && product.type === productId.type)
       );
-      state.totalAmount--;
+      state.totalAmount -= productId.amount;
       state.totalPrice -= productId.price;
       const saveState = JSON.stringify(state.cart);
       sessionStorage.setItem("cartData", saveState);

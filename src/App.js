@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Shopping from "./pages/Shopping";
 import ProductDetails from "./pages/ProductDetails";
 import MoreProducts from "./pages/MoreProducts";
+import CartDeliveryAddress from "./pages/CartDeliveryAddress";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/product/:type/:id" element={<ProductDetails />} />
         <Route path="/shop/moreFurnitures" element={<MoreProducts />} />
+        <Route path="/cart/deliveryaddress" element={<CartDeliveryAddress />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* <Header/>

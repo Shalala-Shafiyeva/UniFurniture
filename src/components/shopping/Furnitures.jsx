@@ -190,10 +190,11 @@ function Furnitures() {
                             fullTitle: product.fullTitle,
                             color: handleColorAndImg(product)[0],
                             img: handleColorAndImg(product)[1],
-                            price: Math.round(Number(product.price)),
+                            price: parseFloat(product.price),
                             amount: 1,
                             stock: product.stock,
-                            hasStock:product.hasStock
+                            hasStock: product.hasStock,
+                            discount: product.discount,
                           })
                         );
                       }}

@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { addToCart } from "../../slices/cartSlice";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import data from "../../data.json";
 
 function Main() {
   let product = useSelector((state) => state.products.singleProduct);
-
+  console.log(product);
   let cart = useSelector((state) => state.cart.cart);
   console.log(cart);
   let dispatch = useDispatch();
@@ -19,25 +18,14 @@ function Main() {
     setImg(product[0].colorImgs[colorIndex].imgs[0]);
   }, [colorIndex]);
 
-  const cartProduct = cart.filter((prod) => prod.id == id);
   const increaseQty = () => {
-    if (cartProduct) {
-      console.log(cartProduct);
-      if (quantity < cartProduct.stock) {
-        setQuantity((prev) => prev + 1);
-        cartProduct.stock -= 1;
-        if (cartProduct.stock == 0) {
-          cartProduct.hasStock = false;
-        }
-      }
+    if (quantity < product[0].stock) {
+      setQuantity((prev) => prev + 1);
     }
   };
   const decreaseQty = () => {
-    if (cartProduct) {
-      if (quantity > 1) {
-        setQuantity((prev) => prev - 1);
-        cartProduct.stock += 1;
-      }
+    if (quantity > 1) {
+      setQuantity((prev) => prev - 1);
     }
   };
 
@@ -167,7 +155,7 @@ function Main() {
                         </span>
                       </div>
                     </div>
-                    {!product.hasStock || cartProduct.stock == 0 ? (
+                    {!product.hasStock ? (
                       <button disabled="disabled" className="addToCart">
                         <span>ADD TO CART</span>
                         <img
@@ -184,9 +172,10 @@ function Main() {
                               fullTitle: product.fullTitle,
                               color: product.colorImgs[colorIndex].colorName,
                               img: product.colorImgs[colorIndex].imgs[0],
-                              price: Math.round(Number(product.price)),
+                              price: parseFloat(product.price),
                               amount: quantity,
                               stock: product.hasStock,
+                              discount: product.discount,
                             })
                           )
                         }
@@ -203,7 +192,7 @@ function Main() {
                   <span className="garranty">
                     Warranty Length {product.garranty} Year
                   </span>
-                  {!product.hasStock || cartProduct.hasStock == false ? (
+                  {!product.hasStock ? (
                     <p className="outOfStock">
                       Sorry, but this product is out of stock
                     </p>
