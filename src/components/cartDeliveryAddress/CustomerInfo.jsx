@@ -13,6 +13,10 @@ function CustomerInfo() {
   const [email, setEmail] = useState("");
 
   const handleOpenForm = () => {
+    if (!openForm) {
+      setFullname("");
+      setEmail("");
+    }
     setOpenForm((prev) => !prev);
   };
 
@@ -32,7 +36,6 @@ function CustomerInfo() {
     }
   }, []);
 
-
   useEffect(() => {
     localStorage.setItem("fullname", fullname);
     localStorage.setItem("email", email);
@@ -47,7 +50,7 @@ function CustomerInfo() {
       <div className="customer">
         <span className="title">Customer Information</span>
         <div className="info">
-          <div className="currentInfo">
+          <div className={`currentInfo ${openForm ? "hidden" : ""}`}>
             <div className="context">
               <div className="img">
                 <img src="/images/account.png" alt="User" />
@@ -57,10 +60,7 @@ function CustomerInfo() {
                 <span>{email}</span>
               </div>
             </div>
-            <button
-              onClick={handleOpenForm}
-              className={`change ${openForm ? "hidden" : ""}`}
-            >
+            <button onClick={handleOpenForm} className="change">
               Change
             </button>
           </div>
@@ -80,8 +80,8 @@ function CustomerInfo() {
                 <div className="inp">
                   <label htmlFor="email">Customer Email</label>
                   <input
-                   onChange={(e) => handleEmail(e.target.value)}
-                   value={email}
+                    onChange={(e) => handleEmail(e.target.value)}
+                    value={email}
                     type="email"
                     id="email"
                     placeholder="Enter your email"

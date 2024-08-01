@@ -60,9 +60,9 @@ export const cartSlice = createSlice({
           product.id === productId.id && product.type === productId.type
       );
       if (exist) {
-        if (exist.amount < productId.stock) {
+        if (exist.stock - exist.amount > 0) {
           exist.amount++;
-          exist.stock--;
+          // exist.stock--;
           exist.totalPrice += productId.price;
         }
       }
@@ -81,7 +81,7 @@ export const cartSlice = createSlice({
       if (exist) {
         if (exist.amount > 1) {
           exist.amount--;
-          exist.stock++;
+          // exist.stock++;
           exist.totalPrice -= productId.price;
         }
       }

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import data from "../data.json";
-import { act } from "react-dom/test-utils";
+
 
 export const productsSlice = createSlice({
   name: "products",

@@ -79,8 +79,12 @@
     position: relative;
 }
 
-.orderSum {
+.shoppingCart .container>.right {
     width: 29%;
+}
+
+.orderSum {
+    width: 100%;
     padding: 34px 30px;
     border-radius: 20px;
     background: #F2FBF9;
@@ -92,7 +96,7 @@
 
 .orderSum .title {
     text-transform: capitalize;
-    color: var(--black-90, #24252E);
+    color: #24252E;
     font-size: 20px;
     font-weight: 500;
     line-height: 32px;
@@ -169,12 +173,15 @@
     background-color: #00A991;
 }
 
-.customerInfo {
+.shoppingCart .container>.left {
     width: 68%;
+}
+
+.customerInfo {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 29px;
-    border: 1px solid red;
 }
 
 .customerInfo .head {
@@ -199,7 +206,10 @@
     line-height: 32px;
 }
 
-.customerInfo .customer {
+.customerInfo .customer,
+.deliveryAddress,
+.billingAddress,
+.cartOrder {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -208,7 +218,10 @@
     border-top: 1px solid #E7E7E8;
 }
 
-.customerInfo .title {
+.customerInfo .title,
+.deliveryAddress .title,
+.billingAddress .title,
+.cartOrder .title {
     color: #3C3D45;
     font-size: 20px;
     font-weight: 600;
@@ -264,13 +277,16 @@
     line-height: 28px;
 }
 
-.customerInfo .customer .nameEmail span:last-of-type {
+.customerInfo .customer .nameEmail span:last-of-type,
+.deliveryAddress .address {
     color: #3C3D45;
     font-size: 18px;
     font-weight: 400;
 }
 
-.customerInfo .change {
+.customerInfo .change,
+.billingAddress .change,
+.cartOrder .change {
     padding: 19px 50px;
     border-radius: 5px;
     background: #CCEEE9;
@@ -332,7 +348,9 @@
     color: #6D6E74;
 }
 
-.customerInfo .customer .changeForm .submit {
+.customerInfo .customer .changeForm .submit,
+.deliveryAddress .save,
+.billingAddress .save {
     border-radius: 10px;
     background: #00A991;
     color: #FFF;
@@ -344,10 +362,323 @@
     padding: 15px 40px;
 }
 
-.hidden{
+.hidden {
     display: none !important;
 }
 
-.visible{
+.visible {
     display: flex !important;
+}
+
+.deliveryAddress .customerAddress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+.deliveryAddress .customerAddress .address {
+    width: 75%;
+}
+
+.deliveryAddress .customerAddress .edit {
+    padding: 15px 56px;
+    border-radius: 5px;
+    background: #FF914D;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.deliveryAddress .addAddress {
+    color: #FF914D;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.deliveryAddress .editForm,
+.deliveryAddress .editAddress form,
+.billingAddress .newBillingAddress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-end;
+}
+
+.deliveryAddress textarea,
+.billingAddress textarea {
+    width: 100%;
+    resize: none;
+    border-radius: 6px;
+    border: 1px solid #6D6E74;
+    height: 100px;
+    padding: 15px 18px;
+    outline: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.deliveryAddress .row,
+.cartOrder .closeOrder,
+.cartOrder .openOrder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.deliveryAddress .row .newAddress {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deliveryAddress .editAddress {
+    width: 100%;
+}
+
+.billingAddress .form {
+    width: 100%;
+}
+
+.billingAddress .form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.billingAddress .sameAddress {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.billingAddress .sameAddress .inp {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.billingAddress .sameAddress .inp input {
+    appearance: none;
+    border-radius: 3px;
+    border: 1px solid #CECFD1;
+    background: #F3F3F3;
+    width: 20px;
+    height: 20px;
+}
+
+.billingAddress .sameAddress .inp input:checked {
+    background-color: #00A991;
+    border: 1px solid #00A991;
+    background-image: url('../../../public/images/Mark.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+}
+
+.billingAddress .sameAddress label,
+.billingAddress .sameAddress p {
+    color: #3C3D45;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cartOrder .head,
+.cartOrder .closeOrder .cover {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartOrder .closeOrder .items {
+    color: #3C3D45;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cartOrder .openOrder .head .items {
+    color: #3C3D45;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.cartOrder .products {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 26px 30px;
+    border-radius: 24px;
+    background: #FFF4ED;
+    position: relative;
+    gap: 20px;
+}
+
+.cartOrder .products .product {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cartOrder .products .closeBtn {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.cartOrder .products .product .img {
+    width: 22%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartOrder .product .img img {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+}
+
+.cartOrder .product .content {
+    width: 76%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.cartOrder .product .content .name {
+    width: 95%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #24252E;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.cartOrder .product .content .color {
+    color: #24252E;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cartOrder .priceShipping {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartOrder .price {
+    color: #24252E;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.cartOrder .shipping {
+    width: max-content;
+    border-radius: 6px;
+    border: 1px solid #FFBD94;
+    background: #FFE9DB;
+    padding: 15px 25px;
+    color: #FF914D;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.cartOrder .rating {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.cartOrder .starts {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cartOrder .starts img {
+    width: 20px;
+    height: 20px;
+}
+
+.cartOrder .review {
+    color: #B6B6B9;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.cartOrder .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartOrder .bottom .removeBtn {
+    color: #FF914D;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cartOrder .qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cartOrder .qty>div {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+}
+
+.cartOrder .qty>.plusBtn {
+    background: #00A991;
+}
+
+.cartOrder .qty .minusBtn {
+    background: #FF914D;
+}
+
+.cartOrder .qty>span {
+    color: #1C1C1C;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 5px;
 }
