@@ -67,11 +67,14 @@
 
 .shoppingCart {
     width: 100%;
-    margin: 75px 0;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
 }
 
 .shoppingCart .container {
     width: 80%;
+    height: max-content;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -81,6 +84,10 @@
 
 .shoppingCart .container>.right {
     width: 29%;
+}
+
+.shoppingCart .container>.left {
+    width: 68%;
 }
 
 .orderSum {
@@ -173,10 +180,6 @@
     background-color: #00A991;
 }
 
-.shoppingCart .container>.left {
-    width: 68%;
-}
-
 .customerInfo {
     width: 100%;
     display: flex;
@@ -209,19 +212,21 @@
 .customerInfo .customer,
 .deliveryAddress,
 .billingAddress,
-.cartOrder {
+.cartOrder,
+.paymentMethod {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px 20px;
+    padding: 20px;
     border-top: 1px solid #E7E7E8;
 }
 
 .customerInfo .title,
 .deliveryAddress .title,
 .billingAddress .title,
-.cartOrder .title {
+.cartOrder .title,
+.paymentMethod .title {
     color: #3C3D45;
     font-size: 20px;
     font-weight: 600;
@@ -440,10 +445,7 @@
     align-items: center;
 }
 
-.deliveryAddress .editAddress {
-    width: 100%;
-}
-
+.deliveryAddress .editAddress,
 .billingAddress .form {
     width: 100%;
 }
@@ -495,14 +497,16 @@
 }
 
 .cartOrder .head,
-.cartOrder .closeOrder .cover {
+.cartOrder .closeOrder .cover,
+.paymentMethod .closeItem {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.cartOrder .closeOrder .items {
+.cartOrder .closeOrder .items,
+.paymentMethod .closeItem>span {
     color: #3C3D45;
     font-size: 18px;
     font-weight: 400;
@@ -681,4 +685,309 @@
     font-size: 18px;
     font-weight: 500;
     padding: 0 5px;
+}
+
+.paymentMethod .closeItem .add {
+    border-radius: 5px;
+    width: 172px;
+    background: #CECFD1;
+    padding: 19px 56px;
+    color: #F2FBF9;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.paymentMethod .openItem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.paymentMethod .openItem h5 {
+    color: #24252E;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.paymentMethod .openItem .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.paymentMethod .wrapper .btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.paymentMethod .wrapper .btns button {
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: 1px solid #6D6E74;
+    color: #6D6E74;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.paymentMethod .wrapper .btns button.active {
+    background: #FFF4ED;
+    border: 1px solid #FFF4ED;
+}
+
+.paymentMethod .form,
+.paymentMethod form {
+    width: 100%;
+    height: max-content;
+}
+
+.paymentMethod form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.paymentMethod .cardForm,
+.paymentMethod .payPalForm {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 36px;
+}
+
+.paymentMethod .cardForm .inp {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.paymentMethod .form label {
+    color: #6D6E74;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.paymentMethod .form input {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #6D6E74;
+    padding: 15px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+}
+
+.paymentMethod .form input::placeholder {
+    color: #6D6E74;
+}
+
+.paymentMethod .inpCheck {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.paymentMethod .inpCheck input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #6D6E74;
+}
+
+.paymentMethod .inpCheck input:checked {
+    background-color: #6d6e74;
+    background-image: url('../../../public/images/checked.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+}
+
+.paymentMethod .payPalForm .inp,
+.paymentMethod .invoiceForm .inp,
+.paymentMethod .googlePayForm .inp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.paymentMethod .confirmBtn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.paymentMethod .confirmBtn button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    width: max-content;
+    padding: 18px 68px;
+    border-radius: 10px;
+    background: #00A991;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.trendFurnitures {
+    width: 100%;
+    margin: 70px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.trendFurnitures .containerr {
+    width: 90%;
+    padding: 50px 0;
+    display: flex;
+    gap: 10px;
+
+}
+
+.trendFurnitures .content {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trendFurnitures .content h3 {
+    color: #0B0D17;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.trendFurnitures .content p {
+    color: #0B0D17;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 32px;
+}
+
+.trendFurnitures .content .explore {
+    border-radius: 10px;
+    background: #00A991;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 10px;
+    width: 75%;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.trendFurnitures .slider {
+    width: 70%;
+}
+
+.trendFurnitures .swiper {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.trendFurnitures .wrapper {
+    width: 38%;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.trendFurnitures .wrapper a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.trendFurnitures .wrapper a .img {
+    width: 100%;
+    height: 270px;
+    border-radius: 12px;
+    background: #EBEBEB;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
+    padding: 16px;
+}
+
+.trendFurnitures .wrapper a .img img {
+    word-break: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.trendFurnitures .wrapper .titleRating {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trendFurnitures .wrapper .titleRating .title {
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #24252E;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    margin-top: 9px;
+}
+
+.trendFurnitures .wrapper .titleRating .stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.trendFurnitures .wrapper .titleRating .stars img {
+    width: 13px;
+    height: 13px;
+}
+
+.trendFurnitures .wrapper .price {
+    color: #B6B6B9;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.trendFurnitures .swiper-button-next {
+    width: 42px;
+    height: 42px;
+    /* padding: 9px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url("../../../public/images/Frame.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
 }

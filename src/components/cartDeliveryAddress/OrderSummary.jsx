@@ -1,9 +1,9 @@
-import { current } from "@reduxjs/toolkit";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-function OrderSummary() {
+function OrderSummary({ activateBtn }) {
+  console.log(activateBtn);
   const cart = useSelector((state) => state.cart.cart);
   const [freeDelivery, setFreenDelivery] = useState(true);
   const [orderAbove, setOrderAbove] = useState(false);
@@ -20,7 +20,6 @@ function OrderSummary() {
     setFreenDelivery((prev) => !prev);
     setOrderAbove((prev) => !prev);
   };
-
   return (
     <div className="orderSum">
       <span className="title">Order Summary</span>
@@ -63,10 +62,15 @@ function OrderSummary() {
         <span>Total</span>
         <span>${totalPrice - totalDiscount - 20}</span>
       </div>
-      <Link className="paymentAddress">
-        <span>Place Order</span>
-        <img src="/images/shop/arrow.png" alt="Arrow" />
-      </Link>
+      <button disabled={activateBtn}>
+        <Link
+          to="#"
+          className={`paymentAddress ${activateBtn ? "active" : ""}`}
+        >
+          <span>Place Order</span>
+          <img src="/images/shop/arrow.png" alt="Arrow" />
+        </Link>
+      </button>
     </div>
   );
 }

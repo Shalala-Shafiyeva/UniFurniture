@@ -14,8 +14,8 @@ function CartOrder() {
     setOpen((prev) => !prev);
   };
   const handleCartLength = () => {
-    if (cart.length == 0) {
-      setOpen(prev=>!prev);
+    if (cart.length - 1 == 0) {
+      setOpen((prev) => !prev);
     }
   };
 

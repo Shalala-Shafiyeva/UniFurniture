@@ -1,0 +1,551 @@
+@media (max-width:1024px) {
+    .discover {
+        margin-top: 68px;
+        height: calc(100vh - 68px);
+    }
+
+    .discover .container {
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .discover .content {
+        gap: 7px;
+    }
+
+    .discover .content h3 {
+        font-size: 35px;
+        line-height: 46px;
+    }
+
+    .discover .content>span,
+    .orderSum .title,
+    .customerInfo .head>span,
+    .customerInfo .title,
+    .deliveryAddress .title,
+    .billingAddress .title,
+    .cartOrder .title,
+    .paymentMethod .title,
+    .trendFurnitures .content p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .discover .content a {
+        width: 70%;
+        border-radius: 7px;
+        font-size: 14px;
+        line-height: 22px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .discover .img {
+        height: 80%;
+    }
+
+    .orderSum {
+        padding: 24px 12px;
+        border-radius: 14px;
+        gap: 17px;
+    }
+
+    .orderSum .cartDetails,
+    .cartOrder .rating {
+        gap: 12px;
+    }
+
+    .orderSum li,
+    .orderSum .total,
+    .cartOrder .review,
+    .trendFurnitures .wrapper .price {
+        font-size: 11px;
+    }
+
+    .orderSum .deliveryBtns,
+    .orderSum .deliveryBtns .btn {
+        border-radius: 4px;
+    }
+
+    .orderSum .deliveryBtns .btn {
+        padding: 7px 12px;
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .orderSum .paymentAddress {
+        padding: 12px;
+        border-radius: 7px;
+        gap: 7px;
+        font-size: 12px;
+    }
+
+    .customerInfo .head h3 {
+        font-size: 22px;
+    }
+
+    .customerInfo .customer .currentInfo .context {
+        gap: 17px;
+    }
+
+    .customerInfo .customer .currentInfo .context .img {
+        width: 74px;
+        height: 74px;
+        border-radius: 7px;
+    }
+
+    .customerInfo .customer .currentInfo .context .nameEmail {
+        gap: 9px;
+    }
+
+    .customerInfo .customer .nameEmail span:first-of-type {
+        font-size: 12px;
+        line-height: 19px;
+    }
+
+    .customerInfo .customer .nameEmail span:last-of-type,
+    .deliveryAddress .address,
+    .deliveryAddress .addAddress,
+    .billingAddress .sameAddress label,
+    .billingAddress .sameAddress p,
+    .cartOrder .closeOrder .items,
+    .paymentMethod .closeItem>span,
+    .cartOrder .openOrder .head .items {
+        font-size: 12px;
+    }
+
+    .customerInfo .change,
+    .billingAddress .change,
+    .cartOrder .change,
+    .deliveryAddress .customerAddress .edit {
+        padding: 13px 39px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .customerInfo .customer .changeForm .inps .inp label,
+    .cartOrder .product .content .color,
+    .cartOrder .bottom .removeBtn,
+    .cartOrder .qty>span,
+    .paymentMethod .form label {
+        font-size: 14px;
+    }
+
+    .customerInfo .customer .changeForm .inps .inp input,
+    .deliveryAddress textarea,
+    .billingAddress textarea {
+        border-radius: 4px;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .customerInfo .customer .changeForm .submit,
+    .deliveryAddress .save,
+    .billingAddress .save {
+        font-size: 14px;
+        border-radius: 4px;
+        padding: 12px 30px;
+    }
+
+    .deliveryAddress .customerAddress,
+    .billingAddress .sameAddress .inp,
+    .deliveryAddress .row,
+    .cartOrder .closeOrder,
+    .cartOrder .openOrder {
+        gap: 10px;
+    }
+
+    .billingAddress .sameAddress .inp input,
+    .paymentMethod .inpCheck input {
+        width: 14px;
+        height: 14px;
+    }
+
+    .billingAddress .sameAddress .inp input:checked {
+        background-size: 8px 8px;
+    }
+
+    .cartOrder .products {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .cartOrder .products .closeBtn {
+        top: 20px;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .cartOrder .products .closeBtn img {
+        word-break: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cartOrder .products .product .img {
+        height: 150px;
+    }
+
+    .cartOrder .product .content .name,
+    .cartOrder .price {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+
+    .cartOrder .shipping {
+        padding: 13px 21px;
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+    .cartOrder .starts img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .cartOrder .qty>div {
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .paymentMethod .closeItem .add {
+        font-size: 12px;
+        padding: 13px 39px;
+        width: max-content;
+    }
+
+    .paymentMethod .openItem {
+        gap: 15px;
+    }
+
+    .paymentMethod .openItem h5 {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .paymentMethod .openItem .wrapper {
+        gap: 18px;
+    }
+
+    .paymentMethod .wrapper .btns {
+        gap: 13px;
+    }
+
+    .paymentMethod .wrapper .btns button {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    .paymentMethod .cardForm,
+    .paymentMethod .payPalForm {
+        gap: 30px;
+    }
+
+    .paymentMethod .cardForm .inp,
+    .paymentMethod .inpCheck {
+        gap: 8px;
+    }
+
+    .paymentMethod .form input {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .paymentMethod .inpCheck input {
+        border-radius: 4px;
+    }
+
+    .paymentMethod .confirmBtn button {
+        padding: 14px 50px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+    .trendFurnitures {
+        margin: 50px 0;
+    }
+
+    .trendFurnitures .containerr {
+        padding: 30px 0;
+    }
+
+    .trendFurnitures .content {
+        gap: 8px;
+        width: 35%;
+    }
+
+    .trendFurnitures .content h3 {
+        font-size: 29px;
+    }
+
+    .trendFurnitures .content .explore {
+        border-radius: 8px;
+        font-size: 12px;
+        line-height: 19px;
+        margin-top: 4px;
+    }
+
+    .trendFurnitures .slider {
+        width: 65%;
+    }
+
+    .trendFurnitures .wrapper {
+        padding: 7px;
+        border-radius: 7px;
+    }
+
+    .trendFurnitures .wrapper a {
+        gap: 3px;
+    }
+
+    .trendFurnitures .wrapper a .img {
+        height: 190px;
+        border-radius: 7px;
+        padding: 11px;
+    }
+
+    .trendFurnitures .wrapper .titleRating .title {
+        font-size: 11px;
+        line-height: 18px;
+        margin-top: 5px;
+    }
+
+    .trendFurnitures .wrapper .titleRating .stars img {
+        width: 9px;
+        height: 9px;
+    }
+
+    .trendFurnitures .swiper-button-next {
+        width: 28px;
+        height: 28px;
+        background-size: 16px;
+    }
+
+    .error {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:576px) {
+    .discover {
+        height: max-content;
+        margin-top: 0px;
+        background-color: #fff;
+    }
+
+    .discover .container {
+        flex-direction: column-reverse;
+        gap: 16px;
+        padding: 0;
+    }
+
+    .discover .content {
+        width: 100%;
+        gap: 6px;
+    }
+
+    .discover .content h3 {
+        font-size: 30px;
+        line-height: normal;
+        padding: 6px 0;
+    }
+
+    .discover .content>span {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .discover .content a {
+        border-radius: 6px;
+        padding: 14px;
+        margin-top: 18px;
+        font-size: 12px;
+        line-height: 20px;
+        width: 50%;
+    }
+
+    .discover .img {
+        width: 100%;
+    }
+
+    .shoppingCart .container {
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .shoppingCart .container>.right,
+    .shoppingCart .container>.left {
+        width: 100%;
+    }
+
+    .orderSum {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .orderSum .title {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .orderSum li,
+    .orderSum .total {
+        font-size: 14px;
+    }
+
+    .orderSum .deliveryBtns .btn {
+        padding: 11px 14px;
+        font-size: 11px;
+        line-height: 21px;
+    }
+
+    .orderSum .paymentAddress {
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    .orderSum .paymentAddress img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .customerInfo {
+        gap: 15px;
+    }
+
+    .customerInfo .head {
+        margin-bottom: 0;
+    }
+
+    .customerInfo .head h3 {
+        font-size: 15px;
+    }
+
+    .customerInfo .head>span,
+    .customerInfo .title,
+    .deliveryAddress .title,
+    .billingAddress .title,
+    .cartOrder .title,
+    .paymentMethod .title {
+        font-size: 9px;
+        line-height: 15px;
+    }
+
+    .customerInfo .customer,
+    .deliveryAddress,
+    .billingAddress,
+    .cartOrder,
+    .paymentMethod {
+        padding: 10px 0;
+        gap: 5px;
+    }
+
+    .customerInfo .customer .info .currentInfo,
+    .customerInfo .customer .currentInfo .context .nameEmail {
+        gap: 5px;
+    }
+
+    .customerInfo .customer .currentInfo .context,
+    .customerInfo .customer .info .changeForm form,
+    .customerInfo .customer .changeForm .inps {
+        gap: 10px;
+    }
+
+    .customerInfo .customer .currentInfo .context .img {
+        width: 47px;
+        height: 49px;
+    }
+
+    .customerInfo .customer .currentInfo .context .img img {
+        border-radius: 4px;
+    }
+
+    .customerInfo .customer .nameEmail span:first-of-type {
+        font-size: 8px;
+        line-height: 13px;
+    }
+
+    .customerInfo .customer .nameEmail span:last-of-type,
+    .deliveryAddress .address,
+    .deliveryAddress .addAddress,
+    .billingAddress .sameAddress label,
+    .billingAddress .sameAddress p,
+    .cartOrder .closeOrder .items,
+    .paymentMethod .closeItem>span {
+        font-size: 8px;
+    }
+
+    .customerInfo .change,
+    .billingAddress .change,
+    .cartOrder .change,
+    .customerInfo .customer .changeForm .submit,
+    .deliveryAddress .save,
+    .billingAddress .save,
+    .deliveryAddress .customerAddress .edit {
+        padding: 9px 25px;
+        border-radius: 2px;
+        font-size: 8px;
+    }
+
+    .customerInfo .customer .changeForm .inps {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .customerInfo .customer .changeForm .inps .inp {
+        width: 100%;
+        gap: 0px;
+    }
+
+    .customerInfo .customer .changeForm .inps .inp input,
+    .customerInfo .customer .changeForm .inps .inp label {
+        border-radius: 3px;
+        padding: 8px;
+        font-size: 8px;
+    }
+
+
+    .deliveryAddress .customerAddress {
+        gap: 10px;
+    }
+
+    .deliveryAddress .editForm,
+    .deliveryAddress .editAddress form,
+    .billingAddress .newBillingAddress,
+    .deliveryAddress .row,
+    .cartOrder .closeOrder,
+    .cartOrder .openOrder,
+    .billingAddress .sameAddress .inp {
+        gap: 8px;
+    }
+
+    .deliveryAddress textarea,
+    .billingAddress textarea {
+        border-radius: 2px;
+        padding: 5px;
+        font-size: 8px;
+        height: 40px;
+    }
+
+    .billingAddress .sameAddress .inp input {
+        width: 9px;
+        height: 9px;
+    }
+
+    .billingAddress .sameAddress .inp input:checked {
+        background-size: 4px;
+        border-radius: 2px;
+    }
+
+    .billingAddress p{
+        font-size: 8px ;
+    }
+
+    .cartOrder .openOrder .head .items {}
+
+
+}
