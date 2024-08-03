@@ -27,7 +27,7 @@ function CartOrder() {
           <span className="items">
             {cart.length} {cart.length > 1 ? "items" : "item"}
           </span>
-          <button onClick={handleOpen} className="change">
+          <button disabled={cart.length===0 } onClick={handleOpen} className="change">
             Change
           </button>
         </div>

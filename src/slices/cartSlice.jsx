@@ -49,7 +49,7 @@ export const cartSlice = createSlice({
           !(product.id === productId.id && product.type === productId.type)
       );
       state.totalAmount -= productId.amount;
-      state.totalPrice -= productId.price;
+      state.totalPrice -= (productId.price * productId.amount);
       const saveState = JSON.stringify(state.cart);
       sessionStorage.setItem("cartData", saveState);
     },

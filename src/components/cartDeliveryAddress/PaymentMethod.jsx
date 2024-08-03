@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function PaymentMethod({ activateBtn, handleActivateBtn }) {
+  const [open, setOpen] = useState(false);
   const payBtns = ["Credit Card", "PayPal", "Pay on Invoice", "Google Pay"];
   const [activeForm, setActiveForm] = useState("Credit Card");
   const [activeBtn, setActiveBtn] = useState("Credit Card");
@@ -69,14 +70,18 @@ function PaymentMethod({ activateBtn, handleActivateBtn }) {
     }
   };
 
+  const handleOpen = () => {
+    setOpen((prev) => !prev);
+  };
+
   return (
     <div className="paymentMethod">
-      <span className="title">Payment Method</span>
-      <div className="closeItem">
+      <span className={`title ${open? "hidden": "visible"}`}>Payment Method</span>
+      <div className={`closeItem ${open? "hidden": "visible"}`}>
         <span>Credit Card</span>
-        <button className="add">Add</button>
+        <button className="add" onClick={handleOpen}>Add</button>
       </div>
-      <div className="openItem">
+      <div className={`openItem ${open? "visible": "hidden"}`}>
         <h5>Payment Method</h5>
         <div className="wrapper">
           <div className="btns">

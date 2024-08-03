@@ -4,7 +4,11 @@ import { useState } from "react";
 import "../cart/cart.css";
 import "../cart/cartResponsice.css";
 import { Link } from "react-router-dom";
-import { increaseAmount,decreaseAmount, removeFromCart } from "../../slices/cartSlice";
+import {
+  increaseAmount,
+  decreaseAmount,
+  removeFromCart,
+} from "../../slices/cartSlice";
 
 function Cart({ openBasket, setOpenBasket }) {
   let cart = useSelector((state) => state.cart.cart);
@@ -36,16 +40,16 @@ function Cart({ openBasket, setOpenBasket }) {
                     <span className="price">${product.price}</span>
                     <div className="qty">
                       <button
-                       onClick={() =>
-                        dispatch(
-                          decreaseAmount({
-                            id:product.id,
-                            type:product.type,
-                            price:product.price,
-                            stock:product.stock
-                          })
-                        )
-                      }
+                        onClick={() =>
+                          dispatch(
+                            decreaseAmount({
+                              id: product.id,
+                              type: product.type,
+                              price: product.price,
+                              stock: product.stock,
+                            })
+                          )
+                        }
                         className="decrease"
                       >
                         -
@@ -55,10 +59,10 @@ function Cart({ openBasket, setOpenBasket }) {
                         onClick={() =>
                           dispatch(
                             increaseAmount({
-                              id:product.id,
-                              type:product.type,
-                              price:product.price,
-                              stock:product.stock
+                              id: product.id,
+                              type: product.type,
+                              price: product.price,
+                              stock: product.stock,
                             })
                           )
                         }
@@ -91,7 +95,11 @@ function Cart({ openBasket, setOpenBasket }) {
           <span>${cart.reduce((acc, item) => acc + item.totalPrice, 0)}</span>
         </div>
         <div className="btn">
-          <Link to="/cart/deliveryaddress"><button className="orderBtn">Make Order</button></Link>
+          <Link to="/cart/deliveryaddress">
+            <button disabled={cart.length === 0} className="orderBtn">
+              Make Order
+            </button>
+          </Link>
         </div>
       </div>
     </section>

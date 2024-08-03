@@ -11,6 +11,7 @@ import Shopping from "./pages/Shopping";
 import ProductDetails from "./pages/ProductDetails";
 import MoreProducts from "./pages/MoreProducts";
 import CartDeliveryAddress from "./pages/CartDeliveryAddress";
+import Services from "./pages/Services";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/product/:type/:id" element={<ProductDetails />} />
         <Route path="/shop/moreFurnitures" element={<MoreProducts />} />
         <Route path="/cart/deliveryaddress" element={<CartDeliveryAddress />} />

@@ -3,10 +3,11 @@ import { useSelector } from "react-redux";
 
 function CustomerInfo() {
   const cart = useSelector((state) => state.cart.cart);
-  const totalPrice = cart.reduce(
+  let totalPrice = cart.reduce(
     (acc, current) => acc + current.price * current.amount,
     0
   );
+  totalPrice=parseFloat(totalPrice.toFixed(2));
 
   const [openForm, setOpenForm] = useState(false);
   const [fullname, setFullname] = useState("");

@@ -8,14 +8,14 @@ function OrderSummary({ activateBtn }) {
   const [freeDelivery, setFreenDelivery] = useState(true);
   const [orderAbove, setOrderAbove] = useState(false);
   const totalAmount = cart.reduce((acc, current) => acc + current.amount, 0);
-  const totalPrice = cart.reduce(
+  let totalPrice = cart.reduce(
     (acc, current) => acc + current.price * current.amount,
     0
   );
+  totalPrice = parseFloat(totalPrice.toFixed(2));
   const totalDiscount =
     (totalPrice * cart.reduce((acc, current) => acc + current.discount, 0)) /
     100;
-
   const handleActive = () => {
     setFreenDelivery((prev) => !prev);
     setOrderAbove((prev) => !prev);
@@ -60,7 +60,7 @@ function OrderSummary({ activateBtn }) {
       </div>
       <div className="total">
         <span>Total</span>
-        <span>${totalPrice - totalDiscount - 20}</span>
+        <span>${parseFloat((totalPrice - totalDiscount - 20).toFixed(2))}</span>
       </div>
       <button disabled={activateBtn}>
         <Link

@@ -70,7 +70,7 @@ function Footer() {
             <span className="title">Company</span>
             <ul>
               <li>
-                <Link to="">-About</Link>
+                <Link to="/about">-About</Link>
               </li>
               <li>
                 <Link to="">-Careers</Link>
@@ -82,7 +82,7 @@ function Footer() {
                 <Link to="">-Contact</Link>
               </li>
               <li>
-                <Link to="">-Press</Link>
+                <Link to="/services">-Services</Link>
               </li>
             </ul>
           </div>

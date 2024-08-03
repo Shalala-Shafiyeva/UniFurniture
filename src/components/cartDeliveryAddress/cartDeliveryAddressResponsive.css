@@ -485,7 +485,8 @@
     .customerInfo .customer .changeForm .submit,
     .deliveryAddress .save,
     .billingAddress .save,
-    .deliveryAddress .customerAddress .edit {
+    .deliveryAddress .customerAddress .edit,
+    .paymentMethod .closeItem .add {
         padding: 9px 25px;
         border-radius: 2px;
         font-size: 8px;
@@ -519,7 +520,8 @@
     .deliveryAddress .row,
     .cartOrder .closeOrder,
     .cartOrder .openOrder,
-    .billingAddress .sameAddress .inp {
+    .billingAddress .sameAddress .inp,
+    .paymentMethod .wrapper .btns {
         gap: 8px;
     }
 
@@ -541,11 +543,183 @@
         border-radius: 2px;
     }
 
-    .billingAddress p{
-        font-size: 8px ;
+    .billingAddress p,
+    .cartOrder .review {
+        font-size: 8px;
     }
 
-    .cartOrder .openOrder .head .items {}
+    .cartOrder .openOrder .head .items {
+        display: none;
+    }
 
+    .cartOrder .products {
+        padding: 16px 10px;
+        border-radius: 14px;
+        gap: 15px;
+    }
 
+    .cartOrder .products .product,
+    .cartOrder .rating {
+        gap: 10px;
+    }
+
+    .cartOrder .products .closeBtn {
+        top: 16px;
+        right: 10px;
+        width: 7px;
+        height: 11px;
+    }
+
+    .cartOrder .products .product .img {
+        height: 100px;
+    }
+
+    .cartOrder .product .content {
+        gap: 4px;
+    }
+
+    .cartOrder .product .content .name,
+    .cartOrder .price {
+        font-size: 12px;
+        line-height: 19px;
+    }
+
+    .cartOrder .product .content .color,
+    .cartOrder .bottom .removeBtn,
+    .cartOrder .qty>span,
+    .paymentMethod .form label {
+        font-size: 11px;
+    }
+
+    .cartOrder .shipping {
+        border-radius: 3px;
+        padding: 5px 10px;
+        font-size: 7px;
+        line-height: 13px;
+    }
+
+    .cartOrder .stars {
+        gap: 2px;
+    }
+
+    .cartOrder .starts img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .cartOrder .qty,
+    .paymentMethod .cardForm .inp,
+    .paymentMethod .inpCheck,
+    .paymentMethod .payPalForm .inp,
+    .paymentMethod .invoiceForm .inp,
+    .paymentMethod .googlePayForm .inp {
+        gap: 5px;
+    }
+
+    .cartOrder .qty>div {
+        width: 22px;
+        height: 22px;
+        font-size: 11px;
+    }
+
+    .paymentMethod .openItem {
+        gap: 15px;
+    }
+
+    .paymentMethod .openItem h5 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .paymentMethod .wrapper .btns button {
+        padding: 10px 20px;
+        font-size: 10px;
+    }
+
+    .paymentMethod .cardForm,
+    .paymentMethod .payPalForm {
+        gap: 15px;
+    }
+
+    .paymentMethod .form input {
+        border-radius: 3px;
+        padding: 9px;
+        font-size: 11px;
+    }
+
+    .paymentMethod .confirmBtn {
+        justify-content: center;
+    }
+
+    .paymentMethod .confirmBtn button {
+        padding: 12px 40px;
+        font-size: 12px;
+    }
+
+    .trendFurnitures {
+        margin: 40px 0;
+        justify-content: center;
+    }
+
+    .trendFurnitures .containerr {
+        width: 80%;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .trendFurnitures .content {
+        width: 100%;
+        gap: 6px;
+    }
+
+    .trendFurnitures .content h3 {
+        font-size: 20px;
+    }
+
+    .trendFurnitures .content p {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .trendFurnitures .content .explore{
+        border-radius: 6px;
+        font-size: 13px;
+        line-height: 21px;
+        padding: 7px;
+    }
+
+    .trendFurnitures .slider{
+        width: 100%;
+    }
+
+    .trendFurnitures .swiper{
+        padding: 0px;
+    }
+
+    .trendFurnitures .wrapper {
+        border-radius: 6px;
+        padding: 5px;
+    }
+
+    .trendFurnitures .wrapper a .img {
+        height: 130px;
+    }
+
+    .trendFurnitures .wrapper .titleRating .title{
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .trendFurnitures .wrapper .titleRating .stars img{
+        width: 7px;
+        height: 7px;
+    }
+
+    .trendFurnitures .wrapper .price {
+        font-size: 9px;
+    }
+
+    .error{
+        font-size: 9px;
+    }
 }
