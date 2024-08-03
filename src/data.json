@@ -3008,5 +3008,37 @@
       "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
       "img": "/images/shop/avatar3.png"
     }
+  ],
+  "servicesArticles":[
+    {
+      "id":1,
+      "title":"Getting started",
+      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit eque ipsum odio justo."
+    },
+    {
+      "id":2,
+      "title":"Desktop & mobile apps",
+      "content":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex."
+    },
+    {
+      "id":3,
+      "title":"Payment & billing",
+      "content":"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore dolore eu fugiat."
+    },
+    {
+      "id":4,
+      "title":"Troubleshooting",
+      "content":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex."
+    },
+    {
+      "id":5,
+      "title":"Investing & traiding ",
+      "content":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex."
+    },
+    {
+      "id":6,
+      "title":"Cryptocurrencies",
+      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit eque ipsum odio justo."
+    }
   ]
 }

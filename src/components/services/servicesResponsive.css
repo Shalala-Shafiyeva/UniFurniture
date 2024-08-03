@@ -1,0 +1,230 @@
+@media (max-width:1024px) {
+    .helpCenter {
+        height: calc(100vh - 68px);
+        margin-top: 68px;
+    }
+
+    .helpCenter .container {
+        gap: 50px;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .helpCenter .context h3 {
+        font-size: 35px;
+        line-height: 47px;
+        padding: 7px;
+    }
+
+    .helpCenter .context p {
+        padding: 7px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .helpCenter .inp {
+        border-radius: 35px;
+        padding: 15px;
+    }
+
+    .helpCenter .inp input {
+        font-size: 12px;
+    }
+
+    .helpCenter .inp img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .generate {
+        width: 100%;
+        margin: 50px 0;
+    }
+
+    .generate .box {
+        gap: 30px;
+        padding: 50px 0;
+    }
+
+    .generate .box .img {
+        height: 340px;
+        border-radius: 7px;
+    }
+
+    .generate .box .content .title {
+        color: #24252E;
+        font-size: 32px;
+    }
+
+    .generate .box .content p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .generate .box a {
+        margin: 15px;
+        padding: 20px 60px;
+        border-radius: 7px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .articles {
+        margin: 50px 0;
+    }
+
+    .articles .container,
+    .articles .articleItems {
+        gap: 40px;
+    }
+
+    .articles .container .head {
+        width: 69%;
+        font-size: 36px;
+        line-height: normal;
+    }
+
+    .articles .articleItems .article {
+        padding: 30px;
+        border-radius: 8px;
+    }
+
+    .articles .article .txt {
+        gap: 7px;
+    }
+
+    .articles .article .txt .title {
+        font-size: 19px;
+        line-height: 31px;
+    }
+
+    .articles .article .txt p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .articles .article .btnn>a {
+        padding: 20px;
+        border-radius: 6px;
+        font-size: 17px;
+        line-height: 27px;
+    }
+}
+
+@media (max-width:576px) {
+    .helpCenter {
+        height: 330px;
+        margin: 0px;
+    }
+
+    .helpCenter .container {
+        gap: 30px;
+        width: 90%;
+    }
+
+    .helpCenter .context h3 {
+        font-size: 30px;
+    }
+
+    .helpCenter .context p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .helpCenter .inp {
+        padding: 10px;
+        border-radius: 23px;
+    }
+
+    .helpCenter .inp input {
+        font-size: 8px;
+    }
+
+    .helpCenter .inp img {
+        width: 12px;
+        height: 12px;
+    }
+
+    .generate {
+        margin: 70px 0;
+    }
+
+    .generate .container {
+        gap: 50px;
+        width: 90%;
+    }
+
+    .generate .box {
+        padding: 0;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .generate .box:first-of-type {
+        flex-direction: column-reverse !important;
+    }
+
+    .generate .box .img {
+        width: 100%;
+        height: 330px;
+    }
+
+    .generate .box .content {
+        width: 100%;
+        align-items: center;
+    }
+
+    .generate .box .content .title {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .generate .box .content p {
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 12px;
+    }
+
+    .articles .container{
+        width: 90%;
+    }
+
+    .articles .container,
+    .articles .articleItems {
+        gap: 20px;
+    }
+
+    .articles .container .head {
+        width: 75%;
+        font-size: 17px;
+    }
+
+    .articles .articleItems .article {
+        padding: 16px;
+        border-radius: 4px;
+    }
+
+    .articles .article .txt {
+        gap: 4px;
+    }
+
+    .articles .article .txt .title {
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .articles .article .txt p {
+        font-size: 8px;
+        line-height: 12px;
+    }
+
+    .articles .article .btnn>a {
+        border-radius: 4px;
+        padding: 12px 20px;
+        font-size: 8px;
+        line-height: 12px;
+    }
+}

@@ -1,0 +1,70 @@
+@media (max-width:1024px) {
+    .hero {
+        margin-top: 68px;
+        height: calc(100vh - 68px);
+    }
+
+    .hero .container {
+        height: 100%;
+        gap: 15px;
+    }
+
+    .hero .container .content {
+        height: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero .container .content h2 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .hero .container .content p {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .hero .container .content a {
+        padding: 20px 60px;
+        font-size: 14px;
+        line-height: 22px;
+        border-radius: 7px;
+    }
+
+    .hero .container .img {
+        height: 70%;
+    }
+
+    .newsLetter {
+        margin: 50px 0;
+    }
+
+    .newsLetter .container {
+        border-radius: 6px;
+        padding: 45px;
+        gap: 18px;
+    }
+
+    .newsLetter .container .title {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .newsLetter .container p {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .newsLetter .container .bottom input {
+        font-size: 12px;
+        line-height: 19px;
+    }
+
+    .newsLetter .container .bottom button {
+        border-radius: 6px;
+        padding: 20px 60px;
+        font-size: 13px;
+        line-height: 22px;
+    }
+}
