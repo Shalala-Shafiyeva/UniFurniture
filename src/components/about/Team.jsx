@@ -1,5 +1,6 @@
 import React from "react";
 import data from "../../data.json";
+import { Link } from "react-router-dom";
 
 function Team() {
   return (
@@ -22,9 +23,9 @@ function Team() {
           </div>
         ))}
       </div>
-      <a href="#" className="getStart">
+      <Link to="/login" className="getStart">
         Get Started
-      </a>
+      </Link>
     </section>
   );
 }

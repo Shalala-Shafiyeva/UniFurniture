@@ -1,5 +1,6 @@
 import React from "react";
 import data from "../../data.json";
+import { Link } from "react-router-dom";
 
 function WeDo() {
   return (
@@ -20,9 +21,9 @@ function WeDo() {
           </div>
         ))}
       </div>
-      <a href="#" className="getStart">
+      <Link to="/login" className="getStart">
         Get Started
-      </a>
+      </Link>
     </section>
   );
 }

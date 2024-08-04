@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function AboutHero() {
   return (
@@ -16,9 +17,9 @@ function AboutHero() {
             malesuada semper nunc magna hac in tellus nibh purus tellus
             ullamcorper.
           </p>
-          <a className="getStart" href="#">
+          <Link className="getStart" to="/login">
             Get Started
-          </a>
+          </Link>
         </div>
         <div className="img">
           <img src="/images/aboutheropng.png" alt="Main image" />

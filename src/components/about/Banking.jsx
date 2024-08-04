@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Banking() {
   return (
@@ -24,9 +25,9 @@ function Banking() {
           posuere pretium tellus viverra volutpat a est quis they it egestas id
           risus cursus venenatis.
         </p>
-        <a className="getStart" href="#">
+        <Link className="getStart" to="/login">
           Get Started
-        </a>
+        </Link>
       </div>
     </section>
   );
