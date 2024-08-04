@@ -198,14 +198,14 @@
     color: #FF914D;
 }
 
-.articles .articleItems {
+.articles .articleItemss {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-.articles .articleItems .article {
+.articles .articleItemss .article {
     width: 100%;
     display: flex;
     justify-content: space-between;

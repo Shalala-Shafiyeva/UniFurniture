@@ -36,17 +36,29 @@
         height: 70%;
     }
 
-    .newsLetter {
+    .newsLetter,
+    .createAccountBlog,
+    .latestArticles {
         margin: 50px 0;
     }
 
-    .newsLetter .container {
+    .newsLetter .container,
+    .createAccountBlog .container {
         border-radius: 6px;
         padding: 45px;
+    }
+
+    .newsLetter .container {
         gap: 18px;
     }
 
-    .newsLetter .container .title {
+    .createAccountBlog .container {
+        gap: 55px;
+    }
+
+    .newsLetter .container .title,
+    .createAccountBlog .title,
+    .latestArticles .container .top .title {
         font-size: 30px;
         line-height: normal;
     }
@@ -56,15 +68,198 @@
         line-height: normal;
     }
 
-    .newsLetter .container .bottom input {
+    .newsLetter .container .bottom input,
+    .latestArticles .card .title {
         font-size: 12px;
         line-height: 19px;
     }
 
-    .newsLetter .container .bottom button {
+    .newsLetter .container .bottom button,
+    .createAccountBlog .container a {
         border-radius: 6px;
         padding: 20px 60px;
         font-size: 13px;
         line-height: 22px;
+    }
+
+    .latestArticles .container,
+    .latestArticles .container .top,
+    .latestArticles .bottom .cards {
+        gap: 30px;
+    }
+
+    .latestArticles .btns button {
+        padding: 12px 40px;
+        border-radius: 7px;
+        font-size: 16px;
+        line-height: 32px;
+    }
+
+    .latestArticles .card {
+        gap: 10px;
+        border-radius: 20px;
+    }
+
+    .latestArticles .card .img,
+    .latestArticles .card .img img {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .latestArticles .card .img img {
+        height: 150px;
+    }
+
+
+    .latestArticles .card p {
+        font-size: 11px;
+    }
+
+    .latestArticles .card .link{
+        top: 10px;
+        left: 10px;
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+@media (max-width:576px) {
+    .hero {
+        height: max-content;
+        margin-top: 30px;
+    }
+
+    .hero .container {
+        width: 90%;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .hero .container .content {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .hero .container .content h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .hero .container .content p {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+    }
+
+    .hero .container .content a {
+        display: none;
+    }
+
+    .hero .container .img {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .hero .container .img a {
+        display: flex;
+    }
+
+    .newsLetter {
+        background: #CCEEE9;
+    }
+
+    .createAccountBlog {
+        background-color: #00a991;
+    }
+
+    .newsLetter .container,
+    .createAccountBlog .container {
+        background-color: transparent;
+        border-radius: 0px;
+        padding: 25px 0;
+    }
+
+    .newsLetter .container {
+        gap: 10px;
+    }
+
+    .createAccountBlog .container {
+        gap: 30px;
+    }
+
+    .newsLetter .container .title,
+    .createAccountBlog .title {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+    }
+
+    .newsLetter .container p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .newsLetter .container .bottom {
+        justify-content: center;
+    }
+
+    .newsLetter .container .bottom input {
+        display: none;
+    }
+
+    .newsLetter .container .bottom button,
+    .createAccountBlog .container a {
+        padding: 10px 30px;
+        border-radius: 3px;
+        font-size: 8px;
+        line-height: 12px;
+    }
+
+    .latestArticles .container .top .title{
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .latestArticles .btns button{
+        padding:6px 18px ;
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .latestArticles .bottom .cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .latestArticles .card{
+        gap: 8px;
+        border-radius: 15px;
+    }
+
+    .latestArticles .card .img,
+    .latestArticles .card .img img {
+        border-radius: 15px 15px 0 0;
+    }
+
+    .latestArticles .card .img img {
+        height: 110px;
+    }
+
+    .latestArticles .card .title{
+        font-size: 9px;
+        line-height: 14px;
+    }
+
+    .latestArticles .card p{
+        font-size: 8px;
+    }
+
+    .latestArticles .card .link{
+        top: 10px;
+        left: 10px;
+        width: 18px;
+        height: 18px;
     }
 }

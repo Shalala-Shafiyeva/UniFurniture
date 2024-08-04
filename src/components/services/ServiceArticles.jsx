@@ -2,14 +2,14 @@ import React from "react";
 import data from "../../data.json";
 import { Link } from "react-router-dom";
 
-function Articles() {
+function ServiceArticles() {
   return (
     <section className="articles">
       <div className="container">
         <div className="head">
           Browse <span>questions</span> by category
         </div>
-        <div className="articleItems">
+        <div className="articleItemss">
           {data.servicesArticles.map((article) => (
             <div className="article" key={article.id}>
               <div className="txt">
@@ -27,4 +27,4 @@ function Articles() {
   );
 }
 
-export default Articles;
+export default ServiceArticles;

@@ -17,6 +17,7 @@ function Hero() {
         </div>
         <div className="img">
           <img src="/images/bloghero.png" alt="blog" />
+          <Link to="/login">Get Started</Link>
         </div>
       </div>
     </section>

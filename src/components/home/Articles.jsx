@@ -23,7 +23,7 @@ function Articles() {
           </div>
         </div>
         <div className="articleItems">
-          {data.homeArticles.map((article) => (
+          {data.homeArticles.slice(0,3).map((article) => (
             <div className="articleItem">
               <div className="img">
                 <img src={article.img} alt="Image" />

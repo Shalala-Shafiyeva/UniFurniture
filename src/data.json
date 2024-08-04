@@ -247,17 +247,45 @@
     {
       "id": 1,
       "img": "/images/home/articlle1.png",
-      "title": "We are the next banking experience"
+      "title": "We are the next banking experience",
+      "category": "Management",
+      "description": "Is it amart to invest in cryptocurrency in 2024? What you need to Know"
+
     },
     {
       "id": 2,
       "img": "/images/home/article2.png",
-      "title": "We are the next banking experience"
+      "title": "We are the next banking experience",
+      "category": "Finance",
+      "description": "21 job interview tips: How to make a great impression from the first moment"
     },
     {
       "id": 3,
       "img": "/images/home/article3.png",
-      "title": "We are the next banking experience"
+      "title": "We are the next banking experience",
+      "category": "Business",
+      "description": "How to invest money: The smart way to grow your money while you sleep"
+    },
+    {
+      "id": 4,
+      "img": "/images/home/article4.png",
+      "title": "We are the next banking experience",
+      "category": "Finance",
+      "description": "How to invest money: The smart way to grow your money while you sleep"
+    },
+    {
+      "id": 5,
+      "img": "/images/home/article5.png",
+      "title": "We are the next banking experience",
+      "category": "Business",
+      "description": "How to invest money: The smart way to grow your money while you sleep"
+    },
+    {
+      "id": 6,
+      "img": "/images/home/article6.png",
+      "title": "We are the next banking experience",
+      "category": "Management",
+      "description": "How to invest money: The smart way to grow your money while you sleep"
     }
   ],
   "products": [
@@ -312,14 +340,14 @@
       ],
       "price": "30.00",
       "priceBefore": "20.00",
-      "reviews":8,
+      "reviews": 8,
       "rating": 5,
-      "trending":false,
-      "onSale":true,
-      "discount":23,
-      "shipping":1,
-      "category":"livingroom",
-      "dateAdded":"2024-01-26T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 23,
+      "shipping": 1,
+      "category": "livingroom",
+      "dateAdded": "2024-01-26T12:00:00Z"
     },
     {
       "id": 2,
@@ -372,14 +400,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 1,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"livingroom",
-      "dateAdded":"2024-01-27T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "livingroom",
+      "dateAdded": "2024-01-27T12:00:00Z"
     },
     {
       "id": 3,
@@ -423,14 +451,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":14,
+      "reviews": 14,
       "rating": 3,
-      "trending":false,
-      "onSale":true,
-      "discount":21,
-      "shipping":3,
-      "category":"livingroom",
-      "dateAdded":"2023-02-07T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 21,
+      "shipping": 3,
+      "category": "livingroom",
+      "dateAdded": "2023-02-07T12:00:00Z"
     },
     {
       "id": 4,
@@ -465,14 +493,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 1,
-      "trending":false,
-      "onSale":true,
-      "discount":11,
-      "shipping":5,
-      "category":"livingroom",
-      "dateAdded":"2024-07-06T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 11,
+      "shipping": 5,
+      "category": "livingroom",
+      "dateAdded": "2024-07-06T12:00:00Z"
     },
     {
       "id": 5,
@@ -525,14 +553,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":9,
+      "reviews": 9,
       "rating": 4.5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"livingroom",
-      "dateAdded":"2023-09-29T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "livingroom",
+      "dateAdded": "2023-09-29T12:00:00Z"
     },
     {
       "id": 6,
@@ -572,14 +600,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":22,
+      "reviews": 22,
       "rating": 2.3,
-      "trending":false,
-      "onSale":true,
-      "discount":5,
-      "shipping":6,
-      "category":"livingroom",
-      "dateAdded":"2022-07-16T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 5,
+      "shipping": 6,
+      "category": "livingroom",
+      "dateAdded": "2022-07-16T12:00:00Z"
     },
     {
       "id": 7,
@@ -624,14 +652,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":90,
+      "reviews": 90,
       "rating": 5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":10,
-      "category":"livingroom",
-      "dateAdded":"2024-02-05T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 10,
+      "category": "livingroom",
+      "dateAdded": "2024-02-05T12:00:00Z"
     },
     {
       "id": 8,
@@ -655,18 +683,15 @@
         {
           "id": 2,
           "colorName": "Black",
-          "imgs": [
-            "/images/shop/chair8-4.jpeg", 
-          "/images/shop/chair8-5.jpeg"
-        ]
+          "imgs": ["/images/shop/chair8-4.jpeg", "/images/shop/chair8-5.jpeg"]
         },
         {
           "id": 3,
           "colorName": "Red",
           "imgs": [
             "/images/shop/chair8-6.jpeg",
-           "/images/shop/chair8-7.jpeg",
-           "/images/shop/chair8-8.jpeg"
+            "/images/shop/chair8-7.jpeg",
+            "/images/shop/chair8-8.jpeg"
           ]
         }
       ],
@@ -683,14 +708,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":19,
+      "reviews": 19,
       "rating": 4,
-      "trending":false,
-      "onSale":true,
-      "discount":9,
-      "shipping":1,
-      "category":"livingroom",
-      "dateAdded":"2021-05-17T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 9,
+      "shipping": 1,
+      "category": "livingroom",
+      "dateAdded": "2021-05-17T12:00:00Z"
     },
     {
       "id": 9,
@@ -715,18 +740,18 @@
           "id": 2,
           "colorName": "Black",
           "imgs": [
-            "/images/shop/chair9-4.jpeg", 
-          "/images/shop/chair9-5.jpeg",
-          "/images/shop/chair9-6.jpeg"
-        ]
+            "/images/shop/chair9-4.jpeg",
+            "/images/shop/chair9-5.jpeg",
+            "/images/shop/chair9-6.jpeg"
+          ]
         },
         {
           "id": 3,
           "colorName": "Grey",
           "imgs": [
             "/images/shop/chair9-7.jpeg",
-           "/images/shop/chair9-8.jpeg",
-           "/images/shop/chair9-9.jpeg"
+            "/images/shop/chair9-8.jpeg",
+            "/images/shop/chair9-9.jpeg"
           ]
         }
       ],
@@ -743,14 +768,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":55,
+      "reviews": 55,
       "rating": 5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":7,
-      "category":"livingroom",
-      "dateAdded":"2023-02-24T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 7,
+      "category": "livingroom",
+      "dateAdded": "2023-02-24T12:00:00Z"
     },
     {
       "id": 10,
@@ -785,14 +810,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 1,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":6,
-      "category":"bedgroom",
-      "dateAdded":"2024-03-07T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 6,
+      "category": "bedgroom",
+      "dateAdded": "2024-03-07T12:00:00Z"
     },
     {
       "id": 11,
@@ -827,14 +852,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":18,
+      "reviews": 18,
       "rating": 2,
-      "trending":false,
-      "onSale":true,
-      "discount":13,
-      "shipping":4,
-      "category":"bedroom",
-      "dateAdded":"2024-05-22T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 13,
+      "shipping": 4,
+      "category": "bedroom",
+      "dateAdded": "2024-05-22T12:00:00Z"
     },
     {
       "id": 12,
@@ -869,14 +894,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":1,
+      "reviews": 1,
       "rating": 1,
-      "trending":false,
-      "onSale":true,
-      "discount":17,
-      "shipping":1,
-      "category":"bedroom",
-      "dateAdded":"2024-07-07T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 17,
+      "shipping": 1,
+      "category": "bedroom",
+      "dateAdded": "2024-07-07T12:00:00Z"
     },
     {
       "id": 13,
@@ -911,14 +936,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 2.1,
-      "trending":false,
-      "onSale":true,
-      "discount":25,
-      "shipping":10,
-      "category":"bedroom",
-      "dateAdded":"2024-08-15T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 25,
+      "shipping": 10,
+      "category": "bedroom",
+      "dateAdded": "2024-08-15T12:00:00Z"
     },
     {
       "id": 14,
@@ -953,14 +978,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":17,
+      "reviews": 17,
       "rating": 3.3,
-      "trending":false,
-      "onSale":true,
-      "discount":32,
-      "shipping":9,
-      "category":"bedroom",
-      "dateAdded":"2024-05-05T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 32,
+      "shipping": 9,
+      "category": "bedroom",
+      "dateAdded": "2024-05-05T12:00:00Z"
     },
     {
       "id": 15,
@@ -994,14 +1019,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":1,
-      "category":"bedroom",
-      "dateAdded":"2024-07-27T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 1,
+      "category": "bedroom",
+      "dateAdded": "2024-07-27T12:00:00Z"
     },
     {
       "id": 16,
@@ -1036,14 +1061,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":25,
+      "reviews": 25,
       "rating": 4.2,
-      "trending":false,
-      "onSale":true,
-      "discount":34,
-      "shipping":12,
-      "category":"bedroom",
-      "dateAdded":"2021-02-18T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 34,
+      "shipping": 12,
+      "category": "bedroom",
+      "dateAdded": "2021-02-18T12:00:00Z"
     },
     {
       "id": 17,
@@ -1078,14 +1103,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":10,
+      "reviews": 10,
       "rating": 2.8,
-      "trending":false,
-      "onSale":true,
-      "discount":34,
-      "shipping":12,
-      "category":"bedroom",
-      "dateAdded":"2024-03-28T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 34,
+      "shipping": 12,
+      "category": "bedroom",
+      "dateAdded": "2024-03-28T12:00:00Z"
     },
     {
       "id": 18,
@@ -1120,14 +1145,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":22,
+      "reviews": 22,
       "rating": 4.9,
-      "trending":false,
-      "onSale":true,
-      "discount":45,
-      "shipping":15,
-      "category":"bedroom",
-      "dateAdded":"2024-08-01T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 45,
+      "shipping": 15,
+      "category": "bedroom",
+      "dateAdded": "2024-08-01T12:00:00Z"
     },
     {
       "id": 19,
@@ -1162,14 +1187,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":1,
+      "reviews": 1,
       "rating": 0,
-      "trending":false,
-      "onSale":true,
-      "discount":55,
-      "shipping":1,
-      "category":"bedroom",
-      "dateAdded":"2023-05-19T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 55,
+      "shipping": 1,
+      "category": "bedroom",
+      "dateAdded": "2023-05-19T12:00:00Z"
     },
     {
       "id": 20,
@@ -1184,14 +1209,11 @@
         {
           "id": 1,
           "colorName": "Brown",
-          "imgs": [
-            "/images/shop/office1.png",
-            "/images/shop/office1-2.jpeg"
-          ]
+          "imgs": ["/images/shop/office1.png", "/images/shop/office1-2.jpeg"]
         }
       ],
       "garranty": 1,
-      "stock":5,
+      "stock": 5,
       "hasStock": true,
       "description": "Tempted to go with more neutral colors and patterns when it comes to your furniture, especially for seating",
       "charasteristics": [
@@ -1203,14 +1225,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":23,
+      "reviews": 23,
       "rating": 3.6,
-      "trending":false,
-      "onSale":true,
-      "discount":3,
-      "shipping":2,
-      "category":"office",
-      "dateAdded":"2024-04-23T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 3,
+      "shipping": 2,
+      "category": "office",
+      "dateAdded": "2024-04-23T12:00:00Z"
     },
     {
       "id": 21,
@@ -1225,18 +1247,12 @@
         {
           "id": 1,
           "colorName": "Brown",
-          "imgs": [
-            "/images/shop/office2.png",
-            "/images/shop/office2-2.jpeg"
-          ]
+          "imgs": ["/images/shop/office2.png", "/images/shop/office2-2.jpeg"]
         },
         {
           "id": 2,
           "colorName": "Black",
-          "imgs": [
-            "/images/shop/office2-3.jpeg",
-            "/images/shop/office2-4.jpeg"
-          ]
+          "imgs": ["/images/shop/office2-3.jpeg", "/images/shop/office2-4.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1252,14 +1268,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":12,
+      "reviews": 12,
       "rating": 4.1,
-      "trending":false,
-      "onSale":true,
-      "discount":12,
-      "shipping":1,
-      "category":"office",
-      "dateAdded":"2021-10-25T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 12,
+      "shipping": 1,
+      "category": "office",
+      "dateAdded": "2021-10-25T12:00:00Z"
     },
     {
       "id": 22,
@@ -1283,10 +1299,7 @@
         {
           "id": 2,
           "colorName": "Grey",
-          "imgs": [
-            "/images/shop/office3-4.jpeg",
-            "/images/shop/office3-5.jpeg"
-          ]
+          "imgs": ["/images/shop/office3-4.jpeg", "/images/shop/office3-5.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1302,14 +1315,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 1,
-      "trending":false,
-      "onSale":true,
-      "discount":11,
-      "shipping":3,
-      "category":"office",
-      "dateAdded":"2024-02-22T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 11,
+      "shipping": 3,
+      "category": "office",
+      "dateAdded": "2024-02-22T12:00:00Z"
     },
     {
       "id": 23,
@@ -1324,10 +1337,7 @@
         {
           "id": 1,
           "colorName": "Brown",
-          "imgs": [
-            "/images/shop/office4.png",
-            "/images/shop/office4-2.jpeg"
-          ]
+          "imgs": ["/images/shop/office4.png", "/images/shop/office4-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1343,14 +1353,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 1,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"office",
-      "dateAdded":"2024-07-26T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "office",
+      "dateAdded": "2024-07-26T12:00:00Z"
     },
     {
       "id": 24,
@@ -1385,14 +1395,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":51,
+      "reviews": 51,
       "rating": 3.7,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":4,
-      "category":"office",
-      "dateAdded":"2023-12-30T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 4,
+      "category": "office",
+      "dateAdded": "2023-12-30T12:00:00Z"
     },
     {
       "id": 25,
@@ -1427,14 +1437,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":26,
+      "reviews": 26,
       "rating": 4.8,
-      "trending":false,
-      "onSale":true,
-      "discount":5,
-      "shipping":1,
-      "category":"office",
-      "dateAdded":"2023-05-25T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 5,
+      "shipping": 1,
+      "category": "office",
+      "dateAdded": "2023-05-25T12:00:00Z"
     },
     {
       "id": 26,
@@ -1449,10 +1459,7 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/office7.png",
-            "/images/shop/office7-2.jpeg"
-          ]
+          "imgs": ["/images/shop/office7.png", "/images/shop/office7-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1468,14 +1475,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 1,
-      "trending":false,
-      "onSale":true,
-      "discount":7,
-      "shipping":1,
-      "category":"office",
-      "dateAdded":"2024-03-05T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 7,
+      "shipping": 1,
+      "category": "office",
+      "dateAdded": "2024-03-05T12:00:00Z"
     },
     {
       "id": 27,
@@ -1499,16 +1506,12 @@
         {
           "id": 2,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/sofa1-4.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa1-4.jpeg"]
         },
         {
           "id": 3,
           "colorName": "Brown",
-          "imgs": [
-            "/images/shop/sofa1-5.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa1-5.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1524,14 +1527,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":5,
-      "category":"livingroom",
-      "dateAdded":"2024-05-27T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 5,
+      "category": "livingroom",
+      "dateAdded": "2024-05-27T12:00:00Z"
     },
     {
       "id": 28,
@@ -1555,10 +1558,7 @@
         {
           "id": 2,
           "colorName": "Black",
-          "imgs": [
-            "/images/shop/sofa2-4.jpeg",
-            "/images/shop/sofa2-5.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa2-4.jpeg", "/images/shop/sofa2-5.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1574,14 +1574,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":8,
+      "reviews": 8,
       "rating": 2,
-      "trending":false,
-      "onSale":true,
-      "discount":6,
-      "shipping":1,
-      "category":"livingroom",
-      "dateAdded":"2023-06-07T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 6,
+      "shipping": 1,
+      "category": "livingroom",
+      "dateAdded": "2023-06-07T12:00:00Z"
     },
     {
       "id": 29,
@@ -1596,18 +1596,12 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/sofa3.png",
-            "/images/shop/sofa3-3.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa3.png", "/images/shop/sofa3-3.jpeg"]
         },
         {
           "id": 2,
           "colorName": "Grey",
-          "imgs": [
-            "/images/shop/sofa3-2.jpeg",
-            "/images/shop/sofa3-4.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa3-2.jpeg", "/images/shop/sofa3-4.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1623,14 +1617,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":15,
+      "reviews": 15,
       "rating": 4.2,
-      "trending":false,
-      "onSale":true,
-      "discount":7,
-      "shipping":5,
-      "category":"livingroom",
-      "dateAdded":"2024-03-08T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 7,
+      "shipping": 5,
+      "category": "livingroom",
+      "dateAdded": "2024-03-08T12:00:00Z"
     },
     {
       "id": 30,
@@ -1666,14 +1660,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 1,
-      "trending":false,
-      "onSale":true,
-      "discount":29,
-      "shipping":2,
-      "category":"livingroom",
-      "dateAdded":"2024-09-15T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 29,
+      "shipping": 2,
+      "category": "livingroom",
+      "dateAdded": "2024-09-15T12:00:00Z"
     },
     {
       "id": 31,
@@ -1688,18 +1682,12 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/sofa6.png",
-            "/images/shop/sofa6-2.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa6.png", "/images/shop/sofa6-2.jpeg"]
         },
         {
           "id": 2,
           "colorName": "Green",
-          "imgs": [
-            "/images/shop/sofa6-3.jpeg",
-            "/images/shop/sofa6-4.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa6-3.jpeg", "/images/shop/sofa6-4.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1715,14 +1703,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":103,
+      "reviews": 103,
       "rating": 4.8,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":14,
-      "category":"livingroom",
-      "dateAdded":"2021-12-05T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 14,
+      "category": "livingroom",
+      "dateAdded": "2021-12-05T12:00:00Z"
     },
     {
       "id": 32,
@@ -1746,26 +1734,17 @@
         {
           "id": 2,
           "colorName": "Black",
-          "imgs": [
-            "/images/shop/sofa5-4.jpeg",
-            "/images/shop/sofa5-7.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa5-4.jpeg", "/images/shop/sofa5-7.jpeg"]
         },
         {
           "id": 3,
           "colorName": "Blue",
-          "imgs": [
-            "/images/shop/sofa5-5.jpeg",
-            "/images/shop/sofa5-6.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa5-5.jpeg", "/images/shop/sofa5-6.jpeg"]
         },
         {
           "id": 4,
           "colorName": "Orange",
-          "imgs": [
-            "/images/shop/sofa5-8.jpeg",
-            "/images/shop/sofa5-9.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa5-8.jpeg", "/images/shop/sofa5-9.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1781,14 +1760,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":78,
+      "reviews": 78,
       "rating": 3.9,
-      "trending":false,
-      "onSale":true,
-      "discount":9,
-      "shipping":4,
-      "category":"livingroom",
-      "dateAdded":"2023-11-17T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 9,
+      "shipping": 4,
+      "category": "livingroom",
+      "dateAdded": "2023-11-17T12:00:00Z"
     },
     {
       "id": 33,
@@ -1803,18 +1782,12 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/sofa7.png",
-            "/images/shop/sofa7-2.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa7.png", "/images/shop/sofa7-2.jpeg"]
         },
         {
           "id": 2,
           "colorName": "Grey",
-          "imgs": [
-            "/images/shop/sofa7-3.jpeg",
-            "/images/shop/sofa7-4.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa7-3.jpeg", "/images/shop/sofa7-4.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1830,14 +1803,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":55,
+      "reviews": 55,
       "rating": 1.9,
-      "trending":false,
-      "onSale":true,
-      "discount":71,
-      "shipping":4,
-      "category":"livingroom",
-      "dateAdded":"2024-04-14T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 71,
+      "shipping": 4,
+      "category": "livingroom",
+      "dateAdded": "2024-04-14T12:00:00Z"
     },
     {
       "id": 34,
@@ -1852,10 +1825,7 @@
         {
           "id": 1,
           "colorName": "Grey",
-          "imgs": [
-            "/images/shop/sofa8.png",
-            "/images/shop/sofa8-2.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa8.png", "/images/shop/sofa8-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1871,14 +1841,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":95,
+      "reviews": 95,
       "rating": 3.5,
-      "trending":false,
-      "onSale":true,
-      "discount":15,
-      "shipping":1,
-      "category":"livingroom",
-      "dateAdded":"2024-06-22T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 15,
+      "shipping": 1,
+      "category": "livingroom",
+      "dateAdded": "2024-06-22T12:00:00Z"
     },
     {
       "id": 35,
@@ -1902,10 +1872,7 @@
         {
           "id": 2,
           "colorName": "Green",
-          "imgs": [
-            "/images/shop/sofa9-4.jpeg",
-            "/images/shop/sofa9-5.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa9-4.jpeg", "/images/shop/sofa9-5.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1921,14 +1888,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":65,
+      "reviews": 65,
       "rating": 4.9,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":1,
-      "category":"livingroom",
-      "dateAdded":"2024-06-30T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 1,
+      "category": "livingroom",
+      "dateAdded": "2024-06-30T12:00:00Z"
     },
     {
       "id": 36,
@@ -1943,10 +1910,7 @@
         {
           "id": 1,
           "colorName": "Grey",
-          "imgs": [
-            "/images/shop/sofa10.png",
-            "/images/shop/sofa10-2.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa10.png", "/images/shop/sofa10-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -1962,14 +1926,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":31,
+      "reviews": 31,
       "rating": 4.2,
-      "trending":false,
-      "onSale":true,
-      "discount":26,
-      "shipping":2,
-      "category":"livingroom",
-      "dateAdded":"2024-11-27T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 26,
+      "shipping": 2,
+      "category": "livingroom",
+      "dateAdded": "2024-11-27T12:00:00Z"
     },
     {
       "id": 37,
@@ -1984,17 +1948,12 @@
         {
           "id": 1,
           "colorName": "Green",
-          "imgs": [
-            "/images/shop/sofa12.png",
-            "/images/shop/sofa12-2.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa12.png", "/images/shop/sofa12-2.jpeg"]
         },
         {
           "id": 2,
           "colorName": "Red",
-          "imgs": [
-            "/images/shop/sofa12-3.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa12-3.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2010,14 +1969,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":95,
+      "reviews": 95,
       "rating": 4.8,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":9,
-      "category":"livingroom",
-      "dateAdded":"2024-12-12T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 9,
+      "category": "livingroom",
+      "dateAdded": "2024-12-12T12:00:00Z"
     },
     {
       "id": 38,
@@ -2041,26 +2000,17 @@
         {
           "id": 2,
           "colorName": "Black",
-          "imgs": [
-            "/images/shop/sofa5-4.jpeg",
-            "/images/shop/sofa5-7.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa5-4.jpeg", "/images/shop/sofa5-7.jpeg"]
         },
         {
           "id": 3,
           "colorName": "Blue",
-          "imgs": [
-            "/images/shop/sofa5-5.jpeg",
-            "/images/shop/sofa5-6.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa5-5.jpeg", "/images/shop/sofa5-6.jpeg"]
         },
         {
           "id": 4,
           "colorName": "Orange",
-          "imgs": [
-            "/images/shop/sofa5-8.jpeg",
-            "/images/shop/sofa5-9.jpeg"
-          ]
+          "imgs": ["/images/shop/sofa5-8.jpeg", "/images/shop/sofa5-9.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2076,14 +2026,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 2.2,
-      "trending":false,
-      "onSale":true,
-      "discount":20,
-      "shipping":2,
-      "category":"livingroom",
-      "dateAdded":"2024-09-29T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 20,
+      "shipping": 2,
+      "category": "livingroom",
+      "dateAdded": "2024-09-29T12:00:00Z"
     },
     {
       "id": 39,
@@ -2098,10 +2048,7 @@
         {
           "id": 1,
           "colorName": "Brown",
-          "imgs": [
-            "/images/shop/table1.png",
-            "/images/shop/table1-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table1.png", "/images/shop/table1-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2117,14 +2064,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":5,
+      "reviews": 5,
       "rating": 2.5,
-      "trending":false,
-      "onSale":true,
-      "discount":28,
-      "shipping":2,
-      "category":"bedroom",
-      "dateAdded":"2024-09-19T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 28,
+      "shipping": 2,
+      "category": "bedroom",
+      "dateAdded": "2024-09-19T12:00:00Z"
     },
     {
       "id": 40,
@@ -2139,10 +2086,7 @@
         {
           "id": 1,
           "colorName": "Brown",
-          "imgs": [
-            "/images/shop/table2.png",
-            "/images/shop/table2-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table2.png", "/images/shop/table2-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2158,14 +2102,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":53,
+      "reviews": 53,
       "rating": 1.2,
-      "trending":false,
-      "onSale":true,
-      "discount":32,
-      "shipping":2,
-      "category":"bedroom",
-      "dateAdded":"2022-02-26T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 32,
+      "shipping": 2,
+      "category": "bedroom",
+      "dateAdded": "2022-02-26T12:00:00Z"
     },
     {
       "id": 41,
@@ -2180,10 +2124,7 @@
         {
           "id": 1,
           "colorName": "Brown",
-          "imgs": [
-            "/images/shop/table3.png",
-            "/images/shop/table3-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table3.png", "/images/shop/table3-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2199,14 +2140,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":50,
+      "reviews": 50,
       "rating": 4.9,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2024-08-13T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2024-08-13T12:00:00Z"
     },
     {
       "id": 42,
@@ -2241,14 +2182,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":75,
+      "reviews": 75,
       "rating": 4.6,
-      "trending":false,
-      "onSale":true,
-      "discount":15,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2021-11-21T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 15,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2021-11-21T12:00:00Z"
     },
     {
       "id": 43,
@@ -2263,10 +2204,7 @@
         {
           "id": 1,
           "colorName": "Brown",
-          "imgs": [
-            "/images/shop/table5.png",
-            "/images/shop/table5-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table5.png", "/images/shop/table5-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2282,14 +2220,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":25,
+      "reviews": 25,
       "rating": 3.2,
-      "trending":false,
-      "onSale":true,
-      "discount":21,
-      "shipping":2,
-      "category":"livingroom",
-      "dateAdded":"2024-02-14T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 21,
+      "shipping": 2,
+      "category": "livingroom",
+      "dateAdded": "2024-02-14T12:00:00Z"
     },
     {
       "id": 44,
@@ -2304,10 +2242,7 @@
         {
           "id": 1,
           "colorName": "Brown",
-          "imgs": [
-            "/images/shop/table6.png",
-            "/images/shop/table6-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table6.png", "/images/shop/table6-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2323,14 +2258,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":52,
+      "reviews": 52,
       "rating": 4.1,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2024-02-22T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2024-02-22T12:00:00Z"
     },
     {
       "id": 45,
@@ -2345,10 +2280,7 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/table7.png",
-            "/images/shop/table7-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table7.png", "/images/shop/table7-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2364,14 +2296,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":15,
+      "reviews": 15,
       "rating": 3.7,
-      "trending":false,
-      "onSale":true,
-      "discount":29,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2024-05-23T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 29,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2024-05-23T12:00:00Z"
     },
     {
       "id": 46,
@@ -2386,10 +2318,7 @@
         {
           "id": 1,
           "colorName": "Black",
-          "imgs": [
-            "/images/shop/table8.png",
-            "/images/shop/table8-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table8.png", "/images/shop/table8-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2405,14 +2334,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":209,
+      "reviews": 209,
       "rating": 5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2024-05-13T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2024-05-13T12:00:00Z"
     },
     {
       "id": 47,
@@ -2427,10 +2356,7 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/table9.png",
-            "/images/shop/table9-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table9.png", "/images/shop/table9-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2446,14 +2372,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":38,
+      "reviews": 38,
       "rating": 4.3,
-      "trending":false,
-      "onSale":true,
-      "discount":10,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2024-06-08T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 10,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2024-06-08T12:00:00Z"
     },
     {
       "id": 48,
@@ -2488,14 +2414,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":123,
+      "reviews": 123,
       "rating": 5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2022-12-31T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2022-12-31T12:00:00Z"
     },
     {
       "id": 49,
@@ -2510,10 +2436,7 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/table11.png",
-            "/images/shop/table11-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table11.png", "/images/shop/table11-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2529,14 +2452,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":128,
+      "reviews": 128,
       "rating": 4.9,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2022-12-28T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2022-12-28T12:00:00Z"
     },
     {
       "id": 50,
@@ -2551,10 +2474,7 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/table12.png",
-            "/images/shop/table12-2.jpeg"
-          ]
+          "imgs": ["/images/shop/table12.png", "/images/shop/table12-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2570,14 +2490,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":13,
+      "reviews": 13,
       "rating": 4.5,
-      "trending":false,
-      "onSale":true,
-      "discount":10,
-      "shipping":2,
-      "category":"businesssolution",
-      "dateAdded":"2023-11-11T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 10,
+      "shipping": 2,
+      "category": "businesssolution",
+      "dateAdded": "2023-11-11T12:00:00Z"
     },
     {
       "id": 51,
@@ -2592,23 +2512,17 @@
         {
           "id": 1,
           "colorName": "Blue",
-          "imgs": [
-            "/images/shop/chair10.png"
-          ]
+          "imgs": ["/images/shop/chair10.png"]
         },
         {
           "id": 2,
           "colorName": "Orange",
-          "imgs": [
-            "/images/shop/chair10-2.jpeg"
-          ]
+          "imgs": ["/images/shop/chair10-2.jpeg"]
         },
         {
           "id": 3,
           "colorName": "Red",
-          "imgs": [
-            "/images/shop/chair10-3.jpeg"
-          ]
+          "imgs": ["/images/shop/chair10-3.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2624,14 +2538,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":120,
+      "reviews": 120,
       "rating": 5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":5,
-      "category":"bedroom",
-      "dateAdded":"2023-12-05T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 5,
+      "category": "bedroom",
+      "dateAdded": "2023-12-05T12:00:00Z"
     },
     {
       "id": 52,
@@ -2646,10 +2560,7 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/chair11.png",
-            "/images/shop/chair11-2.jpeg"
-          ]
+          "imgs": ["/images/shop/chair11.png", "/images/shop/chair11-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2665,14 +2576,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":3,
+      "reviews": 3,
       "rating": 3.7,
-      "trending":false,
-      "onSale":true,
-      "discount":16,
-      "shipping":9,
-      "category":"livingroom",
-      "dateAdded":"2020-01-01T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 16,
+      "shipping": 9,
+      "category": "livingroom",
+      "dateAdded": "2020-01-01T12:00:00Z"
     },
     {
       "id": 53,
@@ -2687,10 +2598,7 @@
         {
           "id": 1,
           "colorName": "Grey",
-          "imgs": [
-            "/images/shop/chair12.png",
-            "/images/shop/chair12-2.jpeg"
-          ]
+          "imgs": ["/images/shop/chair12.png", "/images/shop/chair12-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2706,14 +2614,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":12,
+      "reviews": 12,
       "rating": 5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2022-10-31T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2022-10-31T12:00:00Z"
     },
     {
       "id": 54,
@@ -2728,10 +2636,7 @@
         {
           "id": 1,
           "colorName": "White",
-          "imgs": [
-            "/images/shop/chair13.png",
-            "/images/shop/chair13-2.jpeg"
-          ]
+          "imgs": ["/images/shop/chair13.png", "/images/shop/chair13-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2747,14 +2652,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":12,
+      "reviews": 12,
       "rating": 4.3,
-      "trending":false,
-      "onSale":true,
-      "discount":12,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2024-01-21T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 12,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2024-01-21T12:00:00Z"
     },
     {
       "id": 55,
@@ -2769,10 +2674,7 @@
         {
           "id": 1,
           "colorName": "Grey",
-          "imgs": [
-            "/images/shop/chair14.png",
-            "/images/shop/chair14-2.jpeg"
-          ]
+          "imgs": ["/images/shop/chair14.png", "/images/shop/chair14-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2788,14 +2690,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":10,
+      "reviews": 10,
       "rating": 2,
-      "trending":false,
-      "onSale":true,
-      "discount":50,
-      "shipping":2,
-      "category":"livingroom",
-      "dateAdded":"2022-02-11T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 50,
+      "shipping": 2,
+      "category": "livingroom",
+      "dateAdded": "2022-02-11T12:00:00Z"
     },
     {
       "id": 56,
@@ -2810,10 +2712,7 @@
         {
           "id": 1,
           "colorName": "Black",
-          "imgs": [
-            "/images/shop/chair15.png",
-            "/images/shop/chair15-2.jpeg"
-          ]
+          "imgs": ["/images/shop/chair15.png", "/images/shop/chair15-2.jpeg"]
         }
       ],
       "garranty": 1,
@@ -2829,14 +2728,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":3,
+      "reviews": 3,
       "rating": 2,
-      "trending":false,
-      "onSale":true,
-      "discount":30,
-      "shipping":1,
-      "category":"homedecoration",
-      "dateAdded":"2023-04-13T12:00:00Z"
+      "trending": false,
+      "onSale": true,
+      "discount": 30,
+      "shipping": 1,
+      "category": "homedecoration",
+      "dateAdded": "2023-04-13T12:00:00Z"
     },
     {
       "id": 57,
@@ -2851,10 +2750,7 @@
         {
           "id": 1,
           "colorName": "Grey",
-          "imgs": [
-            "/images/shop/chair17-2.jpeg",
-            "/images/shop/chair17.png"
-          ]
+          "imgs": ["/images/shop/chair17-2.jpeg", "/images/shop/chair17.png"]
         }
       ],
       "garranty": 1,
@@ -2870,14 +2766,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":13,
+      "reviews": 13,
       "rating": 4,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"homedecoration",
-      "dateAdded":"2020-12-31T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "homedecoration",
+      "dateAdded": "2020-12-31T12:00:00Z"
     },
     {
       "id": 58,
@@ -2892,9 +2788,7 @@
         {
           "id": 1,
           "colorName": "Blue",
-          "imgs": [
-            "/images/shop/chair10.png"
-          ]
+          "imgs": ["/images/shop/chair10.png"]
         }
       ],
       "garranty": 1,
@@ -2910,14 +2804,14 @@
         "Features: Product Warranty",
         "Features: Product Warranty"
       ],
-      "reviews":123,
+      "reviews": 123,
       "rating": 5,
-      "trending":true,
-      "onSale":false,
-      "discount":0,
-      "shipping":2,
-      "category":"livingroom",
-      "dateAdded":"2022-12-31T12:00:00Z"
+      "trending": true,
+      "onSale": false,
+      "discount": 0,
+      "shipping": 2,
+      "category": "livingroom",
+      "dateAdded": "2022-12-31T12:00:00Z"
     }
   ],
   "shopSlider": [
@@ -3009,36 +2903,36 @@
       "img": "/images/shop/avatar3.png"
     }
   ],
-  "servicesArticles":[
+  "servicesArticles": [
     {
-      "id":1,
-      "title":"Getting started",
-      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit eque ipsum odio justo."
+      "id": 1,
+      "title": "Getting started",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit eque ipsum odio justo."
     },
     {
-      "id":2,
-      "title":"Desktop & mobile apps",
-      "content":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex."
+      "id": 2,
+      "title": "Desktop & mobile apps",
+      "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex."
     },
     {
-      "id":3,
-      "title":"Payment & billing",
-      "content":"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore dolore eu fugiat."
+      "id": 3,
+      "title": "Payment & billing",
+      "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore dolore eu fugiat."
     },
     {
-      "id":4,
-      "title":"Troubleshooting",
-      "content":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex."
+      "id": 4,
+      "title": "Troubleshooting",
+      "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex."
     },
     {
-      "id":5,
-      "title":"Investing & traiding ",
-      "content":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex."
+      "id": 5,
+      "title": "Investing & traiding ",
+      "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex."
     },
     {
-      "id":6,
-      "title":"Cryptocurrencies",
-      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit eque ipsum odio justo."
+      "id": 6,
+      "title": "Cryptocurrencies",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit eque ipsum odio justo."
     }
   ]
 }

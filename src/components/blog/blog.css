@@ -59,21 +59,35 @@
     height: 86%;
 }
 
+.hero .container .img a {
+    display: none;
+    padding: 20px 60px;
+    border-radius: 7.116px;
+    background: #00A991;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    width: max-content;
+}
+
 .hero .container .img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.newsLetter {
+.newsLetter,
+.createAccountBlog {
     width: 100%;
     margin: 70px 0;
 }
 
-.newsLetter .container {
+.newsLetter .container,
+.createAccountBlog .container {
     width: 80%;
     border-radius: 10px;
-    background: #CCEEE9;
     padding: 60px;
     display: flex;
     flex-direction: column;
@@ -83,12 +97,31 @@
     height: max-content;
 }
 
-.newsLetter .container .title {
-    color: #24252E;
+.newsLetter .container {
+    gap: 26px;
+    background: #CCEEE9;
+}
+
+.createAccountBlog .container {
+    gap: 80px;
+    background-color: #00A991;
+}
+
+.newsLetter .container .title,
+.createAccountBlog .title {
     text-align: center;
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 700;
     line-height: 55px
+}
+
+
+.newsLetter .container .title {
+    color: #24252E
+}
+
+.createAccountBlog .title {
+    color: #fff;
 }
 
 .newsLetter .container p {
@@ -124,14 +157,173 @@
     color: #24252E;
 }
 
-.newsLetter .container .bottom button {
+.newsLetter .container .bottom button,
+.createAccountBlog .container a {
     border-radius: 10px;
-    background: #00A991;
     padding: 25px 80px;
-    color: #FFF;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
     border: none;
     cursor: pointer;
+}
+
+.newsLetter .container .bottom button {
+    background: #00A991;
+    color: #FFF;
+}
+
+.createAccountBlog .container a {
+    color: #000;
+    background-color: #fff;
+}
+
+.latestArticles {
+    width: 100%;
+    margin: 80px 0;
+    height: max-content;
+}
+
+.latestArticles .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: max-content;
+}
+
+.latestArticles .container .top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.latestArticles .container .top .title {
+    color: #0B0D17;
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.latestArticles .container .top .title span {
+    color: #FF914D;
+}
+
+.latestArticles .container .top .btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.latestArticles .btns button {
+    padding: 15px 50px;
+    border-radius: 10px;
+    background: #F2FBF9;
+    color: #24252E;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 50px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+
+.latestArticles .btns button.actice,
+.latestArticles .btns button:hover {
+    color: #FFF;
+    background-color: #00A991;
+}
+
+.latestArticles .bottom {
+    width: 100%;
+}
+
+.latestArticles .bottom .cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.latestArticles .card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 30px;
+    transition: .3s all ease-in-out;
+    background-color: #F2FBF9;
+    position: relative;
+}
+
+.latestArticles .card .link {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #FFF;
+    transition: .3s all ease-in-out;
+}
+
+.latestArticles .card .link:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.latestArticles .card .link a {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.latestArticles .card .link a img {
+    width: 60%;
+    height: 60%;
+    transform: rotate(-45deg);
+}
+
+.latestArticles .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.latestArticles .card .img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px 30px 0 0;
+}
+
+.latestArticles .card .img img {
+    border-radius: 30px 30px 0 0 !important;
+    width: 100%;
+    height: 210px;
+}
+
+.latestArticles .card .title {
+    color: #24252E;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.latestArticles .card p {
+    color: #3C3D45;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 10px 20px 10px;
 }
