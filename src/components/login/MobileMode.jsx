@@ -64,7 +64,7 @@ function MobileMode() {
                 <a href="">Forgot Password?</a>
               </div>
             </div>
-            <Link to="/" type="submit">
+            <Link className="submit" to="/" type="submit">
               Sign In
             </Link>
           </form>

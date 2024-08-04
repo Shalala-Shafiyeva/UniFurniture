@@ -331,6 +331,7 @@
     display: none;
     flex-direction: column;
     justify-content: space-between;
+    height: max-content;
 }
 
 .mobileModee .top {
@@ -481,7 +482,7 @@
     font-weight: 600;
 }
 
-.mobileModee .formPart a {
+.mobileModee .formPart .submit {
     width: 100%;
     height: 56px;
     border-radius: 1000px;
