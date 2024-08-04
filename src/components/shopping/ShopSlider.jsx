@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Autoplay,Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import data from "../../data.json";
 import { Link } from "react-router-dom";
@@ -12,10 +12,11 @@ function ShopSlider() {
     <section className="shopSlider">
       <Swiper
         className="swiper"
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={30}
         slidesPerView={"auto"}
         loop={true}
+        autoplay={{delay:3000, disableOnInteraction:false}}
       >
         {data.shopSlider.map((slider) => {
           return (

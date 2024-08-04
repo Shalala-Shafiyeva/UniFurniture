@@ -13,7 +13,7 @@ function ServiceCommite() {
             in various regions. we provied various types of furniture of the
             hightest quality, of course with good service and other conveniences
           </p>
-          <Link to="#" className="getStart">Get Started</Link>
+          <Link to="/login" className="getStart">Get Started</Link>
         </div>
         <div className="img">
           <img src="/images/shop/commit.png" alt="Image" />

@@ -95,7 +95,7 @@
     }
 
     .furnitures .products .productCard {
-        height: 350px;
+        height: 300px !important;
     }
 
     .furnitures .products .productCard .head {
@@ -312,7 +312,18 @@
     }
 }
 
+@media (max-width:880px) {
+    .shoppingHero .container .cover h2 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
+
 @media (max-width:576px) {
+
+    .shoppingHero {
+        margin-top: 0px;
+    }
 
     .shoppingHero .container {
         width: 100%;
@@ -406,6 +417,7 @@
         gap: 5px;
         font-size: 10px;
         line-height: normal;
+        border-radius: 4px;
     }
 
     .furnitures .filterBtns button img {
@@ -420,19 +432,25 @@
     .furnitures .products .productCard {
         width: 45%;
         height: 220px;
+        padding: 10px;
     }
 
     .furnitures .products .productCard .head {
-        padding: 11px 7px;
+        padding: 7px;
     }
 
-    .furnitures .products .productCard .head .img {
-        width: 10px;
-        height: 10px;
+    .furnitures .products .productCard .head img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .furnitures .products .productCard .head .img img{
+        width: 100%;
+        height: 100%;
     }
 
     .furnitures .products .productCard .head .price {
-        font-size: 7px;
+        font-size: 9px;
         line-height: 11px;
     }
 
@@ -441,12 +459,12 @@
     }
 
     .furnitures .products .productCard .productContext .productName {
-        font-size: 10px;
+        font-size: 12px;
         line-height: normal;
     }
 
     .furnitures .products .productCard .productContext .productDesc {
-        font-size: 7px;
+        font-size: 10px;
         line-height: 11px;
     }
 
@@ -462,6 +480,7 @@
         padding: 5px 15px;
         font-size: 10px;
         line-height: 16px;
+        border-radius: 4px;
     }
 
     .furnitures .pagination {
@@ -470,7 +489,12 @@
 
     .furnitures .pagination .nextBtn,
     .furnitures .pagination .prevBtn {
-        padding: 7px;
+        padding: 6px;
+    }
+
+    .furnitures .pagination .nextBtn img,
+    .furnitures .pagination .prevBtn img{
+        width: 20px;
     }
 
     .furnitures .pagination .pages>button {
@@ -690,7 +714,7 @@
 
     .startShopping a {
         padding: 10px 30px;
-        font-size: 7px;
+        font-size: 10px;
         line-height: 12px;
         border-radius: 3px;
     }
