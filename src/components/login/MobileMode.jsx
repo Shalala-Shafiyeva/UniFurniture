@@ -6,7 +6,6 @@ import { useState } from "react";
 function MobileMode() {
   const initialState = {
     email: "",
-    name: "",
     password: "",
   };
 
@@ -35,7 +34,7 @@ function MobileMode() {
           <form action="">
             <div className="inpMobile">
               <img className="icon" src="/images/Message.png" alt="Email" />
-              <input type="email" name="email" placeholder="Email" />
+              <input value={values.email} onChange={(e)=>{onChange(e)}} type="email" name="email" placeholder="Email" />
             </div>
             <div className="inpMobile">
               <img className="icon" src="/images/Lock.png" alt="Password" />
@@ -53,6 +52,8 @@ function MobileMode() {
                 type={visiblePass ? "text" : "password"}
                 name="password"
                 placeholder="Password"
+                value={values.password}
+                onChange={(e)=>{onChange(e)}}
               />
             </div>
             <div className="checkbox">

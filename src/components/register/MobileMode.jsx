@@ -1,8 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './register.css';
+import "./register.css";
+import { useState } from "react";
 
 function MobileMode() {
+
+  const [visiblePass, setVisiblePass] = useState(false);
+  const handleVisiblePass = () => {
+    setVisiblePass((prev) => !prev);
+  };
+  const [values, setValues] = useState({ name: "", email: "", password: "" });
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
   return (
     <div className="mobileMode">
       <div className="top">
@@ -16,17 +28,50 @@ function MobileMode() {
           <form action="">
             <div className="inpMobile">
               <img src="/images/user.png" alt="User" />
-              <input type="text" name="name" placeholder="Your name" />
+              <input
+                onChange={(e) => {
+                  onChange(e);
+                }}
+                type="text"
+                name="name"
+                placeholder="Your name"
+              />
             </div>
             <div className="inpMobile">
               <img src="/images/Message.png" alt="Email" />
-              <input type="email" name="email" placeholder="Email" />
+              <input
+                onChange={(e) => {
+                  onChange(e);
+                }}
+                type="email"
+                name="email"
+                placeholder="Email"
+              />
             </div>
             <div className="inpMobile">
               <img src="/images/Lock.png" alt="Password" />
-              <input type="password" name="password" placeholder="Password" />
+              <input
+                type={visiblePass ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+                onChange={(e) => {
+                  onChange(e);
+                }}
+              />
+              <img
+                className="hide"
+                src={
+                  visiblePass
+                    ? "/images/home/show.png"
+                    : "/images/home/Hide.png"
+                }
+                alt="Hidden password"
+                onClick={handleVisiblePass}
+              />
             </div>
-            <button type="submit">Sign Up</button>
+            <Link className="submit" to="/login" type="submit">
+              Sign Up
+            </Link>
           </form>
         </div>
       </div>
