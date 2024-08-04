@@ -29,8 +29,8 @@ function ManageFinance() {
             </div>
           ))}
         </div>
-        <Link to="#" className="getStart">
-          GetStarted
+        <Link to="/login" className="getStart">
+          Get Started
         </Link>
       </div>
     </section>

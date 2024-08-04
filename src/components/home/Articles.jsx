@@ -17,7 +17,7 @@ function Articles() {
           </div>
           <div className="btns">
             <Link to="#">BROWSE ALL ARTICLLES</Link>
-            <Link to="#" className="getStart">
+            <Link to="/login" className="getStart">
               Get Started
             </Link>
           </div>

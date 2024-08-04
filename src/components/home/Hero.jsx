@@ -16,7 +16,7 @@ function Hero() {
           WeConsult is a Multi Layout premium Webflow template focussed on
           consulting agencies.
         </p>
-        <Link to='#'>Start Shopping</Link>
+        <Link to='/shop'>Start Shopping</Link>
       </div>
     </section>
     <div className="coverOut">
@@ -27,7 +27,7 @@ function Hero() {
           WeConsult is a Multi Layout premium Webflow template focussed on
           consulting agencies.
         </p>
-        <Link to='#'>Get Started</Link>
+        <Link to='/login'>Get Started</Link>
       </div>
     </>
   );

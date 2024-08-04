@@ -35,6 +35,10 @@
         margin: 100px 0;
     }
 
+    .nextBanking .container {
+        width: 90%;
+    }
+
     .nextBanking .cover .diagram {
         gap: 15px;
     }
@@ -93,6 +97,7 @@
     }
 
     .choose>.container {
+        width: 90%;
         gap: 28px;
     }
 
@@ -125,6 +130,10 @@
         font-size: 12px;
         line-height: 20px;
         padding: 14px 44px;
+    }
+
+    .homeContainer .impact .container {
+        width: 90%;
     }
 
     .homeContainer .impact .rating .top>div,
@@ -390,6 +399,7 @@
 @media (max-width:576px) {
     .homeHero {
         height: 280px;
+        margin-top: 0px;
     }
 
     .homeHero .ellipse {
@@ -591,12 +601,17 @@
     }
 
     .homeContainer .impact {
-        padding: 10px 25px;
+        padding: 20px 25px;
 
     }
 
     .homeContainer .impact .head {
-        gap: 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .homeContainer .impact .head .left {
+        width: 100% !important;
     }
 
     .homeContainer .impact .head .left {
@@ -604,7 +619,7 @@
     }
 
     .homeContainer .getStart {
-        font-size: 5px;
+        font-size: 9px;
         font-weight: 500;
         line-height: 8px;
         padding: 6ppx 18px;
@@ -678,10 +693,15 @@
         line-height: 20px;
     }
 
+    .containerManage .getStart{
+        font-size: 12px;
+    }
+
     .startWithUni .containerStart .head {
         flex-direction: column;
         justify-content: center;
         gap: 35px;
+        text-align: center;
     }
 
     .startWithUni .head>div {
@@ -704,8 +724,14 @@
     }
 
     .startWithUni .head .btns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         gap: 17px;
+    }
+
+    .startWithUni .head .btns a{
+        width: 100%;
     }
 
     .startWithUni .containerStart>.contentUni {
@@ -756,8 +782,14 @@
         text-align: center;
     }
 
+    .createAccount{
+        margin: 0px;
+    }
+
     .createAccount .containerAcc {
         padding: 25px 43px;
+        width: 100%;
+        border-radius: 0;
     }
 
     .createAccount .cover {
@@ -780,47 +812,46 @@
         padding: 50px;
     }
 
-
     .slider .cover .content .title {
-        font-size: 12px;
+        font-size: 15px;
         line-height: normal;
     }
 
     .slider .cover .content p {
-        font-size: 7px;
+        font-size: 12px;
         line-height: normal;
     }
 
     .slider .cover .content .name {
-        font-size: 5px;
+        font-size: 10px;
         line-height: 9px;
     }
 
     .slider .cover .content .role {
-        font-size: 5px;
-        line-height: 8px;
+        font-size: 10px;
+        line-height: 19px;
     }
 
     .slider .swiper-button-prev,
     .slider .swiper-button-next {
-        width: 11px;
-        height: 11px;
+        width: 20px;
+        height: 20px;
         padding: 2px;
     }
 
     .slider .swiper-button-prev::after,
     .slider .swiper-button-next::after {
-        background-size: 5px 5px;
+        background-size: 16px;
     }
 
     .slider .swiper-pagination-bullet {
-        height: 4px;
-        width: 4px;
+        height: 10px;
+        width: 10px;
     }
 
     .slider .swiper-pagination-bullet-active {
-        height: 4px;
-        width: 8px;
+        height: 10px;
+        width: 20px;
     }
 
     .homeContainer .questionAccourdion {
@@ -828,7 +859,9 @@
     }
 
     .questionAccourdion .filterBtns {
+        width: 100%;
         margin-top: 18px;
+        gap: 6px;
     }
 
     .questionAccourdion .filterBtns .btn span,
@@ -875,7 +908,7 @@
     }
 
     .homeContainer .articles {
-        margin: 0;
+        margin: 0 0 40px;
     }
 
     .homeContainer .articles .containerArticle .head {
@@ -899,15 +932,19 @@
 
     .homeContainer .articles .btns {
         width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         justify-content: center;
         align-items: center;
     }
 
-    .homeContainer .articles .btns a:first-of-type {
-        padding: 7px;
-        font-size: 5px;
+    .homeContainer .articles .btns a{
+        width: 100%;
+        padding: 15px !important;
+        font-size: 10px !important;
         line-height: 18px;
+        text-align: center;
     }
 
     .homeContainer .articleItems {
@@ -932,5 +969,17 @@
     .homeContainer .articleItem .context a {
         font-size: 12px;
         line-height: 20px;
+    }
+}
+
+@media (max-width:450px) {
+    .slider .cover{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .slider .cover .content{
+        width: 100%;
+        text-align: center;
     }
 }

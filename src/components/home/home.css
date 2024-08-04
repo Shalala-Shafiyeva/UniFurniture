@@ -57,16 +57,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
     z-index: 2;
 }
 
 .homeHero .cover h3 {
     color: #FFF;
     text-align: center;
-    font-size: 50px;
+    font-size: 44px;
     font-weight: 700;
-    line-height: 65px;
+    line-height: 50px;
     padding: 10px;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .nextBanking>.container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -254,7 +254,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 15px !important;
     font-size: 16px;
     font-weight: 500;
     line-height: 26px;
@@ -302,7 +302,7 @@
 }
 
 .choose>.container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -365,11 +365,11 @@
     background-position: center 100%;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 60px;
+    padding: 60px 0;
 }
 
 .homeContainer .impact>.container {
-    width: 90%;
+    width: 80%;
     height: max-content;
     margin: 0 auto;
     display: flex;
@@ -394,7 +394,7 @@
 
 .homeContainer .getStart {
     display: flex;
-    padding: 20.5px 62px;
+    padding: 20px 50px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
@@ -467,7 +467,7 @@
 }
 
 .manageFinannce .containerManage {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -603,12 +603,14 @@
 
 
 .homeContainer .startWithUni .containerStart {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
     position: relative;
+    height: max-content;
+    margin-bottom: 100px;
 }
 
 .homeContainer .startWithUni .containerStart::before {
@@ -759,10 +761,11 @@
 
 .createAccount {
     width: 100%;
+    padding: 0 !important;
 }
 
 .createAccount .containerAcc {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     padding: 67px 100px;
     border-radius: 10px;
@@ -805,9 +808,13 @@
 }
 
 .slider .swiper {
-    width: 90%;
+    width: 90% ;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 auto ;
+}
+
+.slider .swiper-slide{
+    width: 100%;
 }
 
 .slider .swiper-slide img {

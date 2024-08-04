@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../../data.json";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {Autoplay, Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -14,7 +14,7 @@ function Slider() {
         <Swiper
           className="swiper"
           // install Swiper modules
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}
           navigation={{
@@ -30,6 +30,7 @@ function Slider() {
           //   onSwiper={(swiper) => console.log(swiper)}
           //   onSlideChange={() => console.log("slide change")}
           loop={true}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
         >
           {data.systemSlider.map((slider) => {
             return (

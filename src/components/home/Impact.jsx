@@ -15,7 +15,7 @@ function Impact() {
             </span>
           </div>
           <div className="right">
-            <Link className="getStart" to="#">
+            <Link className="getStart" to="/login">
               Get Started
             </Link>
           </div>
