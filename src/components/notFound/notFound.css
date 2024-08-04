@@ -76,15 +76,16 @@
     .notFound {
         width: 100%;
         margin-top: 68px;
-        padding:10px 16px 32px !important ;
+        padding: 100px 16px 32px !important;
     }
 
-    .notFound .img{
-        width: 100%;padding: 0 49px;
+    .notFound .img {
+        width: 60%;
+        padding: 0 49px;
     }
 
     .notFound h3 {
-        font-size: 42px;
+        font-size: 36px;
         line-height: 55.5px;
     }
 
@@ -97,7 +98,7 @@
         padding: 24px 48px;
     }
 
-    .notFound a >span{
+    .notFound a>span {
         font-size: 14px;
     }
 }
@@ -106,6 +107,7 @@
 @media (max-width:576px) {
     .notFound {
         width: 100%;
+        margin-top: 0px;
         padding: 0 16px 32px !important;
     }
 
@@ -126,7 +128,7 @@
         line-height: 21px;
     }
 
-    .notFound a{
+    .notFound a {
         display: none;
     }
 
