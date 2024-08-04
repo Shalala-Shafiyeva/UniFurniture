@@ -34,11 +34,11 @@ function MobileMode() {
           </span>
           <form action="">
             <div className="inpMobile">
-              <img src="/images/Message.png" alt="Email" />
+              <img className="icon" src="/images/Message.png" alt="Email" />
               <input type="email" name="email" placeholder="Email" />
             </div>
             <div className="inpMobile">
-              <img className="lock" src="/images/Lock.png" alt="Password" />
+              <img className="icon" src="/images/Lock.png" alt="Password" />
               <img
                 className="hide"
                 src={
