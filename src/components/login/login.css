@@ -481,7 +481,7 @@
     font-weight: 600;
 }
 
-.mobileModee .formPart button {
+.mobileModee .formPart a {
     width: 100%;
     height: 56px;
     border-radius: 1000px;
@@ -493,6 +493,9 @@
     border: none;
     cursor: pointer;
     transition: 0.3s all ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mobileModee .formPart button:hover {
