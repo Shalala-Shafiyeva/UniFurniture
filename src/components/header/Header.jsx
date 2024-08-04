@@ -20,44 +20,46 @@ function Header() {
   };
   return (
     <header>
-      <div className="logo">
-        <img src="/images/Logo.png" alt="Logo" />
-        <span>UniFurniture</span>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/shop">Shop</NavLink>
-          </li>
-          <li>
-            <NavLink to="/pricing">Pricing</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
-        </ul>
-      </nav>
-      <div className="btns">
-        <div className="registerBtns">
-          <Link id="login" to="/login">
+      <div className="cover">
+        <Link to="/" className="logo">
+          <img src="/images/Logo.png" alt="Logo" />
+          <span>UniFurniture</span>
+        </Link>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/shop">Shop</NavLink>
+            </li>
+            <li>
+              <NavLink to="/pricing">Pricing</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <div className="btns">
+          <div className="registerBtns">
+            <Link id="login" to="/login">
+              Login
+            </Link>
+            <Link id="register" to="/register">
+              Sign Up
+            </Link>
+          </div>
+          <div className="menuBar" onClick={handleOpenMenu}>
+            <img src="/images/menu.png" alt="Menu" />
+          </div>
+          <NavLink id="mobileLogin" to="/login">
             Login
-          </Link>
-          <Link id="register" to="/register">
-            Sign Up
-          </Link>
-        </div>
-        <div className="menuBar" onClick={handleOpenMenu}>
-          <img src="/images/menu.png" alt="Menu" />
-        </div>
-        <NavLink id="mobileLogin" to="/login">
-          Login
-        </NavLink>
-        <div className="basket" onClick={() => handleOpenBasket()}>
-          <img src="/images/basketicon.png" alt="Basket" />
-          <span>{cart.length}</span>
+          </NavLink>
+          <div className="basket" onClick={() => handleOpenBasket()}>
+            <img src="/images/basketicon.png" alt="Basket" />
+            <span>{cart.length}</span>
+          </div>
         </div>
       </div>
       <div className={`navBar ${openMenu ? "open" : ""}`}>
@@ -79,7 +81,9 @@ function Header() {
           </li>
         </ul>
       </div>
-      {openBasket ? <Cart openBasket={openBasket} setOpenBasket={setOpenBasket}/> : null}
+      {openBasket ? (
+        <Cart openBasket={openBasket} setOpenBasket={setOpenBasket} />
+      ) : null}
     </header>
   );
 }

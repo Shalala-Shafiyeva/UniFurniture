@@ -6,15 +6,21 @@ footer {
 
 footer .top {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 50px 0 90px;
     background-color: #E5F6F4;
+    padding: 50px 0 90px;
+}
+
+footer .top .wrapper {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
 }
 
 footer .top .left {
-    width: 26%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -169,9 +175,13 @@ footer .bottom span {
 
 @media (max-width:576px) {
     footer .top {
+        padding: 24px 24px 46px;
+    }
+
+    footer .top .wrapper {
+        width: 90%;
         flex-direction: column;
         align-items: flex-start;
-        padding: 24px 24px 46px;
         gap: 38px;
     }
 
