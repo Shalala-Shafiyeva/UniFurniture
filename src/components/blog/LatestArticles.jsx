@@ -4,16 +4,19 @@ import { Link } from "react-router-dom";
 
 function LatestArticles() {
   const filterBtns = ["All", "Business", "Finance", "Management"];
+  const [activeBtn, setActiveBtn] = useState("All");
   const [filteredArticles, setFilteredArticles] = useState(data.homeArticles);
   const handleFilteredArticles = (articleCategory) => {
     if (articleCategory === "All") {
       setFilteredArticles(data.homeArticles);
+      setActiveBtn("All");
     } else {
       setFilteredArticles(
         data.homeArticles.filter(
           (article) => article.category === articleCategory
         )
       );
+      setActiveBtn(articleCategory);
     }
     console.log(filteredArticles);
   };
@@ -27,6 +30,7 @@ function LatestArticles() {
           <div className="btns">
             {filterBtns.map((btn, index) => (
               <button
+                className={activeBtn === btn ? "active" : ""}
                 onClick={() => {
                   handleFilteredArticles(btn);
                 }}

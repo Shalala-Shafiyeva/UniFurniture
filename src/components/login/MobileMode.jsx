@@ -1,5 +1,5 @@
 import React from "react";
-import './login.css';
+import "./login.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -10,6 +10,10 @@ function MobileMode() {
     password: "",
   };
 
+  const [visiblePass, setVisiblePass] = useState(false);
+  const handleVisiblePass = () => {
+    setVisiblePass((prev) => !prev);
+  };
   const [values, setValues] = useState(initialState);
 
   const onChange = (e) => {
@@ -34,8 +38,22 @@ function MobileMode() {
               <input type="email" name="email" placeholder="Email" />
             </div>
             <div className="inpMobile">
-              <img src="/images/Lock.png" alt="Password" />
-              <input type="password" name="password" placeholder="Password" />
+              <img className="lock" src="/images/Lock.png" alt="Password" />
+              <img
+                className="hide"
+                src={
+                  visiblePass
+                    ? "/images/home/show.png"
+                    : "/images/home/Hide.png"
+                }
+                alt="Hidden password"
+                onClick={handleVisiblePass}
+              />
+              <input
+                type={visiblePass ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+              />
             </div>
             <div className="checkbox">
               <div className="rememberItem">
@@ -46,7 +64,9 @@ function MobileMode() {
                 <a href="">Forgot Password?</a>
               </div>
             </div>
-            <button type="submit">Sign In</button>
+            <Link to="/" type="submit">
+              Sign In
+            </Link>
           </form>
         </div>
       </div>
@@ -68,7 +88,7 @@ function MobileMode() {
 
         <div className="haveAccount">
           <span>
-            Don't have an account?
+            Don't have an account?{" "}
             <Link to="/register" className="greenTxt">
               Sign up
             </Link>

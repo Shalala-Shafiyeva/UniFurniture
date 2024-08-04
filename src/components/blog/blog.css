@@ -235,7 +235,7 @@
     transition: .3s all ease-in-out;
 }
 
-.latestArticles .btns button.actice,
+.latestArticles .btns button.active,
 .latestArticles .btns button:hover {
     color: #FFF;
     background-color: #00A991;
@@ -250,6 +250,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    justify-content: center;
 }
 
 .latestArticles .card {

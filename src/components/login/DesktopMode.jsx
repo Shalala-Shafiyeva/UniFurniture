@@ -33,7 +33,7 @@ function DesktopMode() {
           Sign In to <span className="greenTxt">UniFurniture</span>
         </h3>
         <span>
-          Don't have an account?
+          Don't have an account?{" "}
           <Link to="/register" className="greenTxt">
             Sign Up
           </Link>
@@ -93,9 +93,9 @@ function DesktopMode() {
               Notification settings
             </span>
           </div>
-          <button className="btnSignIn" type="submit">
+          <Link to="/" className="btnSignIn" type="submit">
             Sign In
-          </button>
+          </Link>
           <div className="continueWith">
             <span>Or continue with</span>
             <div className="btns">
