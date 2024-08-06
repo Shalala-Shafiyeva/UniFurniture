@@ -103,7 +103,7 @@
 }
 
 .desktopTabletModes .loginPage {
-    width: 30%;
+    width: 40%;
     display: inline-flex;
     /* height: 77%; */
     padding: 34px 49px;
@@ -551,6 +551,7 @@ input[type='checkbox']:checked {
         font-size: 10px;
         font-weight: 500;
         line-height: 17px;
+        border-radius: 6px;
     }
 
     .desktopTabletModes input#password {
@@ -609,6 +610,7 @@ input[type='checkbox']:checked {
         gap: 10px;
         font-size: 10px;
         line-height: 17px;
+        border-radius: 6px;
     }
 
     .desktopTabletModes .btns a img {

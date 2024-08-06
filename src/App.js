@@ -30,8 +30,6 @@ function App() {
         <Route path="/cart/deliveryaddress" element={<CartDeliveryAddress />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* <Header/>
-      <Footer /> */}
     </>
   );
 }

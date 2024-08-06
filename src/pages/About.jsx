@@ -10,10 +10,14 @@ import WeDo from "../components/about/WeDo";
 import CreateAcoount from "../components/about/CreateAcoount";
 import "../components/about/about.css";
 import Footer from "../components/footer/Footer";
+import { Helmet } from "react-helmet";
 
 function About() {
   return (
     <>
+      <Helmet>
+        <title>About</title>
+      </Helmet>
       <Header />
       <div className="aboutContainer">
         <AboutHero />
@@ -25,7 +29,7 @@ function About() {
         <WeDo />
         <CreateAcoount />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -10,10 +10,13 @@ import Gallary from "../components/shopping/Gallary";
 import PeopleSlider from "../components/shopping/PeopleSlider";
 import StartShopping from "../components/shopping/StartShopping";
 import Footer from "../components/footer/Footer";
-
+import { Helmet } from "react-helmet";
 function Shopping() {
   return (
     <>
+    <Helmet>
+        <title>Shop</title>
+      </Helmet>
       <Header />
       <ShoppingHero />
       <Furnitures />

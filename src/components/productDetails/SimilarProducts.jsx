@@ -12,7 +12,7 @@ function SimilarProducts() {
 
   const similarProducts = data.products.filter(
     (prod) =>
-      prod.type == singleProduct[0].type && prod.id != singleProduct[0].id
+      prod.type == singleProduct[0]?.type && prod.id != singleProduct[0]?.id
   );
 
   const dispatch = useDispatch();

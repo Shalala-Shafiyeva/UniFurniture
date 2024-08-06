@@ -8,6 +8,7 @@ import Filters from "../components/moreProducts/Filters";
 import FilteredProducts from "../components/moreProducts/FilteredProducts";
 import Delivery from "../components/moreProducts/Delivery";
 import Footer from "../components/footer/Footer";
+import { Helmet } from "react-helmet";
 
 function MoreProducts() {
   // let sortedData = data.products;
@@ -26,6 +27,9 @@ function MoreProducts() {
   // };
   return (
     <>
+      <Helmet>
+        <title>More Furnitures</title>
+      </Helmet>
       <Header />
       <HeadFilters />
       <div className="sections">

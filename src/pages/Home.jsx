@@ -13,9 +13,14 @@ import Slider from "../components/home/Slider";
 import QuestionsAccordion from "../components/home/QuestionsAccordion";
 import Articles from "../components/home/Articles";
 import Footer from "../components/footer/Footer";
+import { Helmet } from "react-helmet";
+
 function Home() {
   return (
     <div className="homeContainer">
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <Header />
       <Hero />
       <NextGenBanking />

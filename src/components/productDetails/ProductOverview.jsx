@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import { singleProduct } from "../../slices/productsSlices";
 import data from "../../data.json";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,10 +8,8 @@ function ProductOverview() {
   const dispatch = useDispatch();
   const { id } = useParams();
   let product = useSelector((state) => state.products.singleProduct);
-  // console.log(product);
-  // product = product.filter((prod) => prod.id == id);
   product = product[0];
-  //console.log(product)
+
   const [hidden, setHidden] = useState(false);
   const [play, setPlay] = useState(false);
   const hiddenElements = () => {
@@ -32,7 +29,7 @@ function ProductOverview() {
             </div>
             <div className="characteristics">
               <ul>
-                {product.charasteristics.map((charasteristic, index) => (
+                {product?.charasteristics?.map((charasteristic, index) => (
                   <li key={index}>
                     <div className="img">
                       <img
