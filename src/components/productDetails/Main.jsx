@@ -5,18 +5,16 @@ import { useSelector, useDispatch } from "react-redux";
 
 function Main() {
   let product = useSelector((state) => state.products.singleProduct);
-  console.log(product);
-  let cart = useSelector((state) => state.cart.cart);
-  console.log(cart);
   let dispatch = useDispatch();
   const { type, id } = useParams();
-  //product=product.filter(prod=>prod.id==id && prod.type==type);
   const [quantity, setQuantity] = useState(1);
   const [colorIndex, setColorIndex] = useState(0);
   const [img, setImg] = useState(product[0]?.colorImgs[colorIndex]?.imgs[0]);
+
   useEffect(() => {
     setImg(product[0].colorImgs[colorIndex].imgs[0]);
-  }, [colorIndex]);
+  }, [colorIndex, type, id]);
+
 
   const increaseQty = () => {
     if (quantity < product[0].stock) {
@@ -216,7 +214,7 @@ function Main() {
                           }`}
                           onClick={() => handleColorChange(index)}
                         >
-                          <img src={color.imgs[colorIndex]} alt="Product" />
+                          <img src={color.imgs[0]} alt="Product" />
                         </div>
                         <span className="colorName">{color.colorName}</span>
                       </div>

@@ -83,7 +83,7 @@ function ProductOverview() {
           </div>
         </div>
         <div className="bottomSection">
-          <Link className="orderBtn" to="#">
+          <Link className="orderBtn" to="/cart/deliveryaddress">
             Order Now
           </Link>
           <div className="questions">
