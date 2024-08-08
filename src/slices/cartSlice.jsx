@@ -32,6 +32,8 @@ export const cartSlice = createSlice({
             fullTitle: productId.fullTitle,
             stock: productId.stock - 1,
             hasStock: productId.hasStock,
+            reviews: productId.reviews,
+            shipping: productId.shipping,
           });
         }
         state.totalAmount += productId.amount;

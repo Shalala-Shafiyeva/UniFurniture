@@ -195,6 +195,8 @@ function Furnitures() {
                             stock: product.stock,
                             hasStock: product.hasStock,
                             discount: product.discount,
+                            reviews: product.reviews,
+                            shipping: product.shipping,
                           })
                         );
                       }}

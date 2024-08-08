@@ -147,11 +147,16 @@ header #register {
         gap: 26px;
     }
 
+    header .registerBtns{
+        gap: 6px;
+    }
+
     nav ul a,
     header #login,
     header #register {
         font-size: 12px !important;
     }
+
 }
 
 @media (max-width:576px) {

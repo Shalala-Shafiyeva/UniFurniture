@@ -11,33 +11,36 @@ import { useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom";
 
 function ProductDetails() {
-  const singleProduct = useSelector((state) => state.products.singleProduct);
+  const allProducts = useSelector((state) => state.products.products);
   const { type, id } = useParams();
-  const product = singleProduct.find(
-    (prod) => prod.id == id && prod.type == type);
+  const product = allProducts.find(
+    (prod) => prod.id == id && prod.type == type
+  );
+  console.log(product, "product");
+
   if (!product) {
+    // return <div>Notfound</div>;
     return (
       <>
         <Helmet>
           <title>Not Found</title>
         </Helmet>
-        <Navigate to="notFound" />
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Helmet>
-          <title>Product</title>
-        </Helmet>
-        <Header />
-        <Main />
-        <ProductOverview />
-        <SimilarProducts />
-        <Footer />
+        <Navigate to="/notFound" />
       </>
     );
   }
+  return (
+    <>
+      <Helmet>
+        <title>Product</title>
+      </Helmet>
+      <Header />
+      <Main product={product} />
+      {/* <ProductOverview />
+      <SimilarProducts /> */}
+      <Footer />
+    </>
+  );
 }
 
 export default ProductDetails;

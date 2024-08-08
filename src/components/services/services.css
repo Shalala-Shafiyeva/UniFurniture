@@ -213,6 +213,8 @@
     padding: 40px;
     border-radius: 12px;
     background: #E5F6F4;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .articles .article .txt {

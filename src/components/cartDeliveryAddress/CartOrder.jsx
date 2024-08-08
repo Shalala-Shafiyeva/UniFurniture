@@ -63,7 +63,7 @@ function CartOrder() {
                     <img src="/images/star.png" alt="Star" />
                     <img src="/images/star.png" alt="Star" />
                   </div>
-                  <span className="review">3 Reviews</span>
+                  <span className="review">{product.reviews} Reviews</span>
                 </div>
                 <div className="bottom">
                   <div
