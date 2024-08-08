@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { addToCart } from "../../slices/cartSlice";
-import { Link, useParams } from "react-router-dom";
+import { Link,  useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 function Main() {
@@ -54,7 +54,6 @@ function Main() {
   const handleColorChange = (index) => {
     setColorIndex(index);
   };
-
   return (
     <section className="mainDetails">
       <div className="container">

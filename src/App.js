@@ -28,6 +28,7 @@ function App() {
         <Route path="/product/:type/:id" element={<ProductDetails />} />
         <Route path="/shop/moreFurnitures" element={<MoreProducts />} />
         <Route path="/cart/deliveryaddress" element={<CartDeliveryAddress />} />
+        <Route path="/notFound" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
