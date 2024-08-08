@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../../data.json";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
@@ -63,7 +63,7 @@ function FilteredProducts() {
       setCurrentPage(currentPage - 1);
     }
   };
-  console.log(currentProducts);
+
   return (
     <section className="filteredProducts">
       <div className="container">
@@ -101,7 +101,7 @@ function FilteredProducts() {
                       ${product.priceBefore}-${product.price}
                     </div>
                     <div className="shipping">
-                      ${product.shipping} days shipping
+                      {product.shipping} days shipping
                     </div>
                   </div>
                 </Link>

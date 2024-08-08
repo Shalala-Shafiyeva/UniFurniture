@@ -3,7 +3,6 @@ import "../components/moreProducts/moreProducts.css";
 import "../components/moreProducts/moreProductsResponsive.css";
 import Header from "../components/header/Header";
 import HeadFilters from "../components/moreProducts/HeadFilters";
-import data from "../data.json";
 import Filters from "../components/moreProducts/Filters";
 import FilteredProducts from "../components/moreProducts/FilteredProducts";
 import Delivery from "../components/moreProducts/Delivery";

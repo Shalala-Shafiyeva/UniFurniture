@@ -1,14 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import data from "../../data.json";
 import { useSelector, useDispatch } from "react-redux";
-import { sortByDateAdded, sortByHighestPrice, sortByLowestPrice } from "../../slices/productsSlices";
+import { useState } from "react";
+import {
+  sortByDateAdded,
+  sortByHighestPrice,
+  sortByLowestPrice,
+  resetFilters,
+} from "../../slices/productsSlices";
 
-function HeadFilters({ sortedData }) {
-  const filteredProducts = useSelector(
-    (state) => state.products.filteredProducts
-  );
+function HeadFilters() {
+  const products = useSelector((state) => state.products.filteredProducts);
   const dispatch = useDispatch();
+  const [activeSort, setActiveSort] = useState(null);
+  const handleActiveSort = (sortType) => {
+    if (activeSort === sortType) {
+      dispatch(resetFilters());
+      setActiveSort(null);
+    } else {
+      switch (sortType) {
+        case "date":
+          dispatch(sortByDateAdded());
+          break;
+        case "highest":
+          dispatch(sortByHighestPrice());
+          break;
+        case "lowest":
+          dispatch(sortByLowestPrice());
+          break;
+        default:
+          break;
+      }
+      setActiveSort(sortType);
+    }
+  };
   return (
     <section className="headFilters">
       <div className="container">
@@ -27,11 +52,15 @@ function HeadFilters({ sortedData }) {
           <div className="sort">
             <span>Sort by:</span>
             <div className="sortBtns">
-              <button onClick={()=>dispatch(sortByDateAdded())}>New</button>
-              <button onClick={()=>dispatch(sortByHighestPrice())}>Highest Price</button>
-              <button onClick={()=>dispatch(sortByLowestPrice())}>Lowest Price</button>
+              <button className={`${activeSort === "date" ? "active" : ""}`} onClick={() => handleActiveSort("date")}>New</button>
+              <button className={`${activeSort === "highest" ? "active" : ""}`} onClick={() => handleActiveSort("highest")}>
+                Highest Price
+              </button>
+              <button className={`${activeSort === "lowest" ? "active" : ""}`} onClick={() => handleActiveSort("lowest")}>
+                Lowest Price
+              </button>
             </div>
-            <span>{filteredProducts.length} results</span>
+            <span>{products.length} results</span>
           </div>
         </div>
       </div>

@@ -1,6 +1,11 @@
 import React from "react";
-import { filterByColor, filterByCategory, filterByStock, filterBySale } from "../../slices/productsSlices";
-import { useDispatch } from "react-redux";
+import {
+  filterByColor,
+  filterByCategory,
+  filterByStock,
+  filterBySale,
+} from "../../slices/productsSlices";
+import { useDispatch, useSelector } from "react-redux";
 function Filters() {
   const categoryBtns = [
     {
@@ -41,6 +46,9 @@ function Filters() {
     "White",
   ];
 
+  const selectedCategories = useSelector(
+    (state) => state.products.selectedCategories
+  );
   const dispatch = useDispatch();
   return (
     <section className="filters">
@@ -55,9 +63,10 @@ function Filters() {
                     type="checkbox"
                     name={`category${btn.id}`}
                     id={`category${btn.id}`}
-                    onClick={() => dispatch(filterByCategory(btn.btnCategory))}
+                    checked={selectedCategories.includes(btn.btnCategory)}
+                    onChange={() => dispatch(filterByCategory(btn.btnCategory))}
                   />
-                  <label htmlFor={`btn${btn.id}`}>{btn.btnName}</label>
+                  <label htmlFor={`category${btn.id}`}>{btn.btnName}</label>
                 </div>
               );
             })}

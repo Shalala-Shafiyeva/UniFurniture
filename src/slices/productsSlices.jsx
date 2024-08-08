@@ -1,13 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import data from "../data.json";
 
-
 export const productsSlice = createSlice({
   name: "products",
   initialState: {
+    products: data.products,
     filteredProducts:
       JSON.parse(sessionStorage.getItem("filteredData")) || data.products,
-    singleProduct: JSON.parse(sessionStorage.getItem("singleData")) || data.products,
+    selectedCategories: [],
+    selectedColor: null,
+    singleProduct:
+      JSON.parse(sessionStorage.getItem("singleData")) || data.products,
     error: false,
   },
   reducers: {
@@ -24,7 +27,7 @@ export const productsSlice = createSlice({
       }
     },
     singledProduct(state, action) {
-      const {id, type}=action.payload
+      const { id, type } = action.payload;
       try {
         const oneProduct = data.products.filter(
           (product) => product.id == id && product.type == type
@@ -37,25 +40,43 @@ export const productsSlice = createSlice({
       }
     },
     filterByColor(state, action) {
-      try {
-        const filteredByColor = state.filteredProducts.filter((product) =>
-          product.colorImgs.some(
-            (colorImg) => colorImg.colorName === action.payload
-          )
-        );
-        state.error = false;
-        state.filteredProducts = filteredByColor;
-        if (filteredByColor.length) {
-          state.error = false;
-          // const saveState = JSON.stringify(filteredByColor);
-          // sessionStorage.setItem("filteredData", saveState);
-        } else {
-          state.error = true;
-          state.filteredProducts = [];
-        }
-      } catch (error) {
-        return error;
-      }
+      // let tempData;
+      // if (state.selectedCategories.length) {
+      //   tempData = state.filteredProducts;
+      // } else {
+      //   tempData = state.products;
+      // }
+      // try {
+      //   const filteredByColor = tempData.filter((product) =>
+      //     product.colorImgs.some(
+      //       (colorImg) => colorImg.colorName === action.payload
+      //     )
+      //   );
+      //   state.error = false;
+      //   state.filteredProducts = filteredByColor;
+      //   if (filteredByColor.length) {
+      //     state.error = false;
+      //     // const saveState = JSON.stringify(filteredByColor);
+      //     // sessionStorage.setItem("filteredData", saveState);
+      //   } else {
+      //     state.error = true;
+      //     state.filteredProducts = [];
+      //   }
+      // } catch (error) {
+      //   return error;
+      // }
+      state.selectedColor = action.payload;
+      state.filteredProducts = state.products.filter(
+        (product) =>
+          (state.selectedCategories.length === 0 ||
+            state.selectedCategories.includes(product.category)) &&
+          (!state.selectedColor ||
+            product.colorImgs.some(
+              (colorImg) => colorImg.colorName === state.selectedColor
+            ))
+      );
+
+      state.error = state.filteredProducts.length === 0;
     },
     sortByHighestPrice(state, action) {
       try {
@@ -118,26 +139,39 @@ export const productsSlice = createSlice({
       }
     },
     filterByCategory(state, action) {
-      try {
-        const filteredByCategoty = state.filteredProducts.filter(
-          (product) => product.category == action.payload
+      let tempProducts = state.products;
+      const category = action.payload;
+
+      if (state.selectedCategories.includes(category)) {
+        state.selectedCategories = state.selectedCategories.filter(
+          (item) => item !== category
         );
-        state.filteredProducts = filteredByCategoty;
-        if (filteredByCategoty.length) {
-          state.error = false;
-          // const saveState = JSON.stringify(filteredByCategoty);
-          // sessionStorage.setItem("filteredData", saveState);
-        } else {
-          state.error = true;
-          state.filteredProducts = [];
-        }
-      } catch (error) {
-        return error;
+      } else {
+        state.selectedCategories.push(category);
       }
+      // if (state.selectedCategories.length > 0) {
+      //   state.filteredProducts = tempProducts.filter((product) =>
+      //     state.selectedCategories.includes(product.category)
+      //   );
+      // } else {
+      //   state.filteredProducts = tempProducts;
+      // }
+      // state.error = state.filteredProducts.length == 0;
+      state.filteredProducts = state.products.filter(
+        (product) =>
+          (state.selectedCategories.length === 0 ||
+            state.selectedCategories.includes(product.category)) &&
+          (!state.selectedColor ||
+            product.colorImgs.some(
+              (colorImg) => colorImg.colorName === state.selectedColor
+            ))
+      );
+
+      state.error = state.filteredProducts.length === 0;
     },
     filterByStock(state, action) {
       try {
-        const filteredByStock = state.filteredProducts.filter(
+        const filteredByStock = state.products.filter(
           (product) => product.hasStock == action.payload
         );
         state.filteredProducts = filteredByStock;
@@ -155,7 +189,7 @@ export const productsSlice = createSlice({
     },
     filterBySale(state, action) {
       try {
-        const filteredBySale = state.filteredProducts.filter(
+        const filteredBySale = state.products.filter(
           (product) => product.onSale == action.payload
         );
         state.filteredProducts = filteredBySale;
@@ -171,6 +205,12 @@ export const productsSlice = createSlice({
         return error;
       }
     },
+    resetFilters(state, action) {
+      state.selectedCategories = [];
+      state.selectedColor = null;
+      state.filteredProducts = state.products;
+      state.error = false;
+    },
   },
 });
 
@@ -184,5 +224,6 @@ export const {
   filterByCategory,
   filterBySale,
   filterByStock,
+  resetFilters,
 } = productsSlice.actions;
 export default productsSlice.reducer;
