@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
-function ShoppingHero() {
+function ShoppingHero({ searchValue, handleSearchInputChange}) {
+  const filteredProducts = useSelector(
+    (state) => state.products.filteredProducts
+  );
   return (
     <section className="shoppingHero">
       <div className="container">
@@ -24,6 +28,10 @@ function ShoppingHero() {
               type="text"
               name="search"
               placeholder="Let's Start your needs"
+              onChange={(e) => {
+                handleSearchInputChange(e);
+              }}
+              value={searchValue}
             />
             <button>
               <img src="/images/shop/search.png" alt="Search icon" />

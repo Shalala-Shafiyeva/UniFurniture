@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { filterProducts, singledProduct } from "../../slices/productsSlices";
+import { singledProduct } from "../../slices/productsSlices";
 import { useDispatch, useSelector } from "react-redux";
-import data from "../../data.json";
 import { addToCart } from "../../slices/cartSlice";
 
-function Furnitures() {
+function Furnitures({ filteredData, handleCategoryFilter }) {
   const dispatch = useDispatch();
-  const filteredProducts = useSelector(
-    (state) => state.products.filteredProducts
-  );
   const cart = useSelector((state) => state.cart.cart);
   const handleColorAndImg = (product) => {
     let productColor = product.colorImgs[0].colorName;
@@ -24,18 +20,10 @@ function Furnitures() {
   useEffect(() => {
     const lastPostIndex = currentPage * productsPerPage;
     const firstPostIndex = lastPostIndex - productsPerPage;
-    let products = [];
-
-    if (filteredProducts.length) {
-      products = filteredProducts.slice(firstPostIndex, lastPostIndex);
-      setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
-    } else {
-      products = data.products.slice(firstPostIndex, lastPostIndex);
-      setTotalPages(Math.ceil(data.products.length / productsPerPage));
-    }
-
+    const products = filteredData.slice(firstPostIndex, lastPostIndex);
+    setTotalPages(Math.ceil(filteredData.length / productsPerPage));
     setCurrentProducts(products);
-  }, [currentPage, filteredProducts]);
+  }, [currentPage, filteredData]);
   const paginate = () => {
     let pages = [];
     const firstPage = currentPage - 4 < 1 ? 1 : currentPage - 4;
@@ -113,7 +101,7 @@ function Furnitures() {
   const activeBtnForChild = (el) => {
     el.target.parentElement.classList.add("active");
   };
-  console.log(cart);
+
   return (
     <section className="furnitures">
       <div className="container">
@@ -133,7 +121,7 @@ function Furnitures() {
                 data-id="button"
                 key={btn.id}
                 onClick={(e) => {
-                  dispatch(filterProducts(btn.name.toLowerCase()));
+                  handleCategoryFilter(btn.name.toLowerCase());
                   activeBtn(e);
                   setCurrentPage(1);
                 }}
@@ -149,75 +137,81 @@ function Furnitures() {
           })}
         </div>
         <div className="products">
-          {currentProducts.map((product) => {
-            return (
-              <Link
-                to={`/product/${product.type}/${product.id}`}
-                className="productCard"
-                key={product.id}
-                onClick={() =>
-                  dispatch(
-                    singledProduct({ id: product.id, type: product.type })
-                  )
-                }
-              >
-                <div className="productContext">
-                  <div className="head">
-                    <div className="favorite">
-                      <img src="/images/shop/heartempty.png" alt="Favorite" />
+          {filteredData.length === 0 ? (
+            <div className="notFound">We don't have such product. Sorry.</div>
+          ) : (
+            currentProducts.map((product) => {
+              return (
+                <Link
+                  to={`/product/${product.type}/${product.id}`}
+                  className="productCard"
+                  key={product.id}
+                  onClick={() =>
+                    dispatch(
+                      singledProduct({ id: product.id, type: product.type })
+                    )
+                  }
+                >
+                  <div className="productContext">
+                    <div className="head">
+                      <div className="favorite">
+                        <img src="/images/shop/heartempty.png" alt="Favorite" />
+                      </div>
+                      <span className="price">$ {product.price} USD</span>
                     </div>
-                    <span className="price">$ {product.price} USD</span>
+                    <span className="productName">{product.name}</span>
+                    <p className="productDesc">{product.text}</p>
                   </div>
-                  <span className="productName">{product.name}</span>
-                  <p className="productDesc">{product.text}</p>
-                </div>
-                <div className="productImg">
-                  <img src={product.img} alt={product.type} />
-                </div>
-                <div className="btn">
-                  {!product.hasStock ? (
-                    <button disabled="disabled" className="addCart">
-                      Add to cart
-                    </button>
-                  ) : (
-                    <button
-                      className="addCart"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(
-                          addToCart({
-                            id: product.id,
-                            fullTitle: product.fullTitle,
-                            color: handleColorAndImg(product)[0],
-                            img: handleColorAndImg(product)[1],
-                            price: parseFloat(product.price),
-                            amount: 1,
-                            stock: product.stock,
-                            hasStock: product.hasStock,
-                            discount: product.discount,
-                            reviews: product.reviews,
-                            shipping: product.shipping,
-                          })
-                        );
-                      }}
-                    >
-                      Add to cart
-                    </button>
-                  )}
-                </div>
-              </Link>
-            );
-          })}
+                  <div className="productImg">
+                    <img src={product.img} alt={product.type} />
+                  </div>
+                  <div className="btn">
+                    {!product.hasStock ? (
+                      <button disabled="disabled" className="addCart">
+                        Add to cart
+                      </button>
+                    ) : (
+                      <button
+                        className="addCart"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          dispatch(
+                            addToCart({
+                              id: product.id,
+                              fullTitle: product.fullTitle,
+                              color: handleColorAndImg(product)[0],
+                              img: handleColorAndImg(product)[1],
+                              price: parseFloat(product.price),
+                              amount: 1,
+                              stock: product.stock,
+                              hasStock: product.hasStock,
+                              discount: product.discount,
+                              reviews: product.reviews,
+                              shipping: product.shipping,
+                            })
+                          );
+                        }}
+                      >
+                        Add to cart
+                      </button>
+                    )}
+                  </div>
+                </Link>
+              );
+            })
+          )}
         </div>
-        <div className="pagination">
-          <div className="prevBtn" onClick={prevPage}>
-            <img src="/images/shop/prev.png" alt="Previous page" />
+        {filteredData.length === 0 ? null : (
+          <div className="pagination">
+            <div className="prevBtn" onClick={prevPage}>
+              <img src="/images/shop/prev.png" alt="Previous page" />
+            </div>
+            <div className="pages">{paginate()}</div>
+            <div className="nextBtn" onClick={nextPage}>
+              <img src="/images/shop/next.png" alt="Next page" />
+            </div>
           </div>
-          <div className="pages">{paginate()}</div>
-          <div className="nextBtn" onClick={nextPage}>
-            <img src="/images/shop/next.png" alt="Next page" />
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );
