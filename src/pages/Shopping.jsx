@@ -43,7 +43,7 @@ function Shopping() {
 
     if (selectedCategory) {
       products = products.filter(
-        (prod) => prod.category.toLowerCase() === selectedCategory.toLowerCase()
+        (prod) => prod.type.toLowerCase() === selectedCategory.toLowerCase()
       );
     }
 
