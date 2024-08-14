@@ -12,6 +12,7 @@ import {
 
 function Cart({ openBasket, setOpenBasket }) {
   let cart = useSelector((state) => state.cart.cart);
+  console.log(cart);
   const handleCloseCart = () => {
     setOpenBasket(false);
   };
@@ -92,7 +93,7 @@ function Cart({ openBasket, setOpenBasket }) {
         </div>
         <div className="totalCount">
           <span>Total:</span>
-          <span>${cart.reduce((acc, item) => acc + item.totalPrice, 0)}</span>
+          <span>${cart.reduce((acc, item) => acc + item.totalPrice, 0).toFixed(2)}</span>
         </div>
         <div className="btn">
           <Link to="/cart/deliveryaddress">

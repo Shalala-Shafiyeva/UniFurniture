@@ -34,10 +34,10 @@ function Header() {
               <NavLink to="/shop">Shop</NavLink>
             </li>
             <li>
-              <NavLink to="/pricing">Pricing</NavLink>
+              <NavLink to="/about">About</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/services">Services</NavLink>
             </li>
           </ul>
         </nav>
@@ -74,10 +74,10 @@ function Header() {
             <NavLink to="/shop">Shop</NavLink>
           </li>
           <li>
-            <NavLink to="/pricing">Pricing</NavLink>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/services">Services</NavLink>
           </li>
         </ul>
       </div>

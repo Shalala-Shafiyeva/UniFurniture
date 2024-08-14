@@ -36,8 +36,8 @@ function ProductDetails() {
       </Helmet>
       <Header />
       <Main product={product} />
-      {/* <ProductOverview />
-      <SimilarProducts /> */}
+      <ProductOverview />
+      <SimilarProducts />
       <Footer />
     </>
   );

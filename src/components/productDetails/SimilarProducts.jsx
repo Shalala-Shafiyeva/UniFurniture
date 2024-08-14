@@ -6,13 +6,13 @@ import { singledProduct } from "../../slices/productsSlices";
 
 function SimilarProducts() {
   const { type, id } = useParams();
-  const singleProduct = data.products.filter(
-    (product) => product.id == id && product.type == type
-  );
+  // const singleProduct = data.products.filter(
+  //   (product) => product.id == id && product.type == type
+  // );
 
   const similarProducts = data.products.filter(
     (prod) =>
-      prod.type == singleProduct[0]?.type && prod.id != singleProduct[0]?.id
+      prod.type == type && prod.id != id
   );
 
   const dispatch = useDispatch();
@@ -26,7 +26,6 @@ function SimilarProducts() {
 
   useEffect(() => {
     console.log(type, id);
-    console.log(singleProduct);
     setCurrentPage(1);
   }, [type, id]);
 
@@ -88,11 +87,12 @@ function SimilarProducts() {
               <div className="product" key={similarProduct.id}>
                 <Link
                   to={`/product/${similarProduct.type}/${similarProduct.id}`}
-                  onClick={() =>
+                  onClick={() =>{
                     dispatch(singledProduct({
                       id: similarProduct.id,
                       type: similarProduct.type,
-                    }))
+                    }));
+                  }
                   }
                 >
                   <div className="img">

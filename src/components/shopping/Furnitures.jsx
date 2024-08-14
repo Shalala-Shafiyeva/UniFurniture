@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { singledProduct } from "../../slices/productsSlices";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../slices/cartSlice";
+import toast, { Toaster } from "react-hot-toast";
 
 function Furnitures({ filteredData, handleCategoryFilter }) {
   const dispatch = useDispatch();
@@ -102,8 +103,41 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
     el.target.parentElement.classList.add("active");
   };
 
+  const success = () => {
+    toast.success("Successfully added to cart");
+  };
+
+  const error = () => {
+    toast.error("Sorry, this product is out of stock");
+  };
+
+  const handleAddToCart = (product) => {
+    if (product.hasStock) {
+      toast.success("Successfully added to cart");
+      dispatch(
+        addToCart({
+          id: product.id,
+          fullTitle: product.fullTitle,
+          color: handleColorAndImg(product)[0],
+          img: handleColorAndImg(product)[1],
+          price: parseFloat(product.price),
+          amount: 1,
+          stock: product.stock,
+          hasStock: product.hasStock,
+          discount: product.discount,
+          reviews: product.reviews,
+          shipping: product.shipping,
+        })
+      );
+    }
+    if (!product.hasStock || !product.stock) {
+      toast.error("Sorry, this product is out of stock");
+    }
+  };
+
   return (
     <section className="furnitures">
+      <Toaster position="top-center" />
       <div className="container">
         <div className="head">
           <h2 className="title">
@@ -166,35 +200,15 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
                     <img src={product.img} alt={product.type} />
                   </div>
                   <div className="btn">
-                    {!product.hasStock ? (
-                      <button disabled="disabled" className="addCart">
-                        Add to cart
-                      </button>
-                    ) : (
                       <button
                         className="addCart"
                         onClick={(e) => {
                           e.preventDefault();
-                          dispatch(
-                            addToCart({
-                              id: product.id,
-                              fullTitle: product.fullTitle,
-                              color: handleColorAndImg(product)[0],
-                              img: handleColorAndImg(product)[1],
-                              price: parseFloat(product.price),
-                              amount: 1,
-                              stock: product.stock,
-                              hasStock: product.hasStock,
-                              discount: product.discount,
-                              reviews: product.reviews,
-                              shipping: product.shipping,
-                            })
-                          );
+                          handleAddToCart(product);
                         }}
                       >
                         Add to cart
                       </button>
-                    )}
                   </div>
                 </Link>
               );
