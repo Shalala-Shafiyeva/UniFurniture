@@ -11,8 +11,7 @@ function SimilarProducts() {
   // );
 
   const similarProducts = data.products.filter(
-    (prod) =>
-      prod.type == type && prod.id != id
+    (prod) => prod.type == type && prod.id != id
   );
 
   const dispatch = useDispatch();
@@ -87,13 +86,15 @@ function SimilarProducts() {
               <div className="product" key={similarProduct.id}>
                 <Link
                   to={`/product/${similarProduct.type}/${similarProduct.id}`}
-                  onClick={() =>{
-                    dispatch(singledProduct({
-                      id: similarProduct.id,
-                      type: similarProduct.type,
-                    }));
-                  }
-                  }
+                  onClick={() => {
+                    dispatch(
+                      singledProduct({
+                        id: similarProduct.id,
+                        type: similarProduct.type,
+                      })
+                    );
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 >
                   <div className="img">
                     <img src={similarProduct.img} alt={similarProduct.type} />
