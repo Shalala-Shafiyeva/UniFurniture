@@ -44,7 +44,7 @@
 .hero .container .content a {
     border-radius: 10px;
     background: #00A991;
-    padding: 30px 80px;
+    padding: 28px 80px;
     color: #FFF;
     font-size: 20px;
     font-weight: 600;
@@ -52,6 +52,16 @@
     text-align: center;
     width: max-content;
     margin-top: 15px;
+    border: 2px solid transparent;
+    transition: .3s all ease-in-out;
+}
+
+.hero .container .content a:hover,
+.newsLetter .container .bottom button:hover,
+.createAccountBlog .container a:hover {
+    border: 2px solid #00A991;
+    background-color: #FFF;
+    color: #00A991;
 }
 
 .hero .container .img {
@@ -166,6 +176,8 @@
     line-height: 32px;
     border: none;
     cursor: pointer;
+    transition: .3s all ease-in-out;
+    border: 2px solid transparent;
 }
 
 .newsLetter .container .bottom button {
@@ -276,6 +288,7 @@
 }
 
 .latestArticles .card .link:hover {
+    background-color: #3c3d45a9;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 

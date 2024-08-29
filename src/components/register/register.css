@@ -276,12 +276,14 @@ input[type='checkbox']:checked {
     font-weight: 700;
     line-height: 24px;
     cursor: pointer;
-    border: none;
+    border: 2px solid transparent;
     transition: 0.3s all ease-in-out;
 }
 
 .desktopTabletModes .btnSignIn:hover {
-    background-color: #018975;
+    background-color: #FFF;
+    color: #00A991;
+    border: 2px solid #00A991;
 }
 
 .desktopTabletModes .continueWith {
@@ -445,7 +447,7 @@ input[type='checkbox']:checked {
     font-size: 16px;
     font-weight: 700;
     padding: 8px;
-    border: none;
+    border: 2px solid transparent;
     cursor: pointer;
     transition: 0.3s all ease-in-out;
     display: flex;
@@ -453,8 +455,10 @@ input[type='checkbox']:checked {
     align-items: center;
 }
 
-.mobileMode .formPart button:hover {
-    background: #0f9b7d;
+.mobileMode .formPart .submit:hover {
+    background: #FFF;
+    color: #00A991;
+    border: 2px solid #00A991;
 }
 
 .mobileMode .bottom {

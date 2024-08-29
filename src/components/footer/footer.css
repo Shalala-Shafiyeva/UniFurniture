@@ -55,6 +55,11 @@ footer .sosialMedia a {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    transition: .3s all ease-in-out;
+}
+
+footer .sosialMedia a:hover{
+    background-color: #3C3D45;
 }
 
 footer .sosialMedia a img {
@@ -91,6 +96,11 @@ footer .title {
 footer li a {
     color: #3C3D45;
     font-size: 16px;
+    transition: .3s all ease-in-out;
+}
+
+footer li a:hover{
+    color: #00A991;
 }
 
 footer .bottom {

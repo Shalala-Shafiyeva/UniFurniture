@@ -34,6 +34,12 @@
     font-weight: 700;
     border: 1px solid #9f9c9c;
     cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+
+.cart .head .closeBtn:hover{
+    background-color: red;
+    color:#FFF;
 }
 
 .cart .head .closeBtn .active {
@@ -174,6 +180,15 @@
     font-weight: 500;
     border: none;
     cursor: pointer;
+    transition: .3s all ease-in-out;
+    border: 2px solid transparent;
+    margin: 0 10px 20px 0;
+}
+
+.cart .orderBtn:hover{
+    color: #00A991;
+    border: 2px solid #00A991;
+    background-color: #FFF;
 }
 
 .cart .orderBtn:disabled {

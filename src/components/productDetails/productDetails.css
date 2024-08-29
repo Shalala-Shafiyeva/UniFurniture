@@ -333,6 +333,14 @@
     text-transform: uppercase;
     border: none;
     cursor: pointer;
+    border: 1px solid transparent;
+    transition: .3s all ease-in-out;
+}
+
+.mainDetails .desktopMode .descDetails .addToCart:hover{
+    border: 1px solid #00A991;
+    color: #00A991;
+    background-color: #00a99037;
 }
 
 .mainDetails .desktopMode .descDetails .addToCart img {
@@ -738,11 +746,19 @@
 .overview .bottomSection .orderBtn {
     border-radius: 10px;
     background: #FF914D;
-    padding: 25px 70px;
+    padding: 23px 70px;
     color: #FFF;
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
+    border: 2px solid transparent;
+    transition: .3s all ease-in-out;
+}
+
+.overview .bottomSection .orderBtn:hover{
+    border: 2px solid #FF914D;
+    color: #FF914D;
+    background-color: #FFF;
 }
 
 .overview .bottomSection .questions {

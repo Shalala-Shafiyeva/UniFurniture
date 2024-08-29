@@ -98,10 +98,13 @@
     margin-top: 43px;
     width: max-content;
     transition: 0.3s all ease-in-out;
+    border: 2px solid transparent;
 }
 
 .aboutContainer .getStart:hover {
-    background-color: #028571;
+    background-color: #fff;
+    color: #00A991;
+    border: 2px solid #00A991;
 }
 
 .aboutContainer .hero .img {

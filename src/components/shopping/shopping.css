@@ -455,6 +455,14 @@
     line-height: 32px;
     margin-top: 30px;
     width: 60%;
+    transition: .3s all ease-in-out;
+    border: 2px solid transparent;
+}
+
+.serviceCommit .txt a:hover{
+    border: 2px solid #00A991;
+    color: #00A991;
+    background-color: #FFF;
 }
 
 .serviceCommit .img {
@@ -537,6 +545,20 @@
     border-radius: 4px;
     margin-top: 30px;
     gap: 10px;
+    border: 1px solid transparent;
+    transition: .3s all ease-in-out;
+}
+
+.shopSlider .swiper .content a.bgGreen:hover{
+    border: 1px solid #00A991;
+    color: #00A991;
+    background-color: #ffffffe8;
+}
+
+.shopSlider .swiper .content a.bgOrange:hover{
+    border: 1px solid #FF914D;
+    color: #FF914D;
+    background-color: #ffffffe8;
 }
 
 .shopSlider .green {
@@ -794,4 +816,12 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
+    border: 2px solid transparent;
+    transition: .3s all ease-in-out;
+}
+
+.startShopping a:hover{
+    border: 2px solid #00A991;
+    color: #00A991;
+    background-color: #FFF;
 }

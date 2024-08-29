@@ -265,12 +265,14 @@
     font-weight: 700;
     line-height: 24px;
     cursor: pointer;
-    border: none;
+    border: 2px solid transparent;
     transition: 0.3s all ease-in-out;
 }
 
 .desktopTabletModess .btnSignIn:hover {
-    background-color: #018975;
+    background-color: #FFF;
+    border: 2px solid #00A991;
+    color: #00A991;
 }
 
 .desktopTabletModess .continueWith {
@@ -491,7 +493,7 @@
     font-size: 16px;
     font-weight: 700;
     padding: 8px;
-    border: none;
+    border: 2px solid transparent;
     cursor: pointer;
     transition: 0.3s all ease-in-out;
     display: flex;
@@ -499,8 +501,10 @@
     align-items: center;
 }
 
-.mobileModee .formPart button:hover {
-    background: #0f9b7d;
+.mobileModee .formPart .submit:hover {
+    background: #FFF;
+    color: #00A991;
+    border: 2px solid #00A991;
 }
 
  .mobileModee .bottom {

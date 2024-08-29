@@ -48,6 +48,28 @@ header #login {
     font-weight: 500;
 }
 
+header #login {
+    border-radius: 22.5px;
+    border: 1px solid transparent;
+    padding: 8px 23px;
+    transition: .3s all ease-in-out;
+}
+
+header #login:hover{
+    color: #00A991;
+    border: 1px solid #00A991;
+}
+
+nav ul li a{
+    border-bottom: 1px solid transparent;
+}
+
+nav ul li a:hover{
+    transition: .3s all ease-in-out;
+    color: #00A991;
+    border-bottom: 1px solid #00A991;
+}
+
 nav ul li .active {
     color: #00A991;
     font-weight: 600;
@@ -57,7 +79,7 @@ nav ul li .active {
 header .registerBtns {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 7px;
 }
 
 header #register {
@@ -69,6 +91,14 @@ header #register {
     line-height: 28px;
     letter-spacing: 0.072px;
     padding: 8px 23px;
+    border: 1px solid transparent;
+    transition: .3s all ease-in-out;
+}
+
+header #register:hover{
+    border: 1px solid #0B0D17;
+    color: #0B0D17;
+    background-color: #FFF;
 }
 
 .menuBar,
@@ -258,6 +288,13 @@ header #register {
         color: #6D6E74;
         font-size: 12px;
         font-weight: 500;
+        transition: .3s all ease-in-out;
+        border-bottom: 1px solid transparent;
+    }
+    
+    .navBar li a:hover{
+        border-bottom: 1px solid #00A991;
+        color: #00A991;
     }
 
     .navBar ul li .active {

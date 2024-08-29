@@ -20,7 +20,7 @@
     border-radius: 0 0 25px 25px;
 }
 
-.coverOut{
+.coverOut {
     display: none;
 }
 
@@ -90,6 +90,14 @@
     font-weight: 600;
     line-height: 32px;
     margin-top: 30px;
+    border: 2px solid transparent;
+    transition: 0.3s all ease-in-out;
+}
+
+.homeHero .cover a:hover {
+    background: #FFF;
+    color: #00A991;
+    border: 2px solid #00A991;
 }
 
 .nextBanking {
@@ -128,7 +136,7 @@
     line-height: 55.5px;
 }
 
-.homeContainer .nextBanking .middleTxt{
+.homeContainer .nextBanking .middleTxt {
     order: 1;
 }
 
@@ -138,7 +146,7 @@
     line-height: 32px;
 }
 
-.homeContainer .nextBanking .smallGrey{
+.homeContainer .nextBanking .smallGrey {
     order: 2;
 }
 
@@ -164,7 +172,7 @@
     object-fit: cover;
 }
 
-.nextBanking .imgSupport img{
+.nextBanking .imgSupport img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -179,11 +187,11 @@
     position: relative;
 }
 
-.nextBanking .imgCripto{
+.nextBanking .imgCripto {
     order: 4;
 }
 
-.nextBanking .imgSupport{
+.nextBanking .imgSupport {
     order: 5;
 }
 
@@ -267,11 +275,23 @@
     color: #6D6E74;
 }
 
+.homeContainer .createAccountBtn:hover {
+    background: #00A991;
+    border: 3px solid #00A991;
+    color: #FFF;
+}
+
 .homeContainer .loginBtn {
     border-radius: 10px;
     background: #00A991;
     border: 3px solid #00A991;
     color: #FFF;
+}
+
+.homeContainer .loginBtn:hover {
+    border: 3px solid #6D6E74;
+    color: #6D6E74;
+    background-color: #fff;
 }
 
 .nextBanking .btns a:hover {
@@ -299,6 +319,7 @@
 .homeContainer .choose {
     width: 100%;
     display: flex;
+    margin-bottom: 60px;
 }
 
 .choose>.container {
@@ -407,10 +428,14 @@
     line-height: 26px;
     border: none;
     transition: .3s all ease-in-out;
+    border: 2px solid transparent;
 }
 
 .homeContainer .getStart:hover {
     box-shadow: 0px 8px 30px 0px rgba(70, 146, 234, 0.18);
+    background-color: #FFF;
+    border: 2px solid #00A991;
+    color: #00A991;
 }
 
 .homeContainer .impact .rating {
@@ -808,12 +833,12 @@
 }
 
 .slider .swiper {
-    width: 90% ;
+    width: 90%;
     height: 100%;
-    margin: 0 auto ;
+    margin: 0 auto;
 }
 
-.slider .swiper-slide{
+.slider .swiper-slide {
     width: 100%;
 }
 
@@ -1047,7 +1072,7 @@
 .questionAccourdion .accordionItem.active {
     border-radius: 7px;
     border: 1px solid #CCEEE9;
-    background:  #F2FBF9;
+    background: #F2FBF9;
     box-shadow: 0px 4px 23px -4px rgba(0, 0, 0, 0.14);
 }
 
@@ -1146,6 +1171,14 @@
     font-weight: 500;
     line-height: 26px;
     padding: 14px;
+    text-align: center;
+    transition: 0.3s all ease-in-out;
+}
+
+.homeContainer .articles .btns a:first-of-type:hover{
+    background-color: #00A991;
+    border: 2px solid #00A991;
+    color: #fff;
 }
 
 .homeContainer .articleItems {
