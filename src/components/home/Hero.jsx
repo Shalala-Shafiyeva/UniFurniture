@@ -6,7 +6,7 @@ function Hero() {
     <>
     <section className="homeHero">
         <div className="ellipse">
-            <img src="/images/home/buttom.png" alt="Ellipse" />
+            <img src="/images/home/Buttom.png" alt="Ellipse" />
         </div>
       <div className="cover">
         <h3>
