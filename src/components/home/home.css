@@ -1067,6 +1067,8 @@
     padding: 30px 20px;
     position: relative;
     border-bottom: 1px solid #9D9EA2;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
 }
 
 .questionAccourdion .accordionItem.active {
@@ -1096,7 +1098,6 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 32px;
-    cursor: pointer;
 }
 
 .questionAccourdion .accordionItem p {
@@ -1106,14 +1107,13 @@
     font-weight: 400;
     position: relative;
     height: 0px;
-    transition: 1s all ease-in-out;
+    transition: .3s all ease-in-out;
     overflow: hidden;
     overflow-y: auto;
 }
 
 .questionAccourdion .accordionItem.active p {
     height: max-content;
-    transition: .3s all ease-in-out;
 }
 
 .homeContainer .articles {

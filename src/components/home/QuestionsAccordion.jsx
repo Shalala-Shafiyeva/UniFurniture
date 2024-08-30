@@ -5,9 +5,10 @@ function QuestionsAccordion() {
   var filterBtns = ["1", "2", "3"];
   let [selectedOption, setSelectedOption] = useState("1");
   let [filteredItems, setFilteredItems] = useState(data.homeQuestions);
+  const [activeItem, setActiveItem] = useState(null);
 
-  function toggleAccordion(e) {
-    e.target.parentElement.classList.toggle('active');
+  function toggleAccordion(itemId) {
+    setActiveItem((prev) => (prev === itemId ? null : itemId));
   }
 
   let handleFilterButtonClick = (option) => {
@@ -15,6 +16,7 @@ function QuestionsAccordion() {
     setFilteredItems(
       data.homeQuestions.filter((item) => item.option == option)
     );
+    setActiveItem(null);
   };
 
   useEffect(() => {
@@ -45,13 +47,15 @@ function QuestionsAccordion() {
           </p>
           <div className="accordion">
             {filteredItems.map((item) => (
-              <div key={item.id} className="accordionItem">
-                <img
-                  onClick={(e)=>{toggleAccordion(e)}}
-                  src="/images/home/accordion.png"
-                  alt="Open icon"
-                />
-                <span onClick={(e)=>{toggleAccordion(e)}}>{item.question}</span>
+              <div
+                key={item.id}
+                className={`accordionItem ${item.id===activeItem ? "active" : ""}`}
+                onClick={(e) => {
+                  toggleAccordion(item.id);
+                }}
+              >
+                <img src="/images/home/accordion.png" alt="Open icon" />
+                <span>{item.question}</span>
                 <p>{item.answer}</p>
               </div>
             ))}
