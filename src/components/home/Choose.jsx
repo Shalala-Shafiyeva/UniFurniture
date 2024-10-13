@@ -2,7 +2,7 @@ import React from "react";
 
 function Choose() {
   return (
-    <section className="choose">
+    <section className="choose" data-aos="fade-up">
       <div className="container">
         <span className="title">
           Why you should choose <span className="green">UniFurniture</span>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Impact() {
   return (
-    <section className="impact">
+    <section className="impact" data-aos="fade-up">
       <div className="container">
         <div className="head">
           <div className="left">

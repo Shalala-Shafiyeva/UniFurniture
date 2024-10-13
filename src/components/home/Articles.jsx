@@ -4,7 +4,7 @@ import data from "../../data.json";
 
 function Articles() {
   return (
-    <section className="articles">
+    <section className="articles" data-aos="fade-up">
       <div className="containerArticle">
         <div className="head">
           <div className="txt">

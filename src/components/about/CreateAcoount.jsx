@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function CreateAcoount() {
   return (
-    <section className="createAccount">
+    <section className="createAccount" data-aos="fade-up">
       <div className="circle item10"></div>
       <div className="circle item11"></div>
       <div className="circle item12"></div>

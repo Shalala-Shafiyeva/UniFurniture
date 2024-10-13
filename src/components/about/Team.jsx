@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Team() {
   return (
-    <section className="team">
+    <section className="team" data-aos="fade-up">
       <h3>
         Meet the <span>amazing team</span> behind Startply X
       </h3>

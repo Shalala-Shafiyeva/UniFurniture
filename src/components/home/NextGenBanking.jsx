@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function NextGenBanking() {
   return (
-    <section className="nextBanking">
+    <section className="nextBanking " data-aos="fade-up">
       <div className="container">
         <div className="cover">
           <div className="diagram">

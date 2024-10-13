@@ -102,6 +102,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .shoppingHero .container .inp button>img {

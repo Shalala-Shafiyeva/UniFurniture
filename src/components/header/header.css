@@ -189,7 +189,7 @@ header #register:hover{
 
 }
 
-@media (max-width:576px) {
+@media (max-width:340px) {
 
     header {
         padding: 10px 25px;

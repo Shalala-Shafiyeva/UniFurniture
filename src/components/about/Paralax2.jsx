@@ -2,7 +2,7 @@ import React from "react";
 
 function Paralax2() {
   return (
-    <section className="paralax2">
+    <section className="paralax2" data-aos="fade-up">
       <div className="cover">
         <span>We have impactful numbers</span>
         <div className="nums">

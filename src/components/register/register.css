@@ -623,7 +623,7 @@ input[type='checkbox']:checked {
     }
 }
 
-@media (max-width:576px) {
+@media (max-width:340px) {
     .desktopTabletModes {
         display: none;
     }

@@ -113,7 +113,7 @@
     }
 }
 
-@media (max-width:576px) {
+@media (max-width:340px) {
     .helpCenter {
         height: 330px;
         margin: 0px;

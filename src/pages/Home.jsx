@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../components/home/Hero";
 import Header from "../components/header/Header";
 import "../components/home/home.css";
@@ -14,8 +14,18 @@ import QuestionsAccordion from "../components/home/QuestionsAccordion";
 import Articles from "../components/home/Articles";
 import Footer from "../components/footer/Footer";
 import { Helmet } from "react-helmet";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Home() {
+
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }, []);
+
   return (
     <div className="homeContainer">
       <Helmet>

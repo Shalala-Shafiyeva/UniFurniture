@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/header/Header";
 import AboutHero from "../components/about/AboutHero";
 import PhoneHero from "../components/about/PhoneHero";
@@ -11,8 +11,18 @@ import CreateAcoount from "../components/about/CreateAcoount";
 import "../components/about/about.css";
 import Footer from "../components/footer/Footer";
 import { Helmet } from "react-helmet";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function About() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <>
       <Helmet>

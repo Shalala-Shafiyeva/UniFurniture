@@ -4,7 +4,7 @@ import data from "../../data.json";
 
 function StartWithUni() {
   return (
-    <section className="startWithUni">
+    <section className="startWithUni" data-aos="fade-up">
       <div className="containerStart">
         <div className="head">
           <div className="left">

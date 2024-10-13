@@ -24,7 +24,7 @@ function QuestionsAccordion() {
   }, []);
 
   return (
-    <section className="questionAccourdion">
+    <section className="questionAccourdion" data-aos="fade-up">
       <div className="containerQuestions">
         <div className="cover">
           <h3 className="middleTxt">Frequently Asked Questions</h3>

@@ -20,7 +20,7 @@ function CartOrder() {
   };
 
   return (
-    <div className="cartOrder">
+    <div className="cartOrder" data-aos="fade-up">
       <div className={`closeOrder ${open ? "hidden" : "visible"}`}>
         <span className="title">Order Summary</span>
         <div className="cover">

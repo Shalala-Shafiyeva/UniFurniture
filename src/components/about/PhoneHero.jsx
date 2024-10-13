@@ -2,7 +2,7 @@ import React from "react";
 
 function PhoneHero() {
   return (
-    <section className="phoneHero">
+    <section className="phoneHero" >
       <div className="cover">
         <span className="title">
           About our <span>company</span>

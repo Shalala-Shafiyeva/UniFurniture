@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Banking() {
   return (
-    <section className="banking">
+    <section className="banking" data-aos="fade-up">
       <div className="circle item3 darkOrange"></div>
       <div className="circle item4"></div>
       <div className="circle item5"></div>

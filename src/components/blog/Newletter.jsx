@@ -2,7 +2,7 @@ import React from "react";
 
 function Newletter() {
   return (
-    <section className="newsLetter">
+    <section className="newsLetter" data-aos="fade-up">
       <div className="container">
         <div className="title">Subscribe to our newsletter</div>
         <p>

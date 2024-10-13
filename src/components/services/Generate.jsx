@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Generate() {
   return (
-    <section className="generate">
+    <section className="generate" data-aos="fade-up">
       <img
         className="design item1"
         src="/images/designright1.png"

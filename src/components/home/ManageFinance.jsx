@@ -4,7 +4,7 @@ import data from "../../data.json";
 
 function ManageFinance() {
   return (
-    <section className="manageFinannce">
+    <section className="manageFinannce" data-aos="fade-up">
       <div className="containerManage">
         <div className="head">
           <h3>It have never been easier to manage your finances</h3>

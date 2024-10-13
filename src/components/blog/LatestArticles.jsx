@@ -21,7 +21,7 @@ function LatestArticles() {
     console.log(filteredArticles);
   };
   return (
-    <section className="latestArticles">
+    <section className="latestArticles" data-aos="fade-up">
       <div className="container">
         <div className="top">
           <div className="title">

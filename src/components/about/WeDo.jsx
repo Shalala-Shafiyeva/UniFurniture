@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function WeDo() {
   return (
-    <section className="weDo">
+    <section className="weDo" data-aos="fade-up">
       <h4>
         The values that shape everything we do at <span>Startply X</span>
       </h4>

@@ -183,7 +183,7 @@ footer .bottom span {
 
 }
 
-@media (max-width:576px) {
+@media (max-width:340px) {
     footer .top {
         padding: 24px 24px 46px;
     }

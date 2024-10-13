@@ -9,7 +9,7 @@ import "swiper/css/scrollbar";
 
 function Slider() {
   return (
-    <section className="slider">
+    <section className="slider" data-aos="fade-up">
       <div className="containerSlider">
         <Swiper
           className="swiper"

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function ServiceArticles() {
   return (
-    <section className="articles">
+    <section className="articles" data-aos="fade-up">
       <div className="container">
         <div className="head">
           Browse <span>questions</span> by category

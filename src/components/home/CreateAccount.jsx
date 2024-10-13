@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function CreateAccount() {
   return (
-    <section className="createAccount">
+    <section className="createAccount" data-aos="fade-up">
       <div className="containerAcc">
         <div className="cover">
           <h4>
