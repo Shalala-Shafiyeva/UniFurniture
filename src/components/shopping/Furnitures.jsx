@@ -143,7 +143,12 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
           <h2 className="title">
             Latest <span>Furnitures</span>
           </h2>
-          <Link to="/shop/moreFurnitures">
+          <Link
+            to="/shop/moreFurnitures"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             <span>More Furnitures</span>
             <img src="/images/shop/arrowleft.png" alt="Arrow More" />
           </Link>
@@ -180,11 +185,12 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
                   to={`/product/${product.type}/${product.id}`}
                   className="productCard"
                   key={product.id}
-                  onClick={() =>
+                  onClick={() => {
                     dispatch(
                       singledProduct({ id: product.id, type: product.type })
-                    )
-                  }
+                    );
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 >
                   <div className="productContext">
                     <div className="head">
@@ -200,15 +206,15 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
                     <img src={product.img} alt={product.type} />
                   </div>
                   <div className="btn">
-                      <button
-                        className="addCart"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleAddToCart(product);
-                        }}
-                      >
-                        Add to cart
-                      </button>
+                    <button
+                      className="addCart"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleAddToCart(product);
+                      }}
+                    >
+                      Add to cart
+                    </button>
                   </div>
                 </Link>
               );

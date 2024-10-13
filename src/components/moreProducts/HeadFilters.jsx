@@ -38,25 +38,56 @@ function HeadFilters() {
     <section className="headFilters">
       <div className="container">
         <div className="cover">
-          <Link className="backBtn" to="/shop">
+          <Link
+            className="backBtn"
+            to="/shop"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             <img src="/images/shop/arrowleft.png" alt="Back" />
             <span>Back to results</span>
           </Link>
           <div className="backLinks">
-            <Link to="/">Home</Link>
+            <Link
+              to="/"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Home
+            </Link>
             <img src="/images/chevron-left.png" alt="Icon" />
-            <Link to="/shop">Shop</Link>
+            <Link
+              to="/shop"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Shop
+            </Link>
             <img src="/images/chevron-left.png" alt="Icon" />
             <Link to="#">More Products</Link>
           </div>
           <div className="sort">
             <span>Sort by:</span>
             <div className="sortBtns">
-              <button className={`${activeSort === "date" ? "active" : ""}`} onClick={() => handleActiveSort("date")}>New</button>
-              <button className={`${activeSort === "highest" ? "active" : ""}`} onClick={() => handleActiveSort("highest")}>
+              <button
+                className={`${activeSort === "date" ? "active" : ""}`}
+                onClick={() => handleActiveSort("date")}
+              >
+                New
+              </button>
+              <button
+                className={`${activeSort === "highest" ? "active" : ""}`}
+                onClick={() => handleActiveSort("highest")}
+              >
                 Highest Price
               </button>
-              <button className={`${activeSort === "lowest" ? "active" : ""}`} onClick={() => handleActiveSort("lowest")}>
+              <button
+                className={`${activeSort === "lowest" ? "active" : ""}`}
+                onClick={() => handleActiveSort("lowest")}
+              >
                 Lowest Price
               </button>
             </div>

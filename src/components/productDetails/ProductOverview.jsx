@@ -80,7 +80,9 @@ function ProductOverview() {
           </div>
         </div>
         <div className="bottomSection">
-          <Link className="orderBtn" to="/cart/deliveryaddress">
+          <Link className="orderBtn" to="/cart/deliveryaddress" onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}>
             Order Now
           </Link>
           <div className="questions">

@@ -72,19 +72,40 @@ function Footer() {
                 <span className="title">Company</span>
                 <ul>
                   <li>
-                    <Link to="/about">-About</Link>
+                    <Link
+                      to="/about"
+                      onClick={() => {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                    >
+                      -About
+                    </Link>
                   </li>
                   <li>
                     <Link to="#">-Careers</Link>
                   </li>
                   <li>
-                    <Link to="/blog">-Blog</Link>
+                    <Link
+                      to="/blog"
+                      onClick={() => {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                    >
+                      -Blog
+                    </Link>
                   </li>
                   <li>
                     <Link to="#">-Contact</Link>
                   </li>
                   <li>
-                    <Link to="/services">-Services</Link>
+                    <Link
+                      to="/services"
+                      onClick={() => {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                    >
+                      -Services
+                    </Link>
                   </li>
                 </ul>
               </div>

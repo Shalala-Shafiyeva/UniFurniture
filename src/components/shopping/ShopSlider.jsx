@@ -34,6 +34,9 @@ function ShopSlider() {
                 <Link
                   to="/shop"
                   className={slider.percent < 40 ? "bgOrange" : "bgGreen"}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 >
                   <span>Shop Now</span>
                   <img src="/images/shop/arrow.png" alt="Shop Now" />

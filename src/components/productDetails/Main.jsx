@@ -81,16 +81,22 @@ function Main({ product }) {
       <Toaster position="top-center"/>
       <div className="container">
         <div className="linksCover">
-          <Link to="/shop">
+          <Link to="/shop" onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}>
             <img src="/images/shop/arrowleft.png" alt="Back" />
             <span>Back to results</span>
           </Link>
           <div className="links">
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}>Home</Link>
             <span>
               <img src="/images/chevron-left.png" alt="Icon" />
             </span>
-            <Link to="/shop">Shop</Link>
+            <Link to="/shop" onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}>Shop</Link>
             <span>
               <img src="/images/chevron-left.png" alt="Icon" />
             </span>

@@ -16,7 +16,7 @@ function Articles() {
             </p>
           </div>
           <div className="btns">
-            <Link to="#">BROWSE ALL ARTICLLES</Link>
+            <Link to="#">BROWSE ALL ARTICLES</Link>
             <Link to="/login" className="getStart">
               Get Started
             </Link>

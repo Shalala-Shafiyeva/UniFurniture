@@ -32,7 +32,14 @@ function Generate() {
               back and provide you with the most effective telemarketing
               strategies.
             </p>
-            <Link to="#">Learn more</Link>
+            <Link
+              to="#"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Learn more
+            </Link>
           </div>
         </div>
         <div className="box">
@@ -44,7 +51,14 @@ function Generate() {
               back and provide you with the most effective telemarketing
               strategies.
             </p>
-            <Link to="#">Read more</Link>
+            <Link
+              to="#"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Read more
+            </Link>
           </div>
           <div className="img">
             <img src="/images/generate2.png" alt="Image" />

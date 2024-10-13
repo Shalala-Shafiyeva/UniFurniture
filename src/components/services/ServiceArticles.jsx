@@ -17,7 +17,14 @@ function ServiceArticles() {
                 <p>{article.content}</p>
               </div>
               <div className="btnn">
-                <Link to="#">Browse article</Link>
+                <Link
+                  to="#"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
+                  Browse article
+                </Link>
               </div>
             </div>
           ))}

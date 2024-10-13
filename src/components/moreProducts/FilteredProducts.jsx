@@ -77,6 +77,9 @@ function FilteredProducts() {
                   className="product"
                   to={`/product/${product.type}/${product.id}`}
                   key={product.id}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 >
                   <div className="img">
                     <img src={product.img} alt={product.title} />
