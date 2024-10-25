@@ -1,16 +1,51 @@
 import React from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function DesktopMode() {
+  const navigate = useNavigate();
   const initialState = {
     email: "",
-    name: "",
     password: "",
   };
 
   const [values, setValues] = useState(initialState);
+  const [errors, setErrors] = useState({});
+  const [invalidCredentials, setInvalidCredentials] = useState("");
+  const [isPolicyChecked, setIsPolicyChecked] = useState(false);
+  const [policyError, setPolicyError] = useState("");
+
+  const handleLogin = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      const result = await response.json();
+      console.log(result);
+
+      if (response.status == 422) {
+        setErrors(result.errors || {});
+        setInvalidCredentials("");
+      } else if (response.status == 401) {
+        setInvalidCredentials(result.message);
+        setErrors({});
+      } else {
+        setErrors({});
+        setInvalidCredentials("");
+        if (!isPolicyChecked) {
+          setPolicyError("Please accept the terms and conditions.");
+          return;
+        }
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Error registering:", error);
+    }
+  };
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -38,7 +73,17 @@ function DesktopMode() {
             Sign Up
           </Link>
         </span>
-        <form action="">
+        {invalidCredentials && (
+          <p className="reg-error">{invalidCredentials}</p>
+        )}
+        <form
+          action=""
+          method="POST"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleLogin();
+          }}
+        >
           <div className="inp">
             <label htmlFor="email">Email</label>
             <input
@@ -51,6 +96,7 @@ function DesktopMode() {
               }}
             />
           </div>
+          {errors.email && <p className="reg-error">{errors.email}</p>}
           <div className="inp">
             <label htmlFor="password">Create Password</label>
             <input
@@ -66,6 +112,7 @@ function DesktopMode() {
               Forget Password ?
             </a>
           </div>
+          {errors.password && <p className="reg-error">{errors.password}</p>}
           <div className="icons">
             <div className="item orange"></div>
             <div className="item orange"></div>
@@ -75,15 +122,21 @@ function DesktopMode() {
             <div className="item lightgrey"></div>
           </div>
           <div className="privacy">
-            <input type="checkbox" name="privacy" />
+            <input
+              type="checkbox"
+              name="privacy"
+              checked={isPolicyChecked}
+              onChange={(e) => setIsPolicyChecked(e.target.checked)}
+            />
             <span>
               You agree to our Privacy Policy, Term and Conditions and
               Notification settings
             </span>
           </div>
-          <Link to="/" className="btnSignIn" type="submit">
+          {policyError && <p className="reg-error">{policyError}</p>}
+          <button className="btnSignIn" type="submit">
             Sign In
-          </Link>
+          </button>
           <div className="continueWith">
             <span>Or continue with</span>
             <div className="btns">

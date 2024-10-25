@@ -326,6 +326,10 @@
     line-height: 24px;
 }
 
+.desktopTabletModess .reg-error{
+    font-size: 9px;
+}
+
 
 /* MOBILE MODE */
 .mobileModee {
@@ -396,6 +400,12 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.mobileModee .formPart form>div{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .mobileModee .inpMobile {
