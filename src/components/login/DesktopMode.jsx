@@ -52,18 +52,6 @@ function DesktopMode() {
             />
           </div>
           <div className="inp">
-            <label htmlFor="name">Your Name</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value={values.name}
-              onChange={(e) => {
-                onChange(e);
-              }}
-            />
-          </div>
-          <div className="inp">
             <label htmlFor="password">Create Password</label>
             <input
               type="password"

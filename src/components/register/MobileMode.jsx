@@ -1,19 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 import { useState } from "react";
 
 function MobileMode() {
-
+  const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
   const [visiblePass, setVisiblePass] = useState(false);
   const handleVisiblePass = () => {
     setVisiblePass((prev) => !prev);
   };
-  const [values, setValues] = useState({ name: "", email: "", password: "" });
+  const [values, setValues] = useState({ name: "", surname: "", email: "", password: "" });
 
   const onChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+  };
+  const handleRegister = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      const result = await response.json();
+      console.log(result);
+
+      if (response.status == 422) {
+        setErrors(result.errors || {});
+      } else {
+        setErrors({});
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error("Error registering:", error);
+    }
   };
   return (
     <div className="mobileMode">
@@ -25,53 +47,87 @@ function MobileMode() {
         <div className="formPart">
           <h4>Register Account</h4>
           <span>Complete your details or continue with social media</span>
-          <form action="">
-            <div className="inpMobile">
-              <img src="/images/user.png" alt="User" />
-              <input
-                onChange={(e) => {
-                  onChange(e);
-                }}
-                type="text"
-                name="name"
-                placeholder="Your name"
-              />
+          <form
+            action=""
+            method="POST"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleRegister();
+            }}
+          >
+            <div>
+              <div className="inpMobile">
+                <img src="/images/user.png" alt="User" />
+                <input
+                  value={values.name}
+                  onChange={(e) => {
+                    onChange(e);
+                  }}
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                />
+              </div>
+              {errors.name && <p className="reg-error">{errors.name}</p>}
             </div>
-            <div className="inpMobile">
-              <img src="/images/Message.png" alt="Email" />
-              <input
-                onChange={(e) => {
-                  onChange(e);
-                }}
-                type="email"
-                name="email"
-                placeholder="Email"
-              />
+            <div>
+              <div className="inpMobile">
+                <img src="/images/user.png" alt="User" />
+                <input
+                  value={values.surname}
+                  onChange={(e) => {
+                    onChange(e);
+                  }}
+                  type="text"
+                  name="surname"
+                  placeholder="Your surname"
+                />
+              </div>
+              {errors.surname && <p className="reg-error">{errors.surname}</p>}
             </div>
-            <div className="inpMobile">
-              <img src="/images/Lock.png" alt="Password" />
-              <input
-                type={visiblePass ? "text" : "password"}
-                name="password"
-                placeholder="Password"
-                onChange={(e) => {
-                  onChange(e);
-                }}
-              />
-              <img
-                className="hide"
-                src={
-                  visiblePass
-                    ? "/images/home/show.png"
-                    : "/images/home/Hide.png"
-                }
-                alt="Hidden password"
-                onClick={handleVisiblePass}
-              />
+            <div>
+              <div className="inpMobile">
+                <img src="/images/Message.png" alt="Email" />
+                <input
+                  value={values.email}
+                  onChange={(e) => {
+                    onChange(e);
+                  }}
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+              {errors.name && <p className="reg-error">{errors.email}</p>}
             </div>
-            <Link className="submit" to="/login" type="submit">
+            <div>
+              <div className="inpMobile">
+                <img src="/images/Lock.png" alt="Password" />
+                <input
+                  value={values.password}
+                  type={visiblePass ? "text" : "password"}
+                  name="password"
+                  placeholder="Password"
+                  onChange={(e) => {
+                    onChange(e);
+                  }}
+                />
+                <img
+                  className="hide"
+                  src={
+                    visiblePass
+                      ? "/images/home/show.png"
+                      : "/images/home/Hide.png"
+                  }
+                  alt="Hidden password"
+                  onClick={handleVisiblePass}
+                />
+              </div>
+              {errors.name && <p className="reg-error">{errors.password}</p>}
+            </div>
+            <button className="submit" type="submit">
               Sign Up
-            </Link>
+            </button>
           </form>
         </div>
       </div>

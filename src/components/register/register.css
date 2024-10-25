@@ -156,6 +156,20 @@
     align-items: center;
 }
 
+.desktopTabletModes .form-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.desktopTabletModes .form-wrapper>div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .desktopTabletModes .inp {
     width: 100%;
     position: relative;
@@ -337,6 +351,13 @@ input[type='checkbox']:checked {
     line-height: 24px;
 }
 
+.reg-error{
+    width: 100%;
+    font-size: 11px;
+    color: red;
+    text-align: left;
+}
+
 
 
 
@@ -411,6 +432,13 @@ input[type='checkbox']:checked {
     gap: 16px;
 }
 
+.mobileMode .formPart form>div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .mobileMode .inpMobile {
     width: 100%;
     padding: 16px 24px;
@@ -432,6 +460,10 @@ input[type='checkbox']:checked {
     outline: none;
     font-size: 16px;
     font-weight: 500;
+}
+
+.mobileMode .reg-error{
+    font-size: 12px;
 }
 
 .mobileMode .inpMobile input::placeholder {
