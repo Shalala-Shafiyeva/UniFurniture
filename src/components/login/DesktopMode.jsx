@@ -108,9 +108,9 @@ function DesktopMode() {
                 onChange(e);
               }}
             />
-            <a href="" id="forgetPass">
+            <Link to="/forgot-password" id="forgetPass">
               Forget Password ?
-            </a>
+            </Link>
           </div>
           {errors.password && <p className="reg-error">{errors.password}</p>}
           <div className="icons">
