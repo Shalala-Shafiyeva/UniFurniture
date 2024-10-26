@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./header.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Cart from "../cart/Cart";
 
 function Header() {
+  const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -12,6 +13,26 @@ function Header() {
       setIsAuthenticated(true);
     }
   });
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/logout", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.status === 200) {
+        localStorage.removeItem("token");
+        setIsAuthenticated(false);
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error("Logout error: ", error);
+    }
+  };
 
   const { cart } = useSelector((state) => state.cart);
   const [openMenu, setOpenMenu] = useState(false);
@@ -61,9 +82,9 @@ function Header() {
                 </Link>
               </>
             ) : (
-              <Link id="logout" to="#">
+              <button id="logout" onClick={handleLogout}>
                 Logout
-              </Link>
+              </button>
             )}
           </div>
           <div className="menuBar" onClick={handleOpenMenu}>
@@ -74,9 +95,9 @@ function Header() {
               Login
             </NavLink>
           ) : (
-            <Link id="mobileLogout" to="#">
+            <button id="mobileLogout" onClick={handleLogout}>
               Logout
-            </Link>
+            </button>
           )}
           <div className="basket" onClick={() => handleOpenBasket()}>
             <img src="/images/basketicon.png" alt="Basket" />
