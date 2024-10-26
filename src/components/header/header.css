@@ -82,7 +82,7 @@ header .registerBtns {
     gap: 7px;
 }
 
-header #register {
+header #register, header #logout{
     border-radius: 22.5px;
     background: #0B0D17;
     color: #FFF;
@@ -95,18 +95,21 @@ header #register {
     transition: .3s all ease-in-out;
 }
 
-header #register:hover{
+header #register:hover,
+header #logout:hover{
     border: 1px solid #0B0D17;
     color: #0B0D17;
     background-color: #FFF;
 }
 
 .menuBar,
-#mobileLogin {
+#mobileLogin,
+#mobileLogout {
     display: none;
 }
 
-#mobileLogin {
+#mobileLogin,
+#mobileLogout {
     color: #24252E;
     text-align: center;
     font-weight: 700;
@@ -183,7 +186,8 @@ header #register:hover{
 
     nav ul a,
     header #login,
-    header #register {
+    header #register,
+    header #logout {
         font-size: 12px !important;
     }
 
@@ -214,7 +218,8 @@ header #register:hover{
     }
 
     .menuBar,
-    #mobileLogin {
+    #mobileLogin,
+    #mobileLogout {
         display: flex;
         cursor: pointer;
     }

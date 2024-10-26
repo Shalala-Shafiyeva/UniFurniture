@@ -33,7 +33,7 @@ function MobileMode() {
 
       const result = await response.json();
       console.log(result);
-
+      
       if (response.status == 422) {
         setErrors(result.errors || {});
         setInvalidCredentials("");
@@ -43,6 +43,7 @@ function MobileMode() {
       } else {
         setErrors({});
         setInvalidCredentials("");
+        localStorage.setItem("token", result.token);
         navigate("/");
       }
     } catch (error) {

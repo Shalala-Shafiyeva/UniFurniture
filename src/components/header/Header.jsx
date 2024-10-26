@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Cart from "../cart/Cart";
 
 function Header() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  });
+
   const { cart } = useSelector((state) => state.cart);
   const [openMenu, setOpenMenu] = useState(false);
   const [openBasket, setOpenBasket] = useState(false);
@@ -43,19 +51,33 @@ function Header() {
         </nav>
         <div className="btns">
           <div className="registerBtns">
-            <Link id="login" to="/login">
-              Login
-            </Link>
-            <Link id="register" to="/register">
-              Sign Up
-            </Link>
+            {!isAuthenticated ? (
+              <>
+                <Link id="login" to="/login">
+                  Login
+                </Link>
+                <Link id="register" to="/register">
+                  Sign Up
+                </Link>
+              </>
+            ) : (
+              <Link id="logout" to="#">
+                Logout
+              </Link>
+            )}
           </div>
           <div className="menuBar" onClick={handleOpenMenu}>
             <img src="/images/menu.png" alt="Menu" />
           </div>
-          <NavLink id="mobileLogin" to="/login">
-            Login
-          </NavLink>
+          {!isAuthenticated ? (
+            <NavLink id="mobileLogin" to="/login">
+              Login
+            </NavLink>
+          ) : (
+            <Link id="mobileLogout" to="#">
+              Logout
+            </Link>
+          )}
           <div className="basket" onClick={() => handleOpenBasket()}>
             <img src="/images/basketicon.png" alt="Basket" />
             <span>{cart.length}</span>

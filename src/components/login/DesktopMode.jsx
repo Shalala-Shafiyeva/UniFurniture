@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function DesktopMode() {
+
   const navigate = useNavigate();
   const initialState = {
     email: "",
@@ -40,6 +41,7 @@ function DesktopMode() {
           setPolicyError("Please accept the terms and conditions.");
           return;
         }
+        localStorage.setItem("token", result.token);
         navigate("/");
       }
     } catch (error) {
