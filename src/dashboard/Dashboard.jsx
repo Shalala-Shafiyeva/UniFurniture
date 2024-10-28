@@ -31,7 +31,6 @@ function Dashboard() {
   };
 
   return (
-    <>
       <div className="sb-nav-fixed">
         <Navbar />
         <div className="layoutSidenav d-flex">
@@ -41,7 +40,6 @@ function Dashboard() {
           </div>
         </div>
       </div>
-    </>
   );
 }
 
