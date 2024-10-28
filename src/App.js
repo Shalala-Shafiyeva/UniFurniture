@@ -14,6 +14,8 @@ import MoreProducts from "./pages/MoreProducts";
 import CartDeliveryAddress from "./pages/CartDeliveryAddress";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
+import { lazy } from "react";
+const Dashboard =lazy(() => import('./dashboard/Dashboard'));
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
         <Route path="/product/:type/:id" element={<ProductDetails />} />
         <Route path="/shop/moreFurnitures" element={<MoreProducts />} />
         <Route path="/cart/deliveryaddress" element={<CartDeliveryAddress />} />
+
+        <Route path="/dashboard" element={<Dashboard />} />
+
         <Route path="/notFound" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
