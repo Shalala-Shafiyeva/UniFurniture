@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Paralax() {
+  const [paralax, setParalax] = useState([]);
+  useEffect(() => {
+    const fetchParalax = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:8000/api/about/paralax",
+          { method: "GET", headers: { "Content-Type": "application/json" } }
+        );
+        const result = await response.json();
+        setParalax(result);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    };
+    fetchParalax();
+  }, []);
+
   return (
     <section className="paralax">
+      {/* BACKEND -EN MELUMATLARI CIKME */}
+      {/* // <section className="paralax"
+    //   style={{
+    //     backgroundImage:
+    //       paralax && paralax.success
+    //         ? `url('http://localhost:8000/storage/${paralax.data.image}')`
+    //         : "none",
+    //   }}
+    // >
+    //   {paralax.success && (
+    //     <div className="cover">
+    //       <h3>{paralax.data.title}</h3>
+    //       <p>{paralax.data.content}</p>
+    //     </div>
+    //   )} */}
       <div className="cover">
         <h3>The story behind how our company was founded</h3>
         <p>

@@ -15,6 +15,16 @@ import CartDeliveryAddress from "./pages/CartDeliveryAddress";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import { lazy } from "react";
+import AboutBannerEdit from "./dashboard/components/about page/AboutBannerEdit";
+import AboutBanner from "./dashboard/components/about page/AboutBanner";
+import AboutParalax from "./dashboard/components/about page/AboutParalax";
+import AboutParalaxEdit from "./dashboard/components/about page/AboutParalaxEdit";
+import AboutTeam from "./dashboard/components/about page/AboutTeam";
+import AboutTeamTitleEdit from "./dashboard/components/about page/AboutTeamTitleEdit";
+import AboutTeamMemberEdit from "./dashboard/components/about page/AboutTeamMemberEdit";
+import AboutNumber from "./dashboard/components/about page/AboutNumber";
+import AboutNumberTitleEdit from "./dashboard/components/about page/AboutNumberTitleEdit";
+import AboutNumberSubtitleEdit from "./dashboard/components/about page/AboutNumberSubtitleEdit";
 const Dashboard =lazy(() => import('./dashboard/Dashboard'));
 
 function App() {
@@ -34,6 +44,16 @@ function App() {
         <Route path="/cart/deliveryaddress" element={<CartDeliveryAddress />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/about/banner" element={<AboutBanner />} />
+        <Route path="/dashboard/about/banner/edit/:id" element={<AboutBannerEdit />} />
+        <Route path="/dashboard/about/paralax" element={<AboutParalax />} />
+        <Route path="/dashboard/about/paralax/edit/:id" element={<AboutParalaxEdit />} />
+        <Route path="/dashboard/about/team" element={<AboutTeam />} />
+        <Route path="/dashboard/about/team/title/edit/:id" element={<AboutTeamTitleEdit />} />
+        <Route path="/dashboard/about/team/member/edit/:id" element={<AboutTeamMemberEdit />} />
+        <Route path="/dashboard/about/number" element={<AboutNumber />} />
+        <Route path="/dashboard/about/number/title/edit/:id" element={<AboutNumberTitleEdit />} />
+        <Route path="/dashboard/about/number/subtitle/edit/:id" element={<AboutNumberSubtitleEdit />} />
 
         <Route path="/notFound" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />

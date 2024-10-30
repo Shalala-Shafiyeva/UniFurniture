@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Sidebar({setActiveComponent}) {
+function Sidebar() {
   return (
     <div id="layoutSidenav_nav" className="col-2 min-vh-100">
       <nav
@@ -72,20 +72,17 @@ function Sidebar({setActiveComponent}) {
               data-bs-parent="#sidenavAccordion"
             >
               <nav className="sb-sidenav-menu-nested nav">
-                <Link className="nav-link" to="" onClick={()=>setActiveComponent("AboutBanner")} >
+                <Link className="nav-link" to="/dashboard/about/banner" >
                   Banner
                 </Link>
-                <Link className="nav-link" to="" onClick={()=>setActiveComponent("AboutParalax")}>
+                <Link className="nav-link" to="/dashboard/about/paralax">
                   Paralax section
                 </Link>
-                <Link className="nav-link" to="" onClick={()=>setActiveComponent("AboutTeam")}>
+                <Link className="nav-link" to="/dashboard/about/team" >
                   Our team section
                 </Link>
-                <Link className="nav-link" to="" onClick={()=>setActiveComponent("AboutNumbers")}>
+                <Link className="nav-link" to="/dashboard/about/number">
                   Numbers section
-                </Link>
-                <Link className="nav-link" to="" onClick={()=>setActiveComponent("AboutWeDo")}>
-                  We do section
                 </Link>
               </nav>
             </div>

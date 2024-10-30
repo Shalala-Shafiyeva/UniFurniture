@@ -1,9 +1,39 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Navbar from "../navbar/Navbar";
+import Sidebar from "../sidebar/Sidebar";
 
 function AboutParalax() {
+  const [paralaxes, setParalaxes] = useState([]);
+  useEffect(() => {
+    const fetchParalaxes = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:8000/api/dashboard/about/paralax",
+          { method: "GET", headers: { "Content-Type": "application/json" } }
+        );
+        const result = await response.json();
+        setParalaxes(result.data);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    };
+    fetchParalaxes();
+  }, [paralaxes]);
+
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8000/api/dashboard/about/paralax/delete/${id}`,
+        { method: "DELETE", headers: { "Content-Type": "application/json" } }
+      );
+      const result = await response.json();
+      setParalaxes(paralaxes.filter((paralax) => paralax.id !== id));
+    } catch (err) {
+      console.log("Error: ", err);
+    }
+  };
+
   const navigate = useNavigate();
   const [content, setContent] = useState("");
   const initialState = {
@@ -16,7 +46,7 @@ function AboutParalax() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("Banner Content:", content);
+    console.log("Paralax Content:", content);
 
     const formData = new FormData();
     formData.append("title", values.title);
@@ -24,7 +54,7 @@ function AboutParalax() {
     formData.append("image", values.image);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/dashboard/about/paralax",
+        "http://localhost:8000/api/dashboard/about/paralax/create",
         {
           method: "POST",
           body: formData,
@@ -37,75 +67,165 @@ function AboutParalax() {
         setErrors(result.errors || {});
       } else {
         setErrors({});
+        setContent("");
+        setValues(initialState);
 
-        navigate("/dashboard");
+        navigate("/dashboard/about/paralax");
       }
     } catch (error) {
-      console.error("Error creating paralax:", error);
+      console.error("Error creating banner:", error);
+    }
+  };
+
+  const handlePublishParalax = async (id) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8000/api/dashboard/about/paralax/publish/${id}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.log("Error:", error);
     }
   };
 
   return (
-    <div className="col-8 p-4">
-      <h2>Paralax section of About page</h2>
-      <form
-        className="col-12 border p-4 d-flex flex-column gap-3"
-        onSubmit={handleFormSubmit}
-        method="POST"
-      >
-        <div>
-          <div className="form-group">
-            <label htmlFor="title">Title</label>
-            <input
-              type="text"
-              className="form-control"
-              id="title"
-              aria-describedby="titleHelp"
-              placeholder="Enter title"
-              value={values.title}
-              onChange={(e) => {
-                setValues({ ...values, title: e.target.value });
-              }}
-              name="title"
-            />
-          </div>
-          {errors.title && <p className="text-danger">{errors.title}</p>}
+    <div className="sb-nav-fixed">
+      <Navbar />
+      <div className="layoutSidenav d-flex">
+        <Sidebar />
+        <div id="layoutSidenav_content" className="container-fluid mt-5">
+          <main>
+            <div className="row">
+              <div className="col-8 p-4">
+                <h2>Paralax of About page</h2>
+                <h3>Create a new paralax</h3>
+                <form
+                  className="col-12 border p-4 d-flex flex-column gap-3"
+                  onSubmit={handleFormSubmit}
+                  method="POST"
+                >
+                  <div>
+                    <div className="form-group">
+                      <label htmlFor="title">Title of paralax</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="title"
+                        aria-describedby="titleHelp"
+                        placeholder="Enter title"
+                        value={values.title}
+                        onChange={(e) => {
+                          setValues({ ...values, title: e.target.value });
+                        }}
+                        name="title"
+                      />
+                    </div>
+                    {errors.title && (
+                      <p className="text-danger">{errors.title}</p>
+                    )}
+                  </div>
+                  <div>
+                    <div className="form-group">
+                      <label htmlFor="content">Content of paralax</label>
+                      <textarea
+                        className="form-control"
+                        name="content"
+                        id="content"
+                        value={content}
+                        onChange={(e) => {
+                          setContent(e.target.value);
+                        }}
+                      ></textarea>
+                    </div>
+                    {errors.content && (
+                      <p className="text-danger">{errors.content}</p>
+                    )}
+                  </div>
+                  <div>
+                    <div className="form-group">
+                      <label htmlFor="image">Image of paralax</label>
+                      <input
+                        type="file"
+                        className="form-control"
+                        id="image"
+                        aria-describedby="imageHelp"
+                        onChange={(e) => {
+                          setValues({ ...values, image: e.target.files[0] });
+                        }}
+                        name="image"
+                      />
+                    </div>
+                    {errors.image && (
+                      <p className="text-danger">{errors.image}</p>
+                    )}
+                  </div>
+                  <button type="submit" className="btn btn-primary">
+                    Create
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div className="row p-4">
+              <h2>Paralaxes of About page</h2>
+              {paralaxes.length == 0 ? (
+                <p>No paralax found</p>
+              ) : (
+                <table className="table table-striped table-bordered">
+                  <thead className="thead-dark">
+                    <tr>
+                      <td scope="col">Title</td>
+                      <td scope="col">Content</td>
+                      <td scope="col">Image</td>
+                      <td scope="col">Publish</td>
+                      <td scope="col">Actions</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {paralaxes.map((paralax) => (
+                      <tr key={paralax.id}>
+                        <td>{paralax.title}</td>
+                        <td>{paralax.content}</td>
+                        <td>
+                          <img
+                            width="100"
+                            src={`http://localhost:8000/storage/${paralax.image}`}
+                            alt="Banner"
+                          />
+                        </td>
+                        <td>
+                          {paralax.is_publish ? "publish" : "not publish"}
+                        </td>
+                        <td className="d-flex gap-2">
+                          <Link
+                            className="btn btn-primary"
+                            to={`/dashboard/about/paralax/edit/${paralax.id}`}
+                          >
+                            Edit
+                          </Link>
+                          <button
+                            className="btn btn-danger"
+                            onClick={() => handleDelete(paralax.id)}
+                          >
+                            Delete
+                          </button>
+                          {!paralax.is_publish && (
+                            <button className="btn btn-success" onClick={()=>handlePublishParalax(paralax.id)}>Publish</button>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          </main>
         </div>
-        <div>
-          <div className="form-group">
-            <label htmlFor="content">Content</label>
-            <CKEditor
-              editor={ClassicEditor}
-              data={content}
-              onChange={(event, editor) => {
-                const data = editor.getData();
-                setContent(data);
-              }}
-              name="content"
-            />
-          </div>
-          {errors.content && <p className="text-danger">{errors.content}</p>}
-        </div>
-        <div>
-          <div className="form-group">
-            <label htmlFor="image">Image</label>
-            <input
-              type="file"
-              className="form-control"
-              id="image"
-              aria-describedby="imageHelp"
-              onChange={(e) => {
-                setValues({ ...values, image: e.target.files[0] });
-              }}
-              name="image"
-            />
-          </div>
-          {errors.image && <p className="text-danger">{errors.image}</p>}
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+      </div>
     </div>
   );
 }
