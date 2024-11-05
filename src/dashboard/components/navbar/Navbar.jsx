@@ -1,4 +1,6 @@
 import React from "react";
+import "../css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function Navbar() {
   return (

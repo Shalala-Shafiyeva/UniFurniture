@@ -95,9 +95,9 @@ function Header() {
               Login
             </NavLink>
           ) : (
-            <button id="mobileLogout" onClick={handleLogout}>
+            <NavLink id="mobileLogout" onClick={handleLogout}>
               Logout
-            </button>
+            </NavLink>
           )}
           <div className="basket" onClick={() => handleOpenBasket()}>
             <img src="/images/basketicon.png" alt="Basket" />

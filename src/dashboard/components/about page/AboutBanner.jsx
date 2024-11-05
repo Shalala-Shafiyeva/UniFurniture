@@ -4,30 +4,41 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
+import "../css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function AboutBanner() {
   const [banners, setBanners] = useState([]);
+  const fetchBanners = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/about-banner", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const result = await response.json();
+      setBanners(result.data);
+    } catch (err) {
+      console.log("Error: ", err);
+    }
+  };
   useEffect(() => {
-    const fetchBanners = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/dashboard/about/banner",
-          { method: "GET", headers: { "Content-Type": "application/json" } }
-        );
-        const result = await response.json();
-        setBanners(result.data);
-      } catch (err) {
-        console.log("Error: ", err);
-      }
-    };
     fetchBanners();
   }, []);
 
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/dashboard/about/banner/delete/${id}`,
-        { method: "DELETE", headers: { "Content-Type": "application/json" } }
+        `http://localhost:8000/api/about-banner/delete/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
       );
       const result = await response.json();
       setBanners(banners.filter((banner) => banner.id !== id));
@@ -56,9 +67,12 @@ function AboutBanner() {
     formData.append("image", values.image);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/dashboard/about/banner/create",
+        "http://localhost:8000/api/about-banner/create",
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
           body: formData,
         }
       );
@@ -82,10 +96,13 @@ function AboutBanner() {
   const handlePublishBanner = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/dashboard/about/banner/publish/${id}`,
+        `http://localhost:8000/api/about-banner/publish/${id}`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       );
       const result = await response.json();

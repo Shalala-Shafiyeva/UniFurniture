@@ -15,17 +15,54 @@ import CartDeliveryAddress from "./pages/CartDeliveryAddress";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import { lazy } from "react";
-import AboutBannerEdit from "./dashboard/components/about page/AboutBannerEdit";
-import AboutBanner from "./dashboard/components/about page/AboutBanner";
-import AboutParalax from "./dashboard/components/about page/AboutParalax";
-import AboutParalaxEdit from "./dashboard/components/about page/AboutParalaxEdit";
-import AboutTeam from "./dashboard/components/about page/AboutTeam";
-import AboutTeamTitleEdit from "./dashboard/components/about page/AboutTeamTitleEdit";
-import AboutTeamMemberEdit from "./dashboard/components/about page/AboutTeamMemberEdit";
-import AboutNumber from "./dashboard/components/about page/AboutNumber";
-import AboutNumberTitleEdit from "./dashboard/components/about page/AboutNumberTitleEdit";
-import AboutNumberSubtitleEdit from "./dashboard/components/about page/AboutNumberSubtitleEdit";
-const Dashboard =lazy(() => import('./dashboard/Dashboard'));
+const Dashboard = lazy(() => import("./dashboard/Dashboard"));
+const AboutBanner = lazy(() =>
+  import("./dashboard/components/about page/AboutBanner")
+);
+const AboutBannerEdit = lazy(() =>
+  import("./dashboard/components/about page/AboutBannerEdit")
+);
+const AboutParalax = lazy(() =>
+  import("./dashboard/components/about page/AboutParalax")
+);
+const AboutParalaxEdit = lazy(() =>
+  import("./dashboard/components/about page/AboutParalaxEdit")
+);
+const AboutTeam = lazy(() =>
+  import("./dashboard/components/about page/AboutTeam")
+);
+const AboutTeamTitleEdit = lazy(() =>
+  import("./dashboard/components/about page/AboutTeamTitleEdit")
+);
+const AboutTeamMemberEdit = lazy(() =>
+  import("./dashboard/components/about page/AboutTeamMemberEdit")
+);
+const AboutNumber = lazy(() =>
+  import("./dashboard/components/about page/AboutNumber")
+);
+const AboutNumberTitleEdit = lazy(() =>
+  import("./dashboard/components/about page/AboutNumberTitleEdit")
+);
+const AboutNumberSubtitleEdit = lazy(() =>
+  import("./dashboard/components/about page/AboutNumberSubtitleEdit")
+);
+const Product = lazy(() => import("./dashboard/components/products/Product"));
+const ProductEdit = lazy(() =>
+  import("./dashboard/components/products/ProductEdit")
+);
+const Type = lazy(() => import("./dashboard/components/products/Type"));
+const ViewProducts = lazy(() =>
+  import("./dashboard/components/products/ViewProducts")
+);
+const TypeEdit = lazy(() => import("./dashboard/components/products/TypeEdit"));
+const Category = lazy(() => import("./dashboard/components/products/Category"));
+const CategoryEdit = lazy(() =>
+  import("./dashboard/components/products/CategoryEdit")
+);
+const Color = lazy(() => import("./dashboard/components/products/Color"));
+const ColorEdit = lazy(() =>
+  import("./dashboard/components/products/ColorEdit")
+);
 
 function App() {
   return (
@@ -45,15 +82,48 @@ function App() {
 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/about/banner" element={<AboutBanner />} />
-        <Route path="/dashboard/about/banner/edit/:id" element={<AboutBannerEdit />} />
+        <Route
+          path="/dashboard/about/banner/edit/:id"
+          element={<AboutBannerEdit />}
+        />
         <Route path="/dashboard/about/paralax" element={<AboutParalax />} />
-        <Route path="/dashboard/about/paralax/edit/:id" element={<AboutParalaxEdit />} />
+        <Route
+          path="/dashboard/about/paralax/edit/:id"
+          element={<AboutParalaxEdit />}
+        />
         <Route path="/dashboard/about/team" element={<AboutTeam />} />
-        <Route path="/dashboard/about/team/title/edit/:id" element={<AboutTeamTitleEdit />} />
-        <Route path="/dashboard/about/team/member/edit/:id" element={<AboutTeamMemberEdit />} />
+        <Route
+          path="/dashboard/about/team/title/edit/:id"
+          element={<AboutTeamTitleEdit />}
+        />
+        <Route
+          path="/dashboard/about/team/member/edit/:id"
+          element={<AboutTeamMemberEdit />}
+        />
         <Route path="/dashboard/about/number" element={<AboutNumber />} />
-        <Route path="/dashboard/about/number/title/edit/:id" element={<AboutNumberTitleEdit />} />
-        <Route path="/dashboard/about/number/subtitle/edit/:id" element={<AboutNumberSubtitleEdit />} />
+        <Route
+          path="/dashboard/about/number/title/edit/:id"
+          element={<AboutNumberTitleEdit />}
+        />
+        <Route
+          path="/dashboard/about/number/subtitle/edit/:id"
+          element={<AboutNumberSubtitleEdit />}
+        />
+        <Route path="/dashboard/product" element={<Product />} />
+        <Route path="/dashboard/product/edit/:id" element={<ProductEdit />} />
+        <Route path="/dashboard/products" element={<ViewProducts />} />
+        <Route path="/dashboard/product/type" element={<Type />} />
+        <Route path="/dashboard/product/type/edit/:id" element={<TypeEdit />} />
+        <Route path="/dashboard/product/category" element={<Category />} />
+        <Route
+          path="/dashboard/product/category/edit/:id"
+          element={<CategoryEdit />}
+        />
+        <Route path="/dashboard/product/color" element={<Color />} />
+        <Route
+          path="/dashboard/product/color/edit/:id"
+          element={<ColorEdit />}
+        />
 
         <Route path="/notFound" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />

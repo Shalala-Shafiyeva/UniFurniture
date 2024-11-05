@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
+import "../css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function AboutParalaxEdit() {
   const { id } = useParams();
@@ -17,10 +19,13 @@ function AboutParalaxEdit() {
     const fetchParalax = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/dashboard/about/paralax/" + id,
+          "http://localhost:8000/api/about-paralax/" + id,
           {
             method: "GET",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
           }
         );
         const result = await response.json();
@@ -43,9 +48,12 @@ function AboutParalaxEdit() {
     formData.append("image", values.image);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/dashboard/about/paralax/edit/" + id,
+        "http://localhost:8000/api/about-paralax/edit/" + id,
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
           body: formData,
         }
       );

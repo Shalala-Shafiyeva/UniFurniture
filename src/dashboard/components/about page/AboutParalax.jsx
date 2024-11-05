@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
+import "../css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function AboutParalax() {
   const [paralaxes, setParalaxes] = useState([]);
@@ -9,8 +11,14 @@ function AboutParalax() {
     const fetchParalaxes = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/dashboard/about/paralax",
-          { method: "GET", headers: { "Content-Type": "application/json" } }
+          "http://localhost:8000/api/about-paralax",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
         );
         const result = await response.json();
         setParalaxes(result.data);
@@ -19,13 +27,19 @@ function AboutParalax() {
       }
     };
     fetchParalaxes();
-  }, [paralaxes]);
+  }, []);
 
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/dashboard/about/paralax/delete/${id}`,
-        { method: "DELETE", headers: { "Content-Type": "application/json" } }
+        `http://localhost:8000/api/about-paralax/delete/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
       );
       const result = await response.json();
       setParalaxes(paralaxes.filter((paralax) => paralax.id !== id));
@@ -54,9 +68,12 @@ function AboutParalax() {
     formData.append("image", values.image);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/dashboard/about/paralax/create",
+        "http://localhost:8000/api/about-paralax/create",
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
           body: formData,
         }
       );
@@ -80,10 +97,13 @@ function AboutParalax() {
   const handlePublishParalax = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/dashboard/about/paralax/publish/${id}`,
+        `http://localhost:8000/api/about-paralax/publish/${id}`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       );
       const result = await response.json();
@@ -214,7 +234,12 @@ function AboutParalax() {
                             Delete
                           </button>
                           {!paralax.is_publish && (
-                            <button className="btn btn-success" onClick={()=>handlePublishParalax(paralax.id)}>Publish</button>
+                            <button
+                              className="btn btn-success"
+                              onClick={() => handlePublishParalax(paralax.id)}
+                            >
+                              Publish
+                            </button>
                           )}
                         </td>
                       </tr>

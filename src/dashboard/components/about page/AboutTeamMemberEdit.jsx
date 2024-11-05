@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { useNavigate, useParams } from "react-router-dom";
+import "../css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function AboutTeamMemberEdit() {
   const { id } = useParams();
@@ -20,10 +22,13 @@ function AboutTeamMemberEdit() {
     const fetchMember = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/dashboard/about/team-member/" + id,
+          "http://localhost:8000/api/about-team-member/" + id,
           {
             method: "GET",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
           }
         );
         const result = await response.json();
@@ -46,9 +51,12 @@ function AboutTeamMemberEdit() {
     formData.append("profile", valueOfMember.profile);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/dashboard/about/team-member/edit/" + id,
+        "http://localhost:8000/api/about-team-member/edit/" + id,
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
           body: formData,
         }
       );
@@ -74,7 +82,7 @@ function AboutTeamMemberEdit() {
         <Sidebar />
         <div id="layoutSidenav_content" className="container-fluid mt-5">
           <main>
-          <div className="row">
+            <div className="row">
               <div className="col-8 p-4">
                 <h3>Edit member</h3>
                 <form

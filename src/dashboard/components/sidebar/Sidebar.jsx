@@ -1,7 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function Sidebar() {
+  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  });
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/logout", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.status === 200) {
+        localStorage.removeItem("token");
+        setIsAuthenticated(false);
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error("Logout error: ", error);
+    }
+  };
+
   return (
     <div id="layoutSidenav_nav" className="col-2 min-vh-100">
       <nav
@@ -41,11 +71,20 @@ function Sidebar() {
               data-bs-parent="#sidenavAccordion1"
             >
               <nav className="sb-sidenav-menu-nested nav">
-                <Link className="nav-link" to="/layout-static.html">
+                <Link className="nav-link" to="/dashboard/products">
                   View All
                 </Link>
-                <Link className="nav-link" to="/layout-sidenav-light.html">
-                  Create
+                <Link className="nav-link" to="/dashboard/product">
+                  Product Create
+                </Link>
+                <Link className="nav-link" to="/dashboard/product/category">
+                  Categories
+                </Link>
+                <Link className="nav-link" to="/dashboard/product/type">
+                  Types
+                </Link>
+                <Link className="nav-link" to="/dashboard/product/color">
+                  Colors
                 </Link>
               </nav>
             </div>
@@ -72,13 +111,13 @@ function Sidebar() {
               data-bs-parent="#sidenavAccordion"
             >
               <nav className="sb-sidenav-menu-nested nav">
-                <Link className="nav-link" to="/dashboard/about/banner" >
+                <Link className="nav-link" to="/dashboard/about/banner">
                   Banner
                 </Link>
                 <Link className="nav-link" to="/dashboard/about/paralax">
                   Paralax section
                 </Link>
-                <Link className="nav-link" to="/dashboard/about/team" >
+                <Link className="nav-link" to="/dashboard/about/team">
                   Our team section
                 </Link>
                 <Link className="nav-link" to="/dashboard/about/number">
@@ -189,6 +228,7 @@ function Sidebar() {
               </div>
               Tables
             </Link> */}
+            <Link className="nav-link" onClick={handleLogout}>Logout</Link>
           </div>
         </div>
         <div className="sb-sidenav-footer">

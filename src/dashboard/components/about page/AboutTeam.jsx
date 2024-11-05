@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { Link, useNavigate } from "react-router-dom";
+import "../css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function AboutTeam() {
   const [titles, setTitles] = useState([]);
@@ -20,31 +22,43 @@ function AboutTeam() {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
+  const fetchTitles = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/about-team-title",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const result = await response.json();
+      setTitles(result.data);
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+  const fetchMembers = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/about-team-member",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const result = await response.json();
+      setMembers(result.data);
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
   useEffect(() => {
-    const fetchTitles = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/dashboard/about/team-title",
-          { method: "GET", headers: { "Content-Type": "application/json" } }
-        );
-        const result = await response.json();
-        setTitles(result.data);
-      } catch (error) {
-        console.log("Error", error);
-      }
-    };
-    const fetchMembers = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/dashboard/about/team-member",
-          { method: "GET", headers: { "Content-Type": "application/json" } }
-        );
-        const result = await response.json();
-        setMembers(result.data);
-      } catch (error) {
-        console.log("Error", error);
-      }
-    };
     fetchTitles();
     fetchMembers();
   }, []);
@@ -55,9 +69,12 @@ function AboutTeam() {
     formData.append("title", valueOfTitle.title);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/dashboard/about/team-title/create",
+        "http://localhost:8000/api/about-team-title/create",
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
           body: formData,
         }
       );
@@ -85,9 +102,12 @@ function AboutTeam() {
     formData.append("profile", valueOfMember.profile);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/dashboard/about/team-member/create",
+        "http://localhost:8000/api/about-team-member/create",
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
           body: formData,
         }
       );
@@ -110,8 +130,14 @@ function AboutTeam() {
   const handleDeleteTitle = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/dashboard/about/team-title/delete/${id}`,
-        { method: "DELETE", headers: { "Content-Type": "application/json" } }
+        `http://localhost:8000/api/about-team-title/delete/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
       );
       const result = await response.json();
       setTitles(titles.filter((title) => title.id !== id));
@@ -122,8 +148,14 @@ function AboutTeam() {
   const handleDeleteMember = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/dashboard/about/team-member/delete/${id}`,
-        { method: "DELETE", headers: { "Content-Type": "application/json" } }
+        `http://localhost:8000/api/about-team-member/delete/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
       );
       const result = await response.json();
       setMembers(members.filter((member) => member.id !== id));
@@ -135,10 +167,13 @@ function AboutTeam() {
   const handlePublishTitle = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/dashboard/about/team-title/publish/${id}`,
+        `http://localhost:8000/api/about-team-title/publish/${id}`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       );
       const result = await response.json();
@@ -367,7 +402,8 @@ function AboutTeam() {
                         <td>{member.surname}</td>
                         <td>{member.position}</td>
                         <td>
-                          <img width="100"
+                          <img
+                            width="100"
                             src={`http://localhost:8000/storage/${member.profile}`}
                             alt="Profile"
                           />

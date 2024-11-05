@@ -4,11 +4,13 @@ import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import "../css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function AboutBannerEdit() {
   const { id } = useParams();
   // const [banner, setBanner] = useState([]);
-  
+
   const navigate = useNavigate();
   const [content, setContent] = useState("");
   const [values, setValues] = useState({
@@ -21,10 +23,13 @@ function AboutBannerEdit() {
     const fetchBanner = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/dashboard/about/banner/" + id,
+          "http://localhost:8000/api/about-banner/" + id,
           {
             method: "GET",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
           }
         );
         const result = await response.json();
@@ -48,9 +53,12 @@ function AboutBannerEdit() {
     formData.append("image", values.image);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/dashboard/about/banner/edit/" + id,
+        "http://localhost:8000/api/about-banner/edit/" + id,
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
           body: formData,
         }
       );

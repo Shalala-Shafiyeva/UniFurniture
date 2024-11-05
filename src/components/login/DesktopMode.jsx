@@ -42,7 +42,7 @@ function DesktopMode() {
           return;
         }
         localStorage.setItem("token", result.token);
-        navigate("/");
+        navigate(result.redirectRoute);
       }
     } catch (error) {
       console.error("Error registering:", error);

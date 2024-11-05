@@ -2,28 +2,33 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { useNavigate, useParams } from "react-router-dom";
+import "../css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function AboutTeamTitleEdit() {
   const { id } = useParams();
 
   const [value, setValue] = useState("");
+  const fetchTitle = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/about-team-title/" + id,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const result = await response.json();
+      console.log(result.data);
+      setValue(result.data.title);
+    } catch (err) {
+      console.log("Error: ", err);
+    }
+  };
   useEffect(() => {
-    const fetchTitle = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/dashboard/about/team-title/" + id,
-          {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-          }
-        );
-        const result = await response.json();
-        console.log(result.data);
-        setValue(result.data.title);
-      } catch (err) {
-        console.log("Error: ", err);
-      }
-    };
     fetchTitle();
   }, []);
 
@@ -36,9 +41,12 @@ function AboutTeamTitleEdit() {
     formData.append("title", value);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/dashboard/about/team-title/edit/" + id,
+        "http://localhost:8000/api/about-team-title/edit/" + id,
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
           body: formData,
         }
       );

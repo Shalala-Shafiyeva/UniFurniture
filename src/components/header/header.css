@@ -93,6 +93,7 @@ header #register, header #logout{
     padding: 8px 23px;
     border: 1px solid transparent;
     transition: .3s all ease-in-out;
+    cursor: pointer;
 }
 
 header #register:hover,
