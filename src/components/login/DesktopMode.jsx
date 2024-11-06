@@ -26,7 +26,6 @@ function DesktopMode() {
       });
 
       const result = await response.json();
-      console.log(result);
 
       if (response.status == 422) {
         setErrors(result.errors || {});

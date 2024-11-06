@@ -254,6 +254,12 @@
     }
 }
 
+@media (max-width:1024px) {
+    .similarProducts .product .review img{
+        width: 12px;
+    }
+}
+
 @media (max-width:340px) {
 
     .mainDetails .container,

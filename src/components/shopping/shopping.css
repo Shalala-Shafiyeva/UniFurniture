@@ -270,6 +270,11 @@
     border-radius: 20px;
     background-size: 50px 50px;
     position: relative;
+    transition: 0.3s all ease-in-out;
+}
+
+.furnitures .products .productCard:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .furnitures .products .productCard .head {
@@ -324,11 +329,11 @@
 }
 
 .furnitures .products .productCard .productImg {
-    width: 100%;
+    width: 60%;
     height: 180px;
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 62%;
     transform: translate(-50%, -50%);
 }
 

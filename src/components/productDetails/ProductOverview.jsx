@@ -4,11 +4,11 @@ import data from "../../data.json";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-function ProductOverview() {
+function ProductOverview({ product }) {
   const dispatch = useDispatch();
   const { id } = useParams();
-  let product = useSelector((state) => state.products.singleProduct);
-  product = product[0];
+  // let product = useSelector((state) => state.products.singleProduct);
+  // product = product[0];
 
   const [hidden, setHidden] = useState(false);
   const [play, setPlay] = useState(false);
@@ -25,19 +25,19 @@ function ProductOverview() {
             <h3>Product Overview</h3>
             <div className="desc">
               <span>Description</span>
-              <p>{product.description}</p>
+              <p>{product.text}</p>
             </div>
             <div className="characteristics">
               <ul>
-                {product?.charasteristics?.map((charasteristic, index) => (
-                  <li key={index}>
+                {product?.characteristics?.map((characteristic, index) => (
+                  <li key={characteristic.id}>
                     <div className="img">
                       <img
                         src="/images/productDetails/product1/Check.png"
                         alt="Check"
                       />
                     </div>
-                    <span>{charasteristic}</span>
+                    <span>{characteristic.characteristic}</span>
                   </li>
                 ))}
               </ul>
@@ -54,7 +54,8 @@ function ProductOverview() {
             <div className="cover">
               <ReactPlayer
                 controls={true}
-                url="/images/productDetails/product1/videoproduct1.mp4"
+                // url="/images/productDetails/product1/videoproduct1.mp4"
+                url={`http://localhost:8000/storage/${product.video}`}
                 playing={play}
                 width={"100%"}
                 height={"100%"}
@@ -71,18 +72,22 @@ function ProductOverview() {
                 src="/images/play.png"
                 alt="Play video"
               />
-              <img
+              <div
                 className={`overlay ${hidden ? "hidden" : ""}`}
-                src="/images/productDetails/product1/mainImg.png"
-                alt=""
-              />
+                style={{ backgroundImage: `url('http://localhost:8000/storage/${product.image}')`, 'backgroundColor': 'lightGrey' }}
+                // src="/images/productDetails/product1/mainImg.png"
+              ></div>
             </div>
           </div>
         </div>
         <div className="bottomSection">
-          <Link className="orderBtn" to="/cart/deliveryaddress" onClick={() => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}>
+          <Link
+            className="orderBtn"
+            to="/cart/deliveryaddress"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             Order Now
           </Link>
           <div className="questions">

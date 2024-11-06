@@ -8,6 +8,45 @@ import toast, { Toaster } from "react-hot-toast";
 function Furnitures({ filteredData, handleCategoryFilter }) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
+  //Fetch All Products
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/publishedProducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const result = await response.json();
+      setFetchedProducts(result.data || []);
+    } catch (err) {
+      console.log("Error fetching: ", err);
+    }
+  };
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/category", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const result = await response.json();
+      setCategories(result.data || []);
+    } catch (err) {
+      console.log("Error fetching: ", err);
+    }
+  };
+  const [fetchedProducts, setFetchedProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    fetchProducts();
+    fetchCategories();
+  }, []);
+
   const handleColorAndImg = (product) => {
     let productColor = product.colorImgs[0].colorName;
     let productImg = product.colorImgs[0].imgs[0];
@@ -21,10 +60,13 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
   useEffect(() => {
     const lastPostIndex = currentPage * productsPerPage;
     const firstPostIndex = lastPostIndex - productsPerPage;
-    const products = filteredData.slice(firstPostIndex, lastPostIndex);
-    setTotalPages(Math.ceil(filteredData.length / productsPerPage));
+    //WITHOUT BACKEND
+    // const products = filteredData.slice(firstPostIndex, lastPostIndex);
+    //With backend
+    const products = fetchedProducts.slice(firstPostIndex, lastPostIndex);
+    setTotalPages(Math.ceil(fetchedProducts.length / productsPerPage));
     setCurrentProducts(products);
-  }, [currentPage, filteredData]);
+  }, [currentPage, fetchedProducts]);
   const paginate = () => {
     let pages = [];
     const firstPage = currentPage - 4 < 1 ? 1 : currentPage - 4;
@@ -136,104 +178,175 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
   };
 
   return (
-    <section className="furnitures">
-      <Toaster position="top-center" />
-      <div className="container">
-        <div className="head">
-          <h2 className="title">
-            Latest <span>Furnitures</span>
-          </h2>
-          <Link
-            to="/shop/moreFurnitures"
-            onClick={() => {
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          >
-            <span>More Furnitures</span>
-            <img src="/images/shop/arrowleft.png" alt="Arrow More" />
-          </Link>
-        </div>
-        <div className="filterBtns">
-          {filterBtns.map((btn) => {
-            return (
-              <button
-                data-id="button"
-                key={btn.id}
-                onClick={(e) => {
-                  handleCategoryFilter(btn.name.toLowerCase());
-                  activeBtn(e);
-                  setCurrentPage(1);
+    <>
+      {fetchedProducts.length > 0 && (
+        <section className="furnitures">
+          <Toaster position="top-center" />
+          <div className="container">
+            <div className="head">
+              <h2 className="title">
+                Latest <span>Furnitures</span>
+              </h2>
+              <Link
+                to="/shop/moreFurnitures"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                <img
-                  onClick={(e) => activeBtnForChild(e)}
-                  src={btn.img}
-                  alt={btn.name}
-                />
-                <span onClick={(e) => activeBtnForChild(e)}>{btn.name}</span>
-              </button>
-            );
-          })}
-        </div>
-        <div className="products">
-          {filteredData.length === 0 ? (
-            <div className="notFound">We don't have such product. Sorry.</div>
-          ) : (
-            currentProducts.map((product) => {
-              return (
-                <Link
-                  to={`/product/${product.type}/${product.id}`}
-                  className="productCard"
-                  key={product.id}
-                  onClick={() => {
-                    dispatch(
-                      singledProduct({ id: product.id, type: product.type })
-                    );
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                >
-                  <div className="productContext">
-                    <div className="head">
-                      <div className="favorite">
-                        <img src="/images/shop/heartempty.png" alt="Favorite" />
-                      </div>
-                      <span className="price">$ {product.price} USD</span>
-                    </div>
-                    <span className="productName">{product.name}</span>
-                    <p className="productDesc">{product.text}</p>
-                  </div>
-                  <div className="productImg">
-                    <img src={product.img} alt={product.type} />
-                  </div>
-                  <div className="btn">
-                    <button
-                      className="addCart"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleAddToCart(product);
+                <span>More Furnitures</span>
+                <img src="/images/shop/arrowleft.png" alt="Arrow More" />
+              </Link>
+            </div>
+            <div className="filterBtns">
+              {filterBtns.map((btn) => {
+                return (
+                  <button
+                    data-id="button"
+                    key={btn.id}
+                    onClick={(e) => {
+                      handleCategoryFilter(btn.name.toLowerCase());
+                      activeBtn(e);
+                      setCurrentPage(1);
+                    }}
+                  >
+                    <img
+                      onClick={(e) => activeBtnForChild(e)}
+                      src={btn.img}
+                      alt={btn.name}
+                    />
+                    <span onClick={(e) => activeBtnForChild(e)}>
+                      {btn.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            <div className="products">
+              {filteredData.length === 0 ? (
+                <div className="notFound">
+                  We don't have such product. Sorry.
+                </div>
+              ) : (
+                //КОД С БЕКЕНД-ом
+                currentProducts.map((product) => {
+                  return (
+                    <Link
+                      to={`/product/${product.category.name.toLowerCase()}/${
+                        product.id
+                      }`}
+                      className="productCard"
+                      key={product.id}
+                      onClick={() => {
+                        dispatch(
+                          singledProduct({ id: product.id, type: product.type })
+                        );
+                        window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                     >
-                      Add to cart
-                    </button>
-                  </div>
-                </Link>
-              );
-            })
-          )}
-        </div>
-        {filteredData.length === 0 ? null : (
-          <div className="pagination">
-            <div className="prevBtn" onClick={prevPage}>
-              <img src="/images/shop/prev.png" alt="Previous page" />
+                      <div className="productContext">
+                        <div className="head">
+                          <div className="favorite">
+                            {/* <img src="/images/shop/heartempty.png" alt="Favorite" /> */}
+                          </div>
+                          <span className="price">
+                            $ {product.price.toFixed(2)} USD
+                          </span>
+                        </div>
+                        <span className="productName">{product.name}</span>
+                        <p className="productDesc">{product.text}</p>
+                      </div>
+                      <div className="productImg">
+                        <img
+                          src={`http://localhost:8000/storage/${product.image}`}
+                          alt={product.type}
+                        />
+                      </div>
+                      <div className="btn">
+                        <button
+                          className="addCart"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleAddToCart(product);
+                          }}
+                        >
+                          Add to cart
+                        </button>
+                      </div>
+                    </Link>
+                  );
+                })
+                //КОД БЕЗ БЕКЕНД-а
+                // currentProducts.map((product) => {
+                //   return (
+                //     <Link
+                //       to={`/product/${product.type}/${product.id}`}
+                //       className="productCard"
+                //       key={product.id}
+                //       onClick={() => {
+                //         dispatch(
+                //           singledProduct({ id: product.id, type: product.type })
+                //         );
+                //         window.scrollTo({ top: 0, behavior: "smooth" });
+                //       }}
+                //     >
+                //       <div className="productContext">
+                //         <div className="head">
+                //           <div className="favorite">
+                //             <img src="/images/shop/heartempty.png" alt="Favorite" />
+                //           </div>
+                //           <span className="price">$ {product.price} USD</span>
+                //         </div>
+                //         <span className="productName">{product.name}</span>
+                //         <p className="productDesc">{product.text}</p>
+                //       </div>
+                //       <div className="productImg">
+                //         <img src={product.img} alt={product.type} />
+                //       </div>
+                //       <div className="btn">
+                //         <button
+                //           className="addCart"
+                //           onClick={(e) => {
+                //             e.preventDefault();
+                //             handleAddToCart(product);
+                //           }}
+                //         >
+                //           Add to cart
+                //         </button>
+                //       </div>
+                //     </Link>
+                //   );
+                // })
+              )}
             </div>
-            <div className="pages">{paginate()}</div>
-            <div className="nextBtn" onClick={nextPage}>
-              <img src="/images/shop/next.png" alt="Next page" />
+
+            {/* WITHOUT BACKEND
+           {filteredData.length === 0 ? null : (
+            <div className="pagination">
+              <div className="prevBtn" onClick={prevPage}>
+                <img src="/images/shop/prev.png" alt="Previous page" />
+              </div>
+              <div className="pages">{paginate()}</div>
+              <div className="nextBtn" onClick={nextPage}>
+                <img src="/images/shop/next.png" alt="Next page" />
+              </div>
             </div>
+          )} */}
+
+            {fetchedProducts.length === 0 ? null : (
+              <div className="pagination">
+                <div className="prevBtn" onClick={prevPage}>
+                  <img src="/images/shop/prev.png" alt="Previous page" />
+                </div>
+                <div className="pages">{paginate()}</div>
+                <div className="nextBtn" onClick={nextPage}>
+                  <img src="/images/shop/next.png" alt="Next page" />
+                </div>
+              </div>
+            )}
           </div>
-        )}
-      </div>
-    </section>
+        </section>
+      )}
+    </>
   );
 }
 export default Furnitures;

@@ -4,15 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import data from "../../data.json";
 import { singledProduct } from "../../slices/productsSlices";
 
-function SimilarProducts() {
+function SimilarProducts({ similarProducts }) {
   const { type, id } = useParams();
   // const singleProduct = data.products.filter(
   //   (product) => product.id == id && product.type == type
   // );
 
-  const similarProducts = data.products.filter(
-    (prod) => prod.type == type && prod.id != id
-  );
+  //without backend
+  // const similarProducts = data.products.filter(
+  //   (prod) => prod.type == type && prod.id != id
+  // );
+
+  //with backend use prop = {similarProducts}
 
   const dispatch = useDispatch();
 
@@ -24,7 +27,6 @@ function SimilarProducts() {
   const productsPerPage = 8;
 
   useEffect(() => {
-    console.log(type, id);
     setCurrentPage(1);
   }, [type, id]);
 
@@ -32,16 +34,13 @@ function SimilarProducts() {
     const lastPostIndex = currentPage * productsPerPage;
     const firstPostIndex = lastPostIndex - productsPerPage;
     let products = [];
-
-    if (similarProducts.length) {
+    setHaveSimilar(similarProducts.length > 0);
+    if (similarProducts.length > 0) {
       products = similarProducts.slice(firstPostIndex, lastPostIndex);
       setTotalPages(Math.ceil(similarProducts.length / productsPerPage));
-    } else {
-      setHaveSimilar(false);
+      setCurrentProducts(products);
     }
-
-    setCurrentProducts(products);
-  }, [currentPage]);
+  }, [similarProducts, currentPage]);
 
   const paginate = () => {
     let pages = [];
@@ -85,7 +84,9 @@ function SimilarProducts() {
             currentProducts.map((similarProduct) => (
               <div className="product" key={similarProduct.id}>
                 <Link
-                  to={`/product/${similarProduct.type}/${similarProduct.id}`}
+                  to={`/product/${similarProduct.category.name.toLowerCase()}/${
+                    similarProduct.id
+                  }`}
                   onClick={() => {
                     dispatch(
                       singledProduct({
@@ -97,7 +98,7 @@ function SimilarProducts() {
                   }}
                 >
                   <div className="img">
-                    <img src={similarProduct.img} alt={similarProduct.type} />
+                    <img src={`http://localhost:8000/storage/${similarProduct.image}`} alt={similarProduct.type} />
                   </div>
                   <div className="review">
                     <div className="stars">
@@ -111,8 +112,16 @@ function SimilarProducts() {
                   </div>
                   <span className="title">{similarProduct.name}</span>
                   <div className="prices">
-                    <span>${similarProduct.priceBefore}</span>
-                    <span>${similarProduct.price}</span>
+                    <span>${similarProduct.price.toFixed(2)}</span>
+                    {similarProduct.discount > 0 && (
+                      <span>
+                        $
+                        {(
+                          similarProduct.price *
+                          (1 - similarProduct.discount / 100)
+                        ).toFixed(2)}
+                      </span>
+                    )}
                   </div>
                 </Link>
               </div>
