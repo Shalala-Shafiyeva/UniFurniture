@@ -197,7 +197,7 @@
     }
 
     .similarProducts .container .product {
-        height: 250px;
+        height: max-content;
     }
 
     .similarProducts .product .img {

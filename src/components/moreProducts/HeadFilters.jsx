@@ -9,7 +9,7 @@ import {
   resetFilters,
 } from "../../slices/productsSlices";
 
-function HeadFilters() {
+function HeadFilters({productsCount}) {
   const products = useSelector((state) => state.products.filteredProducts);
   const dispatch = useDispatch();
   const [activeSort, setActiveSort] = useState(null);
@@ -91,7 +91,10 @@ function HeadFilters() {
                 Lowest Price
               </button>
             </div>
-            <span>{products.length} results</span>
+            {/*without backend
+             <span>{products.length} results</span> */}
+             {/* with backend */}
+            <span>{productsCount}</span>
           </div>
         </div>
       </div>

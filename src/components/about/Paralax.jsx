@@ -19,22 +19,25 @@ function Paralax() {
   }, []);
 
   return (
-    <section className="paralax">
+    <>
       {/* BACKEND -EN MELUMATLARI CIKME */}
-      {/* // <section className="paralax"
-    //   style={{
-    //     backgroundImage:
-    //       paralax && paralax.success
-    //         ? `url('http://localhost:8000/storage/${paralax.data.image}')`
-    //         : "none",
-    //   }}
-    // >
-    //   {paralax.success && (
-    //     <div className="cover">
-    //       <h3>{paralax.data.title}</h3>
-    //       <p>{paralax.data.content}</p>
-    //     </div>
-    //   )} */}
+      <section
+        className="paralax"
+        style={{
+          backgroundImage:
+            paralax && paralax.success
+              ? `url('http://localhost:8000/storage/${paralax.data.image}')`
+              : "none",
+        }}
+      >
+        {paralax.success && (
+          <div className="cover">
+            <h3>{paralax.data.title}</h3>
+            <p>{paralax.data.content}</p>
+          </div>
+        )}
+      </section>
+      {/* <section className="paralax">
       <div className="cover">
         <h3>The story behind how our company was founded</h3>
         <p>
@@ -44,7 +47,8 @@ function Paralax() {
           commodo mattis tempor lectus ac.
         </p>
       </div>
-    </section>
+    </section> */}
+    </>
   );
 }
 

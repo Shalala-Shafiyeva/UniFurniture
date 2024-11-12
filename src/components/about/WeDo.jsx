@@ -12,7 +12,7 @@ function WeDo() {
         {data.weDo.map((card) => (
           <div key={card.id} className="card">
             <div className="img">
-              <img src={card.img} alt="Emplyee" />
+              <img src={card.img} alt="Employee" />
             </div>
             <div className="content">
               <span className="title">{card.title}</span>

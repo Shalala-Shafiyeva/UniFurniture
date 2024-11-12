@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { singledProduct } from "../../slices/productsSlices";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../slices/cartSlice";
@@ -8,7 +8,10 @@ import toast, { Toaster } from "react-hot-toast";
 function Furnitures({ filteredData, handleCategoryFilter }) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
+  const navigate = useNavigate();
   //Fetch All Products
+  const [fetchedProducts, setFetchedProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const fetchProducts = async () => {
     try {
       const response = await fetch(
@@ -40,8 +43,6 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
       console.log("Error fetching: ", err);
     }
   };
-  const [fetchedProducts, setFetchedProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
   useEffect(() => {
     fetchProducts();
     fetchCategories();
@@ -177,6 +178,33 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
     }
   };
 
+  //Basket logic
+  const addProductToCart = async (productId, productColor, colorImage) => {
+    try {
+      const response = await fetch("http://localhost:8000/api/basket/store", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          product_id: productId,
+          quantity: 1,
+          product_color: productColor,
+          color_image: colorImage,
+        }),
+      });
+      const result = await response.json();
+      console.log(result);
+      console.log(productId);
+      result.success
+        ? toast.success(result.message)
+        : toast.error(result.message);
+    } catch (err) {
+      console.log("Error fetching: ", err);
+    }
+  };
+
   return (
     <>
       {fetchedProducts.length > 0 && (
@@ -263,10 +291,16 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
                       </div>
                       <div className="btn">
                         <button
+                          // disabled={!product.stock}
                           className="addCart"
                           onClick={(e) => {
                             e.preventDefault();
-                            handleAddToCart(product);
+                            //without backend
+                            // handleAddToCart(product);
+                            //with backend
+                            localStorage.getItem("token")
+                              ? addProductToCart(product.id, product?.colors[0]?.name, product?.colors[0]?.color_images[0]?.image)
+                              : navigate("/login");
                           }}
                         >
                           Add to cart

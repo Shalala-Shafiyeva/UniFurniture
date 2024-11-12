@@ -123,9 +123,6 @@ function DesktopMode() {
                     setData({ ...data, password: e.target.value })
                   }
                 />
-                <a href="" id="forgetPass">
-                  Forget Password ?
-                </a>
               </div>
               {errors.password && (
                 <p className="reg-error">{errors.password}</p>

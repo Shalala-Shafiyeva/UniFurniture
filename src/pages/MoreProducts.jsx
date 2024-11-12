@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../components/moreProducts/moreProducts.css";
 import "../components/moreProducts/moreProductsResponsive.css";
 import Header from "../components/header/Header";
@@ -24,17 +24,40 @@ function MoreProducts() {
   // const sortByLowPrice = () => {
   //   sortedData = data.products.slice(0).sort((a, b) => a.price - b.price);
   // };
+
+  //products from backend
+  const [products, setProducts] = useState([]);
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/publishedProducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const result = await response.json();
+      setProducts(result.data || []);
+    } catch (err) {
+      console.log("Error fetching: ", err);
+    }
+  };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
     <>
       <Helmet>
         <title>More Furnitures</title>
       </Helmet>
       <Header />
-      <HeadFilters />
+      <HeadFilters productsCount={products?.length || 0} />
       <div className="sections">
         <div className="container">
           <Filters />
-          <FilteredProducts />
+          <FilteredProducts fetchedProducts={products} />
         </div>
       </div>
       <Delivery />

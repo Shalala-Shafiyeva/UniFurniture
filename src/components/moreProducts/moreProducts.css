@@ -296,7 +296,7 @@
     padding: 0 10px 10px 10px;
 }
 
-.filteredProducts a .trend,
+/* .filteredProducts a .trend, */
 .filteredProducts a .sale {
     position: absolute;
     top: 0;
@@ -308,10 +308,10 @@
     line-height: 26px;
 }
 
-.filteredProducts a .trend {
+/* .filteredProducts a .trend {
     background: #B3E5DE;
     color: #24252E;
-}
+} */
 
 .filteredProducts a .sale {
     background: #EF3335;

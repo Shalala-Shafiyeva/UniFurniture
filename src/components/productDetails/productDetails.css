@@ -12,11 +12,11 @@
     gap: 24px;
 }
 
-.mainDetails .desktopMode{
+.mainDetails .desktopMode {
     width: 100%;
 }
 
-.mainDetails .mobileMode{
+.mainDetails .mobileMode {
     display: none;
 }
 
@@ -141,7 +141,7 @@
     gap: 8px;
 }
 
-.mainDetails .desktopMode .wrapper .smallImgs >.img {
+.mainDetails .desktopMode .wrapper .smallImgs>.img {
     width: 80px;
     height: 80px;
     border-radius: 5px;
@@ -149,12 +149,12 @@
     cursor: pointer;
 }
 
-.mainDetails .desktopMode .wrapper .smallImgs> .img.active,
+.mainDetails .desktopMode .wrapper .smallImgs>.img.active,
 .mainDetails .mobileMode .canChoose .img.active {
     border: 2px solid #00A991;
 }
 
-.mainDetails .desktopMode .wrapper .smallImgs >.img img {
+.mainDetails .desktopMode .wrapper .smallImgs>.img img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
@@ -180,6 +180,8 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
+    display: flex;
+    align-items: center;
 }
 
 .mainDetails .desktopMode .descDetails .price {
@@ -338,7 +340,7 @@
     transition: .3s all ease-in-out;
 }
 
-.mainDetails .desktopMode .descDetails .addToCart:hover{
+.mainDetails .desktopMode .descDetails .addToCart:hover {
     border: 1px solid #00A991;
     color: #00A991;
     background-color: #00a99037;
@@ -366,7 +368,7 @@
     text-align: end;
 }
 
-.mobileMode .outOfStock{
+.mobileMode .outOfStock {
     color: red;
     font-size: 14px;
     line-height: 22px;
@@ -498,6 +500,12 @@
     font-weight: 400;
     line-height: 14px;
     margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.mainDetails .mobileMode .rating img {
+    width: 11px;
 }
 
 .mainDetails .mobileMode .price {
@@ -568,6 +576,10 @@
     line-height: 18px;
 }
 
+.mainDetails .mobileMode .qtyAndAddToCart .selectQty>span:not(.qty) {
+    cursor: pointer;
+}
+
 .mainDetails .mobileMode .addToCart {
     padding: 10px 20px;
     border-radius: 4px;
@@ -585,7 +597,7 @@
     text-transform: uppercase;
 }
 
-.mainDetails .mobileMode .addToCart img{
+.mainDetails .mobileMode .addToCart img {
     width: 15px;
     height: 15px;
 }
@@ -756,7 +768,7 @@
     transition: .3s all ease-in-out;
 }
 
-.overview .bottomSection .orderBtn:hover{
+.overview .bottomSection .orderBtn:hover {
     border: 2px solid #FF914D;
     color: #FF914D;
     background-color: #FFF;
@@ -861,7 +873,7 @@
     width: 100%;
     height: 90%;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
 }
 
@@ -883,13 +895,13 @@
     margin-top: 20px;
 }
 
-.similarProducts .star{
+.similarProducts .star {
     display: flex;
     align-items: center;
     gap: 2px;
 }
 
-.similarProducts .star img{
+.similarProducts .star img {
     width: 18px;
     height: 18px;
 }

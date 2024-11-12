@@ -46,37 +46,37 @@
   "weDo": [
     {
       "id": "1",
-      "img": "/images/weDo/Imploye image.png",
+      "img": "/images/weDo/Imployeimage.png",
       "title": "Exection",
       "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
     },
     {
       "id": "2",
-      "img": "/images/weDo/Imploye image2.png",
+      "img": "/images/weDo/Imployeimage2.png",
       "title": "Move like a Startup",
       "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
     },
     {
       "id": "3",
-      "img": "/images/weDo/Imploye image3.png",
+      "img": "/images/weDo/Imployeimage3.png",
       "title": "Results Matter",
       "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
     },
     {
       "id": "4",
-      "img": "/images/weDo/Imploye image4.png",
+      "img": "/images/weDo/Imployeimage4.png",
       "title": "Take Ownership",
       "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
     },
     {
       "id": "5",
-      "img": "/images/weDo/Imploye image5.png",
+      "img": "/images/weDo/Imployeimage5.png",
       "title": "Growth",
       "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
     },
     {
       "id": "6",
-      "img": "/images/weDo/Imploye image6.png",
+      "img": "/images/weDo/Imployeimage6.png",
       "title": "Team Work",
       "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
     }

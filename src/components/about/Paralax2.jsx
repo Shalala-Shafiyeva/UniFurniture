@@ -15,7 +15,6 @@ function Paralax2() {
         );
 
         const result = await response.json();
-        console.log(result);
         setTitle(result);
       } catch (error) {
         console.log("Error: ", error);
@@ -41,11 +40,11 @@ function Paralax2() {
     fetchTitle();
     fetchSubtitles();
   }, []);
-  console.log(title);
+
   return (
     <section className="paralax2" data-aos="fade-up">
       <div className="cover">
-        {title.success && <span>{title.data.title}</span>}
+        {/* {title.success && <span>{title.data.title}</span>}
         {subtitles.success && (
           <div className="nums">
             {subtitles.data.map((subtitle) => (
@@ -63,8 +62,8 @@ function Paralax2() {
             </div>
             ))}
           </div>
-        )}
-        {/* <span>We have impactful numbers</span>
+        )} */}
+        <span>We have impactful numbers</span>
         <div className="nums">
           <div className="left">
             <div className="per">
@@ -90,7 +89,7 @@ function Paralax2() {
               <span>Growth year-over-year</span>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );

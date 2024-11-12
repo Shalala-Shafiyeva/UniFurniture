@@ -35,9 +35,15 @@ function Team() {
     fetchMembers();
     fetchTitles();
   }, []);
+
+  const addClassToWord = (text) => {
+    const formattedText = text.replace(/(amazing team)/gi, '<span class="orange">$1</span>');
+    return formattedText;
+  };
+
   return (
     <section className="team" data-aos="fade-up">
-      {/* {title.data && <h3>{title.data.title}</h3>}
+      {title.data && <h3 dangerouslySetInnerHTML={{ __html: addClassToWord(title.data.title) }} />}
       <div className="memberCards">
         {members.data && members.data.length > 0 ? (
           members.data.map((member) => (
@@ -59,8 +65,8 @@ function Team() {
         ) : (
           <h3>No team members</h3>
         )}
-      </div> */}
-      <h3>
+      </div>
+      {/* <h3>
         Meet the <span>amazing team</span> behind Startply X
       </h3>
       <div className="memberCards">
@@ -77,7 +83,7 @@ function Team() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
       <Link to="/login" className="getStart">
         Get Started
       </Link>

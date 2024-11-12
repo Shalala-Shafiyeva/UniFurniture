@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useCallback } from "react";
 import data from "../../data.json";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-function FilteredProducts() {
+function FilteredProducts({ fetchedProducts }) {
   const filteredProducts = useSelector(
     (state) => state.products.filteredProducts
   );
@@ -20,16 +20,26 @@ function FilteredProducts() {
     const firstPostIndex = lastPostIndex - productsPerPage;
     let products = [];
 
-    if (filteredProducts.length) {
-      products = filteredProducts.slice(firstPostIndex, lastPostIndex);
-      setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
-    } else {
-      products = data.products.slice(firstPostIndex, lastPostIndex);
-      setTotalPages(Math.ceil(data.products.length / productsPerPage));
-    }
+    //without backend
+    // if (filteredProducts.length) {
+    //   products = filteredProducts.slice(firstPostIndex, lastPostIndex);
+    //   setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
+    // } else {
+    //   products = data.products.slice(firstPostIndex, lastPostIndex);
+    //   setTotalPages(Math.ceil(data.products.length / productsPerPage));
+    // }
+
+    //with backend + withoud filters
+    // if (filteredProducts.length) {
+    //   products = filteredProducts.slice(firstPostIndex, lastPostIndex);
+    //   setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
+    // } else {
+    products = fetchedProducts.slice(firstPostIndex, lastPostIndex);
+    setTotalPages(Math.ceil(fetchedProducts.length / productsPerPage));
+    //}
 
     setCurrentProducts(products);
-  }, [currentPage, filteredProducts]);
+  }, [currentPage, filteredProducts, fetchedProducts]);
 
   const paginate = () => {
     let pages = [];
@@ -64,44 +74,120 @@ function FilteredProducts() {
     }
   };
 
+  //rating and review logic
+  const [averageRatings, setAverageRatings] = useState({});
+  const [reviews, setReviews] = useState({});
+  const fetchRatings = useCallback(async () => {
+    const ratings = {};
+    for (const product of fetchedProducts) {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/api/product/${product.id}/average-rating`
+        );
+        const result = await response.json();
+        ratings[product.id] = result.average_rating || 0;
+      } catch (error) {
+        console.error("Error fetching average rating:", error);
+      }
+    }
+    setAverageRatings(ratings);
+  }, [fetchedProducts]);
+
+  const fetchReviews = useCallback(async () => {
+    const productReviews = {};
+    for (const product of fetchedProducts) {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/api/product/${product.id}/reviews`
+        );
+        const result = await response.json();
+        console.log("Fetched reviews for product:", product.id, result);
+        productReviews[product.id] = result.data || 0;
+      } catch (error) {
+        console.error("Error fetching review:", error);
+      }
+    }
+    console.log(productReviews);
+    setReviews(productReviews);
+  }, [fetchedProducts]);
+
+  const fullStar = "/images/star.png";
+  const emptyStar = "/images/emptyStar.png";
+
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <img
+          key={i}
+          src={i <= rating ? fullStar : emptyStar}
+          alt={`${i <= rating ? "Full" : "Empty"} Star`}
+        />
+      );
+    }
+    return stars;
+  };
+
+  useEffect(() => {
+    if (fetchedProducts && fetchedProducts.length > 0) {
+      fetchRatings();
+      fetchReviews();
+    }
+  }, [fetchedProducts]);
+
+  console.log(fetchedProducts);
+  console.log(reviews);
   return (
     <section className="filteredProducts">
       <div className="container">
         {error ? (
-          <div className="error">Sorry we don't have this product</div>
+          <div className="error">Sorry we don't have such product</div>
         ) : (
           <>
             <div className="products">
               {currentProducts.map((product) => (
                 <Link
                   className="product"
-                  to={`/product/${product.type}/${product.id}`}
-                  key={product.id}
+                  to={`/product/${product?.category}/${product?.id}`}
+                  key={product?.id}
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                 >
                   <div className="img">
-                    <img src={product.img} alt={product.title} />
+                    <img
+                      src={`http://localhost:8000/storage/${product?.image}`}
+                      alt={product?.name}
+                    />
                   </div>
                   <div className="details">
-                    {product.trending && <div className="trend">Trending</div>}
-                    {product.onSale && product.discount && (
+                    {product.discount>0 && (
                       <div className="sale">-{product.discount}%</div>
                     )}
                     <div className="rating">
                       <div className="stars">
+                        {renderStars(averageRatings[product.id] || 0)}
+                        {/* <img src="/images/star.png" alt="star" />
                         <img src="/images/star.png" alt="star" />
                         <img src="/images/star.png" alt="star" />
                         <img src="/images/star.png" alt="star" />
-                        <img src="/images/star.png" alt="star" />
-                        <img src="/images/emptystar.png" alt="star" />
+                        <img src="/images/emptystar.png" alt="star" /> */}
                       </div>
-                      <span>({product.reviews} reviews)</span>
+                      <span>({reviews[product.id] || 0} reviews)</span>
                     </div>
                     <div className="title">{product.name}</div>
                     <div className="price">
-                      ${product.priceBefore}-${product.price}
+                      <span>${product.price.toFixed(2)}</span>
+                      {product.discount > 0 && (
+                        <span>
+                          {" "}
+                          - $
+                          {(
+                            product.price *
+                            (1 - product.discount / 100)
+                          ).toFixed(2)}
+                        </span>
+                      )}
                     </div>
                     <div className="shipping">
                       {product.shipping} days shipping

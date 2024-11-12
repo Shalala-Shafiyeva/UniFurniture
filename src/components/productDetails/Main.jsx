@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { addToCart } from "../../slices/cartSlice";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 
 function Main({ product, reviews }) {
   let dispatch = useDispatch();
+  const navigate = useNavigate();
   const { type, id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [colorIndex, setColorIndex] = useState(0);
@@ -67,8 +68,8 @@ function Main({ product, reviews }) {
 
   //end
 
-  const increaseQty = () => {
-    if (quantity < product.stock) {
+  const increaseQty = (productStock, productHasStock) => {
+    if (quantity < productStock && productHasStock) {
       setQuantity((prev) => prev + 1);
     }
   };
@@ -98,6 +99,96 @@ function Main({ product, reviews }) {
         })
       );
       toast.success("Successfully added to cart");
+    }
+  };
+
+  //rating sistemi
+  const [averageRating, setAverageRating] = useState(0);
+
+  const fetchAverageRating = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:8000/api/product/${id}/average-rating`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const result = await response.json();
+      setAverageRating(result.average_rating || 0);
+    } catch (error) {
+      console.error("Error fetching average rating:", error);
+    }
+  };
+
+  const submitRating = async (rating) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8000/api/product/${id}/rate`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({ rating }),
+        }
+      );
+      if (response.status == 200) {
+        fetchAverageRating();
+      }
+    } catch (error) {
+      console.error("Error submitting rating:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAverageRating();
+  }, [id]);
+
+  const fullStar = "/images/star.png";
+  const emptyStar = "/images/emptyStar.png";
+
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <img
+          key={i}
+          src={i <= averageRating ? fullStar : emptyStar}
+          alt={`${i <= averageRating ? "Full" : "Empty"} Star`}
+          onClick={() => submitRating(i)}
+          style={{ cursor: "pointer" }}
+        />
+      );
+    }
+    return stars;
+  };
+
+  //Basket logic
+  const addProductToCart = async (productId, productColor, colorImage) => {
+    try {
+      const response = await fetch("http://localhost:8000/api/basket/store", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          product_id: productId,
+          quantity: quantity,
+          product_color: productColor,
+          color_image: colorImage,
+        }),
+      });
+      const result = await response.json();
+      result.success
+        ? toast.success(result.message)
+        : toast.error(result.message);
+    } catch (err) {
+      console.log("Error fetching: ", err);
     }
   };
 
@@ -189,7 +280,9 @@ function Main({ product, reviews }) {
             </div>
             <div className="descDetails">
               <span className="fullTitle">{product?.full_title}</span>
-              <div className="rating">({reviews} Reviews)</div>
+              <div className="rating">
+                {renderStars()} ({reviews} Reviews)
+              </div>
               <span className="price">${product?.price?.toFixed(2)}</span>
               <p className="desc">{product?.description}</p>
               <div className="chooseColor">
@@ -259,12 +352,28 @@ function Main({ product, reviews }) {
                       -
                     </span>
                     <span className="qty">{quantity}</span>
-                    <span className="plus" onClick={increaseQty}>
+                    <span
+                      className="plus"
+                      onClick={() =>
+                        increaseQty(product.stock, product.hasStock)
+                      }
+                    >
                       +
                     </span>
                   </div>
                 </div>
-                <button onClick={() => handleAddToCart()} className="addToCart">
+                <button
+                  disabled={!product.stock}
+                  onClick={() => {
+                    //without backend
+                    // handleAddToCart();
+                    //with backend
+                    localStorage.getItem("token")
+                      ? addProductToCart(product.id, product?.colors[colorIndex]?.name, product?.colors[colorIndex]?.color_images[0]?.image)
+                      : navigate("/login");
+                  }}
+                  className="addToCart"
+                >
                   <span>ADD TO CART</span>
                   <img
                     src="/images/productDetails/product1/cartbtnicon.png"
@@ -273,7 +382,9 @@ function Main({ product, reviews }) {
                 </button>
               </div>
               <span className="garranty">
-                Warranty Length {product.garranty} Year
+                {product.garranty
+                  ? `Warranty Length ${product.garranty} Year`
+                  : "This product doesn't have warranty"}
               </span>
               {!product.hasStock ? (
                 <p className="outOfStock">
@@ -364,10 +475,14 @@ function Main({ product, reviews }) {
                   Sorry, but this product is out of stock
                 </p>
               ) : null}
-              <span className="rating">{reviews} reviews</span>
+              <span className="rating">
+                {renderStars()} ({reviews} reviews)
+              </span>
               {/* <span className="price">${product?.price.toFixed(2)}</span> */}
               <span className="garranty">
-                Warranty Length {product?.garranty} Year
+                {product.garranty
+                  ? `Warranty Length ${product?.garranty} Year`
+                  : "This product doesn't have warranty"}
               </span>
               <p className="desc">{product?.description}</p>
               <div className="qtyAndAddToCart">
@@ -378,7 +493,12 @@ function Main({ product, reviews }) {
                       -
                     </span>
                     <span className="qty">{quantity}</span>
-                    <span className="plus" onClick={increaseQty}>
+                    <span
+                      className="plus"
+                      onClick={() => {
+                        increaseQty(product.stock, product.hasStock);
+                      }}
+                    >
                       +
                     </span>
                   </div>
@@ -394,22 +514,27 @@ function Main({ product, reviews }) {
                 ) : (
                   <button
                     className="addToCart"
-                    onClick={() =>
-                      dispatch(
-                        addToCart({
-                          id: product.id,
-                          fullTitle: product.fullTitle,
-                          color: product.colorImgs[colorIndex].colorName,
-                          img: product.colorImgs[colorIndex].imgs[0],
-                          price: parseFloat(product.price),
-                          amount: quantity,
-                          stock: product.hasStock,
-                          discount: product.discount,
-                          reviews: product.reviews,
-                          shipping: product.shipping,
-                        })
-                      )
-                    }
+                    onClick={() => {
+                      //without backend
+                      // dispatch(
+                      //   addToCart({
+                      //     id: product.id,
+                      //     fullTitle: product.fullTitle,
+                      //     color: product.colorImgs[colorIndex].colorName,
+                      //     img: product.colorImgs[colorIndex].imgs[0],
+                      //     price: parseFloat(product.price),
+                      //     amount: quantity,
+                      //     stock: product.hasStock,
+                      //     discount: product.discount,
+                      //     reviews: product.reviews,
+                      //     shipping: product.shipping,
+                      //   })
+                      //)
+                      //with backend
+                      localStorage.getItem("token")
+                        ? addProductToCart(product.id)
+                        : navigate("/login");
+                    }}
                   >
                     <span>ADD TO CART</span>
                     <img

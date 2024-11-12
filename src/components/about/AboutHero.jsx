@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 
 function AboutHero() {
   const [banner, setBanner] = useState([]);
+  const addClassToWord = (text) => {
+    const formattedText = text.replace(/(company)/gi, '<span class="orange">$1</span>');
+    return formattedText;
+  };
   useEffect(() => {
     const fetchBanner = async () => {
       try {
@@ -12,22 +16,24 @@ function AboutHero() {
         });
         const result = await response.json();
         setBanner(result);
+
       } catch (err) {
         console.log("Error: ", err);
       }
     };
     fetchBanner();
   }, []);
+
   return (
     <section className="hero">
       <div className="circle item1 darkGreen"></div>
       <div className="circle item2 green"></div>
       
       {/* BACKEND -EN MELUMATLARI CIKME */}
-      {/* {banner.success && (
+      {banner.success && (
         <div className="cover">
           <div className="desc">
-            <h2>{banner.data.title}</h2>
+          <h2 dangerouslySetInnerHTML={{ __html: addClassToWord(banner.data.title) }} />
             <p>{banner.data.content}</p>
             <Link className="getStart" to="/login">
               Get Started
@@ -40,8 +46,8 @@ function AboutHero() {
             />
           </div>
         </div>
-      )} */}
-      <div className="cover">
+      )}
+      {/* <div className="cover">
         <div className="desc">
           <h2>
             About out <span className="orange">company</span>
@@ -59,7 +65,7 @@ function AboutHero() {
         <div className="img">
           <img src="/images/aboutheropng.png" alt="Main image" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

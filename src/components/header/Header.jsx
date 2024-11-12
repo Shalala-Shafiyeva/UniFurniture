@@ -7,12 +7,14 @@ import Cart from "../cart/Cart";
 function Header() {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [qty, setQty] = useState(0);
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       setIsAuthenticated(true);
     }
-  });
+    handleCartProductCount();
+  }, [qty]);
 
   const handleLogout = async () => {
     try {
@@ -31,6 +33,25 @@ function Header() {
       }
     } catch (error) {
       console.error("Logout error: ", error);
+    }
+  };
+
+  const handleCartProductCount = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/basket/productQty",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const result = await response.json();
+      setQty(result.data || 0);
+    } catch (error) {
+      console.log("Error fetching: ", error);
     }
   };
 
@@ -101,7 +122,10 @@ function Header() {
           )}
           <div className="basket" onClick={() => handleOpenBasket()}>
             <img src="/images/basketicon.png" alt="Basket" />
-            <span>{cart.length}</span>
+            {/* without backend */}
+            {/* <span>{cart.length}</span> */}
+            {/* with backend */}
+            <span>{qty}</span>
           </div>
         </div>
       </div>

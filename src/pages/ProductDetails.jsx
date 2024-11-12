@@ -51,12 +51,13 @@ function ProductDetails() {
         }
       );
       const result = await response.json();
-      setSimilarProducts(result.data);
+      setSimilarProducts(result?.data || []);
     } catch (err) {
       console.log("Error fetching: ", err);
     }
   };
 
+  //Review
   const fetchProductReviews = async (id) => {
     try {
       const response = await fetch(
