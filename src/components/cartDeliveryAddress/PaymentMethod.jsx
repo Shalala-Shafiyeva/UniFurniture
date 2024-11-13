@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Toaster, toast } from "react-hot-toast";
 
-function PaymentMethod({ activateBtn, handleActivateBtn }) {
+function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
   const [open, setOpen] = useState(false);
   const payBtns = ["Credit Card", "PayPal", "Pay on Invoice", "Google Pay"];
   const [activeForm, setActiveForm] = useState("Credit Card");
@@ -74,14 +75,44 @@ function PaymentMethod({ activateBtn, handleActivateBtn }) {
     setOpen((prev) => !prev);
   };
 
+  const handleOrderCreate = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/order/store", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          address: orderAddress,
+          payment_type: activeBtn,
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        toast.success(result.message);
+        window.scrollTo(0, 0);
+      } else {
+        toast.error(result.message);
+      }
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  };
+
   return (
     <div className="paymentMethod">
-      <span className={`title ${open? "hidden": "visible"}`}>Payment Method</span>
-      <div className={`closeItem ${open? "hidden": "visible"}`}>
+      <Toaster position="top-center" />
+      <span className={`title ${open ? "hidden" : "visible"}`}>
+        Payment Method
+      </span>
+      <div className={`closeItem ${open ? "hidden" : "visible"}`}>
         <span>Credit Card</span>
-        <button className="add" onClick={handleOpen}>Add</button>
+        <button className="add" onClick={handleOpen}>
+          Add
+        </button>
       </div>
-      <div className={`openItem ${open? "visible": "hidden"}`}>
+      <div className={`openItem ${open ? "visible" : "hidden"}`}>
         <h5>Payment Method</h5>
         <div className="wrapper">
           <div className="btns">
@@ -97,8 +128,13 @@ function PaymentMethod({ activateBtn, handleActivateBtn }) {
           </div>
           <div className="form">
             <form
+            method="POST"
               onSubmit={(e) => {
+                if(!orderAddress){
+                  toast.error("Please choose delivery address");
+                }
                 handleSubmit(e);
+                handleOrderCreate();
               }}
               action=""
             >
@@ -153,10 +189,10 @@ function PaymentMethod({ activateBtn, handleActivateBtn }) {
                     />
                     {errors.cvv && <span className="error">{errors.cvv}</span>}
                   </div>
-                  <div className="inpCheck">
+                  {/* <div className="inpCheck">
                     <input type="checkbox" id="saveCart" />
                     <label htmlFor="saveCard">Save my card for future</label>
-                  </div>
+                  </div> */}
                 </div>
               )}
               {activeForm === "PayPal" && (

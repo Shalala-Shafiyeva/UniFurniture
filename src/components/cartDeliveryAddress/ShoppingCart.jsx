@@ -10,6 +10,7 @@ import PaymentMethod from "./PaymentMethod";
 
 function ShoppingCart() {
   const [activateBtn, setActivateBtn] = useState(false);
+  const [orderAddress, setOrderAddress] = useState('');
   const handleActivateBtn = () => {
     setActivateBtn(true);
   };
@@ -18,12 +19,13 @@ function ShoppingCart() {
       <div className="container">
         <div className="left">
           <CustomerInfo />
-          <DeliveryAddress />
-          <BillingAddress />
+          <DeliveryAddress orderAddress={orderAddress} setOrderAddress={setOrderAddress}/>
+          {/* <BillingAddress /> */}
           <CartOrder />
           <PaymentMethod
             activateBtn={activateBtn}
             handleActivateBtn={handleActivateBtn}
+            orderAddress={orderAddress}
           />
         </div>
         <div className="right">

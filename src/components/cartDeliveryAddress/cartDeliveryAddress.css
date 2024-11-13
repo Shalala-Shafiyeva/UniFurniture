@@ -383,6 +383,15 @@
     align-items: center;
 }
 
+.deliveryAddress .customerAddress .newAddress{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
 .deliveryAddress .customerAddress .address {
     width: 75%;
 }

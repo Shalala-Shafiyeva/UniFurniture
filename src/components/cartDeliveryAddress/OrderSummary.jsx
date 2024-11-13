@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function OrderSummary({ activateBtn }) {
-  console.log(activateBtn);
+  const [products, setProducts] = useState([]);
+  const [qty, setQty] = useState(0);
+  const [total, setTotal] = useState(0);
   const cart = useSelector((state) => state.cart.cart);
   const [freeDelivery, setFreenDelivery] = useState(true);
   const [orderAbove, setOrderAbove] = useState(false);
@@ -13,38 +15,88 @@ function OrderSummary({ activateBtn }) {
     0
   );
   totalPrice = parseFloat(totalPrice.toFixed(2));
-  const totalDiscount =
-    (totalPrice * cart.reduce((acc, current) => acc + current.discount, 0)) /
-    100;
+  // const totalDiscount =
+  //   (totalPrice * cart.reduce((acc, current) => acc + current.discount, 0)) /
+  //   100;
+  const [totalDiscount, setTotalDiscount] = useState(0);
   const handleActive = () => {
     setFreenDelivery((prev) => !prev);
     setOrderAbove((prev) => !prev);
   };
+
+  const fetchCartProduct = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/basket/index", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const result = await response.json();
+      setProducts(result.data || []);
+      setTotal(result.totalPrice || 0);
+      setTotalDiscount(products?.reduce((acc, current) => acc + (Number(current?.product?.price) * Number(current?.product?.discount)) / 100, 0) || 0);
+    } catch (error) {
+      console.log("Error fetching: ", error);
+    }
+  };
+
+  const handleCartProductCount = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/basket/productQty",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const result = await response.json();
+      setQty(result.data || 0);
+    } catch (error) {
+      console.log("Error fetching: ", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCartProduct();
+    handleCartProductCount();
+  }, []);
+
+  console.log(products);
+  console.log(total);
+  console.log(qty);
+
   return (
     <div className="orderSum">
       <span className="title">Order Summary</span>
       <ul className="cartDetails">
         <li>
           <span>Total Item</span>
-          <span>{totalAmount}</span>
+          {/* <span>{totalAmount}</span> */}
+          <span>{qty || 0}</span>
         </li>
         <li>
           <span>Cart Total</span>
-          <span>${totalPrice}</span>
+          {/* <span>${totalPrice}</span> */}
+          <span>${total.toFixed(2) || 0}</span>
         </li>
         <li>
           <span>Product Discount</span>
-          <span>${totalDiscount}</span>
+          <span>${totalDiscount.toFixed(2)}</span>
         </li>
         <li>
           <span>Shipping</span>
-          <span>$20.00</span>
+          <span>Free</span>
         </li>
-        <li>
+        {/* <li>
           <span>Coupon Discount</span>
-        </li>
+        </li> */}
       </ul>
-      <div className="deliveryBtns">
+      {/* <div className="deliveryBtns">
         <button
           onClick={handleActive}
           className={`btn ${freeDelivery ? "active" : ""}`}
@@ -57,10 +109,11 @@ function OrderSummary({ activateBtn }) {
         >
           For Order Above
         </button>
-      </div>
+      </div> */}
       <div className="total">
         <span>Total</span>
-        <span>${parseFloat((totalPrice - totalDiscount - 20).toFixed(2))}</span>
+        {/* <span>${parseFloat((totalPrice - totalDiscount - 20).toFixed(2))}</span> */}
+        <span>${total.toFixed(2) || 0}</span>
       </div>
       <button disabled={activateBtn}>
         <Link
