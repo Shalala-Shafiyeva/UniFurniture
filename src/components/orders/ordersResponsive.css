@@ -1,0 +1,88 @@
+@media (max-width:1024px){
+    .order{
+        margin: 70px 0;
+    }
+
+    .order .container{
+        gap: 30px;
+    }
+
+    .order .title{
+        font-size: 32px;
+    }
+
+    .order .error{
+        font-size: 20px;
+    }
+
+    .order .accordion{
+        margin-top: 20px;
+    }
+
+    .order .accordionItem {
+        gap: 6px;
+        padding: 20px 17px;
+    }
+
+    .order .accordionItem img {
+        width: 23px;
+        height: 23px;
+        top: 20px;
+        right: 17px;
+    }
+
+    .order .accordionItem span {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .order .accordionItem p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .order .accordionItem p .img{
+        height: 150px;
+    }
+}
+
+@media (max-width:340px){
+
+    .order{
+        margin: 0 0 30px;
+    }
+
+    .order .container{
+        gap: 20px;
+    }
+
+    .order .accordion {
+        margin-top: 10px;
+    }
+
+    .order .accordionItem {
+        padding: 10px;
+    }
+
+    .order .accordionItem img {
+        top: 10px;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .order .accordionItem span {
+        font-size: 10px;
+        line-height: normal;
+    }
+
+    .order .accordionItem p {
+        font-size: 10px;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .order .accordionItem p .img{
+        height: 100px;
+    }
+}

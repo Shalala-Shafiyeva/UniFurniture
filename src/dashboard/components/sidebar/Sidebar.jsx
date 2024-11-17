@@ -123,6 +123,9 @@ function Sidebar() {
                 <Link className="nav-link" to="/dashboard/about/number">
                   Numbers section
                 </Link>
+                <Link className="nav-link" to="/dashboard/about/gallery">
+                  Gallery
+                </Link>
               </nav>
             </div>
             {/* <Link

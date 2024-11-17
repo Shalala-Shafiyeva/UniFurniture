@@ -15,6 +15,7 @@ import CartDeliveryAddress from "./pages/CartDeliveryAddress";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import { lazy } from "react";
+import Orders from "./pages/Orders";
 const Dashboard = lazy(() => import("./dashboard/Dashboard"));
 const AboutBanner = lazy(() =>
   import("./dashboard/components/about page/AboutBanner")
@@ -64,6 +65,8 @@ const ColorEdit = lazy(() =>
   import("./dashboard/components/products/ColorEdit")
 );
 
+const Gallery = lazy (()=>import("./dashboard/components/about page/Gallery"));
+
 function App() {
   return (
     <>
@@ -79,6 +82,7 @@ function App() {
         <Route path="/product/:type/:id" element={<ProductDetails />} />
         <Route path="/shop/moreFurnitures" element={<MoreProducts />} />
         <Route path="/cart/deliveryaddress" element={<CartDeliveryAddress />} />
+        <Route path="my-orders" element={<Orders/>} />
 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/about/banner" element={<AboutBanner />} />
@@ -109,6 +113,7 @@ function App() {
           path="/dashboard/about/number/subtitle/edit/:id"
           element={<AboutNumberSubtitleEdit />}
         />
+        <Route path="/dashboard/about/gallery" element={<Gallery/>} />
         <Route path="/dashboard/product" element={<Product />} />
         <Route path="/dashboard/product/edit/:id" element={<ProductEdit />} />
         <Route path="/dashboard/products" element={<ViewProducts />} />

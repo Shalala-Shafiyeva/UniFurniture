@@ -101,13 +101,11 @@ function FilteredProducts({ fetchedProducts }) {
           `http://localhost:8000/api/product/${product.id}/reviews`
         );
         const result = await response.json();
-        console.log("Fetched reviews for product:", product.id, result);
         productReviews[product.id] = result.data || 0;
       } catch (error) {
         console.error("Error fetching review:", error);
       }
     }
-    console.log(productReviews);
     setReviews(productReviews);
   }, [fetchedProducts]);
 
@@ -135,8 +133,6 @@ function FilteredProducts({ fetchedProducts }) {
     }
   }, [fetchedProducts]);
 
-  console.log(fetchedProducts);
-  console.log(reviews);
   return (
     <section className="filteredProducts">
       <div className="container">

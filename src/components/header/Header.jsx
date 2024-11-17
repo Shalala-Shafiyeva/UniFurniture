@@ -89,6 +89,11 @@ function Header() {
             <li>
               <NavLink to="/services">Services</NavLink>
             </li>
+            {isAuthenticated && (
+              <li>
+                <NavLink to="/my-orders">My Orders</NavLink>
+              </li>
+            )}
           </ul>
         </nav>
         <div className="btns">
@@ -146,6 +151,11 @@ function Header() {
           <li>
             <NavLink to="/services">Services</NavLink>
           </li>
+          {isAuthenticated && (
+            <li>
+              <NavLink to="/my-orders">My Orders</NavLink>
+            </li>
+          )}
         </ul>
       </div>
       {openBasket ? (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
@@ -9,31 +9,57 @@ import {
   resetFilters,
 } from "../../slices/productsSlices";
 
-function HeadFilters({productsCount}) {
-  const products = useSelector((state) => state.products.filteredProducts);
-  const dispatch = useDispatch();
-  const [activeSort, setActiveSort] = useState(null);
+function HeadFilters({
+  productsCount,
+  filters,
+  fetchFilteredProducts,
+  handleFilterChange,
+  formatFilters,
+}) {
+  useEffect(() => {
+    formatFilters();
+    fetchFilteredProducts();
+  }, [filters]);
+
+  // useEffect(() => {
+  //   fetchFilteredProducts();
+  // }, []);
+  
+
+  // const products = useSelector((state) => state.products.filteredProducts);
+  // const dispatch = useDispatch();
+  const [activeSort, setActiveSort] = useState("");
+  // const handleActiveSort = (sortType) => {
+  //   if (activeSort == sortType) {
+  //     // dispatch(resetFilters());
+  //     setActiveSort("");
+  //   }
+    // else {
+    //   switch (sortType) {
+    //     case "date":
+    //       dispatch(sortByDateAdded());
+    //       break;
+    //     case "highest":
+    //       dispatch(sortByHighestPrice());
+    //       break;
+    //     case "lowest":
+    //       dispatch(sortByLowestPrice());
+    //       break;
+    //     default:
+    //       break;
+    //   }
+    // setActiveSort(sortType);
+    // }
+  //};
+
   const handleActiveSort = (sortType) => {
     if (activeSort === sortType) {
-      dispatch(resetFilters());
-      setActiveSort(null);
+      setActiveSort("");
     } else {
-      switch (sortType) {
-        case "date":
-          dispatch(sortByDateAdded());
-          break;
-        case "highest":
-          dispatch(sortByHighestPrice());
-          break;
-        case "lowest":
-          dispatch(sortByLowestPrice());
-          break;
-        default:
-          break;
-      }
       setActiveSort(sortType);
     }
   };
+
   return (
     <section className="headFilters">
       <div className="container">
@@ -72,28 +98,58 @@ function HeadFilters({productsCount}) {
           <div className="sort">
             <span>Sort by:</span>
             <div className="sortBtns">
-              <button
-                className={`${activeSort === "date" ? "active" : ""}`}
-                onClick={() => handleActiveSort("date")}
+              <input
+                type="checkbox"
+                id="date"
+                name="created_at"
+                onChange={(e) => {
+                  handleFilterChange("created_at", e.target.checked);
+                  fetchFilteredProducts();
+                }}
+              />
+              <label
+                htmlFor="date"
+                className={`${activeSort == "created_at" ? "active" : ""}`}
+                onClick={() => handleActiveSort("created_at")}
               >
                 New
-              </button>
-              <button
-                className={`${activeSort === "highest" ? "active" : ""}`}
+              </label>
+              <input
+                type="checkbox"
+                id="highest"
+                name="highest"
+                onChange={(e) => {
+                  handleFilterChange("highest", e.target.checked);
+                  fetchFilteredProducts();
+                }}
+              />
+              <label
+                htmlFor="highest"
+                className={`${activeSort == "highest" ? "active" : ""}`}
                 onClick={() => handleActiveSort("highest")}
               >
                 Highest Price
-              </button>
-              <button
-                className={`${activeSort === "lowest" ? "active" : ""}`}
+              </label>
+              <input
+                type="checkbox"
+                id="lowest"
+                name="lowest"
+                onChange={(e) => {
+                  handleFilterChange("lowest", e.target.checked);
+                  fetchFilteredProducts();
+                }}
+              />
+              <label
+                htmlFor="lowest"
+                className={`${activeSort == "lowest" ? "active" : ""}`}
                 onClick={() => handleActiveSort("lowest")}
               >
                 Lowest Price
-              </button>
+              </label>
             </div>
             {/*without backend
              <span>{products.length} results</span> */}
-             {/* with backend */}
+            {/* with backend */}
             <span>{productsCount}</span>
           </div>
         </div>

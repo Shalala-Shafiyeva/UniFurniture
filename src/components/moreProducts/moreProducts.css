@@ -76,7 +76,11 @@
     gap: 10px;
 }
 
-.headFilters .sortBtns button {
+.headFilters .sortBtns input{
+    display: none;
+}
+
+.headFilters .sortBtns label {
     padding: 12px 20px;
     color: #6D6E74;
     font-size: 14px;
@@ -88,8 +92,8 @@
     cursor: pointer;
 }
 
-.headFilters .sortBtns button:hover,
-.headFilters .sortBtns button.active {
+.headFilters .sortBtns label:hover,
+.headFilters .sortBtns label.active {
     color: #1AB29C;
     background: #B3E5DE;
 
