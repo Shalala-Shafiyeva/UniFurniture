@@ -9,21 +9,18 @@ function CategoryEdit() {
   const [category, setCategory] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState({ name: "", image: null });
   const [errors, setErrors] = useState({});
   const token = localStorage.getItem("token");
   const fetchCategory = async (id) => {
     try {
-      const response = await fetch(
-        "http://localhost:8000/api/category/" + id,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch("http://localhost:8000/api/category/" + id, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const result = await response.json();
       setCategory(result.data || []);
       setValue(result.data.name);
@@ -38,17 +35,18 @@ function CategoryEdit() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+    const formData = new FormData();
+    formData.append("name", value.name);
+    formData.append("image", value.image);
     try {
       const response = await fetch(
         "http://localhost:8000/api/category/edit/" + id,
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify({ name: value }),
+          body: formData,
         }
       );
 
@@ -89,15 +87,28 @@ function CategoryEdit() {
                   <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <input
-                      category="text"
+                      type="text"
                       name="name"
                       id="name"
                       className="form-control"
-                      value={value}
-                      onChange={(e) => setValue(e.target.value)}
+                      value={value.name}
+                      onChange={(e) => setValue({ ...value, name: e.target.value})}
                     />
                   </div>
                   {errors.name && <p className="text-danger">{errors.name}</p>}
+                  <div className="form-group">
+                    <label htmlFor="image">Image</label>
+                    <input
+                      type="file"
+                      name="image"
+                      id="image"
+                      className="form-control"
+                      onChange={(e) => setValue({ ...value, image: e.target.files[0]})}
+                    />
+                  </div>
+                  {errors.image && (
+                    <p className="text-danger">{errors.image}</p>
+                  )}
                   <button className="btn btn-primary">Edit</button>
                 </form>
               </div>

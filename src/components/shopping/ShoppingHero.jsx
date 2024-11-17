@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-function ShoppingHero({ searchValue, handleSearchInputChange}) {
-  const filteredProducts = useSelector(
-    (state) => state.products.filteredProducts
-  );
+function ShoppingHero({
+  // searchValue,
+  // handleSearchInputChange,
+  fetchProducts,
+  handleFilterChange,
+  filters
+}) {
+  // const filteredProducts = useSelector(
+  //   (state) => state.products.filteredProducts
+  // );
+
   return (
     <section className="shoppingHero">
       <div className="container">
@@ -28,10 +35,13 @@ function ShoppingHero({ searchValue, handleSearchInputChange}) {
               type="text"
               name="search"
               placeholder="Let's Start your needs"
+              value={filters.search}
               onChange={(e) => {
-                handleSearchInputChange(e);
+                // handleSearchInputChange(e);
+                // handleSearchChange(e.target.value);
+                handleFilterChange(e.target.name, e.target.value);
               }}
-              value={searchValue}
+              // value={searchValue}
             />
             <button>
               <img src="/images/shop/search.png" alt="Search icon" />

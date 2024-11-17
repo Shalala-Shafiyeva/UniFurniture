@@ -14,14 +14,6 @@ function Filters({
   handleTypeChange,
   formatFilters,
 }) {
-  // const [filters, setFilters] = useState({
-  //   types: [],
-  //   color: null,
-  //   sale: false,
-  //   hasStock: false,
-  // });
-
-  // const [products, setProducts] = useState([]);
   const [typeBtns, setTypeBtns] = useState([]);
 
   const fetchTypes = async () => {
@@ -39,76 +31,29 @@ function Filters({
     }
   };
 
+  const [colorBtns, setColorBtns] = useState([]);
+  const fetchColorCount = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/colorsCount", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const result = await response.json();
+      setColorBtns(result.data || []);
+    } catch (err) {
+      console.log("Error fetching: ", err);
+    }
+  };
+
   useEffect(() => {
     fetchTypes();
   }, []);
 
   useEffect(() => {
-    formatFilters();
-     fetchFilteredProducts();
-  }, [filters]);
-
-  useEffect(() => {
-    fetchFilteredProducts();
+    fetchColorCount();
   }, []);
-
-  // const handleFilterChange = (filterKey, value) => {
-  //   setFilters((prevFilters) => ({
-  //     ...prevFilters,
-  //     [filterKey]: value,
-  //   }));
-  // };
-
-  // const handleTypeChange = (type) => {
-  //   setFilters((prevFilters) => ({
-  //     ...prevFilters,
-  //     types: prevFilters.types.includes(type)
-  //       ? prevFilters.types.filter((t) => t !== type)
-  //       : [...prevFilters.types, type],
-  //   }));
-  // };
-
-  // const formatFilters = () => {
-  //   const formattedFilters = {
-  //     types: filters.types.length > 0 ? filters.types.join(",") : undefined,
-  //     color: filters.color || undefined,
-  //     sale: filters.sale ? 1 : undefined,
-  //     hasStock: filters.hasStock ? 1 : undefined,
-  //   };
-
-  //   const cleanedFilters = Object.fromEntries(
-  //     Object.entries(formattedFilters).filter(
-  //       ([_, value]) => value !== undefined
-  //     )
-  //   );
-
-  //   return new URLSearchParams(cleanedFilters).toString();
-  // };
-
-  // useEffect(() => {
-  //   const query = formatFilters();
-  // }, [filters]);
-
-  // const fetchFilteredProducts = async () => {
-  //   try {
-  //     const query = formatFilters();
-  //     console.log("Filters query:", query);
-  //     const response = await fetch(
-  //       `http://localhost:8000/api/filteredProducts?${query}`,
-  //       {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  //     const result = await response.json();
-  //     setProducts(result.data);
-  //   } catch (error) {
-  //     console.error("Error fetching filtered products:", error);
-  //   }
-  // };
-  // console.log(products);
 
   // const categoryBtns = [
   //   {
@@ -138,16 +83,16 @@ function Filters({
   //   },
   // ];
 
-  const colorBtns = [
-    "Black",
-    "Blue",
-    "Brown",
-    "Grey",
-    "Green",
-    "Orange",
-    "Red",
-    "White",
-  ];
+  // const colorBtns = [
+  //   "Black",
+  //   "Blue",
+  //   "Brown",
+  //   "Grey",
+  //   "Green",
+  //   "Orange",
+  //   "Red",
+  //   "White",
+  // ];
 
   // const selectedCategories = useSelector(
   //   (state) => state.products.selectedCategories
@@ -158,22 +103,27 @@ function Filters({
     <section className="filters">
       <div className="container">
         <div className="filter">
-          <h4>Product Categories</h4>
-          <div className="inps">
-            {typeBtns.map((btn) => (
-              <div className="inp" key={btn.id}>
-                <input
-                  type="checkbox"
-                  id={`category${btn.id}`}
-                  onChange={() => {
-                    handleTypeChange(btn.name);
-                    fetchFilteredProducts();
-                  }}
-                />
-                <label htmlFor={`category${btn.id}`}>{btn.name}</label>
+          {typeBtns.length > 0 && (
+            <>
+              <h4>Product Categories</h4>
+              <div className="inps">
+                {typeBtns.map((btn) => (
+                  <div className="inp" key={btn.id}>
+                    <input
+                      type="checkbox"
+                      id={`category${btn.id}`}
+                      onChange={() => {
+                        handleTypeChange(btn.name);
+                      }}
+                    />
+                    <label htmlFor={`category${btn.id}`}>{btn.name}</label>
+                  </div>
+                ))}
               </div>
-            ))}
-            {/* {categoryBtns.map((btn) => {
+            </>
+          )}
+
+          {/* {categoryBtns.map((btn) => {
               return (
                 <div className="inp" key={btn.id}>
                   <input
@@ -187,32 +137,34 @@ function Filters({
                 </div>
               );
             })} */}
-          </div>
         </div>
         <div className="filter">
-          <h4>Filter by Color</h4>
-          <div className="inps">
-            {colorBtns.map((color, index) => {
-              return (
-                <div className="inp" key={index}>
-                  <div>
-                    <input
-                      // onClick={() => dispatch(filterByColor(color))}
-                      onChange={() => {
-                        handleFilterChange("color", color);
-                        fetchFilteredProducts();
-                      }}
-                      type="radio"
-                      name="color"
-                      id={`color${index}`}
-                    />
-                    <label htmlFor={`color${index}`}>{color}</label>
-                  </div>
-                  <span className="count">(29)</span>
-                </div>
-              );
-            })}
-          </div>
+          {colorBtns.length > 0 && (
+            <>
+              <h4>Filter by Color</h4>
+              <div className="inps">
+                {colorBtns.map((color, index) => {
+                  return (
+                    <div className="inp" key={index}>
+                      <div>
+                        <input
+                          // onClick={() => dispatch(filterByColor(color))}
+                          onChange={() => {
+                            handleFilterChange("color", color.name);
+                          }}
+                          type="radio"
+                          name="color"
+                          id={`color${index}`}
+                        />
+                        <label htmlFor={`color${index}`}>{color.name}</label>
+                      </div>
+                      <span className="count">({color.count})</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          )}
         </div>
         <div className="filter">
           <h4>Product Categories</h4>
@@ -224,7 +176,6 @@ function Filters({
                 id="stock"
                 onChange={(e) => {
                   handleFilterChange("hasStock", e.target.checked);
-                  fetchFilteredProducts();
                 }}
                 // onClick={() => dispatch(filterByStock(true))}
               />
@@ -237,7 +188,6 @@ function Filters({
                 id="sale"
                 onChange={(e) => {
                   handleFilterChange("sale", e.target.checked);
-                  fetchFilteredProducts();
                 }}
                 // onClick={() => dispatch(filterBySale(true))}
               />

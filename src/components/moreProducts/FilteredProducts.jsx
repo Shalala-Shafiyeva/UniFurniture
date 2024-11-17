@@ -8,7 +8,7 @@ function FilteredProducts({ fetchedProducts }) {
   const filteredProducts = useSelector(
     (state) => state.products.filteredProducts
   );
-  const error = useSelector((state) => state.products.error);
+  // const error = useSelector((state) => state.products.error);
 
   //pagination
   const [currentProducts, setCurrentProducts] = useState([]);
@@ -136,73 +136,76 @@ function FilteredProducts({ fetchedProducts }) {
   return (
     <section className="filteredProducts">
       <div className="container">
-        {error ? (
-          <div className="error">Sorry we don't have such product</div>
-        ) : (
-          <>
-            <div className="products">
-              {currentProducts.map((product) => (
-                <Link
-                  className="product"
-                  to={`/product/${product?.category}/${product?.id}`}
-                  key={product?.id}
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                >
-                  <div className="img">
-                    <img
-                      src={`http://localhost:8000/storage/${product?.image}`}
-                      alt={product?.name}
-                    />
-                  </div>
-                  <div className="details">
-                    {product.discount>0 && (
-                      <div className="sale">-{product.discount}%</div>
-                    )}
-                    <div className="rating">
-                      <div className="stars">
-                        {renderStars(averageRatings[product.id] || 0)}
-                        {/* <img src="/images/star.png" alt="star" />
+        {
+          // error ? (
+          !fetchedProducts.length ? (
+            <div className="error">Sorry we don't have such product</div>
+          ) : (
+            <>
+              <div className="products">
+                {currentProducts.map((product) => (
+                  <Link
+                    className="product"
+                    to={`/product/${product?.category}/${product?.id}`}
+                    key={product?.id}
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                  >
+                    <div className="img">
+                      <img
+                        src={`http://localhost:8000/storage/${product?.image}`}
+                        alt={product?.name}
+                      />
+                    </div>
+                    <div className="details">
+                      {product.discount > 0 && (
+                        <div className="sale">-{product.discount}%</div>
+                      )}
+                      <div className="rating">
+                        <div className="stars">
+                          {renderStars(averageRatings[product.id] || 0)}
+                          {/* <img src="/images/star.png" alt="star" />
                         <img src="/images/star.png" alt="star" />
                         <img src="/images/star.png" alt="star" />
                         <img src="/images/star.png" alt="star" />
                         <img src="/images/emptystar.png" alt="star" /> */}
+                        </div>
+                        <span>({reviews[product.id] || 0} reviews)</span>
                       </div>
-                      <span>({reviews[product.id] || 0} reviews)</span>
+                      <div className="title">{product.name}</div>
+                      <div className="price">
+                        <span>${product.price.toFixed(2)}</span>
+                        {product.discount > 0 && (
+                          <span>
+                            {" "}
+                            - $
+                            {(
+                              product.price *
+                              (1 - product.discount / 100)
+                            ).toFixed(2)}
+                          </span>
+                        )}
+                      </div>
+                      <div className="shipping">
+                        {product.shipping} days shipping
+                      </div>
                     </div>
-                    <div className="title">{product.name}</div>
-                    <div className="price">
-                      <span>${product.price.toFixed(2)}</span>
-                      {product.discount > 0 && (
-                        <span>
-                          {" "}
-                          - $
-                          {(
-                            product.price *
-                            (1 - product.discount / 100)
-                          ).toFixed(2)}
-                        </span>
-                      )}
-                    </div>
-                    <div className="shipping">
-                      {product.shipping} days shipping
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            <div className="pagination">
-              <div className="prevBtn" onClick={prevPage}>
-                <img src="/images/shop/prev.png" alt="Previous page" />
+                  </Link>
+                ))}
               </div>
-              <div className="pages">{paginate()}</div>
-              <div className="nextBtn" onClick={nextPage}>
-                <img src="/images/shop/next.png" alt="Next page" />
+              <div className="pagination">
+                <div className="prevBtn" onClick={prevPage}>
+                  <img src="/images/shop/prev.png" alt="Previous page" />
+                </div>
+                <div className="pages">{paginate()}</div>
+                <div className="nextBtn" onClick={nextPage}>
+                  <img src="/images/shop/next.png" alt="Next page" />
+                </div>
               </div>
-            </div>
-          </>
-        )}
+            </>
+          )
+        }
       </div>
     </section>
   );

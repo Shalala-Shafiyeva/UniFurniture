@@ -34,7 +34,7 @@
         line-height: 20px;
     }
 
-    .headFilters .sortBtns button {
+    .headFilters .sortBtns label {
         padding: 9px 17px;
         font-size: 12px;
         border-radius: 7px;
@@ -173,7 +173,7 @@
     }
 
 
-    .headFilters .sortBtns button {
+    .headFilters .sortBtns label {
         padding: 9px 20px;
         border-radius: 6px;
         font-size: 10px;

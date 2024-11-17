@@ -224,7 +224,11 @@
     flex-wrap: wrap;
 }
 
-.furnitures .filterBtns button {
+.furnitures .filterBtns input{
+    display: none;
+}
+
+.furnitures .filterBtns label {
     padding: 10px 30px;
     display: flex;
     justify-content: center;
@@ -241,12 +245,12 @@
     transition: .3s all ease-in-out;
 }
 
-.furnitures .filterBtns button img{
+.furnitures .filterBtns label img{
     width: 26px;
 }
 
-.furnitures .filterBtns button.active,
-.furnitures .filterBtns button:hover {
+.furnitures .filterBtns label.active,
+.furnitures .filterBtns label:hover {
     color: #FFF;
     background-color: #00A991;
 }

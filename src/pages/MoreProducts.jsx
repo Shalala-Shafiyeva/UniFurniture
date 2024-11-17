@@ -101,23 +101,7 @@ function MoreProducts() {
 
     return new URLSearchParams(cleanedFilters).toString();
   };
-  // const fetchProducts = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       "http://localhost:8000/api/filteredProducts",
-  //       {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  //     const result = await response.json();
-  //     setProducts(result.data || []);
-  //   } catch (err) {
-  //     console.log("Error fetching: ", err);
-  //   }
-  // };
+
   const fetchFilteredProducts = async () => {
     try {
       const query = formatFilters();
@@ -136,6 +120,11 @@ function MoreProducts() {
       console.error("Error fetching filtered products:", error);
     }
   };
+
+  useEffect(() => {
+    formatFilters();
+    fetchFilteredProducts();
+  }, [filters]);
 
   return (
     <>

@@ -5,30 +5,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../slices/cartSlice";
 import toast, { Toaster } from "react-hot-toast";
 
-function Furnitures({ filteredData, handleCategoryFilter }) {
-  const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.cart);
+function Furnitures({
+  // filteredData,
+  // handleCategoryFilter,
+  fetchProducts,
+  fetchedProducts,
+  handleFilterChange,
+  filters,
+  setFilters
+}) {
+  // const dispatch = useDispatch();
+  // const cart = useSelector((state) => state.cart.cart);
   const navigate = useNavigate();
   //Fetch All Products
-  const [fetchedProducts, setFetchedProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const fetchProducts = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:8000/api/publishedProducts",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const result = await response.json();
-      setFetchedProducts(result.data || []);
-    } catch (err) {
-      console.log("Error fetching: ", err);
-    }
-  };
   const fetchCategories = async () => {
     try {
       const response = await fetch("http://localhost:8000/api/category", {
@@ -43,8 +33,8 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
       console.log("Error fetching: ", err);
     }
   };
+
   useEffect(() => {
-    fetchProducts();
     fetchCategories();
   }, []);
 
@@ -102,48 +92,60 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
   };
 
   //filter btns
-  const filterBtns = [
-    {
-      id: 1,
-      name: "Office",
-      img: "/images/shop/office.svg",
-    },
-    {
-      id: 2,
-      name: "Wardrobe",
-      img: "/images/shop/wardrobe.svg",
-    },
-    {
-      id: 3,
-      name: "Sofa",
-      img: "/images/shop/sofa.svg",
-    },
-    {
-      id: 4,
-      name: "Table",
-      img: "/images/shop/table.svg",
-    },
-    {
-      id: 5,
-      name: "Chair",
-      img: "/images/shop/chair.svg",
-    },
-  ];
+  // const filterBtns = [
+  //   {
+  //     id: 1,
+  //     name: "Office",
+  //     img: "/images/shop/office.svg",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Wardrobe",
+  //     img: "/images/shop/wardrobe.svg",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Sofa",
+  //     img: "/images/shop/sofa.svg",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Table",
+  //     img: "/images/shop/table.svg",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "Chair",
+  //     img: "/images/shop/chair.svg",
+  //   },
+  // ];
 
   //make clicked filter btn active
-  const activeBtn = (el) => {
-    let btns = [...document.querySelectorAll(".filterBtns button")];
-    btns.forEach((btnn) => {
-      btnn.classList.remove("active");
-    });
-    if (el.target.dataset && el.target.dataset.id == "button") {
-      el.target.classList.add("active");
+  // const activeBtn = (el) => {
+  //   let btns = [...document.querySelectorAll(".filterBtns button")];
+  //   btns.forEach((btnn) => {
+  //     btnn.classList.remove("active");
+  //   });
+  //   if (el.target.dataset && el.target.dataset.id == "button") {
+  //     el.target.classList.add("active");
+  //   } else {
+  //     el.target.parentElement.classList.add("active");
+  //   }
+  // };
+  // const activeBtnForChild = (el) => {
+  //   el.target.parentElement.classList.add("active");
+  // };
+  const [activeSort, setActiveSort] = useState("");
+  const handleActiveBtn = (btn) => {
+    if (activeSort === btn) {
+      setActiveSort("");
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        categories: null,
+      }));
     } else {
-      el.target.parentElement.classList.add("active");
+      setActiveSort(btn);
     }
-  };
-  const activeBtnForChild = (el) => {
-    el.target.parentElement.classList.add("active");
   };
 
   const success = () => {
@@ -154,29 +156,29 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
     toast.error("Sorry, this product is out of stock");
   };
 
-  const handleAddToCart = (product) => {
-    if (product.hasStock) {
-      toast.success("Successfully added to cart");
-      dispatch(
-        addToCart({
-          id: product.id,
-          fullTitle: product.fullTitle,
-          color: handleColorAndImg(product)[0],
-          img: handleColorAndImg(product)[1],
-          price: parseFloat(product.price),
-          amount: 1,
-          stock: product.stock,
-          hasStock: product.hasStock,
-          discount: product.discount,
-          reviews: product.reviews,
-          shipping: product.shipping,
-        })
-      );
-    }
-    if (!product.hasStock || !product.stock) {
-      toast.error("Sorry, this product is out of stock");
-    }
-  };
+  // const handleAddToCart = (product) => {
+  //   if (product.hasStock) {
+  //     toast.success("Successfully added to cart");
+  //     dispatch(
+  //       addToCart({
+  //         id: product.id,
+  //         fullTitle: product.fullTitle,
+  //         color: handleColorAndImg(product)[0],
+  //         img: handleColorAndImg(product)[1],
+  //         price: parseFloat(product.price),
+  //         amount: 1,
+  //         stock: product.stock,
+  //         hasStock: product.hasStock,
+  //         discount: product.discount,
+  //         reviews: product.reviews,
+  //         shipping: product.shipping,
+  //       })
+  //     );
+  //   }
+  //   if (!product.hasStock || !product.stock) {
+  //     toast.error("Sorry, this product is out of stock");
+  //   }
+  // };
 
   //Basket logic
   const addProductToCart = async (productId, productColor, colorImage) => {
@@ -195,8 +197,6 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
         }),
       });
       const result = await response.json();
-      console.log(result);
-      console.log(productId);
       result.success
         ? toast.success(result.message)
         : toast.error(result.message);
@@ -207,67 +207,104 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
 
   return (
     <>
-      {fetchedProducts.length > 0 && (
-        <section className="furnitures">
-          <Toaster position="top-center" />
-          <div className="container">
-            <div className="head">
-              <h2 className="title">
-                Latest <span>Furnitures</span>
-              </h2>
-              <Link
-                to="/shop/moreFurnitures"
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                <span>More Furnitures</span>
-                <img src="/images/shop/arrowleft.png" alt="Arrow More" />
-              </Link>
-            </div>
-            <div className="filterBtns">
-              {filterBtns.map((btn) => {
+      {/* {fetchedProducts.length > 0 && ( */}
+      <section className="furnitures">
+        <Toaster position="top-center" />
+        <div className="container">
+          <div className="head">
+            <h2 className="title">
+              Latest <span>Furnitures</span>
+            </h2>
+            <Link
+              to="/shop/moreFurnitures"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              <span>More Furnitures</span>
+              <img src="/images/shop/arrowleft.png" alt="Arrow More" />
+            </Link>
+          </div>
+          <div className="filterBtns">
+            {categories.map((btn) => {
+              return (
+                <>
+                  <input
+                    type="radio"
+                    id={`category-${btn.id}`}
+                    name="categories"
+                    value={btn.name}
+                    onChange={(e) => {
+                      // handleFilterChange(e.target.value);
+                      handleFilterChange(e.target.name, e.target.value);
+                    }}
+                  />
+                  <label
+                    data-id="button"
+                    htmlFor={`category-${btn.id}`}
+                    className={activeSort === btn.name ? "active" : ""}
+                    key={btn.id}
+                    onClick={() => {
+                      handleActiveBtn(btn.name);
+                      setCurrentPage(1);
+                    }}
+                  >
+                    <img
+                      src={`http://localhost:8000/storage/${btn.image}`}
+                      alt={btn.name}
+                    />
+                    <span>{btn.name}</span>
+                  </label>
+                </>
+              );
+            })}
+            {/* {filterBtns.map((btn) => {
                 return (
                   <button
                     data-id="button"
                     key={btn.id}
                     onClick={(e) => {
-                      handleCategoryFilter(btn.name.toLowerCase());
-                      activeBtn(e);
+                      // handleCategoryFilter(btn.name.toLowerCase());
+                      // activeBtn(e);
+                      handleActiveBtn(btn.name.toLowerCase());
                       setCurrentPage(1);
                     }}
                   >
                     <img
-                      onClick={(e) => activeBtnForChild(e)}
+                      // onClick={(e) => activeBtnForChild(e)}
                       src={btn.img}
                       alt={btn.name}
                     />
-                    <span onClick={(e) => activeBtnForChild(e)}>
+                    <span 
+                    // onClick={(e) => activeBtnForChild(e)}
+                    >
                       {btn.name}
                     </span>
                   </button>
                 );
-              })}
-            </div>
-            <div className="products">
-              {filteredData.length === 0 ? (
+              })} */}
+          </div>
+          <div className="products">
+            {
+              // filteredData.length === 0 ? (
+              !fetchedProducts.length ? (
                 <div className="notFound">
                   We don't have such product. Sorry.
                 </div>
               ) : (
                 //КОД С БЕКЕНД-ом
-                currentProducts.map((product) => {
+                currentProducts?.map((product) => {
                   return (
                     <Link
-                      to={`/product/${product.category.name.toLowerCase()}/${
-                        product.id
+                      to={`/product/${product?.category?.name.toLowerCase()}/${
+                        product?.id
                       }`}
                       className="productCard"
-                      key={product.id}
+                      key={product?.id}
                       onClick={() => {
-                        dispatch(
-                          singledProduct({ id: product.id, type: product.type })
-                        );
+                        // dispatch(
+                        //   singledProduct({ id: product.id, type: product.type })
+                        // );
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                     >
@@ -299,7 +336,11 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
                             // handleAddToCart(product);
                             //with backend
                             localStorage.getItem("token")
-                              ? addProductToCart(product.id, product?.colors[0]?.name, product?.colors[0]?.color_images[0]?.image)
+                              ? addProductToCart(
+                                  product.id,
+                                  product?.colors[0]?.name,
+                                  product?.colors[0]?.color_images[0]?.image
+                                )
                               : navigate("/login");
                           }}
                         >
@@ -350,10 +391,11 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
                 //     </Link>
                 //   );
                 // })
-              )}
-            </div>
+              )
+            }
+          </div>
 
-            {/* WITHOUT BACKEND
+          {/* WITHOUT BACKEND
            {filteredData.length === 0 ? null : (
             <div className="pagination">
               <div className="prevBtn" onClick={prevPage}>
@@ -366,20 +408,20 @@ function Furnitures({ filteredData, handleCategoryFilter }) {
             </div>
           )} */}
 
-            {fetchedProducts.length === 0 ? null : (
-              <div className="pagination">
-                <div className="prevBtn" onClick={prevPage}>
-                  <img src="/images/shop/prev.png" alt="Previous page" />
-                </div>
-                <div className="pages">{paginate()}</div>
-                <div className="nextBtn" onClick={nextPage}>
-                  <img src="/images/shop/next.png" alt="Next page" />
-                </div>
+          {fetchedProducts.length === 0 ? null : (
+            <div className="pagination">
+              <div className="prevBtn" onClick={prevPage}>
+                <img src="/images/shop/prev.png" alt="Previous page" />
               </div>
-            )}
-          </div>
-        </section>
-      )}
+              <div className="pages">{paginate()}</div>
+              <div className="nextBtn" onClick={nextPage}>
+                <img src="/images/shop/next.png" alt="Next page" />
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+      {/* )} */}
     </>
   );
 }
