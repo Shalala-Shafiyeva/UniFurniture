@@ -996,11 +996,14 @@
 }
 
 .questionAccourdion .filterBtns {
-    width: 50%;
+    /* width: 50%; */
+    width: max-content;
     padding: 0 20px;
     margin-top: 30px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 30px;
     align-items: center;
 }
 
@@ -1025,6 +1028,7 @@
     color: #85868B;
     font-size: 32px;
     font-weight: 600;
+    width: max-content;
 }
 
 .questionAccourdion .filterBtns .btn.active span.line {

@@ -151,9 +151,10 @@ function Sidebar() {
               data-bs-parent="#sidenavAccordion"
             >
               <nav className="sb-sidenav-menu-nested nav">
-                <Link className="nav-link" to="/dashboard/about/faq">
+                <Link className="nav-link" to="/dashboard/faq">
                   View
                 </Link>
+                <Link className="nav-link" to="/dashboard/faq/options">Options</Link>
               </nav>
             </div>
             {/* <Link

@@ -68,6 +68,8 @@ const ColorEdit = lazy(() =>
 const Gallery = lazy(() => import("./dashboard/components/about page/Gallery"));
 const FAQ = lazy(() => import("./dashboard/components/faqs/FAQ"));
 const FAQEdit = lazy(() => import("./dashboard/components/faqs/FAQEdit"));
+const Option = lazy(() => import("./dashboard/components/faqs/Option"));
+const OptionEdit = lazy(() => import("./dashboard/components/faqs/OptionEdit"));
 
 function App() {
   return (
@@ -116,8 +118,10 @@ function App() {
           element={<AboutNumberSubtitleEdit />}
         />
         <Route path="/dashboard/about/gallery" element={<Gallery />} />
-        <Route path="/dashboard/about/faq" element={<FAQ />} />
-        <Route path="/dashboard/about/faq/edit/:id" element={<FAQEdit />} />
+        <Route path="/dashboard/faq" element={<FAQ />} />
+        <Route path="/dashboard/faq/edit/:id" element={<FAQEdit />} />
+        <Route path="/dashboard/faq/options" element={<Option />} />
+        <Route path="/dashboard/faq/option/edit/:id" element={<OptionEdit />} />
         <Route path="/dashboard/product" element={<Product />} />
         <Route path="/dashboard/product/edit/:id" element={<ProductEdit />} />
         <Route path="/dashboard/products" element={<ViewProducts />} />
