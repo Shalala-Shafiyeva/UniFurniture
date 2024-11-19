@@ -65,7 +65,9 @@ const ColorEdit = lazy(() =>
   import("./dashboard/components/products/ColorEdit")
 );
 
-const Gallery = lazy (()=>import("./dashboard/components/about page/Gallery"));
+const Gallery = lazy(() => import("./dashboard/components/about page/Gallery"));
+const FAQ = lazy(() => import("./dashboard/components/faqs/FAQ"));
+const FAQEdit = lazy(() => import("./dashboard/components/faqs/FAQEdit"));
 
 function App() {
   return (
@@ -82,7 +84,7 @@ function App() {
         <Route path="/product/:type/:id" element={<ProductDetails />} />
         <Route path="/shop/moreFurnitures" element={<MoreProducts />} />
         <Route path="/cart/deliveryaddress" element={<CartDeliveryAddress />} />
-        <Route path="my-orders" element={<Orders/>} />
+        <Route path="my-orders" element={<Orders />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/about/banner" element={<AboutBanner />} />
@@ -113,7 +115,9 @@ function App() {
           path="/dashboard/about/number/subtitle/edit/:id"
           element={<AboutNumberSubtitleEdit />}
         />
-        <Route path="/dashboard/about/gallery" element={<Gallery/>} />
+        <Route path="/dashboard/about/gallery" element={<Gallery />} />
+        <Route path="/dashboard/about/faq" element={<FAQ />} />
+        <Route path="/dashboard/about/faq/edit/:id" element={<FAQEdit />} />
         <Route path="/dashboard/product" element={<Product />} />
         <Route path="/dashboard/product/edit/:id" element={<ProductEdit />} />
         <Route path="/dashboard/products" element={<ViewProducts />} />

@@ -128,6 +128,34 @@ function Sidebar() {
                 </Link>
               </nav>
             </div>
+            <Link
+              className="nav-link collapsed"
+              to="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseLayouts4"
+              aria-expanded="false"
+              aria-controls="collapseLayouts4"
+            >
+              <div className="sb-nav-link-icon">
+                <i className="fas fa-columns"></i>
+              </div>
+              FAQ
+              <div className="sb-sidenav-collapse-arrow">
+                <i className="fas fa-angle-down"></i>
+              </div>
+            </Link>
+            <div
+              className="collapse"
+              id="collapseLayouts4"
+              aria-labelledby="headingFour"
+              data-bs-parent="#sidenavAccordion"
+            >
+              <nav className="sb-sidenav-menu-nested nav">
+                <Link className="nav-link" to="/dashboard/about/faq">
+                  View
+                </Link>
+              </nav>
+            </div>
             {/* <Link
               className="nav-link collapsed"
               href="#"
