@@ -94,6 +94,12 @@ const Exellence = lazy(() =>
 const ExellenceEdit = lazy(() =>
   import("./dashboard/components/shop page/ExellenceEdit")
 );
+const PromotionSlider = lazy(() =>
+  import("./dashboard/components/shop page/PromotionSlider")
+);
+const PromotionSliderEdit = lazy(() =>
+  import("./dashboard/components/shop page/PromotionSliderEdit")
+);
 
 function App() {
   return (
@@ -159,6 +165,14 @@ function App() {
         <Route
           path="/dashboard/shop/exellence/edit/:id"
           element={<ExellenceEdit />}
+        />
+        <Route
+          path="/dashboard/shop/promotion-slider"
+          element={<PromotionSlider />}
+        />
+        <Route
+          path="/dashboard/shop/promotion-slider/edit/:id"
+          element={<PromotionSliderEdit />}
         />
         <Route path="/dashboard/product" element={<Product />} />
         <Route path="/dashboard/product/edit/:id" element={<ProductEdit />} />

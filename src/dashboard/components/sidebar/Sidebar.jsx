@@ -213,6 +213,9 @@ function Sidebar() {
                 <Link className="nav-link" to="/dashboard/shop/exellence">
                   Exellence section
                 </Link>
+                <Link className="nav-link" to="/dashboard/shop/promotion-slider">
+                  Promotion Slider
+                </Link>
               </nav>
             </div>
             {/* <Link

@@ -6,7 +6,7 @@ function ServiceCommite() {
   const fetchExellence = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8000/api//shop/exellence/published",
+        "http://localhost:8000/api/shop/exellence/published",
         {
           method: "GET",
           headers: {
