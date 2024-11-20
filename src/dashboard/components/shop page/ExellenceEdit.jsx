@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ExellenceEdit() {
   const [errors, setErrors] = useState({});
@@ -11,7 +11,7 @@ function ExellenceEdit() {
     image: "",
   });
   const { id } = useParams();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const fetchExellence = async () => {
     try {
       const response = await fetch(
@@ -42,7 +42,7 @@ function ExellenceEdit() {
     formData.append("image", values.image);
     try {
       const response = await fetch(
-        "http://localhost:8000/api/shop-exellence/edit",
+        "http://localhost:8000/api/shop-exellence/edit/" + id,
         {
           method: "POST",
           headers: {
@@ -63,6 +63,7 @@ function ExellenceEdit() {
           content: "",
           image: "",
         });
+        navigate("/dashboard/shop/exellence");
       }
     } catch (error) {
       console.error("Error creating banner:", error);
