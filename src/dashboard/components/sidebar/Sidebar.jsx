@@ -154,7 +154,65 @@ function Sidebar() {
                 <Link className="nav-link" to="/dashboard/faq">
                   View
                 </Link>
-                <Link className="nav-link" to="/dashboard/faq/options">Options</Link>
+                <Link className="nav-link" to="/dashboard/faq/options">
+                  Options
+                </Link>
+              </nav>
+            </div>
+            <Link
+              className="nav-link collapsed"
+              to="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseLayouts5"
+              aria-expanded="false"
+              aria-controls="collapseLayouts5"
+            >
+              <div className="sb-nav-link-icon">
+                <i className="fas fa-columns"></i>
+              </div>
+              Service Page
+              <div className="sb-sidenav-collapse-arrow">
+                <i className="fas fa-angle-down"></i>
+              </div>
+            </Link>
+            <div
+              className="collapse"
+              id="collapseLayouts5"
+              aria-labelledby="headingFive"
+              data-bs-parent="#sidenavAccordion"
+            >
+              <nav className="sb-sidenav-menu-nested nav">
+                <Link className="nav-link" to="/dashboard/service/article">
+                  Articles
+                </Link>
+              </nav>
+            </div>
+            <Link
+              className="nav-link collapsed"
+              to="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseLayouts6"
+              aria-expanded="false"
+              aria-controls="collapseLayouts6"
+            >
+              <div className="sb-nav-link-icon">
+                <i className="fas fa-columns"></i>
+              </div>
+              Shop Page
+              <div className="sb-sidenav-collapse-arrow">
+                <i className="fas fa-angle-down"></i>
+              </div>
+            </Link>
+            <div
+              className="collapse"
+              id="collapseLayouts6"
+              aria-labelledby="headingSix"
+              data-bs-parent="#sidenavAccordion"
+            >
+              <nav className="sb-sidenav-menu-nested nav">
+                <Link className="nav-link" to="/dashboard/shop/exellence">
+                  Exellence section
+                </Link>
               </nav>
             </div>
             {/* <Link
@@ -260,7 +318,9 @@ function Sidebar() {
               </div>
               Tables
             </Link> */}
-            <Link className="nav-link" onClick={handleLogout}>Logout</Link>
+            <Link className="nav-link" onClick={handleLogout}>
+              Logout
+            </Link>
           </div>
         </div>
         <div className="sb-sidenav-footer">

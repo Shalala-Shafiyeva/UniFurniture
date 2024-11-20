@@ -2,21 +2,22 @@ import React, { useEffect, useState } from "react";
 
 function Paralax() {
   const [paralax, setParalax] = useState([]);
+  const fetchParalax = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/about/paralax", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const result = await response.json();
+      setParalax(result);
+    } catch (err) {
+      console.log("Error: ", err);
+    }
+  };
   useEffect(() => {
-    const fetchParalax = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/about/paralax",
-          { method: "GET", headers: { "Content-Type": "application/json" } }
-        );
-        const result = await response.json();
-        setParalax(result);
-      } catch (err) {
-        console.log("Error: ", err);
-      }
-    };
     fetchParalax();
   }, []);
+
 
   return (
     <>

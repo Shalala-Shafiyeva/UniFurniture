@@ -32,7 +32,7 @@ function Articles() {
                 <span className="title">{article.title}</span>
                 <Link to="#">
                   <span>LEAR MORE</span>
-                  <img src="/images/home/Arrow 1.png" alt="Lear more" />
+                  <img src="/images/home/Arrow1.png" alt="Lear more" />
                 </Link>
               </div>
             </div>

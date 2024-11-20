@@ -70,6 +70,30 @@ const FAQ = lazy(() => import("./dashboard/components/faqs/FAQ"));
 const FAQEdit = lazy(() => import("./dashboard/components/faqs/FAQEdit"));
 const Option = lazy(() => import("./dashboard/components/faqs/Option"));
 const OptionEdit = lazy(() => import("./dashboard/components/faqs/OptionEdit"));
+// const Article = lazy(() =>
+//   import("./dashboard/components/service page/Article")
+// );
+// const ArticleEdit = lazy(() =>
+//   import("./dashboard/components/service page/ArticleEdit")
+// );
+// const ArticleTitleEdit = lazy(() =>
+//   import("./dashboard/components/service page/ArticleTitleEdit")
+// );
+const ServiceArticle = lazy(() =>
+  import("./dashboard/components/service page/Article")
+);
+const ServiceArticleEdit = lazy(() =>
+  import("./dashboard/components/service page/ArticleEdit")
+);
+const ServiceArticleTitleEdit = lazy(() =>
+  import("./dashboard/components/service page/ArticleTitleEdit")
+);
+const Exellence = lazy(() =>
+  import("./dashboard/components/shop page/Exellence")
+);
+const ExellenceEdit = lazy(() =>
+  import("./dashboard/components/shop page/ExellenceEdit")
+);
 
 function App() {
   return (
@@ -122,6 +146,20 @@ function App() {
         <Route path="/dashboard/faq/edit/:id" element={<FAQEdit />} />
         <Route path="/dashboard/faq/options" element={<Option />} />
         <Route path="/dashboard/faq/option/edit/:id" element={<OptionEdit />} />
+        <Route path="/dashboard/service/article" element={<ServiceArticle />} />
+        <Route
+          path="/dashboard/service/article/edit/:id"
+          element={<ServiceArticleEdit />}
+        />
+        <Route
+          path="/dashboard/service/article/title/edit/:id"
+          element={<ServiceArticleTitleEdit />}
+        />
+        <Route path="/dashboard/shop/exellence" element={<Exellence />} />
+        <Route
+          path="/dashboard/shop/exellence/edit/:id"
+          element={<ExellenceEdit />}
+        />
         <Route path="/dashboard/product" element={<Product />} />
         <Route path="/dashboard/product/edit/:id" element={<ProductEdit />} />
         <Route path="/dashboard/products" element={<ViewProducts />} />
