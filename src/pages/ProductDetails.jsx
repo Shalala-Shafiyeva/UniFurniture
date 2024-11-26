@@ -23,7 +23,6 @@ function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [similarProducts, setSimilarProducts] = useState([]);
-  const [reviews, setReviews] = useState(0);
   const fetchProduct = async (id) => {
     try {
       const response = await fetch(`http://localhost:8000/api/product/${id}`, {
@@ -33,7 +32,7 @@ function ProductDetails() {
         },
       });
       const result = await response.json();
-      response.status == 200 ? setProduct(result.data) : setProduct({});
+      response.status == 200 ? setProduct(result) : setProduct({});
     } catch (err) {
       console.log("Error fetching: ", err);
     }
@@ -51,36 +50,13 @@ function ProductDetails() {
         }
       );
       const result = await response.json();
-      setSimilarProducts(result?.data || []);
+      setSimilarProducts(result || []);
     } catch (err) {
       console.log("Error fetching: ", err);
     }
   };
 
   //Review
-  const fetchProductReviews = async (id) => {
-    try {
-      const response = await fetch(
-        `http://localhost:8000/api/product/${id}/reviews`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            // Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      const result = await response.json();
-      if (result.success == true) {
-        setReviews(result.data);
-      } else {
-        setReviews(0);
-      }
-    } catch (err) {
-      console.log("Error fetching: ", err);
-    }
-  };
-
   const addView = async (id) => {
     try {
       const response = await fetch(
@@ -101,12 +77,10 @@ function ProductDetails() {
   useEffect(() => {
     fetchProduct(id);
     fetchSimilarProducts();
-    fetchProductReviews(id);
     addView(id);
   }, [id]);
 
   if (!product) {
-    // return <div>Notfound</div>;
     return (
       <>
         <Helmet>
@@ -122,7 +96,7 @@ function ProductDetails() {
         <title>Product</title>
       </Helmet>
       <Header />
-      <Main product={product} reviews={reviews} />
+      <Main product={product}  />
       <ProductOverview product={product} />
       <SimilarProducts similarProducts={similarProducts} />
       <Footer />

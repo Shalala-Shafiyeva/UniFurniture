@@ -25,19 +25,19 @@ function ProductOverview({ product }) {
             <h3>Product Overview</h3>
             <div className="desc">
               <span>Description</span>
-              <p>{product.text}</p>
+              <p>{product?.data?.text}</p>
             </div>
             <div className="characteristics">
               <ul>
-                {product?.characteristics?.map((characteristic, index) => (
-                  <li key={characteristic.id}>
+                {product?.data?.characteristics?.map((characteristic, index) => (
+                  <li key={characteristic?.id}>
                     <div className="img">
                       <img
                         src="/images/productDetails/product1/Check.png"
                         alt="Check"
                       />
                     </div>
-                    <span>{characteristic.characteristic}</span>
+                    <span>{characteristic?.characteristic}</span>
                   </li>
                 ))}
               </ul>
@@ -55,7 +55,7 @@ function ProductOverview({ product }) {
               <ReactPlayer
                 controls={true}
                 // url="/images/productDetails/product1/videoproduct1.mp4"
-                url={`http://localhost:8000/storage/${product.video}`}
+                url={`http://localhost:8000/storage/${product?.data?.video}`}
                 playing={play}
                 width={"100%"}
                 height={"100%"}
@@ -74,7 +74,7 @@ function ProductOverview({ product }) {
               />
               <div
                 className={`overlay ${hidden ? "hidden" : ""}`}
-                style={{ backgroundImage: `url('http://localhost:8000/storage/${product.image}')`, 'backgroundColor': 'lightGrey' }}
+                style={{ backgroundImage: `url('http://localhost:8000/storage/${product?.data?.image}')`, 'backgroundColor': 'lightGrey' }}
                 // src="/images/productDetails/product1/mainImg.png"
               ></div>
             </div>

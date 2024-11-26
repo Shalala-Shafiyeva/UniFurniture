@@ -84,7 +84,7 @@ function CustomerInfo() {
   const handleOpenForm = () => {
     setOpenForm((prev) => !prev);
   };
-  
+
   const [totalPrice, setTotalPrice] = useState(0);
 
   const fetchCartProduct = async () => {
@@ -104,7 +104,7 @@ function CustomerInfo() {
   };
 
   useEffect(() => {
-    fetchCartProduct(); 
+    fetchCartProduct();
     fetchUserInfo();
   }, []);
 
@@ -119,12 +119,14 @@ function CustomerInfo() {
         <div className="info">
           <div className={`currentInfo ${openForm ? "hidden" : ""}`}>
             <div className="context">
-              <div className="img">
-                <img
-                  src={`http://localhost:8000/storage/${userInfo.profile}`}
-                  alt="User"
-                />
-              </div>
+              {userInfo.profile && (
+                <div className="img">
+                  <img
+                    src={`http://localhost:8000/storage/${userInfo?.profile}`}
+                    alt="User"
+                  />
+                </div>
+              )}
               <div className="nameEmail">
                 <span>
                   {userInfo.name} {userInfo.surname}

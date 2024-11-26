@@ -12,7 +12,7 @@ function Furnitures({
   fetchedProducts,
   handleFilterChange,
   filters,
-  setFilters
+  setFilters,
 }) {
   // const dispatch = useDispatch();
   // const cart = useSelector((state) => state.cart.cart);
@@ -204,7 +204,7 @@ function Furnitures({
       console.log("Error fetching: ", err);
     }
   };
-
+  console.log(fetchedProducts);
   return (
     <>
       {/* {fetchedProducts.length > 0 && ( */}
@@ -296,7 +296,7 @@ function Furnitures({
                 currentProducts?.map((product) => {
                   return (
                     <Link
-                      to={`/product/${product?.category?.name.toLowerCase()}/${
+                      to={`/product/${product?.category?.name?.toLowerCase()}/${
                         product?.id
                       }`}
                       className="productCard"

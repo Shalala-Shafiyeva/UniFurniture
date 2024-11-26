@@ -269,7 +269,7 @@
     }
 
     .mainDetails .linksCover {
-        gap: 0px;
+        gap: 5px;
     }
 
     .mainDetails .linksCover>a {

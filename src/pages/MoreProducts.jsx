@@ -115,7 +115,7 @@ function MoreProducts() {
         }
       );
       const result = await response.json();
-      setProducts(result.data);
+      setProducts(result);
     } catch (error) {
       console.error("Error fetching filtered products:", error);
     }

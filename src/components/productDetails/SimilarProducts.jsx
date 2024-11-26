@@ -34,14 +34,13 @@ function SimilarProducts({ similarProducts }) {
     const lastPostIndex = currentPage * productsPerPage;
     const firstPostIndex = lastPostIndex - productsPerPage;
     let products = [];
-    setHaveSimilar(similarProducts?.length > 0);
-    if (similarProducts?.length > 0) {
-      products = similarProducts?.slice(firstPostIndex, lastPostIndex);
-      setTotalPages(Math.ceil(similarProducts?.length / productsPerPage));
+    setHaveSimilar(similarProducts?.data?.length > 0);
+    if (similarProducts?.data?.length > 0) {
+      products = similarProducts?.data?.slice(firstPostIndex, lastPostIndex);
+      setTotalPages(Math.ceil(similarProducts?.data?.length / productsPerPage));
       setCurrentProducts(products);
     }
   }, [similarProducts, currentPage]);
-
   const paginate = () => {
     let pages = [];
     const firstPage = currentPage - 4 < 1 ? 1 : currentPage - 4;
@@ -76,45 +75,6 @@ function SimilarProducts({ similarProducts }) {
   };
 
   //rating system
-  const [averageRatings, setAverageRatings] = useState({});
-  const [reviews, setReviews] = useState({});
-  const fetchRatings = async () => {
-    const ratings = {};
-    for (const product of similarProducts) {
-      try {
-        const response = await fetch(
-          `http://localhost:8000/api/product/${product.id}/average-rating`
-        );
-        const result = await response.json();
-        ratings[product.id] = result.average_rating || 0;
-      } catch (error) {
-        console.error("Error fetching average rating:", error);
-      }
-    }
-    setAverageRatings(ratings);
-  };
-
-  const fetchReviews = async () => {
-    const productReviews = {};
-    for (const product of similarProducts) {
-      try {
-        const response = await fetch(
-          `http://localhost:8000/api/product/${product.id}/reviews`
-        );
-        const result = await response.json();
-        productReviews[product.id] = result.data || 0;
-      } catch (error) {
-        console.error("Error fetching review:", error);
-      }
-    }
-    setReviews(productReviews);
-  };
-
-  useEffect(() => {
-    fetchRatings();
-    fetchReviews();
-  }, [similarProducts]);
-
   const fullStar = "/images/star.png";
   const emptyStar = "/images/emptyStar.png";
 
@@ -131,19 +91,19 @@ function SimilarProducts({ similarProducts }) {
     }
     return stars;
   };
-
+ console.log(similarProducts)
   return (
     <section className="similarProducts">
       <div className="container">
         <span className="head">Compare similar Item</span>
         <div className="products">
           {haveSimilar ? (
-            currentProducts.map((similarProduct) => {
+            currentProducts.map((similarProduct, index) => {
               return (
-                <div className="product" key={similarProduct.id}>
+                <div className="product" key={similarProduct?.id}>
                   <Link
-                    to={`/product/${similarProduct.category.name.toLowerCase()}/${
-                      similarProduct.id
+                    to={`/product/${similarProduct?.category?.name.toLowerCase()}/${
+                      similarProduct?.id
                     }`}
                     onClick={() => {
                       dispatch(
@@ -157,30 +117,30 @@ function SimilarProducts({ similarProducts }) {
                   >
                     <div className="img">
                       <img
-                        src={`http://localhost:8000/storage/${similarProduct.image}`}
-                        alt={similarProduct.type}
+                        src={`http://localhost:8000/storage/${similarProduct?.image}`}
+                        alt={similarProduct?.type}
                       />
                     </div>
                     <div className="review">
                       <div className="stars">
-                        {renderStars(averageRatings[similarProduct.id] || 0)}
+                        {renderStars(similarProducts?.rating[index]?.[similarProduct?.id]?.original?.average_rating || 0)}
                         {/* <img src="/images/star.png" alt="star" />
                       <img src="/images/star.png" alt="star" />
                       <img src="/images/star.png" alt="star" />
                       <img src="/images/star.png" alt="star" />
                       <img src="/images/emptystar.png" alt="star" /> */}
                       </div>
-                      ({reviews[similarProduct.id]} reviews)
+                      ({similarProducts?.reviews?.[index]?.[similarProduct?.id]?.original?.data || 0} reviews)
                     </div>
-                    <span className="title">{similarProduct.name}</span>
+                    <span className="title">{similarProduct?.name}</span>
                     <div className="prices">
-                      <span>${similarProduct.price.toFixed(2)}</span>
-                      {similarProduct.discount > 0 && (
+                      <span>${similarProduct?.price.toFixed(2)}</span>
+                      {similarProduct?.discount > 0 && (
                         <span>
                           $
                           {(
-                            similarProduct.price *
-                            (1 - similarProduct.discount / 100)
+                            similarProduct?.price *
+                            (1 - similarProduct?.discount / 100)
                           ).toFixed(2)}
                         </span>
                       )}

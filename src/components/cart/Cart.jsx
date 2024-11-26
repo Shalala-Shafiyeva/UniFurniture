@@ -141,7 +141,7 @@ function Cart({ openBasket, setOpenBasket }) {
   useEffect(() => {
     fetchCartProduct();
     handleCartProductCount();
-  }, []);
+  }, [qty]);
 
   return (
     <section className={`cart ${!openBasket ? "closeCart" : ""}`}>

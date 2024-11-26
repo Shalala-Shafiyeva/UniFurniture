@@ -34,8 +34,8 @@ function FilteredProducts({ fetchedProducts }) {
     //   products = filteredProducts.slice(firstPostIndex, lastPostIndex);
     //   setTotalPages(Math.ceil(filteredProducts.length / productsPerPage));
     // } else {
-    products = fetchedProducts.slice(firstPostIndex, lastPostIndex);
-    setTotalPages(Math.ceil(fetchedProducts.length / productsPerPage));
+    products = fetchedProducts?.data?.slice(firstPostIndex, lastPostIndex);
+    setTotalPages(Math.ceil(fetchedProducts?.data?.length / productsPerPage));
     //}
 
     setCurrentProducts(products);
@@ -75,40 +75,6 @@ function FilteredProducts({ fetchedProducts }) {
   };
 
   //rating and review logic
-  const [averageRatings, setAverageRatings] = useState({});
-  const [reviews, setReviews] = useState({});
-  const fetchRatings = useCallback(async () => {
-    const ratings = {};
-    for (const product of fetchedProducts) {
-      try {
-        const response = await fetch(
-          `http://localhost:8000/api/product/${product.id}/average-rating`
-        );
-        const result = await response.json();
-        ratings[product.id] = result.average_rating || 0;
-      } catch (error) {
-        console.error("Error fetching average rating:", error);
-      }
-    }
-    setAverageRatings(ratings);
-  }, [fetchedProducts]);
-
-  const fetchReviews = useCallback(async () => {
-    const productReviews = {};
-    for (const product of fetchedProducts) {
-      try {
-        const response = await fetch(
-          `http://localhost:8000/api/product/${product.id}/reviews`
-        );
-        const result = await response.json();
-        productReviews[product.id] = result.data || 0;
-      } catch (error) {
-        console.error("Error fetching review:", error);
-      }
-    }
-    setReviews(productReviews);
-  }, [fetchedProducts]);
-
   const fullStar = "/images/star.png";
   const emptyStar = "/images/emptyStar.png";
 
@@ -126,27 +92,20 @@ function FilteredProducts({ fetchedProducts }) {
     return stars;
   };
 
-  useEffect(() => {
-    if (fetchedProducts && fetchedProducts.length > 0) {
-      fetchRatings();
-      fetchReviews();
-    }
-  }, [fetchedProducts]);
-
   return (
     <section className="filteredProducts">
       <div className="container">
         {
           // error ? (
-          !fetchedProducts.length ? (
+          !fetchedProducts?.data?.length ? (
             <div className="error">Sorry we don't have such product</div>
           ) : (
             <>
               <div className="products">
-                {currentProducts.map((product) => (
+                {currentProducts?.map((product, index) => (
                   <Link
                     className="product"
-                    to={`/product/${product?.category}/${product?.id}`}
+                    to={`/product/${product?.category?.name?.toLowerCase()}/${product?.id}`}
                     key={product?.id}
                     onClick={() => {
                       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -160,18 +119,18 @@ function FilteredProducts({ fetchedProducts }) {
                     </div>
                     <div className="details">
                       {product.discount > 0 && (
-                        <div className="sale">-{product.discount}%</div>
+                        <div className="sale">-{product?.discount}%</div>
                       )}
                       <div className="rating">
                         <div className="stars">
-                          {renderStars(averageRatings[product.id] || 0)}
+                          {renderStars(fetchedProducts?.rating[index]?.[product?.id]?.original?.average_rating || 0)}
                           {/* <img src="/images/star.png" alt="star" />
                         <img src="/images/star.png" alt="star" />
                         <img src="/images/star.png" alt="star" />
                         <img src="/images/star.png" alt="star" />
                         <img src="/images/emptystar.png" alt="star" /> */}
                         </div>
-                        <span>({reviews[product.id] || 0} reviews)</span>
+                        <span>({fetchedProducts?.reviews[index]?.[product?.id]?.original?.data || 0} reviews)</span>
                       </div>
                       <div className="title">{product.name}</div>
                       <div className="price">

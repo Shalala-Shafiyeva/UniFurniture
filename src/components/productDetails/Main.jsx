@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 
-function Main({ product, reviews }) {
+function Main({ product }) {
   let dispatch = useDispatch();
   const navigate = useNavigate();
   const { type, id } = useParams();
@@ -46,17 +46,17 @@ function Main({ product, reviews }) {
 
   //with Backend - start
   const [selectedImage, setSelectedImage] = useState(
-    `http://localhost:8000/storage/${product?.colors?.[colorIndex]?.color_images?.[0]?.image}`
+    `http://localhost:8000/storage/${product?.data?.colors[colorIndex]?.color_images?.[0]?.image}`
   );
 
   useEffect(() => {
     // Update the selected image whenever colorIndex changes
-    if (product?.colors?.[colorIndex]?.color_images?.length) {
+    if (product?.data?.colors[colorIndex]?.color_images?.length) {
       setSelectedImage(
-        `http://localhost:8000/storage/${product.colors[colorIndex].color_images[0].image}`
+        `http://localhost:8000/storage/${product?.data?.colors[colorIndex]?.color_images[0].image}`
       );
     }
-  }, [colorIndex, product]);
+  }, [colorIndex, product?.data]);
 
   const handleSmallImg = (e, img) => {
     setSelectedImage(`http://localhost:8000/storage/${img}`);
@@ -103,26 +103,6 @@ function Main({ product, reviews }) {
   };
 
   //rating sistemi
-  const [averageRating, setAverageRating] = useState(0);
-
-  const fetchAverageRating = async () => {
-    try {
-      const response = await fetch(
-        `http://localhost:8000/api/product/${id}/average-rating`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const result = await response.json();
-      setAverageRating(result.average_rating || 0);
-    } catch (error) {
-      console.error("Error fetching average rating:", error);
-    }
-  };
-
   const submitRating = async (rating) => {
     try {
       const response = await fetch(
@@ -137,16 +117,12 @@ function Main({ product, reviews }) {
         }
       );
       if (response.status == 200) {
-        fetchAverageRating();
+        // fetchAverageRating();
       }
     } catch (error) {
       console.error("Error submitting rating:", error);
     }
   };
-
-  useEffect(() => {
-    fetchAverageRating();
-  }, [id]);
 
   const fullStar = "/images/star.png";
   const emptyStar = "/images/emptyStar.png";
@@ -157,8 +133,8 @@ function Main({ product, reviews }) {
       stars.push(
         <img
           key={i}
-          src={i <= averageRating ? fullStar : emptyStar}
-          alt={`${i <= averageRating ? "Full" : "Empty"} Star`}
+          src={i <= Number(product?.rating?.original?.average_rating) ? fullStar : emptyStar}
+          alt={`${i <= Number(product?.rating?.original?.average_rating) ? "Full" : "Empty"} Star`}
           onClick={() => submitRating(i)}
           style={{ cursor: "pointer" }}
         />
@@ -230,12 +206,12 @@ function Main({ product, reviews }) {
               <img src="/images/chevron-left.png" alt="Icon" />
             </span>
             <Link to="#" className="active">
-              {/* {product.map((prod) => prod.type)} */}
+              {/* {product?.data?.map((prod) => prod.type)} */}
             </Link>
           </div>
         </div>
         <div className="desktopMode">
-          <div className="wrapper" key={product.id}>
+          <div className="wrapper" key={product?.data?.id}>
             <div className="imgDetails">
               <div className="imgs">
                 <div className="mainImg">
@@ -256,9 +232,9 @@ function Main({ product, reviews }) {
                   ))}
                 </div> */}
                 {/* with backend */}
-                {product?.colors && (
+                {product?.data?.colors && (
                   <div className="smallImgs">
-                    {product?.colors[colorIndex]?.color_images?.map(
+                    {product?.data?.colors[colorIndex]?.color_images?.map(
                       (img, index) => (
                         <div
                           className="img"
@@ -279,12 +255,13 @@ function Main({ product, reviews }) {
               </div>
             </div>
             <div className="descDetails">
-              <span className="fullTitle">{product?.full_title}</span>
+              <span className="fullTitle">{product?.data?.full_title}</span>
               <div className="rating">
-                {renderStars()} ({reviews} Reviews)
+                {renderStars()} ({product?.reviews?.original?.data || 0}{" "}
+                Reviews)
               </div>
-              <span className="price">${product?.price?.toFixed(2)}</span>
-              <p className="desc">{product?.description}</p>
+              <span className="price">${product?.data?.price?.toFixed(2)}</span>
+              <p className="desc">{product?.data?.description}</p>
               <div className="chooseColor">
                 <div className="currentColor">
                   <div className="img">
@@ -294,15 +271,17 @@ function Main({ product, reviews }) {
                       alt="Product"
                     /> */}
                     {/* with backend */}
-                    {/* <img
-                      src={`http://localhost:8000/storage/${product?.colors[0]?.color_images[0]?.image}`}
-                      alt="Product"
-                    /> */}
+                    {product?.data?.colors && (
+                      <img
+                        src={`http://localhost:8000/storage/${product?.data?.colors[0]?.color_images[0]?.image}`}
+                        alt="Product"
+                      />
+                    )}
                   </div>
                   {/* without backend 
                   <span>{product.colorImgs[colorIndex].colorName}</span> */}
                   {/* with backend */}
-                  {/* <span>{product?.colors[0]?.name}</span> */}
+                  <span>{product?.data?.colors[0]?.name}</span>
                 </div>
                 <div className="canChoose">
                   {/* without backend
@@ -311,10 +290,10 @@ function Main({ product, reviews }) {
                     {product.colorImgs[colorIndex].colorName}
                   </span> */}
                   {/* with backend */}
-                  {/* <span>
+                  <span>
                     Select Upholstery Colour:{" "}
-                    {product?.colors[colorIndex]?.name}
-                  </span> */}
+                    {product?.data?.colors[colorIndex]?.name}
+                  </span>
                   <div className="colors">
                     {/* without backend 
                     {product.colorImgs.map((color, index) => (
@@ -328,7 +307,7 @@ function Main({ product, reviews }) {
                       </div>
                     ))} */}
                     {/* with backend */}
-                    {product?.colors?.map((color, index) => (
+                    {product?.data?.colors?.map((color, index) => (
                       <div
                         key={color?.id}
                         className="img"
@@ -355,7 +334,10 @@ function Main({ product, reviews }) {
                     <span
                       className="plus"
                       onClick={() =>
-                        increaseQty(product.stock, product.hasStock)
+                        increaseQty(
+                          product?.data?.stock,
+                          product?.data?.hasStock
+                        )
                       }
                     >
                       +
@@ -363,13 +345,18 @@ function Main({ product, reviews }) {
                   </div>
                 </div>
                 <button
-                  disabled={!product.stock}
+                  disabled={!product?.data?.stock}
                   onClick={() => {
                     //without backend
                     // handleAddToCart();
                     //with backend
                     localStorage.getItem("token")
-                      ? addProductToCart(product.id, product?.colors[colorIndex]?.name, product?.colors[colorIndex]?.color_images[0]?.image)
+                      ? addProductToCart(
+                          product?.data?.id,
+                          product?.data?.colors[colorIndex]?.name,
+                          product?.data?.colors[colorIndex]?.color_images[0]
+                            ?.image
+                        )
                       : navigate("/login");
                   }}
                   className="addToCart"
@@ -382,11 +369,11 @@ function Main({ product, reviews }) {
                 </button>
               </div>
               <span className="garranty">
-                {product.garranty
-                  ? `Warranty Length ${product.garranty} Year`
+                {product?.data?.garranty
+                  ? `Warranty Length ${product?.data?.garranty} Year`
                   : "This product doesn't have warranty"}
               </span>
-              {!product.hasStock ? (
+              {!product?.data?.hasStock ? (
                 <p className="outOfStock">
                   Sorry, but this product is out of stock
                 </p>
@@ -395,7 +382,7 @@ function Main({ product, reviews }) {
           </div>
         </div>
         <div className="mobileMode">
-          <div className="wrapper" key={product.id}>
+          <div className="wrapper" key={product?.data?.id}>
             <div className="imgDetails">
               <div className="chooseColor">
                 {/* without backend 
@@ -411,17 +398,20 @@ function Main({ product, reviews }) {
                   </div>
                 ))} */}
                 {/* with backend */}
-                {/* {product.colors.map((color, index) => (
+                {product?.data?.colors.map((color, index) => (
                   <div className="canChoose" key={color.id}>
                     <div
                       className={`img ${colorIndex == index ? "active" : ""}`}
                       onClick={() => handleColorChange(index)}
                     >
-                      <img src={`http://localhost:8000/storage/${color?.color_images[0]?.image}`} alt="Product" />
+                      <img
+                        src={`http://localhost:8000/storage/${color?.color_images[0]?.image}`}
+                        alt="Product"
+                      />
                     </div>
                     <span className="colorName">{color.colorName}</span>
                   </div>
-                ))} */}
+                ))}
               </div>
               <div className="mainImg">
                 <div className="bigImg">
@@ -432,9 +422,9 @@ function Main({ product, reviews }) {
                   <img src={product.image} alt="Product image" />
                   */}
                   {/* with backend */}
-                  {/* <div className="chosedColor">
-                    Select Upholstery: {product.colors[colorIndex].name}
-                  </div> */}
+                  <div className="chosedColor">
+                    Select Upholstery: {product?.data?.colors[colorIndex].name}
+                  </div>
                   <img src={selectedImage} alt="Product image" />
                 </div>
                 <div className="smallImgs">
@@ -451,40 +441,42 @@ function Main({ product, reviews }) {
                     </div>
                   ))} */}
                   {/* with backend */}
-                  {/* {product?.colors[colorIndex]?.color_images?.map((img) => (
-                    <div
-                      className="img"
-                      key={img.id}
-                      onClick={(e) => {
-                        handleSmallImg(e, img.image);
-                      }}
-                    >
-                      <img
-                        src={`http://localhost:8000/storage/${img.image}`}
-                        alt="Product image"
-                      />
-                    </div>
-                  ))} */}
+                  {product?.data?.colors &&
+                    product?.data?.colors[colorIndex]?.color_images?.map((img) => (
+                      <div
+                        className="img"
+                        key={img.id}
+                        onClick={(e) => {
+                          handleSmallImg(e, img.image);
+                        }}
+                      >
+                        <img
+                          src={`http://localhost:8000/storage/${img.image}`}
+                          alt="Product image"
+                        />
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
             <div className="descDetails">
-              <span className="fullTitle">{product?.full_title}</span>
-              {!product?.hasStock ? (
+              <span className="fullTitle">{product?.data?.full_title}</span>
+              {!product?.data?.hasStock ? (
                 <p className="outOfStock">
                   Sorry, but this product is out of stock
                 </p>
               ) : null}
               <span className="rating">
-                {renderStars()} ({reviews} reviews)
+                {renderStars()} ({product?.reviews?.original?.data || 0}{" "}
+                reviews)
               </span>
-              {/* <span className="price">${product?.price.toFixed(2)}</span> */}
+              <span className="price">${product?.data?.price.toFixed(2)}</span>
               <span className="garranty">
-                {product.garranty
-                  ? `Warranty Length ${product?.garranty} Year`
+                {product?.data?.garranty
+                  ? `Warranty Length ${product?.data?.garranty} Year`
                   : "This product doesn't have warranty"}
               </span>
-              <p className="desc">{product?.description}</p>
+              <p className="desc">{product?.data?.description}</p>
               <div className="qtyAndAddToCart">
                 <div className="quantity">
                   <span>QTY</span>
@@ -496,14 +488,17 @@ function Main({ product, reviews }) {
                     <span
                       className="plus"
                       onClick={() => {
-                        increaseQty(product.stock, product.hasStock);
+                        increaseQty(
+                          product?.data?.stock,
+                          product?.data?.hasStock
+                        );
                       }}
                     >
                       +
                     </span>
                   </div>
                 </div>
-                {!product.hasStock ? (
+                {!product?.data?.hasStock ? (
                   <button disabled="disabled" className="addToCart">
                     <span>ADD TO CART</span>
                     <img
@@ -532,7 +527,7 @@ function Main({ product, reviews }) {
                       //)
                       //with backend
                       localStorage.getItem("token")
-                        ? addProductToCart(product.id)
+                        ? addProductToCart(product?.data?.id)
                         : navigate("/login");
                     }}
                   >
