@@ -9,9 +9,8 @@ function Impact() {
           <div className="left">
             <span className="middleTxt">We have impactful numbers</span>
             <span className="smallGrey">
-              Risus elementum fringilla scelerisque varius facilisi aliquam
-              molestie porttitor egestas consequat ut fringilla velit molestie
-              quis vel.
+            Our success is reflected in the numbers we achieve. With impressive growth and proven results, 
+            we continue to make a significant impact in the industry and beyond.
             </span>
           </div>
           <div className="right">

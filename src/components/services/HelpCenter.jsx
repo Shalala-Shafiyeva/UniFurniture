@@ -7,8 +7,8 @@ function HelpCenter() {
         <div className="context">
           <h3>Help Center</h3>
           <p>
-            Sed viverra ipsum nunc aliquet bibendum enim gravida amet risun
-            nulla eget felis nunc bibendum at varius vel.
+          If you have any questions or need assistance, our Help Center is here to provide the support you need. 
+          Browse through our frequently asked questions or contact our support team for further help.
           </p>
         </div>
         <div className="inp">

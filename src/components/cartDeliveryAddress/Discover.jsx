@@ -10,8 +10,9 @@ function Discover() {
             Discover the <span>best furnitures</span>
           </h3>
           <span>
-            Lorem Ipsum is simply dummy text of the printing and typr set
-            industry. printing and lorem Ipsum dummy text.
+          Explore a wide range of premium furniture designed to bring style,
+           comfort, and functionality to your space. 
+          Transform your home or office with pieces crafted to suit your unique taste and needs.
           </span>
           <Link to="/login">Get Started</Link>
         </div>

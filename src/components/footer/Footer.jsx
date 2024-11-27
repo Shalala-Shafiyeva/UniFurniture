@@ -11,9 +11,9 @@ function Footer() {
             <div className="left">
               <span>Startply</span>
               <p>
-                Lorem ipsum Dolor Sit amet, Consectetur Adipiscing Elit, Sed Do
-                Eusmod Tempor Incididunt Ut Labore Et Dolore Magna Alique Ad
-                Minim
+              Startply is your trusted partner in delivering innovative solutions tailored to your needs.
+               We strive to provide 
+              exceptional quality and unmatched expertise to help you achieve your goals effortlessly.
               </p>
               <div className="sosialMedia">
                 <Link to="https://www.facebook.com/">

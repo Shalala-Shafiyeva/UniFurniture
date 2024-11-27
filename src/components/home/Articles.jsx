@@ -10,9 +10,11 @@ function Articles() {
           <div className="txt">
             <h3 className="middleTxt">We are next gen banking experience</h3>
             <p>
-              Risus elementum fringilla scelerisque varius facilisi aliquam
-              molestie porttitor egestas consequat ut fringilla velit molestie
-              quis vel.
+            We offer an innovative banking experience 
+            that simplifies financial management. 
+            Our advanced solutions are designed to 
+            meet the needs of today’s fast-paced world,
+             providing convenience and security at every step.
             </p>
           </div>
           <div className="btns">

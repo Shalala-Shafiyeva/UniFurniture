@@ -22,9 +22,8 @@ function ShoppingHero({
               Every <span className="orange">Furniture</span> has a beautiful
               story
             </h2>
-            <p>
-              Lectus commodo aenean quis molestie ultricies nunc viverra
-              eleifend non viverra amet dictum massa consequat mattis.
+            <p>  Every piece of furniture we offer has its own unique history and craftsmanship. From timeless 
+              designs to modern styles, each item tells a story that brings warmth and character to your home.
             </p>
           </div>
         </div>

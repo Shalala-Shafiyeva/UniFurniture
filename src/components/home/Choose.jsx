@@ -11,8 +11,8 @@ function Choose() {
           <div className="content">
             <span>We have more than 20 years of experienc</span>
             <span>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit c tortor
-              nunc aliquam consectetur.
+            With over two decades of expertise, we are committed to delivering exceptional services.
+             Our knowledge and experience empower us to provide the best solutions tailored to your needs.
             </span>
           </div>
         </div>

@@ -66,8 +66,8 @@ function QuestionsAccordion() {
                 ))}
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit
-                consectetur tortor nunc aliquam consectetur semper augue at.
+              Here you will find answers to the most frequently asked questions.
+               If you can't find the information you're looking for, feel free to reach out to us!
               </p>
               <div className="accordion">
                 {options

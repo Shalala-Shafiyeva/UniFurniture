@@ -6,8 +6,8 @@ function Newletter() {
       <div className="container">
         <div className="title">Subscribe to our newsletter</div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisc elit viverra dignissim
-          pellenteque in ac.
+        Stay updated with the latest news, insights, and exclusive
+         offers by subscribing to our newsletter. Join our community and never miss an update!
         </p>
         <div className="bottom">
             <input type="email" placeholder="Enter your email" />

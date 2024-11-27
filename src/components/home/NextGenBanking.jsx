@@ -8,29 +8,28 @@ function NextGenBanking() {
       <div className="container">
         <div className="cover">
           <div className="diagram">
-            <h5 className="middleTxt">
-              We are the next gen banking experience
-            </h5>
-            <span className="smallGrey">
-              Risus elementum fringilla scelerisque varius facilisi aliquam
-              molestie porttitor egestas consequat ut fringilla velit molestie
-              quis vel.
-            </span>
-            <div className="imgDiagram">
-              <img src="/images/home/diagram.png" alt="Diagram" />
-              <span className="smallGrey">Earning & expense reports</span>
-            </div>
-            <div className="imgCripto">
-              <img src="/images/home/cripto.png" alt="Crypto" />
-              <span>Cryptocurrencies supported</span>
-            </div>
-            <div className="imgSupport">
-              <img src="/images/home/classsupport.png" alt="Image" />
-              <span>World-class support</span>
-              <span>
-                Ingelit consectetur tortor nunc aliquam consectetur semper augue
-                at
-              </span>
+          <h5 className="middleTxt">
+  We are the next-gen banking experience
+</h5>
+<span className="smallGrey">
+  We offer a seamless and innovative banking solution designed to simplify financial management and empower 
+  your financial journey.
+</span>
+<div className="imgDiagram">
+  <img src="/images/home/diagram.png" alt="Diagram" />
+  <span className="smallGrey">Earning & Expense Reports</span>
+</div>
+<div className="imgCripto">
+  <img src="/images/home/cripto.png" alt="Crypto" />
+  <span>Cryptocurrencies Supported</span>
+</div>
+<div className="imgSupport">
+  <img src="/images/home/classsupport.png" alt="Image" />
+  <span>World-Class Support</span>
+  <span>
+    Access expert support anytime, anywhere, with dedicated customer service to address your needs.
+  </span>
+
             </div>
           </div>
           <div className="right">
