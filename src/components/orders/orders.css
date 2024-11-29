@@ -25,6 +25,28 @@
  color: #FF914D;
 }
 
+.order .accordionItem span button{
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 10px;
+    background: #ead2ae;
+    color: #ad4b0f;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+    border: none;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+
+.order .accordionItem span button:hover{
+    background-color: #ad4b0f;
+    color: #ead2ae;
+}
+
 .order .error{
     font-size: 30px;
 }

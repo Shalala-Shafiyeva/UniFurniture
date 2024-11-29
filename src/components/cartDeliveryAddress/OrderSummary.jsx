@@ -36,11 +36,13 @@ function OrderSummary({ activateBtn }) {
       const result = await response.json();
       setProducts(result.data || []);
       setTotal(result.totalPrice || 0);
-      setTotalDiscount(products?.reduce((acc, current) => acc + (Number(current?.product?.price) * Number(current?.product?.discount)) / 100, 0) || 0);
+      setTotalDiscount(result.data?.reduce((acc, current) => acc + (Number(current?.product?.price) * Number(current?.product?.discount) * Number(current?.qty)) / 100, 0) || 0);
     } catch (error) {
       console.log("Error fetching: ", error);
     }
   };
+
+  
 
   const handleCartProductCount = async () => {
     try {
@@ -65,10 +67,6 @@ function OrderSummary({ activateBtn }) {
     fetchCartProduct();
     handleCartProductCount();
   }, []);
-
-  console.log(products);
-  console.log(total);
-  console.log(qty);
 
   return (
     <div className="orderSum">
@@ -113,7 +111,7 @@ function OrderSummary({ activateBtn }) {
       <div className="total">
         <span>Total</span>
         {/* <span>${parseFloat((totalPrice - totalDiscount - 20).toFixed(2))}</span> */}
-        <span>${total.toFixed(2) || 0}</span>
+        <span>${(total - totalDiscount).toFixed(2) || 0}</span>
       </div>
       <button disabled={activateBtn}>
         <Link

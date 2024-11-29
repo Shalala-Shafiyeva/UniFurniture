@@ -31,9 +31,9 @@ function TrendFurnitures() {
             loop={true}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
           >
-            {randormProducts.map((product) => {
+            {randormProducts.map((product, index) => {
               return (
-                <SwiperSlide className="wrapper">
+                <SwiperSlide className="wrapper" key={index}>
                   <Link to={`/product/${product.type}/${product.id}`}>
                     <div className="img">
                       <img src={product.img} alt="Product image" />

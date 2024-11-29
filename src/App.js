@@ -47,6 +47,9 @@ const AboutNumberTitleEdit = lazy(() =>
 const AboutNumberSubtitleEdit = lazy(() =>
   import("./dashboard/components/about page/AboutNumberSubtitleEdit")
 );
+const DashboardOrders = lazy(() =>
+  import("./dashboard/components/orders page/DashboardOrders")
+);
 const Product = lazy(() => import("./dashboard/components/products/Product"));
 const ProductEdit = lazy(() =>
   import("./dashboard/components/products/ProductEdit")
@@ -147,6 +150,7 @@ function App() {
           path="/dashboard/about/number/subtitle/edit/:id"
           element={<AboutNumberSubtitleEdit />}
         />
+        <Route path="/dashboard/orders" element={<DashboardOrders />} />
         <Route path="/dashboard/about/gallery" element={<Gallery />} />
         <Route path="/dashboard/faq" element={<FAQ />} />
         <Route path="/dashboard/faq/edit/:id" element={<FAQEdit />} />

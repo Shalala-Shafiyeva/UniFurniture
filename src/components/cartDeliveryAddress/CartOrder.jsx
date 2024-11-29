@@ -24,6 +24,8 @@ function CartOrder() {
   const [products, setProducts] = useState([]);
   const [qty, setQty] = useState(0);
   const [total, setTotal] = useState(0);
+  const [averageRatings, setAverageRatings] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const fetchCartProduct = async () => {
     try {
       const response = await fetch("http://localhost:8000/api/basket/index", {
@@ -36,6 +38,9 @@ function CartOrder() {
       const result = await response.json();
       setProducts(result.data || []);
       setTotal(result.totalPrice || 0);
+      setAverageRatings(result.rating || []);
+      setReviews(result.reviews || []);
+      console.log(result);
     } catch (error) {
       console.log("Error fetching: ", error);
     }
@@ -145,44 +150,7 @@ function CartOrder() {
     handleCartProductCount();
   }, []);
 
-  //rating system
-  const [averageRatings, setAverageRatings] = useState({});
-  const [reviews, setReviews] = useState({});
-  const fetchRatings = async () => {
-    const ratings = {};
-    for (const product of products) {
-      try {
-        const response = await fetch(
-          `http://localhost:8000/api/product/${product.id}/average-rating`
-        );
-        const result = await response.json();
-        ratings[product.id] = result.average_rating || 0;
-      } catch (error) {
-        console.error("Error fetching average rating:", error);
-      }
-    }
-    setAverageRatings(ratings);
-  };
-
-  const fetchReviews = async () => {
-    const productReviews = {};
-    for (const product of products) {
-      try {
-        const response = await fetch(
-          `http://localhost:8000/api/product/${product.id}/reviews`
-        );
-        const result = await response.json();
-        productReviews[product.id] = result.data || 0;
-      } catch (error) {
-        console.error("Error fetching review:", error);
-      }
-    }
-    setReviews(productReviews);
-  };
-
   useEffect(() => {
-    fetchRatings();
-    fetchReviews();
     handleShippingDate();
   }, [products]);
 
@@ -272,7 +240,6 @@ function CartOrder() {
     }
   };
 
-
   return (
     <div className="cartOrder">
       <Toaster position="top-center" />
@@ -283,14 +250,16 @@ function CartOrder() {
             {/* {cart.length} {cart.length > 1 ? "items" : "item"} */}
             {qty} {qty > 1 ? "items" : "item"}
           </span>
-          <button
-            // disabled={cart.length === 0}
-            disabled={qty === 0}
-            onClick={handleOpen}
-            className="change"
-          >
-            Change
-          </button>
+          {qty.length > 0 && (
+            <button
+              // disabled={cart.length === 0}
+              disabled={qty === 0}
+              onClick={handleOpen}
+              className="change"
+            >
+              Change
+            </button>
+          )}
         </div>
       </div>
       <div className={`openOrder ${open ? "visible" : "hidden"}`}>
@@ -306,8 +275,8 @@ function CartOrder() {
             <img src="/images/close.png" alt="Close" />
           </div>
           {products.length > 0 &&
-            products?.map((product) => (
-              <div className="product" key={product.product_id}>
+            products?.map((product, index) => (
+              <div className="product" key={index}>
                 <div className="img">
                   <img
                     src={`http://localhost:8000/storage/${product?.color_image}`}
@@ -323,11 +292,15 @@ function CartOrder() {
                     <span className="price">
                       $ {product?.product?.price.toFixed(2)}
                     </span>
-                    <div className="shipping">Ship on {handleWeekDay(shippingDate[product?.product_id])}, {todayDayNumber + shippingDate[product?.product_id]} {handleMonth()}</div>
+                    <div className="shipping">
+                      Ship on {handleWeekDay(shippingDate[product?.product_id])}
+                      , {todayDayNumber + shippingDate[product?.product_id]}{" "}
+                      {handleMonth()}
+                    </div>
                   </div>
                   <div className="rating">
                     <div className="stars">
-                      {renderStars(averageRatings[product?.product_id] || 0)}
+                    {renderStars(averageRatings[index]?.[product?.product_id]?.original?.average_rating || 0)}
                       {/* <img src="/images/star.png" alt="Star" />
                       <img src="/images/star.png" alt="Star" />
                       <img src="/images/star.png" alt="Star" />
@@ -335,7 +308,7 @@ function CartOrder() {
                       <img src="/images/star.png" alt="Star" /> */}
                     </div>
                     <span className="review">
-                      {reviews[product?.product_id] || 0} Reviews
+                    {reviews[index]?.[product?.product_id]?.original?.data || 0} Reviews
                     </span>
                   </div>
                   <div className="bottom">

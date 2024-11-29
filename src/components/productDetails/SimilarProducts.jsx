@@ -130,7 +130,7 @@ function SimilarProducts({ similarProducts }) {
                       <img src="/images/star.png" alt="star" />
                       <img src="/images/emptystar.png" alt="star" /> */}
                       </div>
-                      ({similarProducts?.reviews?.[index]?.[similarProduct?.id]?.original?.data || 0} reviews)
+                      ({similarProducts?.reviews[index]?.[similarProduct?.id]?.original?.data || 0} reviews)
                     </div>
                     <span className="title">{similarProduct?.name}</span>
                     <div className="prices">

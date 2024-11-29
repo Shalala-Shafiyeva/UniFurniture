@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 function Order() {
   const [orders, setOrders] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
   const [activeItem, setActiveItem] = useState(null);
   function toggleAccordion(itemId) {
     setActiveItem((prev) => (prev === itemId ? null : itemId));
@@ -16,13 +15,36 @@ function Order() {
     });
 
     const result = await response.json();
-    result.success ? setOrders(result.data) : setErrorMessage(result.message);
+    if (response.status == 200) {
+      setOrders(result.data.filter((order) => order.status !== "CANCELED"));
+    }
   };
 
   useEffect(() => {
     fetchedOrders();
   }, []);
-  console.log(orders);
+
+  const handleCancelled = async (id) => {
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/order/cancel/" + id,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const result = await response.json();
+      if (result.success) {
+        fetchedOrders();
+      }
+    } catch (error) {
+      console.log("Orders fetching error: ", error);
+    }
+  };
+
   return (
     <section className="order">
       <div className="container">
@@ -30,10 +52,11 @@ function Order() {
           <h3 className="title">
             My <span>Orders</span>
           </h3>
-          {errorMessage ? (
-            <p className="error">{errorMessage}</p>
+          {orders.length === 0 ? (
+            <p className="error">No order found</p>
           ) : (
             <div className="order-cover">
+              <h3>Total: {orders[0]?.total.toFixed(2)}</h3>
               <div class="accordion" id="accordionExample">
                 {orders?.map((order) => {
                   return (
@@ -48,7 +71,12 @@ function Order() {
                     >
                       <img src="/images/home/accordion.png" alt="Open icon" />
                       <span>
-                        {order?.uid} {order?.created_at}
+                        {order?.uid} {order?.created_at} Status: {order?.status}{" "}
+                        {order?.status === "PENDING" && (
+                          <button onClick={() => handleCancelled(order?.id)}>
+                            CANCEL
+                          </button>
+                        )}
                       </span>
                       {order?.order_detail?.map((products) => {
                         return (
@@ -61,10 +89,13 @@ function Order() {
                             </div>
                             <div className="description">
                               <p>Title: {products?.product?.name}</p>
-                              <p>Price: ${products?.product?.price.toFixed(2)}</p>
+                              <p>
+                                Price: ${products?.product?.price.toFixed(2)}
+                              </p>
                               <p>Qty: {products?.quantity}</p>
                               <p>Payment type: {order?.payment_type}</p>
                               <p>Delivery Address: {order?.address}</p>
+                              <p>Total: ${products?.total.toFixed(2)}</p>
                             </div>
                           </p>
                         );

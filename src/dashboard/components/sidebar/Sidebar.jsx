@@ -213,8 +213,39 @@ function Sidebar() {
                 <Link className="nav-link" to="/dashboard/shop/exellence">
                   Exellence section
                 </Link>
-                <Link className="nav-link" to="/dashboard/shop/promotion-slider">
+                <Link
+                  className="nav-link"
+                  to="/dashboard/shop/promotion-slider"
+                >
                   Promotion Slider
+                </Link>
+              </nav>
+            </div>
+            <Link
+              className="nav-link collapsed"
+              to="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseLayouts7"
+              aria-expanded="false"
+              aria-controls="collapseLayouts7"
+            >
+              <div className="sb-nav-link-icon">
+                <i className="fas fa-columns"></i>
+              </div>
+              Orders Page
+              <div className="sb-sidenav-collapse-arrow">
+                <i className="fas fa-angle-down"></i>
+              </div>
+            </Link>
+            <div
+              className="collapse"
+              id="collapseLayouts7"
+              aria-labelledby="headingSeven"
+              data-bs-parent="#sidenavAccordion"
+            >
+              <nav className="sb-sidenav-menu-nested nav">
+                <Link className="nav-link" to="/dashboard/orders">
+                  View
                 </Link>
               </nav>
             </div>

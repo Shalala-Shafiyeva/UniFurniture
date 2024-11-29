@@ -10,6 +10,7 @@ import {
   removeFromCart,
 } from "../../slices/cartSlice";
 import toast, { Toaster } from "react-hot-toast";
+import { useQuery } from "react-query";
 
 function Cart({ openBasket, setOpenBasket }) {
   let cart = useSelector((state) => state.cart.cart);
@@ -19,10 +20,10 @@ function Cart({ openBasket, setOpenBasket }) {
   };
 
   //basket with backend
-  const [products, setProducts] = useState([]);
   const [qty, setQty] = useState(0);
   const [total, setTotal] = useState(0);
-  const fetchCartProduct = async () => {
+  
+  const fetchCartProduct =useQuery("cartProducts", async () => {
     try {
       const response = await fetch("http://localhost:8000/api/basket/index", {
         method: "GET",
@@ -32,12 +33,13 @@ function Cart({ openBasket, setOpenBasket }) {
         },
       });
       const result = await response.json();
-      setProducts(result.data || []);
+      // setProducts(result.data || []);
       setTotal(result.totalPrice || 0);
     } catch (error) {
       console.log("Error fetching: ", error);
     }
-  };
+  });
+  const products= fetchCartProduct.data || [];
 
   const handleCartProductCount = async () => {
     try {
@@ -139,7 +141,7 @@ function Cart({ openBasket, setOpenBasket }) {
   };
 
   useEffect(() => {
-    fetchCartProduct();
+    // fetchCartProduct();
     handleCartProductCount();
   }, [qty]);
 

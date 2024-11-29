@@ -36,6 +36,14 @@
         line-height: 22px;
     }
 
+    .order .accordionItem span button{
+        padding: 5px 10px;
+        gap: 5px;
+        font-size: 10px;
+        line-height: normal;
+        border-radius: 4px;
+    }
+
     .order .accordionItem p {
         font-size: 14px;
         line-height: 20px;
@@ -54,6 +62,10 @@
 
     .order .container{
         gap: 20px;
+    }
+
+    .order .title{
+        font-size: 20px;
     }
 
     .order .accordion {

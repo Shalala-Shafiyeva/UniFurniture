@@ -14,10 +14,10 @@
 .helpCenter .container {
     width: 41%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 70px;
     height: 100% !important;
-    margin-top: 96px;
 }
 
 .helpCenter .context {
