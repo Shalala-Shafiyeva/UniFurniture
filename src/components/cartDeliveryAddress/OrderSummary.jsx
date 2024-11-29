@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function OrderSummary({ activateBtn }) {
-  const [products, setProducts] = useState([]);
-  const [qty, setQty] = useState(0);
-  const [total, setTotal] = useState(0);
   const cart = useSelector((state) => state.cart.cart);
   const [freeDelivery, setFreenDelivery] = useState(true);
   const [orderAbove, setOrderAbove] = useState(false);
@@ -18,55 +16,52 @@ function OrderSummary({ activateBtn }) {
   // const totalDiscount =
   //   (totalPrice * cart.reduce((acc, current) => acc + current.discount, 0)) /
   //   100;
-  const [totalDiscount, setTotalDiscount] = useState(0);
   const handleActive = () => {
     setFreenDelivery((prev) => !prev);
     setOrderAbove((prev) => !prev);
   };
 
-  const fetchCartProduct = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/api/basket/index", {
+  // Fetch discount of products in the cart
+  const { data: totalDiscount = 0 } = useQuery("totalDiscount", async () => {
+    const response = await fetch("http://localhost:8000/api/basket/index", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const result = await response.json();
+    return result.totalDiscount || 0;
+  });
+
+  // Fetch count of products in the cart
+  const { data: count = 0 } = useQuery("cartCount", async () => {
+    const response = await fetch(
+      "http://localhost:8000/api/basket/productQty",
+      {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-      });
-      const result = await response.json();
-      setProducts(result.data || []);
-      setTotal(result.totalPrice || 0);
-      setTotalDiscount(result.data?.reduce((acc, current) => acc + (Number(current?.product?.price) * Number(current?.product?.discount) * Number(current?.qty)) / 100, 0) || 0);
-    } catch (error) {
-      console.log("Error fetching: ", error);
-    }
-  };
+      }
+    );
+    const result = await response.json();
+    return result.data || 0;
+  });
 
-  
-
-  const handleCartProductCount = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:8000/api/basket/productQty",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      const result = await response.json();
-      setQty(result.data || 0);
-    } catch (error) {
-      console.log("Error fetching: ", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchCartProduct();
-    handleCartProductCount();
-  }, []);
+  // Fetch total price
+  const { data: total = 0 } = useQuery("cartTotal", async () => {
+    const response = await fetch("http://localhost:8000/api/basket/index", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const result = await response.json();
+    return result.totalPrice || 0;
+  });
 
   return (
     <div className="orderSum">
@@ -75,7 +70,7 @@ function OrderSummary({ activateBtn }) {
         <li>
           <span>Total Item</span>
           {/* <span>{totalAmount}</span> */}
-          <span>{qty || 0}</span>
+          <span>{count || 0}</span>
         </li>
         <li>
           <span>Cart Total</span>

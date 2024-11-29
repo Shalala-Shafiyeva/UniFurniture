@@ -6,6 +6,7 @@ import {
   increaseAmount,
   decreaseAmount,
 } from "../../slices/cartSlice";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 
 function CartOrder() {
   const cart = useSelector((state) => state.cart.cart);
@@ -21,13 +22,12 @@ function CartOrder() {
   };
 
   //backend
-  const [products, setProducts] = useState([]);
-  const [qty, setQty] = useState(0);
-  const [total, setTotal] = useState(0);
-  const [averageRatings, setAverageRatings] = useState([]);
-  const [reviews, setReviews] = useState([]);
-  const fetchCartProduct = async () => {
-    try {
+  const queryClient = useQueryClient();
+
+  // Fetch cart products
+  const { data: products = [], isLoading: isFetchingCart } = useQuery(
+    "cartProducts",
+    async () => {
       const response = await fetch("http://localhost:8000/api/basket/index", {
         method: "GET",
         headers: {
@@ -36,39 +36,72 @@ function CartOrder() {
         },
       });
       const result = await response.json();
-      setProducts(result.data || []);
-      setTotal(result.totalPrice || 0);
-      setAverageRatings(result.rating || []);
-      setReviews(result.reviews || []);
-      console.log(result);
-    } catch (error) {
-      console.log("Error fetching: ", error);
+      return result.data || [];
+    },
+    {
+      refetchOnWindowFocus: false,
     }
-  };
+  );
 
-  const handleCartProductCount = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:8000/api/basket/productQty",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
+  // Fetch ratings of products
+  const { data: rating = [], isLoading: isFetchingRating } = useQuery(
+    "ratingProducts",
+    async () => {
+      const response = await fetch("http://localhost:8000/api/basket/index", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       const result = await response.json();
-      setQty(result.data || 0);
-    } catch (error) {
-      console.log("Error fetching: ", error);
+      return result.rating || [];
+    },
+    {
+      refetchOnWindowFocus: false,
     }
-  };
+  );
 
-  const fetchRemoveFromCart = async (basketId, productId, productColor) => {
-    try {
+  // Fetch ratings of products
+  const { data: reviews = [], isLoading: isFetchingReviews } = useQuery(
+    "reviewsProducts",
+    async () => {
+      const response = await fetch("http://localhost:8000/api/basket/index", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const result = await response.json();
+      return result.reviews || [];
+    },
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
+
+  // Fetch count of products in the cart
+  const { data: count = 0 } = useQuery("cartCount", async () => {
+    const response = await fetch(
+      "http://localhost:8000/api/basket/productQty",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    const result = await response.json();
+    return result.data || 0;
+  });
+
+  // Mutation to remove a product from the cart
+  const removeMutation = useMutation(
+    async ({ basketId, productId, productColor }) => {
       const response = await fetch(
-        "http://localhost:8000/api/basket/delete/" + basketId,
+        `http://localhost:8000/api/basket/delete/${basketId}`,
         {
           method: "POST",
           headers: {
@@ -76,50 +109,31 @@ function CartOrder() {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
           body: JSON.stringify({
-            product_color: productColor,
-            product_id: productId,
-          }),
-        }
-      );
-      const result = await response.json();
-      console.log(result);
-      if (result.success) {
-        toast.success(result.message);
-      }
-    } catch (error) {
-      console.log("Error fetching: ", error);
-    }
-  };
-
-  const fetchDecreate = async (productId, productColor) => {
-    try {
-      const response = await fetch(
-        "http://localhost:8000/api/basket/decrease",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify({
             product_id: productId,
             product_color: productColor,
           }),
         }
       );
-      const result = await response.json();
-      if (result.success) {
-        toast.success(result.message);
-      } else {
-        toast.error(result.message || "Failed to increase product quantity");
-      }
-    } catch (error) {
-      console.log("Error fetching: ", error);
+      return response.json();
+    },
+    {
+      onSuccess: (data) => {
+        if (data.success) {
+          toast.success(data.message);
+          queryClient.invalidateQueries("cartProducts");
+          queryClient.invalidateQueries("cartTotal");
+          queryClient.invalidateQueries("cartCount");
+          queryClient.invalidateQueries("totalDiscount");
+        } else {
+          toast.error(data.message || "Failed to remove product");
+        }
+      },
     }
-  };
+  );
 
-  const fetchIncreate = async (productId, productColor) => {
-    try {
+  // Mutation to increase product quantity
+  const increaseMutation = useMutation(
+    async ({ productId, productColor }) => {
       const response = await fetch(
         "http://localhost:8000/api/basket/increase",
         {
@@ -134,25 +148,60 @@ function CartOrder() {
           }),
         }
       );
-      const result = await response.json();
-      if (result.success) {
-        toast.success(result.message);
-      } else {
-        toast.error(result.message || "Failed to increase product quantity");
-      }
-    } catch (error) {
-      console.log("Error fetching: ", error);
+      return response.json();
+    },
+    {
+      onSuccess: (data) => {
+        if (data.success) {
+          toast.success(data.message);
+          queryClient.invalidateQueries("cartProducts");
+          queryClient.invalidateQueries("cartTotal");
+          queryClient.invalidateQueries("cartCount");
+          queryClient.invalidateQueries("totalDiscount");
+        } else {
+          toast.error(data.message || "Failed to increase product quantity");
+        }
+      },
     }
-  };
+  );
 
-  useEffect(() => {
-    fetchCartProduct();
-    handleCartProductCount();
-  }, []);
+  // Mutation to decrease product quantity
+  const decreaseMutation = useMutation(
+    async ({ productId, productColor }) => {
+      const response = await fetch(
+        "http://localhost:8000/api/basket/decrease",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            product_id: productId,
+            product_color: productColor,
+          }),
+        }
+      );
+      return response.json();
+    },
+    {
+      onSuccess: (data) => {
+        if (data.success) {
+          toast.success(data.message);
+          queryClient.invalidateQueries("cartProducts");
+          queryClient.invalidateQueries("cartTotal");
+          queryClient.invalidateQueries("cartCount");
+          queryClient.invalidateQueries("totalDiscount");
+        } else {
+          toast.error(data.message || "Failed to decrease product quantity");
+        }
+      },
+    }
+  );
 
   useEffect(() => {
     handleShippingDate();
-  }, [products]);
+  }, [count]);
 
   const fullStar = "/images/star.png";
   const emptyStar = "/images/emptyStar.png";
@@ -248,12 +297,12 @@ function CartOrder() {
         <div className="cover">
           <span className="items">
             {/* {cart.length} {cart.length > 1 ? "items" : "item"} */}
-            {qty} {qty > 1 ? "items" : "item"}
+            {count} {count > 1 ? "items" : "item"}
           </span>
-          {qty.length > 0 && (
+          {count.length > 0 && (
             <button
               // disabled={cart.length === 0}
-              disabled={qty === 0}
+              disabled={count === 0}
               onClick={handleOpen}
               className="change"
             >
@@ -267,7 +316,7 @@ function CartOrder() {
           <span className="title">Order Summary</span>
           <span className="items">
             {/* {cart.length} {cart.length > 1 ? "items" : "item"} */}
-            {qty} {qty > 1 ? "items" : "item"}
+            {count} {count > 1 ? "items" : "item"}
           </span>
         </div>
         <div className="products">
@@ -300,7 +349,10 @@ function CartOrder() {
                   </div>
                   <div className="rating">
                     <div className="stars">
-                    {renderStars(averageRatings[index]?.[product?.product_id]?.original?.average_rating || 0)}
+                      {renderStars(
+                        rating[index]?.[product?.product_id]?.original
+                          ?.average_rating || 0
+                      )}
                       {/* <img src="/images/star.png" alt="Star" />
                       <img src="/images/star.png" alt="Star" />
                       <img src="/images/star.png" alt="Star" />
@@ -308,17 +360,19 @@ function CartOrder() {
                       <img src="/images/star.png" alt="Star" /> */}
                     </div>
                     <span className="review">
-                    {reviews[index]?.[product?.product_id]?.original?.data || 0} Reviews
+                      {reviews[index]?.[product?.product_id]?.original?.data ||
+                        0}{" "}
+                      Reviews
                     </span>
                   </div>
                   <div className="bottom">
                     <div
                       onClick={() => {
-                        fetchRemoveFromCart(
-                          product?.basket_id,
-                          product?.product_id,
-                          product?.product_color
-                        );
+                        removeMutation.mutate({
+                          basketId: product?.basket_id,
+                          productId: product?.product_id,
+                          productColor: product?.product_color,
+                        });
                         // dispatch(removeFromCart({ id: product.id }));
                         handleCartLength();
                       }}
@@ -329,10 +383,10 @@ function CartOrder() {
                     <div className="qty">
                       <div
                         onClick={() => {
-                          fetchIncreate(
-                            product?.product_id,
-                            product?.product_color
-                          );
+                          increaseMutation.mutate({
+                            productId: product?.product_id,
+                            productColor: product?.product_color,
+                          });
                           // dispatch(increaseAmount({ id: product.id }))
                         }}
                         className="plusBtn"
@@ -343,10 +397,10 @@ function CartOrder() {
                       <span>{product?.qty}</span>
                       <div
                         onClick={() => {
-                          fetchDecreate(
-                            product?.product_id,
-                            product?.product_color
-                          );
+                          decreaseMutation.mutate({
+                            productId: product?.product_id,
+                            productColor: product?.product_color,
+                          });
                           // dispatch(decreaseAmount({ id: product.id }))
                         }}
                         className="minusBtn"

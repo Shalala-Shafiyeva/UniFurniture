@@ -3,18 +3,12 @@ import "./header.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Cart from "../cart/Cart";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { refresh } from "aos";
 
 function Header() {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [qty, setQty] = useState(0);
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setIsAuthenticated(true);
-    }
-    handleCartProductCount();
-  }, [qty]);
 
   const handleLogout = async () => {
     try {
@@ -36,8 +30,11 @@ function Header() {
     }
   };
 
-  const handleCartProductCount = async () => {
-    try {
+  const queryClient = useQueryClient();
+  // Fetch count of products in the cart
+  const { data: count = 0 } = useQuery(
+    "cartCount",
+    async () => {
       const response = await fetch(
         "http://localhost:8000/api/basket/productQty",
         {
@@ -49,11 +46,9 @@ function Header() {
         }
       );
       const result = await response.json();
-      setQty(result.data || 0);
-    } catch (error) {
-      console.log("Error fetching: ", error);
+      return result.data || 0;
     }
-  };
+  );
 
   const { cart } = useSelector((state) => state.cart);
   const [openMenu, setOpenMenu] = useState(false);
@@ -130,7 +125,7 @@ function Header() {
             {/* without backend */}
             {/* <span>{cart.length}</span> */}
             {/* with backend */}
-            <span>{qty}</span>
+            <span>{count}</span>
           </div>
         </div>
       </div>

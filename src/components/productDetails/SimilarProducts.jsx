@@ -91,7 +91,7 @@ function SimilarProducts({ similarProducts }) {
     }
     return stars;
   };
- console.log(similarProducts)
+
   return (
     <section className="similarProducts">
       <div className="container">

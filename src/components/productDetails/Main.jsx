@@ -3,6 +3,7 @@ import { addToCart } from "../../slices/cartSlice";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
+import { useMutation, useQueryClient } from "react-query";
 
 function Main({ product }) {
   let dispatch = useDispatch();
@@ -133,8 +134,16 @@ function Main({ product }) {
       stars.push(
         <img
           key={i}
-          src={i <= Number(product?.rating?.original?.average_rating) ? fullStar : emptyStar}
-          alt={`${i <= Number(product?.rating?.original?.average_rating) ? "Full" : "Empty"} Star`}
+          src={
+            i <= Number(product?.rating?.original?.average_rating)
+              ? fullStar
+              : emptyStar
+          }
+          alt={`${
+            i <= Number(product?.rating?.original?.average_rating)
+              ? "Full"
+              : "Empty"
+          } Star`}
           onClick={() => submitRating(i)}
           style={{ cursor: "pointer" }}
         />
@@ -144,9 +153,11 @@ function Main({ product }) {
   };
 
   //Basket logic
-  const addProductToCart = async (productId, productColor, colorImage) => {
-    try {
-      const response = await fetch("http://localhost:8000/api/basket/store", {
+  const queryClient = useQueryClient();
+  // Mutation to add product to the cart
+  const addProductToCart = useMutation(
+    async ({ productId, productColor, colorImage }) => {
+      const response = await fetch(`http://localhost:8000/api/basket/store`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -159,14 +170,22 @@ function Main({ product }) {
           color_image: colorImage,
         }),
       });
-      const result = await response.json();
-      result.success
-        ? toast.success(result.message)
-        : toast.error(result.message);
-    } catch (err) {
-      console.log("Error fetching: ", err);
+      return response.json();
+    },
+    {
+      onSuccess: (data) => {
+        if (data.success) {
+          toast.success(data.message);
+          queryClient.invalidateQueries("cartProducts");
+          queryClient.invalidateQueries("cartTotal");
+          queryClient.invalidateQueries("cartCount");
+          queryClient.invalidateQueries("totalDiscount");
+        } else {
+          toast.error(data.message || "Failed to remove product");
+        }
+      },
     }
-  };
+  );
 
   return (
     <section className="mainDetails">
@@ -351,12 +370,13 @@ function Main({ product }) {
                     // handleAddToCart();
                     //with backend
                     localStorage.getItem("token")
-                      ? addProductToCart(
-                          product?.data?.id,
-                          product?.data?.colors[colorIndex]?.name,
-                          product?.data?.colors[colorIndex]?.color_images[0]
-                            ?.image
-                        )
+                      ? addProductToCart.mutate({
+                          productId: product?.data?.id,
+                          productColor: product?.data?.colors[colorIndex]?.name,
+                          colorImage:
+                            product?.data?.colors[colorIndex]?.color_images[0]
+                              ?.image,
+                        })
                       : navigate("/login");
                   }}
                   className="addToCart"
@@ -423,7 +443,7 @@ function Main({ product }) {
                   */}
                   {/* with backend */}
                   <div className="chosedColor">
-                    Select Upholstery: {product?.data?.colors[colorIndex].name}
+                    Select Upholstery: {product?.data?.colors[colorIndex]?.name}
                   </div>
                   <img src={selectedImage} alt="Product image" />
                 </div>
@@ -442,20 +462,22 @@ function Main({ product }) {
                   ))} */}
                   {/* with backend */}
                   {product?.data?.colors &&
-                    product?.data?.colors[colorIndex]?.color_images?.map((img) => (
-                      <div
-                        className="img"
-                        key={img.id}
-                        onClick={(e) => {
-                          handleSmallImg(e, img.image);
-                        }}
-                      >
-                        <img
-                          src={`http://localhost:8000/storage/${img.image}`}
-                          alt="Product image"
-                        />
-                      </div>
-                    ))}
+                    product?.data?.colors[colorIndex]?.color_images?.map(
+                      (img) => (
+                        <div
+                          className="img"
+                          key={img.id}
+                          onClick={(e) => {
+                            handleSmallImg(e, img.image);
+                          }}
+                        >
+                          <img
+                            src={`http://localhost:8000/storage/${img.image}`}
+                            alt="Product image"
+                          />
+                        </div>
+                      )
+                    )}
                 </div>
               </div>
             </div>
@@ -527,7 +549,14 @@ function Main({ product }) {
                       //)
                       //with backend
                       localStorage.getItem("token")
-                        ? addProductToCart(product?.data?.id)
+                        ? addProductToCart.mutate({
+                            productId: product?.data?.id,
+                            productColor:
+                              product?.data?.colors[colorIndex]?.name,
+                            colorImage:
+                              product?.data?.colors[colorIndex]?.color_images[0]
+                                ?.image,
+                          })
                         : navigate("/login");
                     }}
                   >

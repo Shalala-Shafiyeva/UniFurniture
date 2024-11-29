@@ -1,30 +1,21 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import React from "react";
+import { useQuery, useMutation, useQueryClient } from "react-query";
+import toast, { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 import "../cart/cart.css";
 import "../cart/cartResponsice.css";
-import { Link } from "react-router-dom";
-import {
-  increaseAmount,
-  decreaseAmount,
-  removeFromCart,
-} from "../../slices/cartSlice";
-import toast, { Toaster } from "react-hot-toast";
-import { useQuery } from "react-query";
 
 function Cart({ openBasket, setOpenBasket }) {
-  let cart = useSelector((state) => state.cart.cart);
-  const dispatch = useDispatch();
+  const queryClient = useQueryClient();
+
   const handleCloseCart = () => {
     setOpenBasket(false);
   };
 
-  //basket with backend
-  const [qty, setQty] = useState(0);
-  const [total, setTotal] = useState(0);
-  
-  const fetchCartProduct =useQuery("cartProducts", async () => {
-    try {
+  // Fetch cart products
+  const { data: products = [], isLoading: isFetchingCart } = useQuery(
+    "cartProducts",
+    async () => {
       const response = await fetch("http://localhost:8000/api/basket/index", {
         method: "GET",
         headers: {
@@ -33,88 +24,42 @@ function Cart({ openBasket, setOpenBasket }) {
         },
       });
       const result = await response.json();
-      // setProducts(result.data || []);
-      setTotal(result.totalPrice || 0);
-    } catch (error) {
-      console.log("Error fetching: ", error);
+      return result.data || [];
+    },
+    {
+      refetchOnWindowFocus: false,
     }
+  );
+
+  // Fetch count of products in the cart
+  const { data: count = 0 } = useQuery("cartCount", async () => {
+    const response = await fetch("http://localhost:8000/api/basket/productQty", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const result = await response.json();
+    return result.data || 0;
   });
-  const products= fetchCartProduct.data || [];
 
-  const handleCartProductCount = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:8000/api/basket/productQty",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      const result = await response.json();
-      setQty(result.data || 0);
-    } catch (error) {
-      console.log("Error fetching: ", error);
-    }
-  };
+  // Fetch total price
+  const { data: total = 0 } = useQuery("cartTotal", async () => {
+    const response = await fetch("http://localhost:8000/api/basket/index", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const result = await response.json();
+    return result.totalPrice || 0;
+  });
 
-  const fetchRemoveFromCart = async (basketId, productId, productColor) => {
-    try {
-      const response = await fetch(
-        "http://localhost:8000/api/basket/delete/" + basketId,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify({
-            product_color: productColor,
-            product_id: productId,
-          }),
-        }
-      );
-      const result = await response.json();
-      console.log(result);
-      if (result.success) {
-        toast.success(result.message);
-      }
-    } catch (error) {
-      console.log("Error fetching: ", error);
-    }
-  };
-
-  const fetchDecreate = async (productId, productColor) => {
-    try {
-      const response = await fetch(
-        "http://localhost:8000/api/basket/decrease",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify({
-            product_id: productId,
-            product_color: productColor,
-          }),
-        }
-      );
-      const result = await response.json();
-      if (result.success) {
-        toast.success(result.message);
-      } else {
-        toast.error(result.message || "Failed to increase product quantity");
-      }
-    } catch (error) {
-      console.log("Error fetching: ", error);
-    }
-  };
-
-  const fetchIncreate = async (productId, productColor) => {
-    try {
+  // Mutation to increase product quantity
+  const increaseMutation = useMutation(
+    async ({ productId, productColor }) => {
       const response = await fetch(
         "http://localhost:8000/api/basket/increase",
         {
@@ -129,21 +74,90 @@ function Cart({ openBasket, setOpenBasket }) {
           }),
         }
       );
-      const result = await response.json();
-      if (result.success) {
-        toast.success(result.message);
-      } else {
-        toast.error(result.message || "Failed to increase product quantity");
-      }
-    } catch (error) {
-      console.log("Error fetching: ", error);
+      return response.json();
+    },
+    {
+      onSuccess: (data) => {
+        if (data.success) {
+          toast.success(data.message);
+          queryClient.invalidateQueries("cartProducts");
+          queryClient.invalidateQueries("cartTotal");
+          queryClient.invalidateQueries("cartCount");
+          queryClient.invalidateQueries("totalDiscount");
+        } else {
+          toast.error(data.message || "Failed to increase product quantity");
+        }
+      },
     }
-  };
+  );
 
-  useEffect(() => {
-    // fetchCartProduct();
-    handleCartProductCount();
-  }, [qty]);
+  // Mutation to decrease product quantity
+  const decreaseMutation = useMutation(
+    async ({ productId, productColor }) => {
+      const response = await fetch(
+        "http://localhost:8000/api/basket/decrease",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            product_id: productId,
+            product_color: productColor,
+          }),
+        }
+      );
+      return response.json();
+    },
+    {
+      onSuccess: (data) => {
+        if (data.success) {
+          toast.success(data.message);
+          queryClient.invalidateQueries("cartProducts");
+          queryClient.invalidateQueries("cartTotal");
+          queryClient.invalidateQueries("cartCount");
+          queryClient.invalidateQueries("totalDiscount");
+        } else {
+          toast.error(data.message || "Failed to decrease product quantity");
+        }
+      },
+    }
+  );
+
+  // Mutation to remove a product from the cart
+  const removeMutation = useMutation(
+    async ({ basketId, productId, productColor }) => {
+      const response = await fetch(
+        `http://localhost:8000/api/basket/delete/${basketId}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            product_id: productId,
+            product_color: productColor,
+          }),
+        }
+      );
+      return response.json();
+    },
+    {
+      onSuccess: (data) => {
+        if (data.success) {
+          toast.success(data.message);
+          queryClient.invalidateQueries("cartProducts");
+          queryClient.invalidateQueries("cartTotal");
+          queryClient.invalidateQueries("cartCount");
+          queryClient.invalidateQueries("totalDiscount");
+        } else {
+          toast.error(data.message || "Failed to remove product");
+        }
+      },
+    }
+  );
 
   return (
     <section className={`cart ${!openBasket ? "closeCart" : ""}`}>
@@ -154,73 +168,12 @@ function Cart({ openBasket, setOpenBasket }) {
             x
           </div>
           <span>Shopping Cart</span>
-          {/* <span>{cart.length}</span> */}
-          <span>{qty}</span>
+          <span>{count}</span>
         </div>
         <div className="orderProducts">
-          {/* without backend
-          {cart.length ? (
-            cart.map((product) => (
-              <div className="product">
-                <div className="productDesc">
-                  <div className="img">
-                    <img src={product.img} alt="Product" />
-                  </div>
-                  <div className="txt">
-                    <span className="title">{product.fullTitle}</span>
-                    <span className="price">${product.price}</span>
-                    <div className="qty">
-                      <button
-                        onClick={() =>
-                          dispatch(
-                            decreaseAmount({
-                              id: product.id,
-                              type: product.type,
-                              price: product.price,
-                              stock: product.stock,
-                            })
-                          )
-                        }
-                        className="decrease"
-                      >
-                        -
-                      </button>
-                      <span>{product.amount}</span>
-                      <button
-                        onClick={() =>
-                          dispatch(
-                            increaseAmount({
-                              id: product.id,
-                              type: product.type,
-                              price: product.price,
-                              stock: product.stock,
-                            })
-                          )
-                        }
-                        className="increase"
-                      >
-                        +
-                      </button>
-                    </div>
-                    <span className="color">{product.color}</span>
-                  </div>
-                </div>
-                <div
-                  className="removeBtn"
-                  onClick={() =>
-                    dispatch(
-                      removeFromCart({ id: product.id, type: product.type })
-                    )
-                  }
-                >
-                  <img src="/images/trash.svg" alt="Trash" />
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="emptyCart">You didn't order anything</div>
-          )} */}
-          {products?.length ? (
+          {isFetchingCart ? (
+            <div>Loading...</div>
+          ) : products.length ? (
             products.map((product) => (
               <div className="product" key={product.id}>
                 <div className="productDesc">
@@ -234,27 +187,27 @@ function Cart({ openBasket, setOpenBasket }) {
                     <span className="title">
                       {product?.product?.full_title}
                     </span>
-                    <span className="price">${product?.product?.price}</span>
+                    <span className="price">${product?.product?.price.toFixed(2)}</span>
                     <div className="qty">
                       <button
-                        onClick={() => {
-                          fetchDecreate(
-                            product?.product_id,
-                            product?.product_color
-                          );
-                        }}
+                        onClick={() =>
+                          decreaseMutation.mutate({
+                            productId: product?.product_id,
+                            productColor: product?.product_color,
+                          })
+                        }
                         className="decrease"
                       >
                         -
                       </button>
                       <span>{product.qty}</span>
                       <button
-                        onClick={() => {
-                          fetchIncreate(
-                            product?.product_id,
-                            product?.product_color
-                          );
-                        }}
+                        onClick={() =>
+                          increaseMutation.mutate({
+                            productId: product?.product_id,
+                            productColor: product?.product_color,
+                          })
+                        }
                         className="increase"
                       >
                         +
@@ -265,13 +218,13 @@ function Cart({ openBasket, setOpenBasket }) {
                 </div>
                 <div
                   className="removeBtn"
-                  onClick={() => {
-                    fetchRemoveFromCart(
-                      product?.id,
-                      product?.product_id,
-                      product?.product_color
-                    );
-                  }}
+                  onClick={() =>
+                    removeMutation.mutate({
+                      basketId: product?.id,
+                      productId: product?.product_id,
+                      productColor: product?.product_color,
+                    })
+                  }
                 >
                   <img src="/images/trash.svg" alt="Trash" />
                 </div>
@@ -285,9 +238,6 @@ function Cart({ openBasket, setOpenBasket }) {
         </div>
         <div className="totalCount">
           <span>Total:</span>
-          {/* <span>
-            ${cart.reduce((acc, item) => acc + item.totalPrice, 0).toFixed(2)}
-          </span> */}
           <span>${total.toFixed(2)}</span>
         </div>
         <div className="btn">

@@ -4,6 +4,7 @@ import { singledProduct } from "../../slices/productsSlices";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../slices/cartSlice";
 import toast, { Toaster } from "react-hot-toast";
+import { useMutation, useQueryClient } from "react-query";
 
 function Furnitures({
   // filteredData,
@@ -181,9 +182,11 @@ function Furnitures({
   // };
 
   //Basket logic
-  const addProductToCart = async (productId, productColor, colorImage) => {
-    try {
-      const response = await fetch("http://localhost:8000/api/basket/store", {
+  const queryClient = useQueryClient();
+  // Mutation to add product to the cart
+  const addProductToCart = useMutation(
+    async ({ productId, productColor, colorImage }) => {
+      const response = await fetch(`http://localhost:8000/api/basket/store`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -196,15 +199,22 @@ function Furnitures({
           color_image: colorImage,
         }),
       });
-      const result = await response.json();
-      result.success
-        ? toast.success(result.message)
-        : toast.error(result.message);
-    } catch (err) {
-      console.log("Error fetching: ", err);
+      return response.json();
+    },
+    {
+      onSuccess: (data) => {
+        if (data.success) {
+          toast.success(data.message);
+          queryClient.invalidateQueries("cartProducts");
+          queryClient.invalidateQueries("cartTotal");
+          queryClient.invalidateQueries("cartCount");
+          queryClient.invalidateQueries("totalDiscount");
+        } else {
+          toast.error(data.message || "Failed to remove product");
+        }
+      },
     }
-  };
-  console.log(fetchedProducts);
+  );
   return (
     <>
       {/* {fetchedProducts.length > 0 && ( */}
@@ -336,11 +346,12 @@ function Furnitures({
                             // handleAddToCart(product);
                             //with backend
                             localStorage.getItem("token")
-                              ? addProductToCart(
-                                  product.id,
-                                  product?.colors[0]?.name,
-                                  product?.colors[0]?.color_images[0]?.image
-                                )
+                              ? addProductToCart.mutate({
+                                  productId: product?.id,
+                                  productColor: product?.colors[0]?.name,
+                                  colorImage:
+                                    product?.colors[0]?.color_images[0]?.image,
+                                })
                               : navigate("/login");
                           }}
                         >
