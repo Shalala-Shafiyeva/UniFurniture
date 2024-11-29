@@ -10,8 +10,9 @@ function Hero() {
             Fast & <span>easy business</span> banking service
           </h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur urna tellus tristique commodo
-            donce pharetra elementum eleifend dignissim nam sitcommod.
+          Experience a seamless and efficient banking service designed 
+          specifically for businesses. We simplify financial management, enabling you to focus on growing your 
+          business while we take care of your banking needs.
           </p>
           <Link to="/login">Get Started</Link>
         </div>

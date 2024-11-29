@@ -8,9 +8,10 @@ function PhoneHero() {
           About our <span>company</span>
         </span>
         <p>
-          Suspendisse at faucibus platea leo dui orci lacinia quisque nec non
-          nunc adipiscing a placerat massa. Neque nunc nulla urna orci malesuada
-          semper nunc magna hac in tellus nibh purus tellus ullamcorper.
+        We strive to build a company that values innovation, 
+        integrity, and customer satisfaction. Our commitment lies in creating 
+        sustainable solutions and fostering a culture of 
+        excellence to drive success and growth for our stakeholders.
         </p>
       </div>
     </section>

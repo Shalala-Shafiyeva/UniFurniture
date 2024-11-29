@@ -10,8 +10,7 @@ function Error() {
       </div>
       <h4>Oops! Page not found...!</h4>
       <span>
-        Velit dolor leo amet ultricies elementum ultricies urna magna bibendum
-        enim mauris a tellus rhoncus. Sapien nisi viverra.
+      This page is not available or has been deleted. Please check the URL or go to the homepage.
       </span>
       <Link to="/">
         <span>GO TO HOME PAGE</span>

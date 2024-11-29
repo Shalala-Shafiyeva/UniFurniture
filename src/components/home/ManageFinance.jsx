@@ -9,8 +9,8 @@ function ManageFinance() {
         <div className="head">
           <h3>It have never been easier to manage your finances</h3>
           <span>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur
-            tortor nunc aliquam consectetur.
+          Take control of your financial future with our easy-to-use tools and services. We make managing your 
+          money simple, efficient, and secure, so you can focus on what matters most.
           </span>
         </div>
         <div className="cards">

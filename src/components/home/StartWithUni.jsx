@@ -10,9 +10,10 @@ function StartWithUni() {
           <div className="left">
             <h3>How to get started with UniFurniturep</h3>
             <p>
-              Aliquet aliquet nunc at orci purus id ultricies urna tempor id
-              vitae quis nulla vitae neque nunc dolor velit amet odio vivamus in
-              purus neque mi egestas aliquam in elit quam.
+            To get started with UniFurniture, simply create an account, browse 
+            our wide selection of furniture, and add your desired items to your cart. Once you're ready, 
+            proceed to checkout and follow the easy steps to complete your purchase. 
+            If you have any questions along the way, our customer support team is here to assist you!
             </p>
           </div>
           <div className="btns">

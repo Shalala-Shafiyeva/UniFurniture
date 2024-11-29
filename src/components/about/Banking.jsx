@@ -20,10 +20,9 @@ function Banking() {
           accessibility worldwide
         </h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipiscing elit eque ipsum odio
-          justo amet urna auctor at congue vulputate augue praesent mauris eu
-          posuere pretium tellus viverra volutpat a est quis they it egestas id
-          risus cursus venenatis.
+        We are dedicated to ensuring that everyone, regardless of location or
+         circumstances, can access banking services. Our goal is to empower communities through financial 
+        inclusivity and innovation, fostering growth and opportunities for all.
         </p>
         <Link className="getStart" to="/login">
           Get Started

@@ -16,8 +16,9 @@ function TrendFurnitures() {
         <div className="content">
           <h3>Buy trending Furnitures Products</h3>
           <p>
-            Lectus commodo aenean quis molestie ultricies nunc viverra eleifend
-            non viverra amet dictum massa consequat mattis.
+          Discover the latest furniture trends that combine modern design and functionality. 
+          Elevate your living or working space with stylish pieces crafted for comfort and elegance.
+           Shop now for the perfect additions to your decor.
           </p>
           <button className="explore">Explore More</button>
         </div>
