@@ -36,6 +36,7 @@ function MoreProducts() {
     highest: false,
     lowest: false,
   });
+  const [filteredKey, setFilteredKey] = useState(false);
 
   const handleFilterChange = (filterKey, value) => {
     // setFilters((prevFilters) => ({
@@ -147,8 +148,10 @@ function MoreProducts() {
             handleFilterChange={handleFilterChange}
             handleTypeChange={handleTypeChange}
             formatFilters={formatFilters}
+            filteredKey={filteredKey}
+            setFilteredKey={setFilteredKey}
           />
-          <FilteredProducts fetchedProducts={products} />
+          <FilteredProducts fetchedProducts={products} filteredKey={filteredKey}/>
         </div>
       </div>
       <Delivery />

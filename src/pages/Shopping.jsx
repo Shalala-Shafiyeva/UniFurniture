@@ -57,6 +57,7 @@ function Shopping() {
   //with backend
   const [fetchedProducts, setFetchedProducts] = useState([]);
   const [filters, setFilters] = useState({ search: null, categories: null });
+  const [filteredKey, setFilteredKey] = useState(false);
   const handleFilterChange = (filterKey, value) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
@@ -111,8 +112,11 @@ function Shopping() {
         // searchValue={searchValue}
         // handleSearchInputChange={handleSearchInputChange}
         fetchProducts={fetchProducts}
+        fetchedProducts={fetchedProducts}
         handleFilterChange={handleFilterChange}
         filters={filters}
+        filteredKey={filteredKey}
+        setFilteredKey={setFilteredKey}
       />
       <Furnitures
         // filteredData={filteredData}
@@ -122,6 +126,8 @@ function Shopping() {
         handleFilterChange={handleFilterChange}
         filters={filters}
         setFilters={setFilters}
+        filteredKey={filteredKey}
+        setFilteredKey={setFilteredKey}
       />
       <ServiceCommite />
       <ShopSlider />

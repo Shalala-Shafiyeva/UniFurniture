@@ -9,6 +9,13 @@ import { refresh } from "aos";
 function Header() {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, [token]);
 
   const handleLogout = async () => {
     try {
@@ -49,6 +56,7 @@ function Header() {
       return result.data || 0;
     }
   );
+  
 
   const { cart } = useSelector((state) => state.cart);
   const [openMenu, setOpenMenu] = useState(false);

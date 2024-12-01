@@ -84,6 +84,7 @@ function Cart({ openBasket, setOpenBasket }) {
           queryClient.invalidateQueries("cartTotal");
           queryClient.invalidateQueries("cartCount");
           queryClient.invalidateQueries("totalDiscount");
+          queryClient.invalidateQueries("addresses");
         } else {
           toast.error(data.message || "Failed to increase product quantity");
         }
@@ -118,6 +119,7 @@ function Cart({ openBasket, setOpenBasket }) {
           queryClient.invalidateQueries("cartTotal");
           queryClient.invalidateQueries("cartCount");
           queryClient.invalidateQueries("totalDiscount");
+          queryClient.invalidateQueries("addresses");
         } else {
           toast.error(data.message || "Failed to decrease product quantity");
         }
@@ -152,6 +154,7 @@ function Cart({ openBasket, setOpenBasket }) {
           queryClient.invalidateQueries("cartTotal");
           queryClient.invalidateQueries("cartCount");
           queryClient.invalidateQueries("totalDiscount");
+          queryClient.invalidateQueries("addresses");
         } else {
           toast.error(data.message || "Failed to remove product");
         }

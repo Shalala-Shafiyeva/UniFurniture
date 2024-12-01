@@ -9,9 +9,10 @@ function DesktopMode() {
     surname: "",
     email: "",
     password: "",
+    checked_policy: false,
   });
   const [errors, setErrors] = useState({});
-  const [isPolicyChecked, setIsPolicyChecked] = useState(false);
+  // const [isPolicyChecked, setIsPolicyChecked] = useState(false);
   const [policyError, setPolicyError] = useState("");
   const handleRegister = async () => {
     try {
@@ -26,15 +27,13 @@ function DesktopMode() {
 
       if (response.status == 422) {
         setErrors(result.errors || {});
+        if (result.errors.checked_policy) {
+          setPolicyError("Please accept the terms and conditions.");
+        }
       } else {
         setErrors({});
-
-        if (!isPolicyChecked) {
-          setPolicyError("Please accept the terms and conditions.");
-          return;
-        }
         setPolicyError("");
-        
+
         navigate("/login");
       }
     } catch (error) {
@@ -142,8 +141,10 @@ function DesktopMode() {
               <input
                 type="checkbox"
                 name="privacy"
-                checked={isPolicyChecked}
-                onChange={(e) => setIsPolicyChecked(e.target.checked)}
+                checked={data.checked_policy}
+                onChange={(e) =>
+                  setData({ ...data, checked_policy: e.target.checked })
+                }
               />
               <span>
                 You agree to our Privacy Policy, Term and Conditions and

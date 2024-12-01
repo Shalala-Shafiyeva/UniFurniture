@@ -61,6 +61,9 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
         newErrors.googlePay = "Google Pay ID is required";
     }
     setErrors(newErrors);
+    if (Object.keys(newErrors).length == 0) {
+      localStorage.setItem("paymentMethod", activeBtn);
+    }
     return Object.keys(newErrors).length === 0;
   };
 
@@ -68,7 +71,9 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
     e.preventDefault();
     if (validationInputs()) {
       handleActivateBtn();
+      return true;
     }
+    return false;
   };
 
   const handleOpen = () => {
@@ -84,14 +89,15 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify({
-          address: orderAddress,
-          payment_type: activeBtn,
+          address: localStorage.getItem("defaultAddress"),
+          payment_type: localStorage.getItem("paymentMethod"),
         }),
       });
       const result = await response.json();
       if (result.success) {
         toast.success(result.message);
         window.scrollTo(0, 0);
+        localStorage.removeItem("paymentMethod");
       } else {
         toast.error(result.message);
       }
@@ -128,13 +134,17 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
           </div>
           <div className="form">
             <form
-            method="POST"
+              method="POST"
               onSubmit={(e) => {
-                if(!orderAddress){
+                if (!localStorage.getItem("defaultAddress")) {
                   toast.error("Please choose delivery address");
                 }
-                handleSubmit(e);
-                handleOrderCreate();
+                if (errors.length) {
+                  toast.error("Please complete payment method");
+                }
+                if (handleSubmit(e)) {
+                  handleOrderCreate();
+                }
               }}
               action=""
             >
@@ -146,7 +156,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                       type="text"
                       id="cardNum"
                       placeholder="Your card number"
-                      value={inputValue.cardNum}
+                      value={inputValue.cardNum || ""}
                       onChange={handleInputChange}
                     />
                     {errors.cardNum && (
@@ -159,7 +169,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                       type="text"
                       id="name"
                       placeholder="Name of card owner"
-                      value={inputValue.name}
+                      value={inputValue.name || ""}
                       onChange={handleInputChange}
                     />
                     {errors.name && (
@@ -171,7 +181,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                     <input
                       type="date"
                       id="expire"
-                      value={inputValue.expire}
+                      value={inputValue.expire || ""}
                       onChange={handleInputChange}
                     />
                     {errors.expire && (
@@ -184,7 +194,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                       placeholder="Enter CVV code"
                       type="text"
                       id="cvv"
-                      value={inputValue.cvv}
+                      value={inputValue.cvv || ""}
                       onChange={handleInputChange}
                     />
                     {errors.cvv && <span className="error">{errors.cvv}</span>}
@@ -203,7 +213,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                       id="paypalEmail"
                       type="email"
                       placeholder="PayPal Email"
-                      value={inputValue.paypalEmail}
+                      value={inputValue.paypalEmail || ""}
                       onChange={handleInputChange}
                     />
                     {errors.paypalEmail && (
@@ -220,7 +230,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                       id="invoiceNum"
                       type="text"
                       placeholder="Invoice Number"
-                      value={inputValue.invoiceNum}
+                      value={inputValue.invoiceNum || ""}
                       onChange={handleInputChange}
                     />
                     {errors.invoiceNum && (
@@ -237,7 +247,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                       id="googlePay"
                       type="text"
                       placeholder="Google Pay ID"
-                      value={inputValue.googlePay}
+                      value={inputValue.googlePay || ""}
                       onChange={handleInputChange}
                     />
                     {errors.googlePay && (

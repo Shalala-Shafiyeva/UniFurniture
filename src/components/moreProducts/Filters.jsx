@@ -13,6 +13,7 @@ function Filters({
   handleFilterChange,
   handleTypeChange,
   formatFilters,
+  setFilteredKey,
 }) {
   const [typeBtns, setTypeBtns] = useState([]);
 
@@ -114,6 +115,7 @@ function Filters({
                       id={`category${btn.id}`}
                       onChange={() => {
                         handleTypeChange(btn.name);
+                        setFilteredKey(true);
                       }}
                     />
                     <label htmlFor={`category${btn.id}`}>{btn.name}</label>
@@ -151,6 +153,7 @@ function Filters({
                           // onClick={() => dispatch(filterByColor(color))}
                           onChange={() => {
                             handleFilterChange("color", color.name);
+                            setFilteredKey(true);
                           }}
                           type="radio"
                           name="color"
@@ -176,6 +179,7 @@ function Filters({
                 id="stock"
                 onChange={(e) => {
                   handleFilterChange("hasStock", e.target.checked);
+                  setFilteredKey(true);
                 }}
                 // onClick={() => dispatch(filterByStock(true))}
               />
@@ -188,6 +192,7 @@ function Filters({
                 id="sale"
                 onChange={(e) => {
                   handleFilterChange("sale", e.target.checked);
+                  setFilteredKey(true);
                 }}
                 // onClick={() => dispatch(filterBySale(true))}
               />

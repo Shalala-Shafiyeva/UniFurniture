@@ -14,12 +14,14 @@ function Furnitures({
   handleFilterChange,
   filters,
   setFilters,
+  filteredKey,
 }) {
   // const dispatch = useDispatch();
   // const cart = useSelector((state) => state.cart.cart);
   const navigate = useNavigate();
   //Fetch All Products
   const [categories, setCategories] = useState([]);
+
   const fetchCategories = async () => {
     try {
       const response = await fetch("http://localhost:8000/api/category", {
@@ -209,6 +211,7 @@ function Furnitures({
           queryClient.invalidateQueries("cartTotal");
           queryClient.invalidateQueries("cartCount");
           queryClient.invalidateQueries("totalDiscount");
+          queryClient.invalidateQueries("addresses");
         } else {
           toast.error(data.message || "Failed to remove product");
         }
@@ -297,7 +300,7 @@ function Furnitures({
           <div className="products">
             {
               // filteredData.length === 0 ? (
-              !fetchedProducts.length ? (
+              !fetchedProducts.length && filteredKey == true ? (
                 <div className="notFound">
                   We don't have such product. Sorry.
                 </div>

@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-function FilteredProducts({ fetchedProducts }) {
+function FilteredProducts({ fetchedProducts, filteredKey }) {
   const filteredProducts = useSelector(
     (state) => state.products.filteredProducts
   );
@@ -97,7 +97,7 @@ function FilteredProducts({ fetchedProducts }) {
       <div className="container">
         {
           // error ? (
-          !fetchedProducts?.data?.length ? (
+          !fetchedProducts?.data?.length && filteredKey ?  (
             <div className="error">Sorry we don't have such product</div>
           ) : (
             <>

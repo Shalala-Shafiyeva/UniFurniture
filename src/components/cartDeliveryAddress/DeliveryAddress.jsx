@@ -1,65 +1,90 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addAddress, editAddress } from "../../slices/addressSlice";
+import { useQuery, useMutation, useQueryClient } from "react-query";
 
 function DeliveryAddress({ orderAddress, setOrderAddress }) {
-  const [addresses, setAddresses] = useState([]);
   const [defaultAddress, setDefaultAddress] = useState("");
   const [validationErrors, setValidationErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const fetchedAddresses = useCallback(async () => {
-    try {
-      const response = await fetch("http://localhost:8000/api/address/index", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      const result = await response.json();
-      if (result.success) {
-        setAddresses(result.data);
-      }
-    } catch (error) {
-      console.log("Error fetching addresses:", error);
-    }
-  }, [addresses]);
 
-  useEffect(() => {
-    fetchedAddresses();
-  }, []);
+  const queryClient = useQueryClient();
+
+  // Fetch addresses
+  const {
+    data: addresses = [],
+    isLoading,
+    error,
+  } = useQuery("addresses", async () => {
+    const response = await fetch("http://localhost:8000/api/address/index", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const result = await response.json();
+    if (!result.success)
+      throw new Error(result.message || "Failed to fetch addresses");
+    return result.data;
+  });
 
   useEffect(() => {
     if (defaultAddress) {
       setOrderAddress(defaultAddress);
     }
-  }, [defaultAddress]);
+  }, []);
 
-  const handleCreateAddress = async (address) => {
-    try {
+  //Fetch Default Address
+  const { data: defaultAddressData = "" } = useQuery(
+    "defaultAddress",
+    async () => {
+      const response = await fetch(
+        "http://localhost:8000/api/address/showDefaultAddress",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const result = await response.json();
+      return result.data;
+    }
+  );
+
+  // Create address
+  const createAddressMutation = useMutation(
+    async (address) => {
       const response = await fetch("http://localhost:8000/api/address/store", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        body: JSON.stringify({ address: address }),
+        body: JSON.stringify({ address }),
       });
       const result = await response.json();
-      if (response.status == 422) {
-        setValidationErrors(result.errors || {});
-      } else {
-        setValidationErrors({});
-      }
-    } catch (error) {
-      console.log("Error fetching addresses:", error);
+      if (response.status === 422) throw result.errors;
+      return result;
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries("addresses"); // Refresh address list
+        setOpenForm(false);
+        setText("");
+      },
+      onError: (errors) => {
+        console.error("Validation errors:", errors);
+      },
     }
-  };
-
-  const handleDeleteAddress = async (id) => {
-    try {
+  );
+  // Delete address
+  const deleteAddressMutation = useMutation(
+    async (id) => {
       const response = await fetch(
-        "http://localhost:8000/api/address/delete/" + id,
+        `http://localhost:8000/api/address/delete/${id}`,
         {
           method: "GET",
           headers: {
@@ -68,40 +93,47 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
           },
         }
       );
-      const result = await response.json();
-    } catch (error) {
-      console.log("Error fetching addresses:", error);
+      return response.json();
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries("addresses");
+      },
     }
-  };
+  );
 
-  const handleEditAddress = async (id, address) => {
-    try {
+  // Edit address
+  const editAddressMutation = useMutation(
+    async ({ id, address }) => {
       const response = await fetch(
-        "http://localhost:8000/api/address/edit/" + id,
+        `http://localhost:8000/api/address/edit/${id}`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
-          body: JSON.stringify({ address: address }),
+          body: JSON.stringify({ address }),
         }
       );
       const result = await response.json();
-      if (response.status == 422) {
-        setValidationErrors(result.errors || {});
-      } else {
-        setValidationErrors({});
-      }
-    } catch (error) {
-      console.log("Error fetching addresses:", error);
+      if (response.status === 422) throw result.errors;
+      return result;
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries("addresses");
+        setEditText("");
+        setOpenEditFormId(null);
+      },
     }
-  };
+  );
 
-  const handleDefaultAddress = async (id) => {
-    try {
+  // Set default address
+  const defaultAddressMutation = useMutation(
+    async (id) => {
       const response = await fetch(
-        "http://localhost:8000/api/address/default/" + id,
+        `http://localhost:8000/api/address/default/${id}`,
         {
           method: "GET",
           headers: {
@@ -110,15 +142,19 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
           },
         }
       );
-
       const result = await response.json();
       if (result.success) {
-        setDefaultAddress(result.data.address);
+        setOrderAddress(result.data.address);
+        localStorage.setItem("defaultAddress", result.data.address);
       }
-    } catch (error) {
-      console.log("Error fetching addresses:", error);
+      return result;
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries("addresses");
+      },
     }
-  };
+  );
 
   const handleAddress = async (id) => {
     setLoading(true);
@@ -143,6 +179,14 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
     }
   };
 
+  const handleAdd = () => {
+    if (text.trim()) createAddressMutation.mutate(text);
+  };
+
+  const handleEdit = (id) => {
+    if (editText.trim()) editAddressMutation.mutate({ id, address: editText });
+  };
+
   const [text, setText] = useState("");
   const [editText, setEditText] = useState("");
   const [openForm, setOpenForm] = useState(false);
@@ -150,13 +194,13 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
   const dispatch = useDispatch();
   // const addresses = useSelector((state) => state.address.address);
 
-  const handleAdd = () => {
-    if (text.trim() !== "") {
-      dispatch(addAddress(text));
-      setText("");
-      setOpenForm(false);
-    }
-  };
+  // const handleAdd = () => {
+  //   if (text.trim() !== "") {
+  //     dispatch(addAddress(text));
+  //     setText("");
+  //     setOpenForm(false);
+  //   }
+  // };
 
   // const handleEdit = (id) => {
   //   if (editText.trim() !== "") {
@@ -195,7 +239,7 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
               </button>
               <button
                 className="edit"
-                onClick={() => handleDeleteAddress(address.id)}
+                onClick={() => deleteAddressMutation.mutate(address.id)}
               >
                 Delete
               </button>
@@ -203,7 +247,7 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
                 <button
                   className="edit"
                   onClick={() => {
-                    handleDefaultAddress(address.id);
+                    defaultAddressMutation.mutate(address.id);
                     setOrderAddress(defaultAddress);
                   }}
                 >
@@ -221,7 +265,7 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
                     onSubmit={(e) => {
                       e.preventDefault();
                       // handleEdit(address.id, editText);
-                      handleEditAddress(address.id, editText);
+                      handleEdit(address.id);
                     }}
                     action=""
                     className="editForm visible"
@@ -231,8 +275,8 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
                       value={editText}
                       onChange={(e) => setEditText(e.target.value)}
                     ></textarea>
-                    {validationErrors.address && (
-                      <span>{validationErrors.address}</span>
+                    {editAddressMutation.error?.address && (
+                      <span>{editAddressMutation.error.address}</span>
                     )}
                     <button className="save">Save</button>
                   </form>
@@ -251,7 +295,6 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
           onSubmit={(e) => {
             e.preventDefault();
             handleAdd();
-            handleCreateAddress(text);
           }}
           action=""
           className="editForm visible"
@@ -262,7 +305,9 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
             id="newAddress"
             name="address"
           ></textarea>
-          {validationErrors.address && <span>{validationErrors.address}</span>}
+          {createAddressMutation.error?.address && (
+            <span>{createAddressMutation.error?.address}</span>
+          )}
           <button className="save">Save</button>
         </form>
       )}

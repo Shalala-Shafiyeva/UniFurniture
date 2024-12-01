@@ -5,8 +5,11 @@ function ShoppingHero({
   // searchValue,
   // handleSearchInputChange,
   fetchProducts,
+  fetchedProducts,
   handleFilterChange,
-  filters
+  filters,
+  filteredKey,
+  setFilteredKey,
 }) {
   // const filteredProducts = useSelector(
   //   (state) => state.products.filteredProducts
@@ -22,8 +25,11 @@ function ShoppingHero({
               Every <span className="orange">Furniture</span> has a beautiful
               story
             </h2>
-            <p>  Every piece of furniture we offer has its own unique history and craftsmanship. From timeless 
-              designs to modern styles, each item tells a story that brings warmth and character to your home.
+            <p>
+              {" "}
+              Every piece of furniture we offer has its own unique history and
+              craftsmanship. From timeless designs to modern styles, each item
+              tells a story that brings warmth and character to your home.
             </p>
           </div>
         </div>
@@ -39,6 +45,11 @@ function ShoppingHero({
                 // handleSearchInputChange(e);
                 // handleSearchChange(e.target.value);
                 handleFilterChange(e.target.name, e.target.value);
+                if (e.target.value === "") {
+                  setFilteredKey(false);
+                }else{
+                  setFilteredKey(true);
+                }
               }}
               // value={searchValue}
             />
