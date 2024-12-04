@@ -72,7 +72,7 @@ function HeadFilters({
             }}
           >
             <img src="/images/shop/arrowleft.png" alt="Back" />
-            <span>Back to results</span>
+            <span>Geri qayıt</span>
           </Link>
           <div className="backLinks">
             <Link
@@ -81,7 +81,7 @@ function HeadFilters({
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Home
+              Ana səhifə
             </Link>
             <img src="/images/chevron-left.png" alt="Icon" />
             <Link
@@ -90,13 +90,13 @@ function HeadFilters({
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Shop
+              Alış-veriş
             </Link>
             <img src="/images/chevron-left.png" alt="Icon" />
-            <Link to="#">More Products</Link>
+            <Link to="#">Daha çox</Link>
           </div>
           <div className="sort">
-            <span>Sort by:</span>
+            <span>Sırala:</span>
             <div className="sortBtns">
               <input
                 type="checkbox"
@@ -112,7 +112,7 @@ function HeadFilters({
                 className={`${activeSort == "created_at" ? "active" : ""}`}
                 onClick={() => handleActiveSort("created_at")}
               >
-                New
+                Yeni
               </label>
               <input
                 type="checkbox"
@@ -128,7 +128,7 @@ function HeadFilters({
                 className={`${activeSort == "highest" ? "active" : ""}`}
                 onClick={() => handleActiveSort("highest")}
               >
-                Highest Price
+                Ən bahalı
               </label>
               <input
                 type="checkbox"
@@ -144,7 +144,7 @@ function HeadFilters({
                 className={`${activeSort == "lowest" ? "active" : ""}`}
                 onClick={() => handleActiveSort("lowest")}
               >
-                Lowest Price
+                Ən ucuz
               </label>
             </div>
             {/*without backend

@@ -43,10 +43,10 @@ function MobileMode() {
         <Link to="/login">
           <img src="/images/chevron-left.png" alt="Back" />
         </Link>
-        <span>Sign Up</span>
+        <span>Hesab yaradın</span>
         <div className="formPart">
-          <h4>Register Account</h4>
-          <span>Complete your details or continue with social media</span>
+          <h4>Yeni hesab səhifəsi</h4>
+          <span>Məlumatlarınızı tamamlayın və ya sosial media ilə davam edin</span>
           <form
             action=""
             method="POST"
@@ -65,7 +65,7 @@ function MobileMode() {
                   }}
                   type="text"
                   name="name"
-                  placeholder="Your name"
+                  placeholder="Adınız"
                 />
               </div>
               {errors.name && <p className="reg-error">{errors.name}</p>}
@@ -80,7 +80,7 @@ function MobileMode() {
                   }}
                   type="text"
                   name="surname"
-                  placeholder="Your surname"
+                  placeholder="Soyadınız"
                 />
               </div>
               {errors.surname && <p className="reg-error">{errors.surname}</p>}
@@ -95,7 +95,7 @@ function MobileMode() {
                   }}
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder="Email-niz"
                 />
               </div>
               {errors.name && <p className="reg-error">{errors.email}</p>}
@@ -107,7 +107,7 @@ function MobileMode() {
                   value={values.password}
                   type={visiblePass ? "text" : "password"}
                   name="password"
-                  placeholder="Password"
+                  placeholder="Şifrəniz"
                   onChange={(e) => {
                     onChange(e);
                   }}
@@ -126,7 +126,7 @@ function MobileMode() {
               {errors.name && <p className="reg-error">{errors.password}</p>}
             </div>
             <button className="submit" type="submit">
-              Sign Up
+              Hesab yaradın
             </button>
           </form>
         </div>
@@ -134,7 +134,7 @@ function MobileMode() {
 
       <div className="bottom">
         <div className="continueWith">
-          <span>Or continue with</span>
+          <span>Və ya davam edin</span>
           <div className="btns">
             <a href="">
               <img src="/images/google.png" alt="Google Account" />
@@ -149,9 +149,9 @@ function MobileMode() {
 
         <div className="haveAccount">
           <span>
-            Already have an account?{" "}
+            Hesabınız var?{" "}
             <Link to="/login" className="greenTxt">
-              Sign in
+              Daxil olun
             </Link>
           </span>
         </div>

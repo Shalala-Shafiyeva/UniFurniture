@@ -6,8 +6,8 @@ function StartShopping() {
     <section className="startShopping">
       <div className="container">
         <div className="cover">
-          <h2>Saved the weekend and browse our more featured product</h2>
-          <Link to="/register">Start Shopping</Link>
+          <h2>Həftə sonunu xilas etdik və daha çox təqdim olunan məhsulumuzu nəzərdən keçirin</h2>
+          <Link to="/register">Alış-verişə Baslayın</Link>
         </div>
       </div>
     </section>

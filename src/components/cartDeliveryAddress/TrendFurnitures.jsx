@@ -1,9 +1,15 @@
 import React from "react";
-import { Autoplay,Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Autoplay,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import data from "../../data.json";
 import "swiper/css";
-import "swiper/css/navigation"; 
+import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 function TrendFurnitures() {
   const randormProducts = [];
@@ -14,20 +20,21 @@ function TrendFurnitures() {
     <section className="trendFurnitures">
       <div className="containerr">
         <div className="content">
-          <h3>Buy trending Furnitures Products</h3>
+          <h3>Trendləri Yansıdan Mebel Məhsulları Alın</h3>
           <p>
-          Discover the latest furniture trends that combine modern design and functionality. 
-          Elevate your living or working space with stylish pieces crafted for comfort and elegance.
-           Shop now for the perfect additions to your decor.
+            Son müasir dizayn və funksionallığı birləşdirən mebel trendlərini
+            kəşf edin. Komfort və zəriflik üçün hazırlanmış şık parçalarla yaşam
+            və iş mühitinizi yüksəldin. Dekorunuza mükəmməl əlavələr üçün indi
+            alış-veriş edin.
           </p>
-          <button className="explore">Explore More</button>
+          <button className="explore">Daha Ətraflı</button>
         </div>
         <div className="slider">
           <Swiper
             className="swiper"
-            modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={20}
-            navigation={{ nextEl: ".swiper-button-next"}}
+            navigation={{ nextEl: ".swiper-button-next" }}
             slidesPerView={"auto"}
             loop={true}
             autoplay={{ delay: 3000, disableOnInteraction: false }}

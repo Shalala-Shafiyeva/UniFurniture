@@ -106,7 +106,7 @@ function Filters({
         <div className="filter">
           {typeBtns.length > 0 && (
             <>
-              <h4>Product Categories</h4>
+              <h4>Məhsul Kateqoriyaları</h4>
               <div className="inps">
                 {typeBtns.map((btn) => (
                   <div className="inp" key={btn.id}>
@@ -143,7 +143,7 @@ function Filters({
         <div className="filter">
           {colorBtns.length > 0 && (
             <>
-              <h4>Filter by Color</h4>
+              <h4>Rəngə görə filtr</h4>
               <div className="inps">
                 {colorBtns.map((color, index) => {
                   return (
@@ -170,7 +170,7 @@ function Filters({
           )}
         </div>
         <div className="filter">
-          <h4>Product Categories</h4>
+          <h4>Digər filtrlər</h4>
           <div className="inps">
             <div className="inp">
               <input
@@ -183,7 +183,7 @@ function Filters({
                 }}
                 // onClick={() => dispatch(filterByStock(true))}
               />
-              <label htmlFor="stock">In Stock</label>
+              <label htmlFor="stock">Stokda</label>
             </div>
             <div className="inp">
               <input
@@ -196,7 +196,7 @@ function Filters({
                 }}
                 // onClick={() => dispatch(filterBySale(true))}
               />
-              <label htmlFor="sale">On Sale</label>
+              <label htmlFor="sale">Endirimli</label>
             </div>
           </div>
         </div>

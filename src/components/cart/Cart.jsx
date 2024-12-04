@@ -170,12 +170,12 @@ function Cart({ openBasket, setOpenBasket }) {
           <div onClick={handleCloseCart} className="closeBtn">
             x
           </div>
-          <span>Shopping Cart</span>
+          <span>Alış-veriş Səbəti</span>
           <span>{count}</span>
         </div>
         <div className="orderProducts">
           {isFetchingCart ? (
-            <div>Loading...</div>
+            <div>Yüklənir...</div>
           ) : products.length ? (
             products.map((product) => (
               <div className="product" key={product.id}>
@@ -235,18 +235,18 @@ function Cart({ openBasket, setOpenBasket }) {
             ))
           ) : (
             <div className="emptyCart">
-              Looks like you haven’t added any items yet.
+              Görünür, hələ heç bir məhsul əlavə etməmisiniz.
             </div>
           )}
         </div>
         <div className="totalCount">
-          <span>Total:</span>
+          <span>Toplam:</span>
           <span>${total.toFixed(2)}</span>
         </div>
         <div className="btn">
           <Link to="/cart/deliveryaddress">
             <button disabled={products.length === 0} className="orderBtn">
-              Make Order
+              Sifariş et
             </button>
           </Link>
         </div>

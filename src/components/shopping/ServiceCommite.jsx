@@ -28,16 +28,15 @@ function ServiceCommite() {
       <section className="serviceCommit">
         <div className="container">
           <div className="txt">
-            <h2>Exellence in service is our commitment</h2>
+            <h2>Xidmətin mükəmməlliyi bizim öhdəliyimizdir</h2>
             <p>
-              We are a company that focuses on the furniture sector that has
-              been established for 20 years, we are located in the us with 100
-              branches in various regions. we provied various types of furniture
-              of the hightest quality, of course with good service and other
-              conveniences
+              Biz 20 ildir fəaliyyət göstərən və mebel sektoruna fokuslanmış bir
+              şirkətik, ABŞ-da yerləşirik və müxtəlif bölgələrdə 100 filialımız
+              var. Biz yüksək keyfiyyətli müxtəlif növ mebellər təqdim edirik,
+              əlbəttə ki, yaxşı xidmət və digər rahatlıqlarla birlikdə
             </p>
             <Link to="/login" className="getStart">
-              Get Started
+              Başlayın
             </Link>
           </div>
           <div className="img">
@@ -57,7 +56,7 @@ function ServiceCommite() {
     //         hightest quality, of course with good service and other conveniences
     //       </p>
     //       <Link to="/login" className="getStart">
-    //         Get Started
+    //         Başlayın
     //       </Link>
     //     </div>
     //     <div className="img">

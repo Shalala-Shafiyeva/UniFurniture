@@ -6,10 +6,8 @@ function CreateAccount() {
     <section className="createAccount" data-aos="fade-up">
       <div className="containerAcc">
         <div className="cover">
-          <h4>
-            Take the control of your finances. Create a free account today.
-          </h4>
-          <Link to="/register">Sign up</Link>
+          <h4>Maliyyə idarəetməsini ələ alın. Bu gün pulsuz hesab yaradın.</h4>
+          <Link to="/register">Hesab yaradın</Link>
         </div>
       </div>
     </section>

@@ -50,13 +50,13 @@ function Order() {
       <div className="container">
         <div className="wrapper">
           <h3 className="title">
-            My <span>Orders</span>
+            Mənim <span>Sifarişlərim</span>
           </h3>
           {orders.length === 0 ? (
-            <p className="error">No order found</p>
+            <p className="error">Heç bir sifariş yoxdur</p>
           ) : (
             <div className="order-cover">
-              <h3>Total: {orders[0]?.total.toFixed(2)}</h3>
+              {/* <h3>Total: {orders[0]?.total.toFixed(2)}</h3> */}
               <div class="accordion" id="accordionExample">
                 {orders?.map((order) => {
                   return (
@@ -74,7 +74,7 @@ function Order() {
                         {order?.uid} {order?.created_at} Status: {order?.status}{" "}
                         {order?.status === "PENDING" && (
                           <button onClick={() => handleCancelled(order?.id)}>
-                            CANCEL
+                            LƏĞV ET
                           </button>
                         )}
                       </span>
@@ -88,14 +88,14 @@ function Order() {
                               />
                             </div>
                             <div className="description">
-                              <p>Title: {products?.product?.name}</p>
+                              <p>Məhsulun adı: {products?.product?.name}</p>
                               <p>
-                                Price: ${products?.product?.price.toFixed(2)}
+                                Qiymət: ${products?.product?.price.toFixed(2)}
                               </p>
-                              <p>Qty: {products?.quantity}</p>
-                              <p>Payment type: {order?.payment_type}</p>
-                              <p>Delivery Address: {order?.address}</p>
-                              <p>Total: ${products?.total.toFixed(2)}</p>
+                              <p>Miqdar: {products?.quantity}</p>
+                              <p>Odəniş üsulu: {order?.payment_type}</p>
+                              <p>Çatdırılma ünvanı: {order?.address}</p>
+                              <p>Toplam: ${products?.total.toFixed(2)}</p>
                             </div>
                           </p>
                         );

@@ -6,7 +6,7 @@ function WeDo() {
   return (
     <section className="weDo" data-aos="fade-up">
       <h4>
-        The values that shape everything we do at <span>Startply X</span>
+        <span>Startply X</span>-də etdiyimiz hər şeyi formalaşdıran dəyərlər
       </h4>
       <div className="doCards">
         {data.weDo.map((card) => (
@@ -22,7 +22,7 @@ function WeDo() {
         ))}
       </div>
       <Link to="/login" className="getStart">
-        Get Started
+        Başlayın
       </Link>
     </section>
   );

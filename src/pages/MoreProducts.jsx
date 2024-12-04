@@ -134,7 +134,7 @@ function MoreProducts() {
       </Helmet>
       <Header />
       <HeadFilters
-        productsCount={products?.length || 0}
+        productsCount={products?.data?.length || 0}
         filters={filters}
         fetchFilteredProducts={fetchFilteredProducts}
         handleFilterChange={handleFilterChange}

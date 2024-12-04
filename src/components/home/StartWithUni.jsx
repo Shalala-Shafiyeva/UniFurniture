@@ -8,26 +8,28 @@ function StartWithUni() {
       <div className="containerStart">
         <div className="head">
           <div className="left">
-            <h3>How to get started with UniFurniturep</h3>
+            <h3>UniFurniture ilə işə necə başlamaq olar</h3>
             <p>
-            To get started with UniFurniture, simply create an account, browse 
-            our wide selection of furniture, and add your desired items to your cart. Once you're ready, 
-            proceed to checkout and follow the easy steps to complete your purchase. 
-            If you have any questions along the way, our customer support team is here to assist you!
+              UniFurniture ilə başlamaq üçün sadəcə bir hesab yaradın, geniş
+              mebel seçimimizi nəzərdən keçirin və istədiyiniz məhsulları
+              səbətinizə əlavə edin. Hazır olduğunuzda, ödəniş prosesinə keçin
+              və alqı-satqınızı tamamlaymaq üçün asan addımları izləyin. Hər
+              hansı bir sualınız varsa, müştəri dəstək komandamız sizə kömək
+              etməyə hazırdır!
             </p>
           </div>
           <div className="btns">
             <Link className="createAccountBtn" to="/register">
-              Create Account
+              Hesab Yarad
             </Link>
             <Link className="loginBtn" to="/login">
-              Sign In
+              Daxil ol
             </Link>
           </div>
         </div>
         <div className="contentUni">
           {data.startWithUni.map((card) => {
-            if (card.id % 2 != 0 ) {
+            if (card.id % 2 != 0) {
               return (
                 <div className="box" key={card.id}>
                   <div className="img">

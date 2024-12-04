@@ -10,10 +10,10 @@ function Delivery() {
               <img src="/images/shipping.png" alt="Shipping" />
             </div>
             <div className="desc">
-              <span>Fast & free shipping</span>
+              <span>Tez və pulsuz çatdırılma</span>
               <p>
-                Every single order ships for free. No minimums, no tiers, no
-                fine print whatsoever.
+                Hər bir sifariş pulsuz göndərilir. Hər hansı bir minimum və ya
+                limit yoxdur, hər şey açıq şəkildə təqdim edilir.
               </p>
             </div>
           </div>
@@ -22,10 +22,10 @@ function Delivery() {
               <img src="/images/design.png" alt="Design" />
             </div>
             <div className="desc">
-              <span>Modular, easy-to-move design</span>
+              <span>Modul, asanlıqla hərəkət etdirilə bilən dizayn</span>
               <p>
-                Our innovative modular design is driven by the belief that
-                furniture should fit this home
+                Bizim inqilabi modul dizaynımız, mebellərin hər evə uyğun olmalı
+                olduğunu düşünərək hazırlanmışdır
               </p>
             </div>
           </div>
@@ -34,10 +34,10 @@ function Delivery() {
               <img src="/images/design.png" alt="Material" />
             </div>
             <div className="desc">
-              <span>Durable, premium materials</span>
+              <span>Dayanıqlı, premium materiallar</span>
               <p>
-                We use materials like sustainably-forested wood, strengthened
-                steel hardware
+                Biz davamlı meşələrdən alınan taxta və möhkəmləndirilmiş polad
+                hardware kimi materiallardan istifadə edirik
               </p>
             </div>
           </div>

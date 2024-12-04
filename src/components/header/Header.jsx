@@ -39,24 +39,20 @@ function Header() {
 
   const queryClient = useQueryClient();
   // Fetch count of products in the cart
-  const { data: count = 0 } = useQuery(
-    "cartCount",
-    async () => {
-      const response = await fetch(
-        "http://localhost:8000/api/basket/productQty",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      const result = await response.json();
-      return result.data || 0;
-    }
-  );
-  
+  const { data: count = 0 } = useQuery("cartCount", async () => {
+    const response = await fetch(
+      "http://localhost:8000/api/basket/productQty",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    const result = await response.json();
+    return result.data || 0;
+  });
 
   const { cart } = useSelector((state) => state.cart);
   const [openMenu, setOpenMenu] = useState(false);
@@ -81,20 +77,20 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">Əsas Səhifə</NavLink>
             </li>
             <li>
-              <NavLink to="/shop">Shop</NavLink>
+              <NavLink to="/shop">Alış-veriş</NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/about">Haqqımızda</NavLink>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <NavLink to="/services">Xidmətlər</NavLink>
             </li>
             {isAuthenticated && (
               <li>
-                <NavLink to="/my-orders">My Orders</NavLink>
+                <NavLink to="/my-orders">Sifarişlər</NavLink>
               </li>
             )}
           </ul>
@@ -104,15 +100,15 @@ function Header() {
             {!isAuthenticated ? (
               <>
                 <Link id="login" to="/login">
-                  Login
+                  Daxil Ol
                 </Link>
                 <Link id="register" to="/register">
-                  Sign Up
+                  Qeydiyyat
                 </Link>
               </>
             ) : (
               <button id="logout" onClick={handleLogout}>
-                Logout
+                Çıxış
               </button>
             )}
           </div>
@@ -121,11 +117,11 @@ function Header() {
           </div>
           {!isAuthenticated ? (
             <NavLink id="mobileLogin" to="/login">
-              Login
+              Daxil ol
             </NavLink>
           ) : (
             <NavLink id="mobileLogout" onClick={handleLogout}>
-              Logout
+              Çıxış
             </NavLink>
           )}
           <div className="basket" onClick={() => handleOpenBasket()}>
@@ -143,20 +139,20 @@ function Header() {
         </div>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">Əsas Səhifə</NavLink>
           </li>
           <li>
-            <NavLink to="/shop">Shop</NavLink>
+            <NavLink to="/shop">Alış-veriş</NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about">Haqqımızda</NavLink>
           </li>
           <li>
-            <NavLink to="/services">Services</NavLink>
+            <NavLink to="/services">Xidmətlər</NavLink>
           </li>
           {isAuthenticated && (
             <li>
-              <NavLink to="/my-orders">My Orders</NavLink>
+              <NavLink to="/my-orders">Sifarişlər</NavLink>
             </li>
           )}
         </ul>

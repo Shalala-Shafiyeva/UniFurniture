@@ -11,8 +11,8 @@ function CreateAcoount() {
       <div className="circle item14"></div>
       {/* <div className="vector"></div> */}
       <div className="cover">
-        <h4>Take the control of your finances. Create a free account.</h4>
-        <Link to="/register">Sign up</Link>
+        <h4>Maliyyələrinizi idarə edin. Pulsuz hesab yaradın.</h4>
+        <Link to="/register">Qeydiyyatdan keçin</Link>
       </div>
     </section>
   );

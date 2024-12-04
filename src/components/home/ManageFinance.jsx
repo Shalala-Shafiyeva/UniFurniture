@@ -7,10 +7,12 @@ function ManageFinance() {
     <section className="manageFinannce" data-aos="fade-up">
       <div className="containerManage">
         <div className="head">
-          <h3>It have never been easier to manage your finances</h3>
+          <h3>Heç vaxt maliyyə idarə etmək bu qədər asan olmamışdı</h3>
           <span>
-          Take control of your financial future with our easy-to-use tools and services. We make managing your 
-          money simple, efficient, and secure, so you can focus on what matters most.
+            Maliyyə gələcəyinizi asanlıqla idarə etmək üçün istifadəçi dostu
+            alətlərimiz və xidmətlərimizlə nəzarətə götürün. Biz pul idarə
+            etməyi sadə, effektiv və təhlükəsiz edirik ki, siz ən vacib şeylərə
+            fokuslana biləsiniz.
           </span>
         </div>
         <div className="cards">
@@ -30,7 +32,7 @@ function ManageFinance() {
           ))}
         </div>
         <Link to="/login" className="getStart">
-          Get Started
+          Başlayın
         </Link>
       </div>
     </section>

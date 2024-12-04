@@ -25,12 +25,12 @@ function Generate() {
             <img src="/images/generate1.png" alt="Image" />
           </div>
           <div className="content">
-            <div className="title">Generate lesds effortlessly</div>
+            <div className="title">Asanlıqla potensial müştərilər yaradın</div>
             <p>
-              You’ve probably wondered at some point. How can we enhance lead
-              generation for your business? Worry no more because we have your
-              back and provide you with the most effective telemarketing
-              strategies.
+              Yəqin ki, bir vaxtlar düşünmüsünüz: Biznesiniz üçün potensial
+              müştəri cəlb etməyi necə yaxşılaşdıra bilərik? Artıq narahat
+              olmağa ehtiyac yoxdur, çünki biz sizin yanınızdayıq və sizə ən
+              effektiv telemarketinq strategiyalarını təqdim edirik.
             </p>
             <Link
               to="#"
@@ -38,18 +38,18 @@ function Generate() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Learn more
+              Daha ətraflı
             </Link>
           </div>
         </div>
         <div className="box">
           <div className="content">
-            <div className="title">Generate lesds effortlessly</div>
+            <div className="title">Potensial müştəriləri asanlıqla yaradın</div>
             <p>
-              You’ve probably wondered at some point. How can we enhance lead
-              generation for your business? Worry no more because we have your
-              back and provide you with the most effective telemarketing
-              strategies.
+              Yəqin ki, bir vaxtlar düşünmüsünüz: Biznesiniz üçün potensial
+              müştəri cəlb etməyi necə yaxşılaşdıra bilərik? Artıq narahat
+              olmağa ehtiyac yoxdur, çünki biz sizin yanınızdayıq və sizə ən
+              effektiv telemarketinq strategiyalarını təqdim edirik.
             </p>
             <Link
               to="#"
@@ -57,7 +57,7 @@ function Generate() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Read more
+              Daha ətraflı
             </Link>
           </div>
           <div className="img">

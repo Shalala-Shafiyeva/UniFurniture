@@ -538,7 +538,7 @@
     font-size: 27px;
     font-weight: 500;
     line-height: 50px;
-    height: 60px;
+    /* height: 60px; */
     text-transform: capitalize;
 }
 

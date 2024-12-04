@@ -36,7 +36,7 @@ function AboutHero() {
           <h2 dangerouslySetInnerHTML={{ __html: addClassToWord(banner.data.title) }} />
             <p>{banner.data.content}</p>
             <Link className="getStart" to="/login">
-              Get Started
+            Başlayın
             </Link>
           </div>
           <div className="img">
@@ -59,7 +59,7 @@ function AboutHero() {
             ullamcorper.
           </p>
           <Link className="getStart" to="/login">
-            Get Started
+            Başlayın
           </Link>
         </div>
         <div className="img">

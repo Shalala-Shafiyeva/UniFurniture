@@ -22,14 +22,14 @@ function ShoppingHero({
         <div className="context">
           <div className="cover">
             <h2>
-              Every <span className="orange">Furniture</span> has a beautiful
-              story
+              Hər bir<span className="orange">Məhsulun</span> gözəl bir hekayəsi
+              var
             </h2>
             <p>
               {" "}
-              Every piece of furniture we offer has its own unique history and
-              craftsmanship. From timeless designs to modern styles, each item
-              tells a story that brings warmth and character to your home.
+              Təklif etdiyimiz hər bir mebelin özünə məxsus bir tarixçəsi və
+              ustalığı var. Vaxtsız dizaynlardan müasir üslublara qədər, hər bir
+              əşya evinizə istilik və xarakter qataraq öz hekayəsini danışır.
             </p>
           </div>
         </div>
@@ -39,7 +39,7 @@ function ShoppingHero({
               className="orange"
               type="text"
               name="search"
-              placeholder="Let's Start your needs"
+              placeholder="Ehtiyaclarınızı qarşılamağa başlayaq"
               value={filters.search}
               onChange={(e) => {
                 // handleSearchInputChange(e);
@@ -47,7 +47,7 @@ function ShoppingHero({
                 handleFilterChange(e.target.name, e.target.value);
                 if (e.target.value === "") {
                   setFilteredKey(false);
-                }else{
+                } else {
                   setFilteredKey(true);
                 }
               }}

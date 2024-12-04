@@ -50,7 +50,7 @@ function QuestionsAccordion() {
         <div className="cover">
           {options?.length > 0 && (
             <>
-              <h3 className="middleTxt">Frequently Asked Questions</h3>
+              <h3 className="middleTxt">Tez-tez Verilən Suallar</h3>
               <div className="filterBtns">
                 {options?.map((option) => (
                   <button
@@ -66,8 +66,9 @@ function QuestionsAccordion() {
                 ))}
               </div>
               <p>
-              Here you will find answers to the most frequently asked questions.
-               If you can't find the information you're looking for, feel free to reach out to us!
+                Burada ən çox verilən sualların cavablarını tapa bilərsiniz.
+                Axtardığınız məlumatı tapa bilmirsinizsə, bizimlə əlaqə
+                qurmaqdan çəkinməyin!
               </p>
               <div className="accordion">
                 {options

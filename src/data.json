@@ -47,131 +47,131 @@
     {
       "id": "1",
       "img": "/images/weDo/Imployeimage.png",
-      "title": "Exection",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
+      "title": "İcra Prosesi",
+      "description": "Hər bir layihəmizdə dəqiqlik, vaxtında yerinə yetirmə və yüksək keyfiyyət prinsiplərinə sadiq qalırıq. İcra prosesində komandamız detallara xüsusi diqqət yetirir, nəticələrə nail olmaq üçün hər bir mərhələni peşəkarcasına idarə edir və müştərilərimizin gözləntilərini üstələməyə çalışır. Bizim üçün icra, uğurun əsas açarıdır."
     },
     {
       "id": "2",
       "img": "/images/weDo/Imployeimage2.png",
-      "title": "Move like a Startup",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
+      "title": "Startap Kimi Davran",
+      "description": "Daim dəyişən bazar tələblərinə uyğunlaşaraq, yaradıcı həllər təqdim edir və müştərilərimizin ehtiyaclarını qarşılayırıq. Startap kimi hərəkət etmək, bizi rəqabətdən bir addım öndə saxlayır və hər zaman irəliyə baxmağımıza kömək edir."
     },
     {
       "id": "3",
       "img": "/images/weDo/Imployeimage3.png",
-      "title": "Results Matter",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
+      "title": "Nəticə Əhəmiyyətlidir",
+      "description": " Hər bir layihədə məqsədimiz müştərilərimizə real dəyər qatmaq və konkret uğurlar əldə etməkdir. Uğuru ölçmək üçün yalnız proseslərə deyil, nəticələrin keyfiyyətinə və müştəri məmnuniyyətinə diqqət yetiririk. Nəticələrin əhəmiyyətli olduğunu bilirik və bunun üçün hər zaman maksimum səy göstəririk."
     },
     {
       "id": "4",
       "img": "/images/weDo/Imployeimage4.png",
-      "title": "Take Ownership",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
+      "title": "Məsuliyyət Daşımaq",
+      "description": "Hər bir layihə və tapşırıqda özünü sahibkar kimi hiss edərək, problemləri həll etmək və yeni imkanlar yaratmaq üçün aktiv şəkildə çalışırıq. Məsuliyyət daşımaq, bizə güvən və uğur gətirir, həmçinin komanda üzvlərinin özlərini daha da inkişaf etdirməsinə imkan yaradır."
     },
     {
       "id": "5",
       "img": "/images/weDo/Imployeimage5.png",
-      "title": "Growth",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
+      "title": "İnkişaf Etdirmək",
+      "description": "Biz yalnız məhsul və xidmətlərimizi deyil, həm də komanda üzvlərimizi və şirkətimizi davamlı olaraq inkişaf etdiririk. Yeni bacarıqlar öyrənmək, yeni bazar imkanlarını araşdırmaq və yenilikləri tətbiq etmək üçün daim irəliləyirik. İnkişaf, bizim üçün sadəcə bir hədəf deyil, hər zaman təkmilləşməyə və daha yüksək səviyyələrə çatmağa olan bağlılığımızın təzahürüdür."
     },
     {
       "id": "6",
       "img": "/images/weDo/Imployeimage6.png",
-      "title": "Team Work",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at."
+      "title": "Komanda İşləməyi",
+      "description": "Komanda işi ən böyük gücümüzdür. Hər bir fərdin bacarıqları və fikirləri dəyərli hesab edilir, və biz birgə çalışaraq ən yaxşı nəticələri əldə edirik. Hər bir komanda üzvü bir-birini dəstəkləyir, qarşılıqlı hörmət və əməkdaşlıqla problemləri həll edir. Biz inanırıq ki, güclü komanda ruhu ilə daha böyük uğurlara imza atmaq mümkündür."
     }
   ],
   "founders": [
     {
       "id": 1,
       "name": "Sabo",
-      "surname": "Marties",
-      "role": "Founder of Rubik",
-      "content": "suggests that the top planners spend most of their time engaged in analysis and are concerned with industry.",
+      "surname": "Martis",
+      "role": "İcraçı Direktor",
+      "content": "Ən yaxşı planlaşdırıcılar vaxtlarının çoxunu analizlə məşğul olmağa sərf edir və sənaye ilə maraqlanırlar.",
       "img": "/images/founders/img1.png"
     },
     {
       "id": 2,
-      "name": "Sabo",
-      "surname": "Marties",
-      "role": "Founder of Rubik",
-      "content": "suggests that the top planners spend most of their time engaged in analysis and are concerned with industry.",
+      "name": "Ethan",
+      "surname": "Carter",
+      "role": "Baş Məqsədçi",
+      "content": "Riskləri qəbul və yenilikçi yanaşmalar tətbiq edin. Hər zaman fərqli düşünün və cəsur olun.",
       "img": "/images/founders/img2.png"
     },
     {
       "id": 3,
-      "name": "Sabo",
-      "surname": "Marties",
-      "role": "Founder of Rubik",
-      "content": "suggests that the top planners spend most of their time engaged in analysis and are concerned with industry.",
+      "name": "Adrian",
+      "surname": "Novak",
+      "role": "Təsisçi və CEO",
+      "content": "Hər uğursuzluq bir təcrübədir. Səhvlərdən qorxma, onlardan dərs al və yenidən cəhd et.",
       "img": "/images/founders/img3.png"
     },
     {
       "id": 4,
-      "name": "Sabo",
-      "surname": "Marties",
-      "role": "Founder of Rubik",
-      "content": "suggests that the top planners spend most of their time engaged in analysis and are concerned with industry.",
+      "name": "Tamerlan",
+      "surname": "Mammadov",
+      "role": "İdarə Heyətinin Sədri",
+      "content": "İş dünyasında və şəxsi inkişafda daim inkişaf edin. Heç vaxt öyrənməkdən dayanmayın, biliklər sizi irəlilədəcək.",
       "img": "/images/founders/img4.png"
     }
   ],
   "startWithUni": [
     {
       "id": 1,
-      "title": "Download our free app",
-      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at.",
+      "title": "Pulsuz tətbiqimizi yükləyin",
+      "content": "Pulsuz tətbiqimizi yükləyərək alış-veriş idarəetməsini daha asan və effektiv edin.",
       "img": "/images/startWithUni/image1.png"
     },
     {
       "id": 2,
-      "title": "Create an account",
-      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at.",
+      "title": "Hesab yaradın",
+      "content": "Hesab yaradın və xidmətlərimizdən tam şəkildə faydalanmağa başlayın.",
       "img": "/images/startWithUni/image2.png"
     },
     {
       "id": 3,
-      "title": "Start controlling your finances",
-      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at.",
+      "title": "Maliyyənizi idarə etməyə başlayın",
+      "content": "Maliyyənizi idarə etməyə başlayın və gələcəyinizi daha yaxşı planlamaq üçün güclü bir addım atın.",
       "img": "/images/startWithUni/image3.png"
     },
     {
       "id": 4,
-      "title": "Start Shopping",
-      "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur tortor nunc aliquam consectetur semper augue at.",
+      "title": "Alış-verişlərə başlayın",
+      "content": "Alış-verişə başlayın və istədiyiniz məhsulları ən yaxşı qiymətlərlə əldə edin.",
       "img": "/images/startWithUni/image4.png"
     }
   ],
   "systemSlider": [
     {
       "id": 1,
-      "title": "A great system for us",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit tellus augue sagittis erat consectetur est blandit blandit nec mauris pulvinar lectus duis amet tortor, sit tincidunt rhoncus tincidunt imperdiet penatibus vitae risus, vitae.",
-      "name": "Taylor More",
-      "role": "Founder of Alpha",
+      "title": "Evinizi gözəlləşdirin",
+      "description": "Keyfiyyətli və zövqlü mebellər seçərək həyat tərzinizi dəyişin.",
+      "name": "Ayxan Məmmədova",
+      "role": "Dizayn Mütəxəssisi",
       "img": "/images/home/sliderImg.png"
     },
     {
       "id": 2,
-      "title": "A great system for us",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit tellus augue sagittis erat consectetur est blandit blandit nec mauris pulvinar lectus duis amet tortor, sit tincidunt rhoncus tincidunt imperdiet penatibus vitae risus, vitae.",
-      "name": "Taylor More",
-      "role": "Founder of Alpha",
+      "title": "Rahatlıq və dəbdəbə bir arada",
+      "description": "Hər kəs üçün ideal həllər: rahat, funksional və estetik mebellər",
+      "name": "Leyla Hüseynova",
+      "role": "İnteryer Dizayneri",
       "img": "/images/home/sliderImg.png"
     },
     {
       "id": 3,
-      "title": "A great system for us",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit tellus augue sagittis erat consectetur est blandit blandit nec mauris pulvinar lectus duis amet tortor, sit tincidunt rhoncus tincidunt imperdiet penatibus vitae risus, vitae.",
-      "name": "Taylor More",
-      "role": "Founder of Alpha",
+      "title": "İstədiyiniz üsluba uyğun mebellər",
+      "description": "Minimalizmdən klassikaya qədər geniş seçim imkanları.",
+      "name": "Rəşad Əliyev",
+      "role": "Məhsul Meneceri",
       "img": "/images/home/sliderImg.png"
     },
     {
       "id": 4,
-      "title": "A great system for us",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit tellus augue sagittis erat consectetur est blandit blandit nec mauris pulvinar lectus duis amet tortor, sit tincidunt rhoncus tincidunt imperdiet penatibus vitae risus, vitae.",
-      "name": "Taylor More",
-      "role": "Founder of Alpha",
+      "title": "Rahatlıq evdən başlayır",
+      "description": "Gündəlik həyatınız üçün komfortlu və davamlı mebellər.",
+      "name": "Gülnar Əhmədova",
+      "role": "Müştəri Məsləhətçisi",
       "img": "/images/home/sliderImg.png"
     }
   ],
@@ -247,45 +247,44 @@
     {
       "id": 1,
       "img": "/images/home/articlle1.png",
-      "title": "We are the next banking experience",
-      "category": "Management",
-      "description": "Is it amart to invest in cryptocurrency in 2024? What you need to Know"
-
+      "title": "Müasir Mebel Dizaynının Trendləri ilə Evinizi Gözləlləsdirin",
+      "category": "Dizayn",
+      "description": "Müasir ev dekorasiyasına uyğun mebel seçməkdə çətinlik çəkirsiniz? Bu məqalədə, 2024-cü ilin ən populyar mebel dizaynı trendlərini və bu trendlərlə evinizi necə gözəlləşdirəcəyinizi öyrənəcəksiniz."
     },
     {
       "id": 2,
       "img": "/images/home/article2.png",
-      "title": "We are the next banking experience",
-      "category": "Finance",
-      "description": "21 job interview tips: How to make a great impression from the first moment"
+      "title": "Kiçik Məkanlar Üçün İdeal Mebel Seçimləri",
+      "category": "Estetika",
+      "description": "Kiçik evlərdə həm funksional, həm də şık görünən mebellər necə seçilməlidir? Məkanınızı daha geniş və rahat göstərməyin sirləri ilə tanış olun."
     },
     {
       "id": 3,
       "img": "/images/home/article3.png",
-      "title": "We are the next banking experience",
-      "category": "Business",
-      "description": "How to invest money: The smart way to grow your money while you sleep"
+      "title": "Evdə Rahatlıq: Keyfiyyətli Divanlar və Onların Seçim Qaydaları",
+      "category": "Məsləhətlər",
+      "description": "Uzun müddət dayanıqlı, rahat və estetik divan seçmək istəyirsiniz? Bu məqalədə keyfiyyətli divan seçmək üçün nəzərə alınması vacib olan meyarları müzakirə edirik."
     },
     {
       "id": 4,
       "img": "/images/home/article4.png",
-      "title": "We are the next banking experience",
-      "category": "Finance",
-      "description": "How to invest money: The smart way to grow your money while you sleep"
+      "title": "Mebellərin Baxımı Üçün Əsas Məsləhətlər",
+      "category": "Məsləhətlər",
+      "description": "Mebellərinizin ömrünü uzatmaq və onların görünüşünü təzə saxlamaq istəyirsiniz? Sadə, lakin təsirli baxım məsləhətlərimizi oxuyun və mebellərinizi hər zaman ideal formada saxlayın."
     },
     {
       "id": 5,
       "img": "/images/home/article5.png",
-      "title": "We are the next banking experience",
-      "category": "Business",
-      "description": "How to invest money: The smart way to grow your money while you sleep"
+      "title": "Uşaq Otağı Üçün Ən Təhlükəsiz və Rahat Mebellər",
+      "category": "Estetika",
+      "description": "Uşaqlarınız üçün həm təhlükəsiz, həm də funksional mebellər seçmək istəyirsiniz? Bu məqalədə, uşaq otağı üçün ən uyğun mebel variantlarını və onların xüsusiyyətlərini öyrənəcəksiniz."
     },
     {
       "id": 6,
       "img": "/images/home/article6.png",
-      "title": "We are the next banking experience",
-      "category": "Management",
-      "description": "How to invest money: The smart way to grow your money while you sleep"
+      "title": "Evinizə Xüsusi Tərz: Mebellərin Fərdiləşdirilməsi",
+      "category": "Design",
+      "description": "Unikal və fərdi tərzə sahib olmaq istəyirsiniz? Mebellərin rəng, material və dizayn baxımından fərdiləşdirilməsi üçün yaradıcı fikirlər və tövsiyələr bu məqalədə təqdim olunur."
     }
   ],
   "products": [
@@ -2869,37 +2868,37 @@
   "peopleSlider": [
     {
       "id": 1,
-      "name": "Robin Doe",
-      "role": "Founder of Alpha",
-      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "name": "Nigar Hüseynova",
+      "role": "Dizayn Mütəxəssisi",
+      "text": "Bu veb sayt vasitəsilə evim üçün ideal mebelləri tapdım. Keyfiyyətli məhsullar və mükəmməl müştəri xidməti məni çox razı saldı!",
       "img": "/images/shop/avatar1.png"
     },
     {
       "id": 2,
-      "name": "Sabo Masties",
-      "role": "Founder of Rubik",
-      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "name": "Orxan Əliyev",
+      "role": "Sahibkar",
+      "text": "Evim və ofisim üçün zövqlü və funksional mebelləri buradan aldım. Məhsullar həm keyfiyyətlidir, həm də münasib qiymətlidir.",
       "img": "/images/shop/avatar2.png"
     },
     {
       "id": 3,
-      "name": "John Rowan",
-      "role": "Founder of tabar",
-      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "name": "Leyla Məmmədova",
+      "role": "Müəllim",
+      "text": "Bu mağaza həm rahat alış-veriş təcrübəsi, həm də geniş seçim imkanı təklif edir. Aldığım mebellərdən çox razıyam!",
       "img": "/images/shop/avatar3.png"
     },
     {
       "id": 4,
-      "name": "June Doe",
-      "role": "Founder of Camo",
-      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "name": "Rəşad İbrahimov",
+      "role": "Marketinq Meneceri",
+      "text": "Sifarişlərim vaxtında və əla qablaşdırma ilə çatdırıldı. Hər kəsə tövsiyə edirəm! Həm keyfiyyət, həm də xidmət səviyyəsi çox yüksəkdir.",
       "img": "/images/shop/avatar2.png"
     },
     {
       "id": 5,
-      "name": "Maria Samolya",
-      "role": "Founder of Omega",
-      "text": "Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.",
+      "name": "Aygün Quliyeva",
+      "role": "İnteryer Dizayneri",
+      "text": "Müştərilərim üçün layihələrdə istifadə etdiyim mebellərin hamısını buradan alıram. Həm keyfiyyət, həm də xidmət səviyyəsi çox yüksəkdir.",
       "img": "/images/shop/avatar3.png"
     }
   ],

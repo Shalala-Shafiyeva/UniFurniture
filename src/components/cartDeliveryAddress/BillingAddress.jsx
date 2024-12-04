@@ -9,7 +9,7 @@ function BillingAddress() {
   };
   return (
     <div className="billingAddress">
-      <span className="title">Billing Address</span>
+      <span className="title">Ödəmə Ünvanı</span>
       <div className="form">
         <form
           action=""
@@ -20,7 +20,7 @@ function BillingAddress() {
           <div className="sameAddress">
             <div className="inp">
               <input type="checkbox" id="same" />
-              <label htmlFor="same">Same as delivery address</label>
+              <label htmlFor="same">Çatdırılma ünvanı ilə eyni</label>
             </div>
             <button
               onClick={() => {
@@ -28,7 +28,7 @@ function BillingAddress() {
               }}
               className={`change ${openForm ? "hidden" : ""}`}
             >
-              Change
+              Dəyişdir
             </button>
           </div>
           <div className={`newBillingAddress ${!openForm ? "hidden" : ""}`}>
@@ -46,10 +46,10 @@ function BillingAddress() {
                 handleForm();
               }}
             >
-              Save
+              Saxla
             </button>
           </div>
-           <p className={`${openForm? "hidden" : ""}`}>{text}</p>
+          <p className={`${openForm ? "hidden" : ""}`}>{text}</p>
         </form>
       </div>
     </div>

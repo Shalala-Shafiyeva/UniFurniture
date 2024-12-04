@@ -63,17 +63,17 @@ function Paralax2() {
             ))}
           </div>
         )} */}
-        <span>We have impactful numbers</span>
+        <span>Bizim əhəmiyyətli rəqəmlərimiz</span>
         <div className="nums">
           <div className="left">
             <div className="per">
               <span>98%</span>
-              <span>Customer satisfaction</span>
+              <span>Müştəri məmnuniyyəti</span>
             </div>
             <div className="box">
               <div className="plus">
                 <span>205M+</span>
-                <span>Monthly active users</span>
+                <span>Həftəlik yeni istifadəçilər</span>
               </div>
             </div>
           </div>
@@ -81,12 +81,12 @@ function Paralax2() {
             <div className="box2">
               <div className="per">
                 <span>100K+</span>
-                <span>New users per week</span>
+                <span>Aylıq yeni istifadəçilər</span>
               </div>
             </div>
             <div className="plus">
               <span>55%</span>
-              <span>Growth year-over-year</span>
+              <span>İldən-ilə artım</span>
             </div>
           </div>
         </div>

@@ -111,11 +111,11 @@ function CustomerInfo() {
   return (
     <div className="customerInfo">
       <div className="head">
-        <h3>Shopping Cart</h3>
-        <span>Total: ${totalPrice.toFixed(2)}</span>
+        <h3>Alış-veriş Səbəti</h3>
+        <span>Toplam: ${totalPrice.toFixed(2)}</span>
       </div>
       <div className="customer">
-        <span className="title">Customer Information</span>
+        <span className="title">Müştəri Məlumatlar</span>
         <div className="info">
           <div className={`currentInfo ${openForm ? "hidden" : ""}`}>
             <div className="context">
@@ -135,18 +135,18 @@ function CustomerInfo() {
               </div>
             </div>
             <button onClick={handleOpenForm} className="change">
-              Change
+            Dəyişdir
             </button>
           </div>
           <div className={`changeForm ${openForm ? "visible" : "hidden"}`}>
             <form action="" onSubmit={(e) => e.preventDefault()}>
               <div className="inps">
                 <div className="inp">
-                  <label htmlFor="name">Customer Name</label>
+                  <label htmlFor="name">Ad</label>
                   <input
                     type="text"
                     id="name"
-                    placeholder="Enter your fullname"
+                    placeholder="Adınızı daxil edin"
                     name="name"
                     value={userInfo.name}
                     onChange={handleUserInfoChange}
@@ -154,11 +154,11 @@ function CustomerInfo() {
                   {errors.name && <span className="error">{errors.name}</span>}
                 </div>
                 <div className="inp">
-                  <label htmlFor="surname">Customer Surname</label>
+                  <label htmlFor="surname">Soyad</label>
                   <input
                     type="text"
                     id="surname"
-                    placeholder="Enter your surname"
+                    placeholder="Soyadınızı daxil edin" 
                     name="surname"
                     value={userInfo.surname}
                     onChange={handleUserInfoChange}
@@ -168,11 +168,11 @@ function CustomerInfo() {
                   )}
                 </div>
                 <div className="inp">
-                  <label htmlFor="city">Customer City</label>
+                  <label htmlFor="city">Şəhər</label>
                   <input
                     type="text"
                     id="city"
-                    placeholder="Enter your city"
+                    placeholder="Yaşadığınız şəhəri daxil edin"
                     name="city"
                     value={userInfo.city}
                     onChange={handleUserInfoChange}
@@ -180,11 +180,11 @@ function CustomerInfo() {
                   {errors.city && <span className="error">{errors.city}</span>}
                 </div>
                 <div className="inp">
-                  <label htmlFor="country">Customer Country</label>
+                  <label htmlFor="country">Ölkə</label>
                   <input
                     type="text"
                     id="country"
-                    placeholder="Enter your country"
+                    placeholder="Yaşadığınız ölkəni daxil edin"
                     name="country"
                     value={userInfo.country}
                     onChange={handleUserInfoChange}
@@ -194,11 +194,11 @@ function CustomerInfo() {
                   )}
                 </div>
                 <div className="inp">
-                  <label htmlFor="phone">Customer Phone</label>
+                  <label htmlFor="phone">Əlaqə nömrəsi</label>
                   <input
                     type="tel"
                     id="phone"
-                    placeholder="Enter your phone"
+                    placeholder="Əlaqə nömrənizi daxil edin"
                     name="phone"
                     value={userInfo.phone || ""}
                     onChange={handleUserInfoChange}
@@ -208,7 +208,7 @@ function CustomerInfo() {
                   )}
                 </div>
                 <div className="inp">
-                  <label htmlFor="profile">Customer Profile</label>
+                  <label htmlFor="profile">Profil şəkli</label>
                   <input
                     type="file"
                     id="profile"
@@ -226,7 +226,7 @@ function CustomerInfo() {
                 }}
                 className="submit"
               >
-                Save
+                Saxla
               </button>
             </form>
           </div>

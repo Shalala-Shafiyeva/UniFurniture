@@ -95,7 +95,7 @@ function SimilarProducts({ similarProducts }) {
   return (
     <section className="similarProducts">
       <div className="container">
-        <span className="head">Compare similar Item</span>
+        <span className="head">Oxşar Məhsulları Müqayisə Et</span>
         <div className="products">
           {haveSimilar ? (
             currentProducts.map((similarProduct, index) => {
@@ -151,7 +151,7 @@ function SimilarProducts({ similarProducts }) {
             })
           ) : (
             <h2 className="noSimilar">
-              This product doesn't have similar products
+              Bu məhsulun oxşar məhsulları yoxdur. 
             </h2>
           )}
         </div>

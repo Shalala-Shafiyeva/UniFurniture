@@ -5,15 +5,17 @@ function HelpCenter() {
     <section className="helpCenter">
       <div className="container">
         <div className="context">
-          <h3>Help Center</h3>
+          <h3>Yardım Mərkəzi</h3>
           <p>
-          If you have any questions or need assistance, our Help Center is here to provide the support you need. 
-          Browse through our frequently asked questions or contact our support team for further help.
+            Əgər hər hansı sualınız varsa və ya köməyə ehtiyacınız varsa, Yardım
+            Mərkəzimiz sizə lazım olan dəstəyi təmin etmək üçün buradadır.
+            Tez-tez verilən suallara baxın və ya əlavə kömək üçün dəstək
+            komandamızla əlaqə saxlayın.
           </p>
         </div>
         <div className="inp">
-            <input type="text" placeholder="What do you need help with?"/>
-            <img src="/images/search.png" alt="Seach" />
+          <input type="text" placeholder="Sizə necə kömək edə bilərik?" />
+          <img src="/images/search.png" alt="Seach" />
         </div>
       </div>
     </section>

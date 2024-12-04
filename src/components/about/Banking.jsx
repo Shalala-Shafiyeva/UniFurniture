@@ -16,16 +16,17 @@ function Banking() {
       </div>
       <div className="desc">
         <h3>
-          We are on the mission to increase <span>banking </span>
-          accessibility worldwide
+          Biz bütün dünyada əlçatanlıq üçün <span>bankçılığı</span> artırmaq
+          missiyasındayıq
         </h3>
         <p>
-        We are dedicated to ensuring that everyone, regardless of location or
-         circumstances, can access banking services. Our goal is to empower communities through financial 
-        inclusivity and innovation, fostering growth and opportunities for all.
+          Biz hər kəsin, yerindən və ya şəraitindən asılı olmayaraq, bank
+          xidmətlərinə çıxışını təmin etməyə sadiqik. Missiyamız maliyyə
+          inklüzivliyi və innovativ həllər vasitəsilə icmaları gücləndirmək,
+          inkişafı dəstəkləmək və hər kəs üçün imkanlar yaratmaqdır.
         </p>
         <Link className="getStart" to="/login">
-          Get Started
+          Başlayın
         </Link>
       </div>
     </section>

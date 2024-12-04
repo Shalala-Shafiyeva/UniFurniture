@@ -4,14 +4,15 @@ function Newletter() {
   return (
     <section className="newsLetter" data-aos="fade-up">
       <div className="container">
-        <div className="title">Subscribe to our newsletter</div>
+        <div className="title">Bizim bülletenə abunə olun</div>
         <p>
-        Stay updated with the latest news, insights, and exclusive
-         offers by subscribing to our newsletter. Join our community and never miss an update!
+          Son xəbərlər, fikirlər və xüsusi təkliflərlə bağlı yenilikləri izləmək
+          üçün bülletenimizə abunə olun. Cəmiyyətimizə qoşulun və heç bir
+          yeniliyi qaçırmayın!
         </p>
         <div className="bottom">
-            <input type="email" placeholder="Enter your email" />
-            <button>Subscribe</button>
+          <input type="email" placeholder="Email-inizi daxil edin" />
+          <button>Abunə ol</button>
         </div>
       </div>
     </section>

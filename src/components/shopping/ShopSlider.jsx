@@ -52,11 +52,10 @@ function ShopSlider() {
                 <div className="content">
                   <span className="title">{slider.subtitle}</span>
                   <h3>
-                    Upto{" "}
                     <span className={slider.percent < 40 ? "orange" : "green"}>
                       {slider.title}
-                    </span>{" "}
-                    Off
+                    </span>{" Qədər"}
+                    Endirim
                   </h3>
                   <p>{slider.text}</p>
                   <Link
@@ -68,7 +67,7 @@ function ShopSlider() {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                   >
-                    <span>Shop Now</span>
+                    <span>İndi Alın</span>
                     <img src="/images/shop/arrow.png" alt="Shop Now" />
                   </Link>
                 </div>

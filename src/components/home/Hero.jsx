@@ -10,11 +10,12 @@ function Hero() {
         </div>
         <div className="cover">
           <h3>
-            Let’s Make Shopping & amazingFinance benefits with great rewards
+            Gəlin, alış-veriş və möhtəşəm maliyyə faydaları ilə böyük mükafatlar
+            qazanın
           </h3>
           <p>
-            WeConsult is a Multi Layout premium Webflow template focussed on
-            consulting agencies.
+            WeConsult, məsləhətçi agentliklərinə yönəlmiş çoxlu şablonları olan
+            premium Webflow şablonudur.
           </p>
           <Link
             to="/shop"
@@ -22,19 +23,20 @@ function Hero() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            Start Shopping
+            Alış-verişə Başla
           </Link>
         </div>
       </section>
       <div className="coverOut">
         <h3>
-          Let’s Make Shopping & amazingFinance benefits with great rewards
+          Gəlin, alış-veriş və möhtəşəm maliyyə faydaları ilə böyük mükafatlar
+          qazanın
         </h3>
         <p>
-          WeConsult is a Multi Layout premium Webflow template focussed on
-          consulting agencies.
+          WeConsult, məsləhətçi agentliklərinə yönəlmiş çoxlu şablonları olan
+          premium Webflow şablonudur.
         </p>
-        <Link to="/login">Get Started</Link>
+        <Link to="/login">Başlayın</Link>
       </div>
     </>
   );

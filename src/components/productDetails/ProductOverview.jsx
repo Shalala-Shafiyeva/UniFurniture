@@ -22,9 +22,9 @@ function ProductOverview({ product }) {
       <div className="container">
         <div className="topSection">
           <div className="txt">
-            <h3>Product Overview</h3>
+            <h3>Məhsulun Ümumi Baxışı</h3>
             <div className="desc">
-              <span>Description</span>
+              <span>Açıqlama</span>
               <p>{product?.data?.text}</p>
             </div>
             <div className="characteristics">
@@ -45,7 +45,7 @@ function ProductOverview({ product }) {
           </div>
           <div className="video">
             <div>
-              <span>Product Video</span>
+              <span>Məhsul Videosu</span>
               <img
                 src="/images/productDetails/product1/Share.png"
                 alt="Share"
@@ -88,12 +88,12 @@ function ProductOverview({ product }) {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            Order Now
+            İndi Sifariş Verin
           </Link>
           <div className="questions">
             <div className="left">
-              <span>Have a question?</span>
-              <span>We're here to help</span>
+              <span>Sualınız var?</span>
+              <span>Sizə kömək etməyə hazırıq</span>
             </div>
             <Link className="messegeBtn" to="mailto:unifurniture@gmail.com">
               <span>Messege us</span>

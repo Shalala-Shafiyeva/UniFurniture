@@ -199,7 +199,7 @@ function Main({ product }) {
             }}
           >
             <img src="/images/shop/arrowleft.png" alt="Back" />
-            <span>Back to results</span>
+            <span>Nəticələrə qayıt</span>
           </Link>
           <div className="links">
             <Link
@@ -208,7 +208,7 @@ function Main({ product }) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Home
+              Ana səhifə
             </Link>
             <span>
               <img src="/images/chevron-left.png" alt="Icon" />
@@ -219,7 +219,7 @@ function Main({ product }) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Shop
+              Alış-veriş
             </Link>
             <span>
               <img src="/images/chevron-left.png" alt="Icon" />
@@ -277,7 +277,7 @@ function Main({ product }) {
               <span className="fullTitle">{product?.data?.full_title}</span>
               <div className="rating">
                 {renderStars()} ({product?.reviews?.original?.data || 0}{" "}
-                Reviews)
+                baxış)
               </div>
               <span className="price">${product?.data?.price?.toFixed(2)}</span>
               <p className="desc">{product?.data?.description}</p>
@@ -310,7 +310,7 @@ function Main({ product }) {
                   </span> */}
                   {/* with backend */}
                   <span>
-                    Select Upholstery Colour:{" "}
+                  Döşəmə rəngini seçin:{" "}
                     {product?.data?.colors[colorIndex]?.name}
                   </span>
                   <div className="colors">
@@ -344,7 +344,7 @@ function Main({ product }) {
               </div>
               <div className="qtyAndAddToCart">
                 <div className="quantity">
-                  <span>QTY</span>
+                  <span>Miqdar</span>
                   <div className="selectQty">
                     <span className="minus" onClick={decreaseQty}>
                       -
@@ -381,7 +381,7 @@ function Main({ product }) {
                   }}
                   className="addToCart"
                 >
-                  <span>ADD TO CART</span>
+                  <span>SƏBƏTƏ ATIN</span>
                   <img
                     src="/images/productDetails/product1/cartbtnicon.png"
                     alt=""
@@ -395,7 +395,7 @@ function Main({ product }) {
               </span>
               {!product?.data?.hasStock ? (
                 <p className="outOfStock">
-                  Sorry, but this product is out of stock
+                  Bu məhsul bitib
                 </p>
               ) : null}
             </div>
@@ -443,7 +443,7 @@ function Main({ product }) {
                   */}
                   {/* with backend */}
                   <div className="chosedColor">
-                    Select Upholstery: {product?.data?.colors[colorIndex]?.name}
+                    Rəngi seçin: {product?.data?.colors[colorIndex]?.name}
                   </div>
                   <img src={selectedImage} alt="Product image" />
                 </div>
@@ -485,7 +485,7 @@ function Main({ product }) {
               <span className="fullTitle">{product?.data?.full_title}</span>
               {!product?.data?.hasStock ? (
                 <p className="outOfStock">
-                  Sorry, but this product is out of stock
+                  Məhsul bitib
                 </p>
               ) : null}
               <span className="rating">
@@ -501,7 +501,7 @@ function Main({ product }) {
               <p className="desc">{product?.data?.description}</p>
               <div className="qtyAndAddToCart">
                 <div className="quantity">
-                  <span>QTY</span>
+                  <span>Miqdar</span>
                   <div className="selectQty">
                     <span className="minus" onClick={decreaseQty}>
                       -
@@ -522,7 +522,7 @@ function Main({ product }) {
                 </div>
                 {!product?.data?.hasStock ? (
                   <button disabled="disabled" className="addToCart">
-                    <span>ADD TO CART</span>
+                    <span>SƏBƏTƏ ATIN</span>
                     <img
                       src="/images/productDetails/product1/cartbtnicon.png"
                       alt=""

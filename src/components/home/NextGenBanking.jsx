@@ -8,37 +8,42 @@ function NextGenBanking() {
       <div className="container">
         <div className="cover">
           <div className="diagram">
-          <h5 className="middleTxt">
-  We are the next-gen banking experience
-</h5>
-<span className="smallGrey">
-  We offer a seamless and innovative banking solution designed to simplify financial management and empower 
-  your financial journey.
-</span>
-<div className="imgDiagram">
-  <img src="/images/home/diagram.png" alt="Diagram" />
-  <span className="smallGrey">Earning & Expense Reports</span>
-</div>
-<div className="imgCripto">
-  <img src="/images/home/cripto.png" alt="Crypto" />
-  <span>Cryptocurrencies Supported</span>
-</div>
-<div className="imgSupport">
-  <img src="/images/home/classsupport.png" alt="Image" />
-  <span>World-Class Support</span>
-  <span>
-    Access expert support anytime, anywhere, with dedicated customer service to address your needs.
-  </span>
-
+            <h5 className="middleTxt">
+              Biz növbətçi nəsil bankçılıq təcrübəsiyik
+            </h5>
+            <span className="smallGrey">
+              Biz maliyyə idarəçiliyini sadələşdirmək və maliyyə yolculuğunuzu
+              gücləndirmək üçün nəzərdə tutulmuş, hamar və innovativ bankçılıq
+              həlli təklif edirik.
+            </span>
+            <div className="imgDiagram">
+              <img src="/images/home/diagram.png" alt="Diagram" />
+              <span className="smallGrey">Qazanc və Xərc Hesabatları</span>
+            </div>
+            <div className="imgCripto">
+              <img src="/images/home/cripto.png" alt="Crypto" />
+              <span>Dəstəklənən Kriptovalyutalar</span>
+            </div>
+            <div className="imgSupport">
+              <img src="/images/home/classsupport.png" alt="Image" />
+              <span>Dünya Səviyyəli Dəstək</span>
+              <span>
+                İstədiyiniz vaxt, hər yerdə mütəxəssis dəstəyi əldə edin,
+                ehtiyaclarınıza cavab vermək üçün xüsusi müştəri xidmətləri.
+              </span>
             </div>
           </div>
           <div className="right">
             <div className="btns">
-              <Link className="createAccountBtn" to="/register">Create Account</Link>
-              <Link className="loginBtn" to="/login">Sign In</Link>
+              <Link className="createAccountBtn" to="/register">
+                Hesab Yarat
+              </Link>
+              <Link className="loginBtn" to="/login">
+                Daxil Ol
+              </Link>
             </div>
             <div className="app">
-              <div className="title">Mobile and desktop app</div>
+              <div className="title">Mobil və masaüstü tətbiq</div>
               <div className="imgPhone">
                 <img src="/images/home/phone.png" alt="Phone" />
               </div>

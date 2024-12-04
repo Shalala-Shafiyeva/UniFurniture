@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 // import data from "../../data.json";
 
 function Gallary() {
-
   const [images, setImages] = useState([]);
   const fetchImages = async () => {
     try {
@@ -30,14 +29,15 @@ function Gallary() {
     <section className="gallary">
       <div className="container">
         <div className="head">
-          <h3>Our Decoration Gallary</h3>
-          <p>
-            You can monitor your beautiful home with the product we will provide
-          </p>
+          <h3>Bizim Dekorasiya Qalereyamız</h3>
+          <p>Təqdim edəcəyimiz məhsul ilə gözəl evinizi izləyə bilərsiniz</p>
         </div>
         {images.map((item) => (
           <div key={item.id} className="img">
-            <img  src={`http://localhost:8000/storage/${item.image}`} alt="Image" />
+            <img
+              src={`http://localhost:8000/storage/${item.image}`}
+              alt="Image"
+            />
           </div>
         ))}
         {/* {data.gallary.map((item) => (

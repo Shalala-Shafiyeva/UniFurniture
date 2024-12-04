@@ -52,12 +52,12 @@ function DesktopMode() {
       <div className="circle darkgreenCircle2"></div>
       <div className="loginPage">
         <h3>
-          Create account to <span className="greenTxt">UniFurniture</span>
+          <span className="greenTxt">UniFurniture</span>-də hesab yaradın
         </h3>
         <span>
-          Already have an account ?
+          Artıq hesabınız var?{" "}
           <Link to="/login" className="greenTxt">
-            Sign In
+            Daxil olun
           </Link>
         </span>
         <form
@@ -71,7 +71,7 @@ function DesktopMode() {
           <div className="form-wrapper">
             <div>
               <div className="inp">
-                <label htmlFor="name">First Name</label>
+                <label htmlFor="name">Ad</label>
                 <input
                   type="text"
                   name="name"
@@ -84,7 +84,7 @@ function DesktopMode() {
             </div>
             <div>
               <div className="inp">
-                <label htmlFor="surname">Last Name</label>
+                <label htmlFor="surname">Soyad</label>
                 <input
                   type="text"
                   name="surname"
@@ -112,7 +112,7 @@ function DesktopMode() {
             </div>
             <div>
               <div className="inp">
-                <label htmlFor="password">Create Password</label>
+                <label htmlFor="password">Şifrə</label>
                 <input
                   type="password"
                   name="password"
@@ -147,17 +147,17 @@ function DesktopMode() {
                 }
               />
               <span>
-                You agree to our Privacy Policy, Term and Conditions and
-                Notification settings
+                Siz Məxfilik Siyasətimizə, Şərtlər və Qaydalarımıza və Bildiriş
+                ayarlarına razılıq verirsiniz.
               </span>
             </div>
             {policyError && <p className="reg-error">{policyError}</p>}
           </div>
           <button className="btnSignIn" type="submit">
-            Sign Up
+            Hesab Yaradın
           </button>
           <div className="continueWith">
-            <span>Or continue with</span>
+            <span>Və ya davam edin</span>
             <div className="btns">
               <a href="">
                 <img src="/images/google.png" alt="Google Account" />

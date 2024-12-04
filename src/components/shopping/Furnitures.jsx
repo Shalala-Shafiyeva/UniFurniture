@@ -226,7 +226,7 @@ function Furnitures({
         <div className="container">
           <div className="head">
             <h2 className="title">
-              Latest <span>Furnitures</span>
+              Son <span>Məhsullar</span>
             </h2>
             <Link
               to="/shop/moreFurnitures"
@@ -234,7 +234,7 @@ function Furnitures({
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              <span>More Furnitures</span>
+              <span>Daha çox məhsul</span>
               <img src="/images/shop/arrowleft.png" alt="Arrow More" />
             </Link>
           </div>
@@ -302,7 +302,7 @@ function Furnitures({
               // filteredData.length === 0 ? (
               !fetchedProducts.length && filteredKey == true ? (
                 <div className="notFound">
-                  We don't have such product. Sorry.
+                  Təəssuflər ki məhsul tapılmadı.
                 </div>
               ) : (
                 //КОД С БЕКЕНД-ом
@@ -358,7 +358,7 @@ function Furnitures({
                               : navigate("/login");
                           }}
                         >
-                          Add to cart
+                          Səbətə əlavə edin
                         </button>
                       </div>
                     </Link>

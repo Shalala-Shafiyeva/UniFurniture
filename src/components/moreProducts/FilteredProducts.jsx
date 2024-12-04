@@ -98,7 +98,7 @@ function FilteredProducts({ fetchedProducts, filteredKey }) {
         {
           // error ? (
           !fetchedProducts?.data?.length && filteredKey ?  (
-            <div className="error">Sorry we don't have such product</div>
+            <div className="error">Üzr istəyirik, belə bir məhsul yoxdur</div>
           ) : (
             <>
               <div className="products">
@@ -130,7 +130,7 @@ function FilteredProducts({ fetchedProducts, filteredKey }) {
                         <img src="/images/star.png" alt="star" />
                         <img src="/images/emptystar.png" alt="star" /> */}
                         </div>
-                        <span>({fetchedProducts?.reviews[index]?.[product?.id]?.original?.data || 0} reviews)</span>
+                        <span>({fetchedProducts?.reviews[index]?.[product?.id]?.original?.data || 0} baxış)</span>
                       </div>
                       <div className="title">{product.name}</div>
                       <div className="price">
@@ -147,7 +147,7 @@ function FilteredProducts({ fetchedProducts, filteredKey }) {
                         )}
                       </div>
                       <div className="shipping">
-                        {product.shipping} days shipping
+                        {product.shipping} gün çatdırılma
                       </div>
                     </div>
                   </Link>

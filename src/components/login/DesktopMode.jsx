@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function DesktopMode() {
-
   const navigate = useNavigate();
   const initialState = {
     email: "",
@@ -66,12 +65,12 @@ function DesktopMode() {
       </div>
       <div className="loginPage">
         <h3>
-          Sign In to <span className="greenTxt">UniFurniture</span>
-        </h3>
+          <span className="greenTxt">UniFurniture</span>-yə daxil olun
+        </h3> 
         <span>
-          Don't have an account?{" "}
+          Hesabınız yoxdur?{" "}
           <Link to="/register" className="greenTxt">
-            Sign Up
+            Qeydiyyat
           </Link>
         </span>
         {invalidCredentials && (
@@ -99,7 +98,7 @@ function DesktopMode() {
           </div>
           {errors.email && <p className="reg-error">{errors.email}</p>}
           <div className="inp">
-            <label htmlFor="password">Create Password</label>
+            <label htmlFor="password">Şifrə yaradın</label>
             <input
               type="password"
               name="password"
@@ -110,7 +109,7 @@ function DesktopMode() {
               }}
             />
             <Link to="/forgot-password" id="forgetPass">
-              Forget Password ?
+              Şifrəni unutmusunuz?
             </Link>
           </div>
           {errors.password && <p className="reg-error">{errors.password}</p>}
@@ -130,16 +129,16 @@ function DesktopMode() {
               onChange={(e) => setIsPolicyChecked(e.target.checked)}
             />
             <span>
-              You agree to our Privacy Policy, Term and Conditions and
-              Notification settings
+              Siz bizim Gizlilik Siyasətimizə, Şərtlər və Şəraitimizə və
+              Bildiriş Parametrlərimizə razılaşırsınız.
             </span>
           </div>
           {policyError && <p className="reg-error">{policyError}</p>}
           <button className="btnSignIn" type="submit">
-            Sign In
+            Daxil Olun
           </button>
           <div className="continueWith">
-            <span>Or continue with</span>
+            <span>Və ya davam edin</span>
             <div className="btns">
               <a href="">
                 <img src="/images/google.png" alt="Google Account" />

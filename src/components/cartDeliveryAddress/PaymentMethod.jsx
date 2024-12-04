@@ -4,9 +4,9 @@ import { Toaster, toast } from "react-hot-toast";
 
 function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
   const [open, setOpen] = useState(false);
-  const payBtns = ["Credit Card", "PayPal", "Pay on Invoice", "Google Pay"];
-  const [activeForm, setActiveForm] = useState("Credit Card");
-  const [activeBtn, setActiveBtn] = useState("Credit Card");
+  const payBtns = ["Kredit kartı", "PayPal", "Faktura ilə", "Google Pay"];
+  const [activeForm, setActiveForm] = useState("Kredit kartı");
+  const [activeBtn, setActiveBtn] = useState("Kredit kartı");
   const [inputValue, setInputValue] = useState({
     cardNum: "",
     name: "",
@@ -39,26 +39,26 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
 
   const validationInputs = () => {
     const newErrors = {};
-    if (activeForm === "Credit Card") {
+    if (activeForm === "Kredit kartı") {
       if (inputValue.cardNum.trim() === "")
-        newErrors.cardNum = "Card Number is required";
+        newErrors.cardNum = "Kart nömrəsi tələb olunur";
       if (inputValue.name.trim() === "")
-        newErrors.name = "Holder Name is required";
+        newErrors.name = "Sahibin adı tələb olunur";
       if (inputValue.expire.trim() === "")
-        newErrors.expire = "Expiry Date is required";
-      if (inputValue.cvv.trim() === "") newErrors.cvv = "CVV Code is required";
+        newErrors.expire = "Son istifadə tarixi tələb olunur";
+      if (inputValue.cvv.trim() === "") newErrors.cvv = "CVV kod tələb olunur";
     }
     if (activeForm === "PayPal") {
       if (!inputValue.paypalEmail)
-        newErrors.paypalEmail = "PayPal Email is required";
+        newErrors.paypalEmail = "PayPal ünvanı tələb olunur";
     }
-    if (activeForm === "Pay on Invoice") {
+    if (activeForm === "Faktura ilə") {
       if (!inputValue.invoiceNum)
-        newErrors.invoiceNum = "Invoice Number is required";
+        newErrors.invoiceNum = "Faktura nömrəsi tələb olunur";
     }
     if (activeForm === "Google Pay") {
       if (!inputValue.googlePay)
-        newErrors.googlePay = "Google Pay ID is required";
+        newErrors.googlePay = "Google Pay ID tələb olunur";
     }
     setErrors(newErrors);
     if (Object.keys(newErrors).length == 0) {
@@ -110,16 +110,16 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
     <div className="paymentMethod">
       <Toaster position="top-center" />
       <span className={`title ${open ? "hidden" : "visible"}`}>
-        Payment Method
+        Ödəmə Üsulu
       </span>
       <div className={`closeItem ${open ? "hidden" : "visible"}`}>
-        <span>Credit Card</span>
+        <span>Kredit Kartı</span>
         <button className="add" onClick={handleOpen}>
-          Add
+          Əlavə Et
         </button>
       </div>
       <div className={`openItem ${open ? "visible" : "hidden"}`}>
-        <h5>Payment Method</h5>
+        <h5>Ödəmə Üsulu</h5>
         <div className="wrapper">
           <div className="btns">
             {payBtns.map((btn, index) => (
@@ -137,10 +137,10 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
               method="POST"
               onSubmit={(e) => {
                 if (!localStorage.getItem("defaultAddress")) {
-                  toast.error("Please choose delivery address");
+                  toast.error("Çatdırılma ünvanı qeyd edin");
                 }
                 if (errors.length) {
-                  toast.error("Please complete payment method");
+                  toast.error("Tələb olunan xanaları doldurun");
                 }
                 if (handleSubmit(e)) {
                   handleOrderCreate();
@@ -151,11 +151,11 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
               {activeForm === "Credit Card" && (
                 <div className="cardForm">
                   <div className="inp">
-                    <label htmlFor="cardNum">Card Number*</label>
+                    <label htmlFor="cardNum">Kart nömrəsi*</label>
                     <input
                       type="text"
                       id="cardNum"
-                      placeholder="Your card number"
+                      placeholder="Kartınızın nömrəsi"
                       value={inputValue.cardNum || ""}
                       onChange={handleInputChange}
                     />
@@ -164,11 +164,11 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                     )}
                   </div>
                   <div className="inp">
-                    <label htmlFor="name">Holder Name*</label>
+                    <label htmlFor="name">Sahibin adı*</label>
                     <input
                       type="text"
                       id="name"
-                      placeholder="Name of card owner"
+                      placeholder="Kart sahibin adı"
                       value={inputValue.name || ""}
                       onChange={handleInputChange}
                     />
@@ -177,7 +177,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                     )}
                   </div>
                   <div className="inp">
-                    <label htmlFor="expire">Expiry Date*</label>
+                    <label htmlFor="expire">Son istifadə tarixi*</label>
                     <input
                       type="date"
                       id="expire"
@@ -189,7 +189,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                     )}
                   </div>
                   <div className="inp">
-                    <label htmlFor="code">CVV Code*</label>
+                    <label htmlFor="code">CVV kod*</label>
                     <input
                       placeholder="Enter CVV code"
                       type="text"
@@ -208,11 +208,11 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
               {activeForm === "PayPal" && (
                 <div className="payPalForm">
                   <div className="inp">
-                    <label htmlFor="paypalEmail">PayPal Email*</label>
+                    <label htmlFor="paypalEmail">PayPal ünvanı*</label>
                     <input
                       id="paypalEmail"
                       type="email"
-                      placeholder="PayPal Email"
+                      placeholder="PayPal ünvanı daxil edin"
                       value={inputValue.paypalEmail || ""}
                       onChange={handleInputChange}
                     />
@@ -222,14 +222,14 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                   </div>
                 </div>
               )}
-              {activeForm === "Pay on Invoice" && (
+              {activeForm === "Faktura ilə" && (
                 <div className="invoiceForm">
                   <div className="inp">
-                    <label htmlFor="invoiceNum">Invoice Number*</label>
+                    <label htmlFor="invoiceNum">Faktura nömrəsi*</label>
                     <input
                       id="invoiceNum"
                       type="text"
-                      placeholder="Invoice Number"
+                      placeholder="Faktura nömrəsini daxil edin"
                       value={inputValue.invoiceNum || ""}
                       onChange={handleInputChange}
                     />
@@ -257,7 +257,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                 </div>
               )}
               <div className="confirmBtn">
-                <button type="submit">Confirm & Pay</button>
+                <button type="submit">Təsdiq Et və Ödə</button>
               </div>
             </form>
           </div>

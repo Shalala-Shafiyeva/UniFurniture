@@ -74,7 +74,7 @@ function ServiceArticles() {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                 >
-                  Browse article
+                  Məqaləni nəzərdən keçirin
                 </Link>
               </div>
             </div>

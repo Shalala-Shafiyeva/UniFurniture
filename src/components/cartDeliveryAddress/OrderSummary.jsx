@@ -65,25 +65,25 @@ function OrderSummary({ activateBtn }) {
 
   return (
     <div className="orderSum">
-      <span className="title">Order Summary</span>
+      <span className="title">Sifarişlərin icmalı</span>
       <ul className="cartDetails">
         <li>
-          <span>Total Item</span>
+          <span>Cəmi Məhsul</span>
           {/* <span>{totalAmount}</span> */}
           <span>{count || 0}</span>
         </li>
         <li>
-          <span>Cart Total</span>
+          <span>Səbət Ümumi</span>
           {/* <span>${totalPrice}</span> */}
           <span>${total.toFixed(2) || 0}</span>
         </li>
         <li>
-          <span>Product Discount</span>
+          <span>Məhsul Endirimi</span>
           <span>${totalDiscount.toFixed(2)}</span>
         </li>
         <li>
-          <span>Shipping</span>
-          <span>Free</span>
+          <span>Çatdırılma</span>
+          <span>Pulsuz</span>
         </li>
         {/* <li>
           <span>Coupon Discount</span>
@@ -104,7 +104,7 @@ function OrderSummary({ activateBtn }) {
         </button>
       </div> */}
       <div className="total">
-        <span>Total</span>
+        <span>Toplam</span>
         {/* <span>${parseFloat((totalPrice - totalDiscount - 20).toFixed(2))}</span> */}
         <span>${(total - totalDiscount).toFixed(2) || 0}</span>
       </div>
@@ -113,7 +113,7 @@ function OrderSummary({ activateBtn }) {
           to="#"
           className={`paymentAddress ${activateBtn ? "active" : ""}`}
         >
-          <span>Place Order</span>
+          <span>Sifarişi Ver</span>
           <img src="/images/shop/arrow.png" alt="Arrow" />
         </Link>
       </button>

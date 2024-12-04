@@ -6,9 +6,9 @@ function CreateAccount() {
     <section className="createAccountBlog" data-aos="fade-up">
       <div className="container">
         <div className="title">
-          Take the control of your finances. Create a free account today.
+          Maliyyənizin idarəsini ələ alın. Bu gün pulsuz hesab yaradın.
         </div>
-        <Link to="/register">Sign up</Link>
+        <Link to="/register">Qeydiyyatdan keçin</Link>
       </div>
     </section>
   );

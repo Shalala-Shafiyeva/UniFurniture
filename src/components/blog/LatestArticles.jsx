@@ -3,13 +3,13 @@ import data from "../../data.json";
 import { Link } from "react-router-dom";
 
 function LatestArticles() {
-  const filterBtns = ["All", "Business", "Finance", "Management"];
-  const [activeBtn, setActiveBtn] = useState("All");
+  const filterBtns = ["Hamısı", "Dizayn", "Estetika", "Məsləhətlər"];
+  const [activeBtn, setActiveBtn] = useState("Hamısı");
   const [filteredArticles, setFilteredArticles] = useState(data.homeArticles);
   const handleFilteredArticles = (articleCategory) => {
-    if (articleCategory === "All") {
+    if (articleCategory === "Hamısı") {
       setFilteredArticles(data.homeArticles);
-      setActiveBtn("All");
+      setActiveBtn("Hamısı");
     } else {
       setFilteredArticles(
         data.homeArticles.filter(
@@ -25,7 +25,7 @@ function LatestArticles() {
       <div className="container">
         <div className="top">
           <div className="title">
-            Latest <span>Articles</span>
+            Ən son <span>Məqalələr</span>
           </div>
           <div className="btns">
             {filterBtns.map((btn, index) => (

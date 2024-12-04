@@ -220,7 +220,7 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
 
   return (
     <div className="deliveryAddress">
-      <span className="title">Delivery Address</span>
+      <span className="title">Çatdırılma Ünvanı</span>
       <div className="customerAddress">
         {addresses.map((address) => (
           <div className="row" key={address.id}>
@@ -235,13 +235,13 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
                   openEditFormId === address.id ? "hidden" : ""
                 }`}
               >
-                Edit
+                Dəyişdir
               </button>
               <button
                 className="edit"
                 onClick={() => deleteAddressMutation.mutate(address.id)}
               >
-                Delete
+                Sil
               </button>
               {!address.is_default && (
                 <button
@@ -251,14 +251,14 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
                     setOrderAddress(defaultAddress);
                   }}
                 >
-                  Make default address
+                  Cari ünvanı et
                 </button>
               )}
             </div>
             {openEditFormId === address.id && (
               <div className="editAddress">
                 {loading ? (
-                  <span>Loading...</span>
+                  <span>Yüklənir...</span>
                 ) : (
                   <form
                     method="POST"
@@ -287,7 +287,9 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
         ))}
       </div>
       <div className="addAddress">
-        <span onClick={() => setOpenForm(!openForm)}>+ Add New Address</span>
+        <span onClick={() => setOpenForm(!openForm)}>
+          + Yeni Ünvan Əlavə Et
+        </span>
       </div>
       {openForm && (
         <form

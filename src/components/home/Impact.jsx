@@ -7,15 +7,16 @@ function Impact() {
       <div className="container">
         <div className="head">
           <div className="left">
-            <span className="middleTxt">We have impactful numbers</span>
+            <span className="middleTxt">Bizim əhəmiyyətli rəqəmlərimiz var</span>
             <span className="smallGrey">
-            Our success is reflected in the numbers we achieve. With impressive growth and proven results, 
-            we continue to make a significant impact in the industry and beyond.
+            Uğurumuz, əldə etdiyimiz rəqəmlərlə özünü göstərir. Təəccüblü böyümə və sübut olunmuş nəticələrlə, 
+        biz sənayedə və ondan kənarda əhəmiyyətli təsir göstərməyə davam edirik.
+
             </span>
           </div>
           <div className="right">
             <Link className="getStart" to="/login">
-              Get Started
+              Başlayın
             </Link>
           </div>
         </div>
@@ -23,21 +24,21 @@ function Impact() {
           <div className="top">
             <div>
               <span>98%</span>
-              <span>Customer satisfaction</span>
+              <span>Müştəri məmnuniyyəti</span>
             </div>
             <div>
               <span>100K+</span>
-              <span>New users per week</span>
+              <span>Həftəlik yeni istifadəçilər</span>
             </div>
           </div>
           <div className="bottom">
             <div>
               <span>205M+</span>
-              <span>Monthly active users</span>
+              <span>Aylıq yeni istifadəçilər</span>
             </div>
             <div>
               <span>55%</span>
-              <span>Growth year-over-year</span>
+              <span>İldən-ilə artım</span>
             </div>
           </div>
         </div>

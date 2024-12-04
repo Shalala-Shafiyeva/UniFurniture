@@ -1,6 +1,12 @@
 import React from "react";
 import data from "../../data.json";
-import { Autoplay,Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Autoplay,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,12 +17,15 @@ function PeopleSlider() {
   return (
     <section className="peopleSlider">
       <div className="container">
-        <h2>What People Say</h2>
-        <p>Know about our clients, we are a worldwide brand</p>
+        <h2>İnsanlar Nə Deyir</h2>
+        <p>
+          Bizim müştərilərimiz haqqında məlumat əldə edin, biz dünya
+          miqyasında bir brendik
+        </p>
         <Swiper
           className="swiper"
           // install Swiper modules
-          modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={30}
           slidesPerView={"auto"}
           navigation={{

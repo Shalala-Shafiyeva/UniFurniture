@@ -293,11 +293,12 @@ function CartOrder() {
     <div className="cartOrder">
       <Toaster position="top-center" />
       <div className={`closeOrder ${open ? "hidden" : "visible"}`}>
-        <span className="title">Order Summary</span>
+        <span className="title">Sifarişlərin icmalı</span>
         <div className="cover">
           <span className="items">
             {/* {cart.length} {cart.length > 1 ? "items" : "item"} */}
-            {count} {count > 1 ? "items" : "item"}
+            {/* {count} {count > 1 ? "items" : "item"} */}
+            {count} {"məhsul"}
           </span>
           {count.length > 0 && (
             <button
@@ -306,17 +307,18 @@ function CartOrder() {
               onClick={handleOpen}
               className="change"
             >
-              Change
+              Dəyişdir
             </button>
           )}
         </div>
       </div>
       <div className={`openOrder ${open ? "visible" : "hidden"}`}>
         <div className="head">
-          <span className="title">Order Summary</span>
+          <span className="title">Sifarişlərin icmalı</span>
           <span className="items">
             {/* {cart.length} {cart.length > 1 ? "items" : "item"} */}
-            {count} {count > 1 ? "items" : "item"}
+            {/* {count} {count > 1 ? "items" : "item"} */}
+            {count} {"məhsul"}
           </span>
         </div>
         <div className="products">
@@ -335,15 +337,16 @@ function CartOrder() {
                 <div className="content">
                   <span className="name">{product?.product?.full_title}</span>
                   <span className="color">
-                    Product Color: {product?.product_color}
+                    Məhsulun Rəngi: {product?.product_color}
                   </span>
                   <div className="priceShipping">
                     <span className="price">
                       $ {product?.product?.price.toFixed(2)}
                     </span>
                     <div className="shipping">
-                      Ship on {handleWeekDay(shippingDate[product?.product_id])}
-                      , {todayDayNumber + shippingDate[product?.product_id]}{" "}
+                      Çatdırılma tarixi{" "}
+                      {handleWeekDay(shippingDate[product?.product_id])},{" "}
+                      {todayDayNumber + shippingDate[product?.product_id]}{" "}
                       {handleMonth()}
                     </div>
                   </div>
@@ -362,7 +365,7 @@ function CartOrder() {
                     <span className="review">
                       {reviews[index]?.[product?.product_id]?.original?.data ||
                         0}{" "}
-                      Reviews
+                      baxış
                     </span>
                   </div>
                   <div className="bottom">
@@ -378,7 +381,7 @@ function CartOrder() {
                       }}
                       className="removeBtn"
                     >
-                      Remove
+                      Çıxar
                     </div>
                     <div className="qty">
                       <div

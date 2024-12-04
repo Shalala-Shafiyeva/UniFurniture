@@ -171,11 +171,11 @@ function DashboardOrders() {
             </div>
             <div className="row p-4">
               <h2>Orders of all Users</h2>
-              {orders.length == 0 ? (
+              {orders?.length == 0 ? (
                 <p>No order found</p>
               ) : (
-                orders.map((order) => (
-                  <div class="accordion-item" key={order.id}>
+                orders?.map((order) => (
+                  <div class="accordion-item" key={order?.id}>
                     <h2
                       class="accordion-header"
                       id={`panelsStayOpen-headingOne-${order.id}`}
@@ -184,12 +184,12 @@ function DashboardOrders() {
                         class="accordion-button"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target={`#panelsStayOpen-collapse-${order.id}`}
+                        data-bs-target={`#panelsStayOpen-collapse-${order?.id}`}
                         aria-expanded="true"
                         aria-controls="panelsStayOpen-collapseOne"
                       >
-                        {order.uid} - {order.user.name} - {order.status} -{" "}
-                        {order.created_at}
+                        {order?.uid} - {order?.user?.name} - {order?.status} -{" "}
+                        {order?.created_at}
                       </button>
                     </h2>
                     <div
@@ -209,17 +209,17 @@ function DashboardOrders() {
                           </thead>
                           <tbody>
                             {order?.order_detail?.map((orderDetail) => (
-                              <tr key={orderDetail.id}>
-                                <td>{orderDetail.product.name}</td>
-                                <td>{orderDetail.quantity}</td>
-                                <td>{orderDetail.price}</td>
-                                <td>{orderDetail.total.toFixed(2)}</td>
+                              <tr key={orderDetail?.id}>
+                                <td>{orderDetail?.product?.name}</td>
+                                <td>{orderDetail?.quantity}</td>
+                                <td>{orderDetail?.price}</td>
+                                <td>{orderDetail?.total?.toFixed(2)}</td>
                               </tr>
                             ))}
                             <tr>
                               <td className="text-end">Total</td>
-                              <td>{order.total.toFixed(2)}</td>
-                              {order.status == "PENDING" && (
+                              <td>{order?.total?.toFixed(2)}</td>
+                              {order?.status == "PENDING" && (
                                 <>
                                   <td className="text-end">Action</td>
                                   <td>
@@ -235,7 +235,7 @@ function DashboardOrders() {
                                   </td>
                                 </>
                               )}
-                              {order.status == "CONFIRMED" && (
+                              {order?.status == "CONFIRMED" && (
                                 <>
                                   <td className="text-end">Action</td>
                                   <td>
@@ -251,7 +251,7 @@ function DashboardOrders() {
                                   </td>
                                 </>
                               )}
-                              {order.status == "SHIPPED" && (
+                              {order?.status == "SHIPPED" && (
                                 <>
                                   <td className="text-end">Action</td>
                                   <td>
@@ -267,7 +267,7 @@ function DashboardOrders() {
                                   </td>
                                 </>
                               )}
-                              {order.status == "DELIVERED" && (
+                              {order?.status == "DELIVERED" && (
                                 <>
                                   <td className="text-end">Action</td>
                                   <td>

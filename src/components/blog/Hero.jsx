@@ -7,18 +7,19 @@ function Hero() {
       <div className="container">
         <div className="content">
           <h2>
-            Fast & <span>easy business</span> banking service
+            Sürətli və <span>asan biznes</span> bank xidməti
           </h2>
           <p>
-          Experience a seamless and efficient banking service designed 
-          specifically for businesses. We simplify financial management, enabling you to focus on growing your 
-          business while we take care of your banking needs.
+            Bizneslər üçün xüsusi olaraq nəzərdə tutulmuş, problemsiz və
+            səmərəli bank xidməti təcrübəsi yaşayın. Biz maliyyə idarəçiliyini
+            sadələşdiririk, beləliklə, siz işinizi böyütməyə fokuslana
+            bilərsiniz, biz isə bankçılıq ehtiyaclarınızı qarşılayırıq.
           </p>
-          <Link to="/login">Get Started</Link>
+          <Link to="/login">Başlayın</Link>
         </div>
         <div className="img">
           <img src="/images/bloghero.png" alt="blog" />
-          <Link to="/login">Get Started</Link>
+          <Link to="/login">Başlayın</Link>
         </div>
       </div>
     </section>

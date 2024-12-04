@@ -7,14 +7,15 @@ function Discover() {
       <div className="container">
         <div className="content">
           <h3>
-            Discover the <span>best furnitures</span>
+            Ən yaxşı <span>mebelləri</span> kəşf edin
           </h3>
+
           <span>
-          Explore a wide range of premium furniture designed to bring style,
-           comfort, and functionality to your space. 
-          Transform your home or office with pieces crafted to suit your unique taste and needs.
+            Stil, komfort və funksionallığı məkanınıza gətirəcək geniş çeşiddə
+            premium mebelləri kəşf edin. Evinizi və ya ofisinizi öz zövqünüzə və
+            ehtiyaclarınıza uyğun hazırlanmış mebel parçaları ilə bəzəyin.
           </span>
-          <Link to="/login">Get Started</Link>
+          <Link to="/login">Başlayın</Link>
         </div>
         <div className="img">
           <img src="/images/discover.png" alt="Image" />

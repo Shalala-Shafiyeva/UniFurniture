@@ -85,7 +85,7 @@ function Team() {
         ))}
       </div> */}
       <Link to="/login" className="getStart">
-        Get Started
+        Başlayın
       </Link>
     </section>
   );

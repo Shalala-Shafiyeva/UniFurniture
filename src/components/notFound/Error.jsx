@@ -8,12 +8,13 @@ function Error() {
       <div className="img">
         <img src="/images/notfound.png" alt="Not Found" />
       </div>
-      <h4>Oops! Page not found...!</h4>
+      <h4>Səhifə tapılmadı...!</h4>
       <span>
-      This page is not available or has been deleted. Please check the URL or go to the homepage.
+        Bu səhifə mövcud deyil və ya silinib. Zəhmət olmasa URL-ni yoxlayın və
+        ya ana səhifəyə gedin.
       </span>
       <Link to="/">
-        <span>GO TO HOME PAGE</span>
+        <span>Ana Səhifəyə Get</span>
         <img src="/images/Right.png" alt="Right Arrow" />
       </Link>
     </div>

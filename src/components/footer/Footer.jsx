@@ -11,9 +11,10 @@ function Footer() {
             <div className="left">
               <span>Startply</span>
               <p>
-              Startply is your trusted partner in delivering innovative solutions tailored to your needs.
-               We strive to provide 
-              exceptional quality and unmatched expertise to help you achieve your goals effortlessly.
+                Startply, ehtiyaclarınıza uyğun innovativ həllər təqdim edən
+                etibarlı tərəfdaşınızdır. Biz mükəmməl keyfiyyət və bənzərsiz
+                mütəxəssisliklə hədəflərinizə asanlıqla çatmağınıza kömək etməyə
+                çalışırıq.
               </p>
               <div className="sosialMedia">
                 <Link to="https://www.facebook.com/">
@@ -29,47 +30,47 @@ function Footer() {
             </div>
             <div className="right">
               <div className="col">
-                <span className="title">Product</span>
+                <span className="title">Məhsul</span>
                 <ul>
                   <li>
-                    <Link to="#">-Inspiration</Link>
+                    <Link to="#">-İlham</Link>
                   </li>
                   <li>
-                    <Link to="#">-Blocks</Link>
+                    <Link to="#">-Bloklar</Link>
                   </li>
                   <li>
-                    <Link to="#">-Templates</Link>
+                    <Link to="#">-Şablonlar</Link>
                   </li>
                   <li>
-                    <Link to="#">-Universe</Link>
+                    <Link to="#">-Kainat</Link>
                   </li>
                   <li>
-                    <Link to="#">-Pricing</Link>
+                    <Link to="#">-Qiymətləndirmə</Link>
                   </li>
                 </ul>
               </div>
               <div className="col">
-                <span className="title">Resources</span>
+                <span className="title">Resurslar</span>
                 <ul>
                   <li>
-                    <Link to="#">-Case Studies</Link>
+                    <Link to="#">-Vəziyyət Araşdırmaları</Link>
                   </li>
                   <li>
-                    <Link to="#">-Security</Link>
+                    <Link to="#">-Təhlükəsizlik</Link>
                   </li>
                   <li>
-                    <Link to="#">-Enterprise</Link>
+                    <Link to="#">-İnkişaf</Link>
                   </li>
                   <li>
                     <Link to="#">-Apl</Link>
                   </li>
                   <li>
-                    <Link to="#">-Integrations</Link>
+                    <Link to="#">-İnteqrasiyalar</Link>
                   </li>
                 </ul>
               </div>
               <div className="col">
-                <span className="title">Company</span>
+                <span className="title">Şirkət</span>
                 <ul>
                   <li>
                     <Link
@@ -78,11 +79,11 @@ function Footer() {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                     >
-                      -About
+                      -Haqqımızda
                     </Link>
                   </li>
                   <li>
-                    <Link to="#">-Careers</Link>
+                    <Link to="#">-Karyera</Link>
                   </li>
                   <li>
                     <Link
@@ -91,11 +92,11 @@ function Footer() {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                     >
-                      -Blog
+                      -Bloq
                     </Link>
                   </li>
                   <li>
-                    <Link to="#">-Contact</Link>
+                    <Link to="#">-Əlaqə</Link>
                   </li>
                   <li>
                     <Link
@@ -104,7 +105,7 @@ function Footer() {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                     >
-                      -Services
+                      -Xidmətlər
                     </Link>
                   </li>
                 </ul>
@@ -113,7 +114,7 @@ function Footer() {
           </div>
         </div>
         <div className="bottom">
-          <span>Copynighted By @2023 Engej</span>
+          <span>© 2023 Engej - Bütün Hüquqlar Qorunur</span>
           <div className="sosialMediaBottom">
             <Link to="https://www.facebook.com/">
               <img src="/images/facebook.png" alt="Facebook" />

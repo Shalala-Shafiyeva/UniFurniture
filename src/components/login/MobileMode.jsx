@@ -56,11 +56,12 @@ function MobileMode() {
         <Link to="/register">
           <img src="/images/chevron-left.png" alt="Back" />
         </Link>
-        <span>Sign In</span>
+        <span>Daxil olun</span>
         <div className="formPart">
-          <h4>WelcomeBack</h4>
+          <h4>Yenidən Xoş Gəlmisiniz</h4>
           <span>
-            Sign in your email and password or continue with social media
+            Email və şifrənizlə daxil edin və ya sosial mediadan istifadə edərək
+            davam edin
           </span>
           {invalidCredentials && (
             <p className="reg-error">{invalidCredentials}</p>
@@ -104,7 +105,7 @@ function MobileMode() {
                 <input
                   type={visiblePass ? "text" : "password"}
                   name="password"
-                  placeholder="Password"
+                  placeholder="Şifrə"
                   value={values.password}
                   onChange={(e) => {
                     onChange(e);
@@ -121,11 +122,11 @@ function MobileMode() {
                 <label htmlFor="remember">Remember me</label>
               </div> */}
               <div className="forgetItem">
-                <Link to="/forgot-password">Forgot Password?</Link>
+                <Link to="/forgot-password">Şifrəni unutmusunuz?</Link>
               </div>
             </div>
             <button className="submit" to="/" type="submit">
-              Sign In
+              Daxil Olun
             </button>
           </form>
         </div>
@@ -133,7 +134,7 @@ function MobileMode() {
 
       <div className="bottom">
         <div className="continueWith">
-          <span>Or continue with</span>
+          <span>Və ya davam edin</span>
           <div className="btns">
             <a href="">
               <img src="/images/google.png" alt="Google Account" />
@@ -148,9 +149,9 @@ function MobileMode() {
 
         <div className="haveAccount">
           <span>
-            Don't have an account?{" "}
+            Hüsabınız yoxdur?{" "}
             <Link to="/register" className="greenTxt">
-              Sign up
+              Qeydiyyat
             </Link>
           </span>
         </div>

@@ -2,16 +2,16 @@ import React from "react";
 
 function PhoneHero() {
   return (
-    <section className="phoneHero" >
+    <section className="phoneHero">
       <div className="cover">
         <span className="title">
-          About our <span>company</span>
+          Şirkətimiz <span>haqqında</span>
         </span>
         <p>
-        We strive to build a company that values innovation, 
-        integrity, and customer satisfaction. Our commitment lies in creating 
-        sustainable solutions and fostering a culture of 
-        excellence to drive success and growth for our stakeholders.
+          Biz yeniliklərə, dürüstlüyə və müştəri məmnuniyyətinə dəyər verən bir
+          şirkət qurmağa çalışırıq. Öhdəliyimiz davamlı həllər yaratmaq və
+          mükəmməllik mədəniyyətini inkişaf etdirmək yolu ilə maraqlı
+          tərəflərimiz üçün uğur və inkişafı təmin etməkdir.
         </p>
       </div>
     </section>
