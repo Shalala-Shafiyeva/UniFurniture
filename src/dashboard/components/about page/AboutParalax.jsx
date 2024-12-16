@@ -192,7 +192,7 @@ function AboutParalax() {
             </div>
             <div className="row p-4">
               <h2>Paralaxes of About page</h2>
-              {paralaxes.length == 0 ? (
+              {paralaxes?.length == 0 ? (
                 <p>No paralax found</p>
               ) : (
                 <table className="table table-striped table-bordered">
@@ -206,7 +206,7 @@ function AboutParalax() {
                     </tr>
                   </thead>
                   <tbody>
-                    {paralaxes.map((paralax) => (
+                    {paralaxes?.map((paralax) => (
                       <tr key={paralax.id}>
                         <td>{paralax.title}</td>
                         <td>{paralax.content}</td>

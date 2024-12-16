@@ -125,7 +125,7 @@ function CartOrder() {
           queryClient.invalidateQueries("cartCount");
           queryClient.invalidateQueries("totalDiscount");
         } else {
-          toast.error(data.message || "Failed to remove product");
+          toast.error(data.message || "Məhsulu səbətdən çıxarmaq olmadı");
         }
       },
     }
@@ -159,7 +159,7 @@ function CartOrder() {
           queryClient.invalidateQueries("cartCount");
           queryClient.invalidateQueries("totalDiscount");
         } else {
-          toast.error(data.message || "Failed to increase product quantity");
+          toast.error(data.message || "Məhsulun miqdarını artırmaq mümkün olmadı");
         }
       },
     }
@@ -193,7 +193,7 @@ function CartOrder() {
           queryClient.invalidateQueries("cartCount");
           queryClient.invalidateQueries("totalDiscount");
         } else {
-          toast.error(data.message || "Failed to decrease product quantity");
+          toast.error(data.message || "Məhsulun miqdarını azaltmaq mümkün olmadı");
         }
       },
     }

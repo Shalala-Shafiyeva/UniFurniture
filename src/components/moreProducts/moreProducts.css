@@ -199,27 +199,28 @@
 }
 
 .filters .filter:nth-of-type(2) .inps .inp:first-of-type>div input:checked {
-    border: 6px solid #000;
+    border: 6px solid #efe5e5;
+    background-color: #e1f6f3;
 }
 
 .filters .filter:nth-of-type(2) .inps .inp:nth-of-type(2)>div input:checked {
-    border: 6px solid rgba(30, 116, 191, 1);
-}
-
-.filters .filter:nth-of-type(2) .inps .inp:nth-of-type(3)>div input:checked {
-    border: 6px solid #4A281E;
-}
-
-.filters .filter:nth-of-type(2) .inps .inp:nth-of-type(4)>div input:checked {
     border: 6px solid #BFBFBF;
 }
 
+.filters .filter:nth-of-type(2) .inps .inp:nth-of-type(3)>div input:checked {
+    border: 6px solid rgba(30, 116, 191, 1);
+}
+
+.filters .filter:nth-of-type(2) .inps .inp:nth-of-type(4)>div input:checked {
+    border: 6px solid #FF7A00;
+}
+
 .filters .filter:nth-of-type(2) .inps .inp:nth-of-type(5)>div input:checked {
-    border: 6px solid #51B846;
+    border: 6px solid #000;
 }
 
 .filters .filter:nth-of-type(2) .inps .inp:nth-of-type(6)>div input:checked {
-    border: 6px solid #FF7A00;
+    border: 6px solid #4A281E;
 }
 
 .filters .filter:nth-of-type(2) .inps .inp:nth-of-type(7)>div input:checked {
@@ -227,8 +228,10 @@
 }
 
 .filters .filter:nth-of-type(2) .inps .inp:nth-of-type(8)>div input:checked {
-    border: 6px solid #efe5e5;
-    background-color: #e1f6f3;
+    border: 6px solid yellow !important;
+}
+.filters .filter:nth-of-type(2) .inps .inp:nth-of-type(9)>div input:checked {
+    border: 6px solid #51B846 !important;
 }
 
 .filters .filter:nth-of-type(2) .inps span {

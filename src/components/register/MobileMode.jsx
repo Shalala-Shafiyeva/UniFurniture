@@ -126,7 +126,7 @@ function MobileMode() {
               {errors.name && <p className="reg-error">{errors.password}</p>}
             </div>
             <button className="submit" type="submit">
-              Hesab yaradın
+              Hesab Yaradın
             </button>
           </form>
         </div>

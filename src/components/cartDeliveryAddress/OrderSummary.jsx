@@ -108,7 +108,7 @@ function OrderSummary({ activateBtn }) {
         {/* <span>${parseFloat((totalPrice - totalDiscount - 20).toFixed(2))}</span> */}
         <span>${(total - totalDiscount).toFixed(2) || 0}</span>
       </div>
-      <button disabled={activateBtn}>
+      {/* <button disabled={activateBtn}>
         <Link
           to="#"
           className={`paymentAddress ${activateBtn ? "active" : ""}`}
@@ -116,7 +116,7 @@ function OrderSummary({ activateBtn }) {
           <span>Sifarişi Ver</span>
           <img src="/images/shop/arrow.png" alt="Arrow" />
         </Link>
-      </button>
+      </button> */}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function AboutHero() {
   const [banner, setBanner] = useState([]);
   const addClassToWord = (text) => {
-    const formattedText = text.replace(/(company)/gi, '<span class="orange">$1</span>');
+    const formattedText = text.replace(/(Şirkətimiz)/gi, '<span class="orange">$1</span>');
     return formattedText;
   };
   useEffect(() => {
@@ -16,7 +16,6 @@ function AboutHero() {
         });
         const result = await response.json();
         setBanner(result);
-
       } catch (err) {
         console.log("Error: ", err);
       }

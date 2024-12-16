@@ -148,7 +148,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
               }}
               action=""
             >
-              {activeForm === "Credit Card" && (
+              {activeForm === "Kredit kartı" && (
                 <div className="cardForm">
                   <div className="inp">
                     <label htmlFor="cardNum">Kart nömrəsi*</label>
@@ -191,7 +191,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
                   <div className="inp">
                     <label htmlFor="code">CVV kod*</label>
                     <input
-                      placeholder="Enter CVV code"
+                      placeholder="CVV kodu daxil edin"
                       type="text"
                       id="cvv"
                       value={inputValue.cvv || ""}

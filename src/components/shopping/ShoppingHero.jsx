@@ -22,7 +22,7 @@ function ShoppingHero({
         <div className="context">
           <div className="cover">
             <h2>
-              Hər bir<span className="orange">Məhsulun</span> gözəl bir hekayəsi
+              Hər bir <span className="orange">Məhsulun</span> gözəl bir hekayəsi
               var
             </h2>
             <p>

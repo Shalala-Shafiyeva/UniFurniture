@@ -86,7 +86,7 @@ function Cart({ openBasket, setOpenBasket }) {
           queryClient.invalidateQueries("totalDiscount");
           queryClient.invalidateQueries("addresses");
         } else {
-          toast.error(data.message || "Failed to increase product quantity");
+          toast.error(data.message || "Məhsulun miqdarını artırmaq mümkün olmadı");
         }
       },
     }
@@ -121,7 +121,7 @@ function Cart({ openBasket, setOpenBasket }) {
           queryClient.invalidateQueries("totalDiscount");
           queryClient.invalidateQueries("addresses");
         } else {
-          toast.error(data.message || "Failed to decrease product quantity");
+          toast.error(data.message || "Məhsulun miqdarını azaltmaq mümkün olmadı");
         }
       },
     }
@@ -156,7 +156,7 @@ function Cart({ openBasket, setOpenBasket }) {
           queryClient.invalidateQueries("totalDiscount");
           queryClient.invalidateQueries("addresses");
         } else {
-          toast.error(data.message || "Failed to remove product");
+          toast.error(data.message || "Məhsulu səbətdən çıxarmaq olmadı");
         }
       },
     }
@@ -175,7 +175,7 @@ function Cart({ openBasket, setOpenBasket }) {
         </div>
         <div className="orderProducts">
           {isFetchingCart ? (
-            <div>Yüklənir...</div>
+            <div className="loading">Yüklənir...</div>
           ) : products.length ? (
             products.map((product) => (
               <div className="product" key={product.id}>

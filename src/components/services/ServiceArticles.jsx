@@ -48,7 +48,6 @@ function ServiceArticles() {
     fetchArticles();
   }, []);
 
-  console.log(articles)
 
   return (
     <section className="articles" data-aos="fade-up">
@@ -74,7 +73,7 @@ function ServiceArticles() {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                 >
-                  Məqaləni nəzərdən keçirin
+                 Daha Ətraflı
                 </Link>
               </div>
             </div>

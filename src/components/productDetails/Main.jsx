@@ -82,7 +82,7 @@ function Main({ product }) {
 
   const handleAddToCart = () => {
     if (!product.hasStock || !product.stock) {
-      toast.error("This product is out of stock");
+      toast.error("Məhsul bitmişdir");
     }
     if (product.hasStock) {
       dispatch(
@@ -99,7 +99,7 @@ function Main({ product }) {
           shipping: product.shipping,
         })
       );
-      toast.success("Successfully added to cart");
+      toast.success("Məhsul səbətə əlavə olundu");
     }
   };
 
@@ -181,7 +181,7 @@ function Main({ product }) {
           queryClient.invalidateQueries("cartCount");
           queryClient.invalidateQueries("totalDiscount");
         } else {
-          toast.error(data.message || "Failed to remove product");
+          toast.error(data.message || "Məhsult səbətdən çıxarılmadı");
         }
       },
     }

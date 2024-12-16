@@ -12,7 +12,7 @@ function CategoryEdit() {
   const [value, setValue] = useState({ name: "", image: null });
   const [errors, setErrors] = useState({});
   const token = localStorage.getItem("token");
-  const fetchCategory = async (id) => {
+  const fetchCategory = async () => {
     try {
       const response = await fetch("http://localhost:8000/api/category/" + id, {
         method: "GET",
@@ -23,14 +23,14 @@ function CategoryEdit() {
       });
       const result = await response.json();
       setCategory(result.data || []);
-      setValue(result.data.name);
+      setValue(result.data);
     } catch (err) {
       console.log("Error fetching: ", err);
     }
   };
 
   useEffect(() => {
-    fetchCategory(id);
+    fetchCategory();
   }, []);
 
   const handleFormSubmit = async (e) => {
@@ -62,7 +62,6 @@ function CategoryEdit() {
           navigate("/dashboard/product/category");
           return;
         }
-        console.log(result);
       }
     } catch (error) {
       console.error("Error editing:", error);

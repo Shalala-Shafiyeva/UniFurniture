@@ -152,16 +152,16 @@ function Furnitures({
   };
 
   const success = () => {
-    toast.success("Successfully added to cart");
+    toast.success("Məhsul səbətə əlavə edildi");
   };
 
   const error = () => {
-    toast.error("Sorry, this product is out of stock");
+    toast.error("Təəssüf ki məhsul bitmişdir");
   };
 
   // const handleAddToCart = (product) => {
   //   if (product.hasStock) {
-  //     toast.success("Successfully added to cart");
+  //     .success("Successfully added to cart");
   //     dispatch(
   //       addToCart({
   //         id: product.id,
@@ -213,7 +213,7 @@ function Furnitures({
           queryClient.invalidateQueries("totalDiscount");
           queryClient.invalidateQueries("addresses");
         } else {
-          toast.error(data.message || "Failed to remove product");
+          toast.error(data.message || "Məhsul səbətdən çıxarılmadı");
         }
       },
     }

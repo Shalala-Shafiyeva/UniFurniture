@@ -20,7 +20,7 @@ function StartWithUni() {
           </div>
           <div className="btns">
             <Link className="createAccountBtn" to="/register">
-              Hesab Yarad
+              Hesab Yaradın
             </Link>
             <Link className="loginBtn" to="/login">
               Daxil ol
